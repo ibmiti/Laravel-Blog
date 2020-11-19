@@ -12,13 +12,11 @@ class PostsController extends Controller
 {
     public function show($slug)
     {
-    
-        // $post = DB::table('posts')->where('slug', $slug)->first();
-        $post = Post::where('slug', $slug)->first();
+        $post = Post::where('slug', $slug)->firstOrFail();
         
-        if (! $post) {
-            abort(404);
-        }
+        // if (! $post) {
+        //     abort(404);
+        // }
 
         return view('post', 
         [
