@@ -1,3 +1,3 @@
 <h1>Blog</h1>
 
-<p>{{ $post ?? '' }}</p>
+<p>{{ $post->body }}</p>
