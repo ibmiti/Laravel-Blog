@@ -20,3 +20,6 @@ Route::get('/', function () {
 
 Route::get('post/{post}', [PostsController::class, 'show']);
 
+Route::get('/contact', function(){
+    return view('contact');
+});
