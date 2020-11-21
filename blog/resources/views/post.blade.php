@@ -6,6 +6,3 @@
 
 <p>{{ $post->body }}</p>
 @endsection
-@section('footer')
-<x-footer />
-@endsection
