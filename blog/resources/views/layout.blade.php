@@ -12,7 +12,7 @@
 
 
 /* media stylings */
-@media screen and (max-width: 1680px) {
+/* @media screen and (max-width: 1680px) {
 
 body, input, select, textarea {
     font-size: 12pt;
@@ -58,7 +58,7 @@ body, input, select, textarea {
     padding: 1.5em;
 }
 
-}
+} */
 
 
 </style>    
@@ -73,7 +73,7 @@ body, input, select, textarea {
 
 
 header {
-    background: #55d6aa;
+    background: eggshell;
 }
 
 header::after {
@@ -91,6 +91,15 @@ nav {
     float: right;
 }
 
+nav ul {
+    margin : 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
 .logo {
     float: left;
 }
@@ -104,15 +113,19 @@ body {
 }
 
 </style>
+<!--  needs separating from header content -->
+<body>
+
 
 <header>
 <div class="container">
     <?php 
-    
-        $image = "https://images.unsplash.com/photo-1540957904852-c2184978df5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80";
+        // i like this image - I will create one similar using photo shop - and make a png
+        $image = "https://images.unsplash.com/photo-1550439694-0cc5e82d1179?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80";
 
     ?>
     <img src="{{ $image }}" alt="logo image" height="40px" width="40px" class="logo">
+    
 
 <nav>
     <ul>
@@ -125,8 +138,10 @@ body {
 </div>
 </header>
 
-<!--  needs separating from header content -->
-<body>
+
+
+
+
 <div>
     @yield ('content')
 </div>
