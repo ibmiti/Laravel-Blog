@@ -89,6 +89,7 @@ header::after {
 
 nav {
     float: right;
+    margin-top: 15px;
 }
 
 nav ul {
@@ -99,9 +100,22 @@ nav ul {
 
 nav li {
     display: inline-block;
+    margin-left: 70px;
 }
+
+a {
+    text-decoration: none;
+}
+
+
 .logo {
     float: left;
+    border-radius: 30px 30px 30px 30px;
+}
+
+#bb {
+    display: inline-block;
+    margin-left: 10px;
 }
 
 /* body  */
@@ -124,7 +138,8 @@ body {
         $image = "https://images.unsplash.com/photo-1550439694-0cc5e82d1179?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80";
 
     ?>
-    <img src="{{ $image }}" alt="logo image" height="40px" width="40px" class="logo">
+    <img src="{{ $image }}" alt="logo image" height="60px" width="60px" class="logo">
+    <h3 id='bb'>BB</h3>
     
 
 <nav>
