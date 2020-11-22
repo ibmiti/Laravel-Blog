@@ -1,3 +1,12 @@
+<style>
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+</style>
+
 <footer class="container">
   <div class="footer__inner">
     <div class="logo">BabiBassinet</div>

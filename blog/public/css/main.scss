@@ -4,61 +4,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 
-// // nav bar list items
-
-// body {
-//   background: #fffdfd;
-//   height: 100vh;
-// }
-
-
-/*  footer  */
-$brand-primary: #92B8C3;
-$brand-secondary: #FF30AA;
-$brand-dark: #fff;
-$brand-light: #fff;
-$brand-grey: #344;
-* {
-  box-sizing: border-box;
-}
-
-footer {
-  height: 300px;
-  background-color: $brand-primary;
-  position: relative;
-  .footer__inner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 40px 60px;
-    width: 100%;
-    * {
-      color: $brand-light;
+     /* body  */
+	 body {
+        background: #fffdfd;
+        /* height: 100vh; */
+        font-weight: 400;
+        font-family: 'Raleway', 'Roboto';
     }
-  }
-  .logo {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 40px;
-    margin-bottom: 80px;
-    transform: translateY(50px);
-    opacity: 0;
-    transition: transform, opacity;
-    transition-duration: .8s;
-    transition-timing-function: ease;  
-    
-    &.show{
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
 
 
 
