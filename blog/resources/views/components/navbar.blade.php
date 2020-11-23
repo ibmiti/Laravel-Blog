@@ -48,7 +48,7 @@ nav a {
 }
 
 nav a:hover {
-    color: pink;
+    color: #F4C2C2;
 
     transition: all ease-in-out 300ms;
 }
@@ -85,6 +85,10 @@ nav a:hover::before {
     /* padding-top: 25px; */
 }
 
+#b {
+    color : #B9DEED;
+}
+
 .hamburger-menu {
     background-color: transparent;
     display: none;
@@ -96,16 +100,20 @@ nav a:hover::before {
 
 .hamburger-menu:focus {
     outline:none;
-    color: pink;
+    color: #F4C2C2;
 
     transition: all ease-in-out 230ms;
 }
 
 @media screen and (max-width: 767px){
-		nav ul li {
+		/* nav ul li {
 			display: none;
-        }
+        } */
         
+        .nav-ul {
+            display: none;
+        }
+
         .hamburger-menu {
             display: block;
             padding-top: 20px;
@@ -133,12 +141,12 @@ nav a:hover::before {
 </style>
 <header>
 <div class="container">
-    <h3 id='bb'>BABYBASSINET</h3>
- <nav>
+    <h3 class="logo" id='bb'><span id='b'>BABY</span>BASSINET</h3>
+ <nav class="nav-ul">
     <button class="hamburger-menu btn" id="hamburger-menu">
         <i class="fas fa-bars"></i>
     </button>
-    <ul>
+    <ul id="nav-ul">
     <?php
         if (!Request::is('/'))
         {
@@ -164,3 +172,14 @@ nav a:hover::before {
 </div>
 
 </header>
+
+<script type="text/javascript">
+
+    const hamburger_menu = document.getElementByid('hamburger-menu');
+    const navUL = document.getElementById('nav-ul');
+
+    hamburger_menu.addEventListener('click', () => {
+        navUL.classList.toggle('show');
+    });
+
+</script>
