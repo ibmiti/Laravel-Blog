@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
+Route::get('/post', function(){
+    return view('blog');
+});
+
 Route::get('post/{post}', [PostsController::class, 'show']);
 
 Route::get('/contact', function(){

@@ -95,19 +95,19 @@ nav a:hover::before {
     <?php
         if (!Request::is('/'))
         {
-            echo '<li><a href="">Home</a></li>';
+            echo '<li><a href="/">Home</a></li>';
         }
         if (!Request::is('about'))
         {
             echo '<li><a href="/about">About</a></li>'; 
         }    
-        if (!Request::is('blog'))
+        if (!Request::is('post'))
         {
-            echo '<li><a href="">Blog</a></li>';
+            echo '<li><a href="/post">Blog</a></li>';
         }
         if (!Request::is('contact'))
         {
-            echo '<li><a href="">Contact</a></li>';
+            echo '<li><a href="/contact">Contact</a></li>';
         }
     ?>
     </ul>
