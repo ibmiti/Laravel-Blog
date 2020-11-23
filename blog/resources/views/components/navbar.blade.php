@@ -58,6 +58,8 @@ nav a:before {
     top: 0;
     width: 0%;
     position: absolute;
+
+    transition: all ease-in-out 250ms;
 }
 
 nav a:hover::before {
@@ -90,25 +92,24 @@ nav a:hover::before {
 
  <nav>
     <ul>
-        <?php
-    if (!Request::is('/'))
-    {
-        echo '<li><a href="">Home</a></li>';
-    }
-    if (!Request::is('about'))
-    {
-        echo '<li><a href="/about">About</a></li>'; 
-    }    
-    if (!Request::is('blog'))
-    {
-        echo '<li><a href="">Blog</a></li>';
-    }
-    if (!Request::is('contact'))
-    {
-        echo '<li><a href="">Contact</a></li>';
-    }
-
-?>
+    <?php
+        if (!Request::is('/'))
+        {
+            echo '<li><a href="">Home</a></li>';
+        }
+        if (!Request::is('about'))
+        {
+            echo '<li><a href="/about">About</a></li>'; 
+        }    
+        if (!Request::is('blog'))
+        {
+            echo '<li><a href="">Blog</a></li>';
+        }
+        if (!Request::is('contact'))
+        {
+            echo '<li><a href="">Contact</a></li>';
+        }
+    ?>
     </ul>
  </nav>
 </div>
