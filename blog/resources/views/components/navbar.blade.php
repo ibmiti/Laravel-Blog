@@ -48,7 +48,9 @@ nav a {
 }
 
 nav a:hover {
-    color: teal;
+    color: pink;
+
+    transition: all ease-in-out 300ms;
 }
 
 nav a:before {
@@ -56,7 +58,7 @@ nav a:before {
     display: block;
     height: 5px;
     
-    background-color: #444;
+    background-color: #B9DEED;
     top: 0;
     width: 0%;
     position: absolute;
@@ -87,13 +89,16 @@ nav a:hover::before {
     background-color: transparent;
     display: none;
     border: 0;
-    color: black;
+    color: #B9DEED;
     cursor: pointer;
     font-size: 20px;
 }
 
 .hamburger-menu:focus {
     outline:none;
+    color: pink;
+
+    transition: all ease-in-out 230ms;
 }
 
 @media screen and (max-width: 767px){
