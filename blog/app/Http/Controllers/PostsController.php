@@ -13,9 +13,9 @@ class PostsController extends Controller
     public function show($slug)
     {
     
-        return view('post', 
+        return view('posts', 
         [
-            'post' => Post::where('slug', $slug)->firstOrFail()
+            'posts' => Post::where('slug', $slug)->firstOrFail()
         ]
     );
 

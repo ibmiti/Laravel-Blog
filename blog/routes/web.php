@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
-Route::get('/post', function(){
+Route::get('/posts', function(){
     return view('blog');
 });
 
-Route::get('post/{post}', [PostsController::class, 'show']);
+Route::get('posts/{post}', [PostsController::class, 'show']);
 
 Route::get('/contact', function(){
     return view('contact');
