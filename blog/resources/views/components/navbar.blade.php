@@ -106,10 +106,7 @@ nav a:hover::before {
 }
 
 @media screen and (max-width: 767px){
-		/* nav ul li {
-			display: none;
-        } */
-        
+	    
         .nav-ul {
             display: none;
         }
