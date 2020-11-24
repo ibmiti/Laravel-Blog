@@ -22,55 +22,32 @@
     <div class="collapse navbar-collapse m-2 p-4"  id="navbarNavDropdown01">
     <ul class="navbar-nav text-right mr-4"> 
         <?php     
-
-
-            $uris = [];
             $uri = Request::getRequestUri();
-            // if ($uri ==) {
-
-            // }
-            
             switch ($uri) {
-                case ($uri === '/'):
-
-
+                case ($uri == '/'):
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/posts">BLOG</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>');
                     break;
-                case 20:
-                    echo "Age is 20";
+                case ($uri == '/posts'):
+                    echo ('<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/posts">BLOG</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>');
                     break;
-                case 21:
-                    echo "Age is 21";
+                case ($uri == '/about'):
+                    
+                    echo ('<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/about">ABOUT</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/posts">BLOG</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>');
                     break;
-
-            dd($uri);
-
-
-            // if ($uri === '/' && )
-            // {
-            //        echo ('<li class="nav-item active">
-            //             <a class="nav-link" href="/">HOME</a>
-            //         </li>');
-            // } 
-            
-            if (!Request::is('about'))
-            {
-                   echo ('<li class="nav-item active">
-                        <a class="nav-link" href="/about">ABOUT</a>
-                    </li>');
-            }   
-
-            if (Request::is('posts'))
-            {
-                echo ('<li class="nav-item active">
-                        <a class="nav-link" href="/posts">BLOG</a>
-                    </li>');
-            }
-            if (Request::is('contact'))
-            {
-                echo ('<li class="nav-item active">
-                        <a class="nav-link" href="/contact">CONTACT</a>
-                    </li>');
-            }
+                case ($uri == '/contact'):
+                    echo ('<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/posts">BLOG</a></li>');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/contact">CONTACT</a></li>');
+                    break;
         ?>
    </ul> 
   </nav>                             
