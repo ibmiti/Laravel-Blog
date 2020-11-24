@@ -22,49 +22,55 @@
     <div class="collapse navbar-collapse m-2 p-4"  id="navbarNavDropdown01">
     <ul class="navbar-nav text-right mr-4"> 
         <?php     
-            if (Request::is('/'))
-            {
-                echo ('<li class="nav-item active"><a class="nav-link" href="/">HOME</a></li>');
-                    
-                echo ('<li class="nav-item "><a class="nav-link" href="/about">ABOUT</a></li>');
-                
-                echo ('<li class="nav-item "><a class="nav-link" href="/posts">BLOG</a></li>');
-                    
-                echo ('<li class="nav-item "><a class="nav-link" href="/posts">CONTACT</a></li>');
-            } 
-            
-            if (Request::is('about'))
-            {
-                echo ('<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>');
-                    
-                echo ('<li class="nav-item active"><a class="nav-link" href="/about">ABOUT</a></li>');
-                
-                echo ('<li class="nav-item"><a class="nav-link" href="/posts">BLOG</a></li>');
-                    
-                echo ('<li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>');
-            } 
 
-            // if (Request::is('posts'))
+
+            $uris = [];
+            $uri = Request::getRequestUri();
+            // if ($uri ==) {
+
+            // }
+            
+            switch ($uri) {
+                case ($uri === '/'):
+
+
+                    break;
+                case 20:
+                    echo "Age is 20";
+                    break;
+                case 21:
+                    echo "Age is 21";
+                    break;
+
+            dd($uri);
+
+
+            // if ($uri === '/' && )
             // {
-            //     echo ('<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>');
-                    
-            //     echo ('<li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>');
-                
-            //     echo ('<li class="nav-item active"><a class="nav-link" href="/posts">BLOG</a></li>');
-                    
-            //     echo ('<li class="nav-item"><a class="nav-link" href="/contact>CONTACT</a></li>');
+            //        echo ('<li class="nav-item active">
+            //             <a class="nav-link" href="/">HOME</a>
+            //         </li>');
             // } 
             
+            if (!Request::is('about'))
+            {
+                   echo ('<li class="nav-item active">
+                        <a class="nav-link" href="/about">ABOUT</a>
+                    </li>');
+            }   
+
+            if (Request::is('posts'))
+            {
+                echo ('<li class="nav-item active">
+                        <a class="nav-link" href="/posts">BLOG</a>
+                    </li>');
+            }
             if (Request::is('contact'))
             {
-                echo ('<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>');
-                    
-                echo ('<li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>');
-                
-                echo ('<li class="nav-item"><a class="nav-link" href="/posts">BLOG</a></li>');
-                    
-                echo ('<li class="nav-item active"><a class="nav-link" href="/contact">CONTACT</a></li>');
-            } 
+                echo ('<li class="nav-item active">
+                        <a class="nav-link" href="/contact">CONTACT</a>
+                    </li>');
+            }
         ?>
    </ul> 
   </nav>                             
