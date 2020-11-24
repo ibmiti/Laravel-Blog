@@ -5,11 +5,23 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+    html {
+        height: 100%;
+    }
 
      /* body  */
 	 body {
         background: #fffdfd;
         /* height: 100vh; */
         font-weight: 400;
+        font-size: 1.125em;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.6;
         font-family: 'Raleway', 'Roboto';
+        min-height: 100vh;
+    }
+
+    .content {
+        padding: 3rem; 
     }

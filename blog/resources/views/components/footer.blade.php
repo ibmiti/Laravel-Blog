@@ -2,7 +2,17 @@
 
 footer a {
     text-decoration: none;
-    color: black;
+    color: white;
+
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 3em;
+
+  margin-top: auto;
+  
 }
 
 </style>

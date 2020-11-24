@@ -110,22 +110,13 @@ nav a:hover::before {
 }
 
 @media screen and (max-width: 767px){
-        
-        /* nav ul li {
-            display: none;
-            width: 100%;
-        } */
 
         .nav-ul {
             display: none;
             flex-direction: column;
             width: 100%;
+            transition: all ease-in-out 400ms;
         }
-
-        /* .nav-ul {
-            display: none;
-            width: 100%;
-        } */
 
         .nav-ul.show {
             display: flex;
@@ -149,10 +140,16 @@ nav a:hover::before {
 		} 
 
 		header {
-			/* background-image: url('') */
-			padding-bottom: 0;
+            /* padding: 40px 100px; */
+            /* position: fixed; */
+            /* top: 0;
+            left: 0; */
+            /* width: 100%; */
+            display: flex;
+            transition: 0.6s;
+            z-index: 1000000;
 		} 
-	}
+	}   
 
 
 </style>
@@ -196,8 +193,13 @@ nav a:hover::before {
 
     hamburger_menu.addEventListener('click', () => {
         navUL.classList.toggle('show');
-        console.log('fire');
     });
+
+    // window.addEventListener('scroll', () => {
+    //     console.log('ello');
+    //     const header = document.getElementsByTagName('Header');
+    //     header.classList.toggle("sticky", window.scrollY > 0);
+    // });
 
 </script>
 
