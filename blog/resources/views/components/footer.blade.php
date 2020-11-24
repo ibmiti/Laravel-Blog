@@ -1,6 +1,6 @@
 <style>
 
-footer a {
+/* footer a {
     text-decoration: none;
     color: white;
 
@@ -12,12 +12,13 @@ footer {
   padding: 3em;
 
   margin-top: auto;
-  
-}
+
+} */
 
 </style>
 
-<footer class="container">
+<div class="container">
+<footer>
   <div class="footer__inner">
     <div class="logo">BabiBassinet</div>
       <a href="">© Babi Bassinet</a>
@@ -29,3 +30,4 @@ footer {
       </div>
   </div>
 </footer>
+</div>
