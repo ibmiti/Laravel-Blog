@@ -10,7 +10,7 @@
 <div class="container container-fluid">
 <!-- find new color -->
   <!-- <nav class="navbar sticky-top navbar-expand-lg justify-content-between navbar-light bg-light" role="navigation">  -->
-  <nav class="navbar sticky-top navbar-expand-lg justify-content-between navbar-light "  style="background-color: #EFFDFA;" role="navigation"> 
+  <nav class="navbar sticky-top navbar-expand-lg justify-content-between navbar-light"  style="background-color: #EFFDFA;" role="navigation"> 
     <a id="bb" class="navbar-brand" href="/">
     <!-- <img src="https://www.geeksforgeeks.org/wp-content/uploads/gfg_transparent_white_small.png" 
                          width="30" height="30"
@@ -29,7 +29,7 @@
     </button> 
 
     <div class="collapse navbar-collapse m-2 p-4"  id="navbarNavDropdown01">
-    <ul class="navbar-nav text-right mr-4"> 
+    <ul class="navbar-nav ml-auto"> 
         <?php     
             $uri = Request::getRequestUri();
             switch ($uri) {
