@@ -10,12 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!-- font-icons -->
     <script src="https://use.fontawesome.com/a7bffd41d3.js"></script>
-    <title>Babi Bassinet</title>
+    <title>BabyBassinet - @yield('title') </title>
 </head>
 
 <body>
-<!-- <x-navbar /> -->
-<x-navbar2 />
+<x-navbar />
 
 <div class="container container-fluid">
     @yield ('content')
