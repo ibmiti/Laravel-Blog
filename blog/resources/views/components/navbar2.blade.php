@@ -1,8 +1,17 @@
+<style>
+    @media screen and (max-width: 767px){
+ 
+        #bb {
+            width: 80px;
+        }
+
+	}   
+</style>
 <div class="container container-fluid">
 <!-- find new color -->
   <!-- <nav class="navbar sticky-top navbar-expand-lg justify-content-between navbar-light bg-light" role="navigation">  -->
   <nav class="navbar sticky-top navbar-expand-lg justify-content-between navbar-light "  style="background-color: #EFFDFA;" role="navigation"> 
-    <a class="navbar-brand" href="/">
+    <a id="bb" class="navbar-brand" href="/">
     <!-- <img src="https://www.geeksforgeeks.org/wp-content/uploads/gfg_transparent_white_small.png" 
                          width="30" height="30"
                          class="d-inline-block align-top" alt="">    will use own image -->
@@ -48,6 +57,7 @@
                     echo ('<li class="nav-item"><a class="nav-link" href="/posts">BLOG</a></li>');
                     echo ('<li class="nav-item active"><a class="nav-link" href="/contact">CONTACT</a></li>');
                     break;
+                }
         ?>
    </ul> 
   </nav>                             
