@@ -32,6 +32,7 @@
     <!-- Content -->
   </section>
   <!--Section: Jumbotron-->
+  <hr class="my-5">
 
 <div class="container">
   <div class="row">

@@ -3,7 +3,7 @@
   <!-- <nav class="container container-fluid navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar justify-content-between" role="navigation">  -->
   
     <a id="logo" href="/">
-        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="60" style="padding-top:15px"/>   
+        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect heartBeat" width="60" height="60" style="padding-top:15px"/>   
         <span style="color: #89cff0">BABY</span>BASSINET          
     </a>
     <button id="hamburger" class="navbar-toggler bg-light" 
