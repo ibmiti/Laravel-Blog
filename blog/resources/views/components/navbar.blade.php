@@ -1,22 +1,23 @@
 <style>
     @media screen and (max-width: 767px){
  
-        #bb {
-            width: 80px;
+        #logo {
+            width : 300px;
+            height :250px;
         }
-
 	}   
 </style>
 <div class="container container-fluid">
 <!-- find new color -->
   <!-- <nav class="navbar sticky-top navbar-expand-lg justify-content-between navbar-light bg-light" role="navigation">  -->
   <nav class="navbar sticky-top navbar-expand-lg justify-content-between navbar-light"  style="background-color: #EFFDFA;" role="navigation"> 
-    <a id="bb" class="navbar-brand" href="/">
-    <!-- <img src="https://www.geeksforgeeks.org/wp-content/uploads/gfg_transparent_white_small.png" 
-                         width="30" height="30"
-                         class="d-inline-block align-top" alt="">    will use own image -->
-    <span style="color:blue;">BABY</span>BASSINET
+    <a id="logo" class="navbar-brand" href="/">
+
+    <img  id="logo" src="images/logo_babybassinet.png" class="d-inline-block align-to"/> 
+                         
     </a>
+
+
     <button class="navbar-toggler bg-light" 
             type="button" 
             data-toggle="collapse" 
