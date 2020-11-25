@@ -15,6 +15,9 @@
 
 <body>
 <x-navbar />
+<x-navbar2 />
+<x-navbar3 />
+
 
 <div class="container container-fluid">
     @yield ('content')

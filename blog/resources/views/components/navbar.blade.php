@@ -1,10 +1,8 @@
-<!-- <div class="container"> -->
-  <nav class="container container-fluid navbar sticky-top navbar-expand-lg justify-content-between navbar-light"  style="background-color: white;" role="navigation"> 
-  <!-- <nav class="container container-fluid navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar justify-content-between" role="navigation">  -->
-  
+<div class="container">
+  <nav class="container container-fluid navbar sticky-top navbar-expand-lg justify-content-between navbar-light"  style="background-color: white;" role="navigation">   
     <a id="logo" href="/">
-        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect heartBeat" width="60" height="60" style="padding-top:15px"/>   
-        <span style="color: #89cff0">BABY</span>BASSINET          
+        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="60" style="padding-top:15px"/>   
+        <strong>BABY BASSINET</strong>   
     </a>
     <button id="hamburger" class="navbar-toggler bg-light" 
             type="button" 
@@ -15,8 +13,7 @@
             aria-label="Toggle navigation"
             style="outline-color:pink"> 
         <span style="" class="navbar-toggler-icon"></span> 
-    </button> 
-
+    </button>
     <div class="collapse navbar-collapse m-2 p-4"  id="navbarNavDropdown01">
     <ul class="navbar-nav ml-auto"> 
         <?php     
@@ -49,4 +46,4 @@
         ?>
    </ul> 
   </nav>                             
-<!-- </div> -->
+</div>

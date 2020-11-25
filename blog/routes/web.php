@@ -35,7 +35,3 @@ Route::get('/about', function(){
 Route::get('/test', function(){
     return view('test');
 });
-
-Route::get('/test1', function(){
-    return view('test1');
-});
