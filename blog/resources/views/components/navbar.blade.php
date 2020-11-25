@@ -2,8 +2,8 @@
   <nav class="navbar sticky-top navbar-expand-lg justify-content-between navbar-light"  style="background-color: #EFFDFA;" role="navigation"> 
   
     <a id="logo" class="navbar-brand" href="/">
-        <img src="images/bbLogo.png" class="d-inline-block align-to" width="120" height="100" style="padding-top:15px"/>        
-        BABYBASSINET          
+        <img src="images/bbLogo.png" class="d-inline-block align-to" width="80" height="100" style="padding-top:15px"/>        
+        <span style="color: #89cff0">BABY</span>BASSINET          
     </a>
     <button id="hamburger" class="navbar-toggler bg-light" 
             type="button" 
