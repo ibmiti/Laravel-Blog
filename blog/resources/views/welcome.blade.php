@@ -3,31 +3,32 @@
 @section('title', 'Welcome Home')
 @section('content')
 
+<style>
+ 
+ #color-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: grey;
+   opacity: 0.3;
+}
+</style>
 
 <main class="mt-5 pt-5">
 <div class="container">
 
   <!--Section: Jumbotron-->
-  <section class="card wow fadeIn" style="background-image: url(https://images.unsplash.com/photo-1458731909820-5850bdcaee0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
-
+  <section class="card wow fadeIn" style="background-image: url(images/bearJumboBB.png); background-position: center; position: relative; ">
+  <div id="color-overlay"></div>
     <!-- Content -->
     <div class="card-body text-white text-center py-5 px-5 my-5">
 
       <h1 class="mb-4">
-        <strong>Learn Bootstrap 4 with MDB</strong>
+        <strong style="color:black">BABY BASSINET</strong>
       </h1>
-      <p>
-        <strong>Best & free guide of responsive web design</strong>
-      </p>
-      <p class="mb-4">
-        <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written
-          versions available. Create your own, stunning website.</strong>
-      </p>
-      <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start
-        free tutorial
-        <i class="fas fa-graduation-cap ml-2"></i>
-      </a>
-
+      <div class="mb-4"></div>
     </div>
     <!-- Content -->
   </section>

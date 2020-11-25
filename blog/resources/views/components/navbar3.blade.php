@@ -4,7 +4,6 @@
         <strong class="navbar-brand" href="#">BABY BASSINET</strong>   
 </a>
 
-  <!-- Collapse button -->
   <button class="navbar-toggler" 
           type="button" 
           data-toggle="collapse"
@@ -16,36 +15,33 @@
           >
     <span class="navbar-toggler-icon"></span></button>
 
-  <!-- Collapsible content -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent15">
-
-    <!-- Links -->
     <ul class="navbar-nav ml-auto"> 
         <?php     
             $uri = Request::getRequestUri();
             switch ($uri) {
                 case ($uri == '/'):
-                    echo ('<li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/posts">BLOG</a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT</strong></a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/posts"><strong>BLOG</strong></a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 case ($uri == '/posts'):
-                    echo ('<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>');
-                    echo ('<li class="nav-item active"><a class="nav-link" href="/posts">BLOG</a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/posts"><strong>BLOG</strong></a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 case ($uri == '/about'):    
-                    echo ('<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>');
-                    echo ('<li class="nav-item active"><a class="nav-link" href="/about">ABOUT</a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/posts">BLOG</a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/about"><strong>ABOUT</strong></a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/posts"><strong>BLOG</strong></a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 case ($uri == '/contact'):
-                    echo ('<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/posts">BLOG</a></li>');
-                    echo ('<li class="nav-item active"><a class="nav-link" href="/contact">CONTACT</a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT</strong></a></li>');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/posts"><strong>BLOG</strong></a></li>');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 }
         ?>

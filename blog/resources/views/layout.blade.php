@@ -16,7 +16,7 @@
 <body>
 
 <div class="container container-fluid">
-<x-navbar3/>
+<x-navbar/>
 </div>
 
 
