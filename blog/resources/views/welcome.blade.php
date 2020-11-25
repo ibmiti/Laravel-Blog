@@ -12,7 +12,7 @@
    width: 100%;
    height: 100%;
    background-color: grey;
-   opacity: 0.3;
+   opacity: 0.1;
 }
 </style>
 
@@ -26,7 +26,7 @@
     <div class="card-body text-white text-center py-5 px-5 my-5">
 
       <h1 class="mb-4">
-        <strong style="color:black">BABY BASSINET</strong>
+        <strong style="color:red">BABY BASSINET</strong>
       </h1>
       <div class="mb-4"></div>
     </div>
