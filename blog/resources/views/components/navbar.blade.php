@@ -1,8 +1,9 @@
-<div class="container container-fluid">
-  <nav class="navbar sticky-top navbar-expand-lg justify-content-between navbar-light"  style="background-color: #EFFDFA;" role="navigation"> 
+<!-- <div class="container"> -->
+  <nav class="container container-fluid navbar sticky-top navbar-expand-lg justify-content-between navbar-light"  style="background-color: white;" role="navigation"> 
+  <!-- <nav class="container container-fluid navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar justify-content-between" role="navigation">  -->
   
-    <a id="logo" class="navbar-brand" href="/">
-        <img src="images/bbLogo.png" class="d-inline-block align-to" width="80" height="100" style="padding-top:15px"/>        
+    <a id="logo" href="/">
+        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="60" style="padding-top:15px"/>   
         <span style="color: #89cff0">BABY</span>BASSINET          
     </a>
     <button id="hamburger" class="navbar-toggler bg-light" 
@@ -48,4 +49,4 @@
         ?>
    </ul> 
   </nav>                             
-</div>
+<!-- </div> -->

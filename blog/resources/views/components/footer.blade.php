@@ -1,22 +1,3 @@
-<style>
-
-footer a {
-    text-decoration: none;
-    color: white;
-
-}
-
-footer {
-  background: #333;
-  color: white;
-  padding: 3em;
-  width: 100%;
-  margin-top: auto;
-
-}
-
-</style>
-
 <footer class="page-footer font-small cyan darken-3">
 
   <!-- Footer Elements -->
@@ -64,8 +45,8 @@ footer {
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3">© 2020 ofRoot
+    <!-- <a href="">ofRoot.com</a> -->
   </div>
   <!-- Copyright -->
 

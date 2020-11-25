@@ -31,3 +31,11 @@ Route::get('/contact', function(){
 Route::get('/about', function(){
     return view('about');
 });
+
+Route::get('/test', function(){
+    return view('test');
+});
+
+Route::get('/test1', function(){
+    return view('test1');
+});
