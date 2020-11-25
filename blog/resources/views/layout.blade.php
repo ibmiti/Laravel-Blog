@@ -14,9 +14,10 @@
 </head>
 
 <body>
-<x-navbar />
-<x-navbar2 />
-<x-navbar3 />
+
+<div class="container container-fluid">
+<x-navbar3/>
+</div>
 
 
 <div class="container container-fluid">

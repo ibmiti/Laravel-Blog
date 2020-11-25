@@ -8,7 +8,7 @@
 <div class="container">
 
   <!--Section: Jumbotron-->
-  <section class="card wow fadeIn" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+  <section class="card wow fadeIn" style="background-image: url(https://images.unsplash.com/photo-1458731909820-5850bdcaee0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
 
     <!-- Content -->
     <div class="card-body text-white text-center py-5 px-5 my-5">

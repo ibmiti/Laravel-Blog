@@ -32,7 +32,10 @@ background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FB
 
 <!--Navbar-->
 <nav class="container container-fluid navbar navbar-light navbar-1 white">
-
+<a id="logo" href="/">
+        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="60" style="padding-top:15px"/>   
+        <strong>BABY BASSINET</strong>   
+    </a>
   <!-- Navbar brand -->
   <a class="navbar-brand" href="#">Navbar</a>
 
