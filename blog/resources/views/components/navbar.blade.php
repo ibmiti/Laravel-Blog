@@ -13,7 +13,24 @@
 </a>
 <strong class="navbar-brand" 
                 style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
-                href="#">BB</strong>   
+                href="#">
+                <?php 
+                switch($uri = Request::getRequestUri()) {
+                    case ($uri == '/'):
+                        echo ('BB | HOME');
+                    break;
+                    case ($uri == '/posts'):
+                        echo ('BB | BLOG');
+                    break;
+                    case($uri == '/about'):
+                        echo ('BB | ABOUT US');
+                    break;
+                    case ($uri == '/contact'):
+                        echo ('BB | CONTACT US');
+                    break;
+                }
+                ?>
+                </strong>   
 
   <button class="navbar-toggler" 
           type="button" 
