@@ -21,7 +21,7 @@
 <div class="container">
 
   <!--Section: Jumbotron-->
-  <section class="card wow fadeIn" style="background-image: url(images/bearJumboBB2.png); background-position: center; position: relative; background-repeat:no-repeat;">
+  <section class="card wow fadeIn" style="background-image: url(images/bearJumboBB2.png); background-position: center; position: relative; background-repeat:no-repeat; ">
   <div id="color-overlay"></div>
     <!-- Content -->
     <div style="min-height: 300px;" class="card-body text-white text-center py-5 px-5 my-5">

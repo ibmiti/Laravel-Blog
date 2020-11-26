@@ -14,9 +14,8 @@
 </head>
 
 <body>
-
-<div class="container container-fluid">
-<x-navbar/>
+    <div class="container container-fluid">
+    <x-navbar/>
 </div>
 
 

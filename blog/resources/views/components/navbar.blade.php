@@ -1,8 +1,19 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
+    nav ul li {
+        /* font-family: 'Raleway', 'Roboto'; */
+        font-family: 'Big Shoulders Stencil Display', cursive;
+        font-size: 40px;
+    }
+</style>
+
 <nav class="navbar navbar-light navbar">
 <a id="logo" href="/">
-        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="80" style="padding-top:15px" />   
-        <!-- <strong class="navbar-brand" href="#">BB</strong>    -->
+        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="80" style="padding-top:15px" /> 
 </a>
+<strong class="navbar-brand" 
+                style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
+                href="#">BB</strong>   
 
   <button class="navbar-toggler" 
           type="button" 
