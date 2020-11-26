@@ -19,7 +19,7 @@
 
 <!-- <main class="mt-5 pt-5"> -->
 <div class="container">
-  <!--Section: Jumbotron-->
+
   <x-header-image/>
 
   <div class="container">
