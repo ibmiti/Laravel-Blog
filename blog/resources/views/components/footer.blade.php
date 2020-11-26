@@ -45,7 +45,7 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 ofRoot
+  <div class="footer-copyright text-center py-3">© 2020 BABYBASSINET x designed by ofRoot
     <!-- <a href="">ofRoot.com</a> -->
   </div>
   <!-- Copyright -->

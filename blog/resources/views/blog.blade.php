@@ -2,6 +2,10 @@
 <!-- this will likely display all blog posts -->
 @section('title', 'Keep up with us')
 @section ('content')
+
+<x-header-image/>
+
+
     <h1>Hello blog  </h1>
     <div class="container">
   <div class="row">
