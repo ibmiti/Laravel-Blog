@@ -20,14 +20,10 @@
 <div class="container">
 
   <!--Section: Jumbotron-->
-  <section class="card wow fadeIn" style="background-image: url(images/bearJumboBB.png); background-position: center; position: relative; ">
+  <section class="card wow fadeIn" style="background-image: url(images/bearJumboBB2.png); background-position: center; position: relative; ">
   <div id="color-overlay"></div>
     <!-- Content -->
     <div class="card-body text-white text-center py-5 px-5 my-5">
-
-      <h1 class="mb-4">
-        <strong style="color:red">BABY BASSINET</strong>
-      </h1>
       <div class="mb-4"></div>
     </div>
     <!-- Content -->
