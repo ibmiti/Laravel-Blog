@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
+Route::get('/create_post', [PostsController::class, 'create']);
+
 Route::get('/posts', function(){
     return view('blog');
 });

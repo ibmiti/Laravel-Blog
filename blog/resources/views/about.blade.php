@@ -12,7 +12,7 @@
 
     .col-md {
       font-family: Verdana;
-      font-size: 11px;
+      font-size: 16px;
       color: #555555;
       line-height: 1.5;
       letter-spacing: .45px;

@@ -1,9 +1,6 @@
 @extends ('layout')
-<!-- this will likely display all blog posts -->
 @section('title', 'Keep up with us')
 @section ('content')
-
-
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');

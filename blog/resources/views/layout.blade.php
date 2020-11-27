@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- styles -->
     <link href="{{ asset('css/main.scss') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!-- font-icons -->
     <script src="https://use.fontawesome.com/a7bffd41d3.js"></script>
     <title>BabyBassinet - @yield('title') </title>
 </head>
@@ -18,12 +15,9 @@
     <x-navbar/>
 </div>
 
-
 <div class="container container-fluid">
     @yield ('content')
 </div>
-
-<!-- personal scripts -->
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->
 
 <!-- bootstrap related scripts -->
