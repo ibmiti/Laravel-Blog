@@ -22,17 +22,13 @@
         <h1 class="col-lg text-center">The Latest Articles From The Bassinet</h1>
     </div>
     
-    <!-- <div class="row">
+    <div class="row">
       <div class="col-sm">
           <ul>
-              @foreach($articles as $article)
-                <li>{{ $article->title }}</li>
-                <p>{{ $article->excerpt }}</p>
-                <hr>
-              @endforeach
+           
           </ul>
         </div>
-    </div> -->
+    </div>
 </div>
 @endsection
 

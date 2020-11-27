@@ -30,6 +30,10 @@
       padding: 20px 100px 20px 100px;
     }
 
+    ul {
+      list-style-type: none;
+    }
+
 </style>
 
 <x-header-image/>
@@ -50,12 +54,18 @@
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic sequi quasi vitae iusto harum omnis corporis iste eos, amet magnam, sint in libero a eveniet! Est doloribus aliquam exercitationem obcaecati?
       </div>
     </div>
+    
+    <div class="row">
+        <h1 class="col-lg text-center">The Latest Articles From The Bassinet</h1>
+    </div>
+    
     <div class="row">
       <div class="col-sm">
           <ul>
               @foreach($articles as $article)
                 <li>{{ $article->title }}</li>
                 <p>{{ $article->excerpt }}</p>
+                <hr>
               @endforeach
           </ul>
         </div>

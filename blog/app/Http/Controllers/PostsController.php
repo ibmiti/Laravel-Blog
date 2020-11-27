@@ -12,7 +12,9 @@ class PostsController extends Controller
 {
     public function show($slug)
     {
-    
+        if ($slug == ''){
+            return view('blog')
+        }
         return view('posts', 
         [
             'posts' => Post::where('slug', $slug)->firstOrFail()
