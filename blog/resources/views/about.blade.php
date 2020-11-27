@@ -20,6 +20,16 @@
       padding: 20px 100px 20px 100px;
     }
 
+    .col-sm {
+      font-family: Verdana;
+      font-size: 16px;
+      color: #555555;
+      line-height: 1.5;
+      letter-spacing: .45px;
+      margin: 20px 20px 20px 20px;
+      padding: 20px 100px 20px 100px;
+    }
+
 </style>
 
 <x-header-image/>
@@ -40,5 +50,17 @@
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic sequi quasi vitae iusto harum omnis corporis iste eos, amet magnam, sint in libero a eveniet! Est doloribus aliquam exercitationem obcaecati?
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm">
+          <ul>
+              @foreach($articles as $article)
+                <li>{{ $article->title }}</li>
+                <p>{{ $article->excerpt }}</p>
+              @endforeach
+          </ul>
+        </div>
+    </div>
+      
+    
 </div>
 @endsection

@@ -18,7 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
-Route::get('/create_post', [PostsController::class, 'create']);
 
 Route::get('/posts', function(){
     return view('blog');
@@ -31,7 +30,9 @@ Route::get('/contact', function(){
 });
 
 Route::get('/about', function(){
-    return view('about');
+    return view('about', [
+        'articles' => $articles = App\Models\Article::latest('created_at')->get()->take(3)
+    ]);
 });
 
 Route::get('/test', function(){
