@@ -1,26 +1,62 @@
 @extends ('layout')
 @section ('title', 'Contact us')
 
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
+    .col-lg  {
+        /* font-family: 'Raleway', 'Roboto'; */
+        font-family: 'Big Shoulders Stencil Display', cursive;
+        font-size: 40px;
+    }
+</style>
+
 @section ('content')
 
 <x-header-image/>
 
 <div class="container">
-    <h1>hello</h1>
+    
+    <div class="row">
+        <h1 class="col-lg text-center">Contacting the Bassinet</h1>
+    </div>
+    
+    <div class="row">
+        <h1 class="col-lg text-center">We Wont Share Your Deets</h1>
+    </div>
+
+    
+    <form class="row justify-content-center" method="POST" action="">
+        @csrf
+        <div class="form-group">
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Email">
+            <button type="button" class="btn btn-secondary btn-sm">Send</button>
+        </div>
+    </form>
+
+</div>
+
+
+
+    <!-- PHP Skills test - Spend 60 minutes or less getting this as far as you can, please submit your files even if they are not fully finished.
+
+Create a webpage with a form that has the following text input fields: Product name, Quantity in stock, Price per item.
+
+The submitted data of the form should be saved in an XML / JSON file with valid XML / JSON syntax.
+Underneath of the form, the web page should display all of the data which has been submitted in rows ordered by date time submitted, the order of the data columns should be: Product name, Quantity in stock, Price per item, Datetime submitted, Total value number.
+The "Total value number" should be calculated as (Quantity in stock * Price per item).
+The last row should how a sum total of all of the Total Value numbers.
+For extra credit, include functionality to edit each line.
+Solution requirements:
+
+Use Php / Html / Javascript / Css.
+Use Twitter Bootstrap.
+The form should be submitting the data and updating the data being displayed on the page using Ajax.
+Provide all the files related to the solution in one zip file, the solution should work directly after extracting it on a server without the need to modify anything in the files to make it work. -->
+
   <div class="row">
-    <div class="col-sm">
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-    </div>
-    <div class="col-sm">
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-    </div>
-    <div class="col-sm">
-    <img src="images/bbLogo.png" class="d-inline-block align-to" width="80" height="100" style="padding-top:15px"/>        
-    </div>
+    <form class="col-lg" action=""></form>
   </div>
 </div>
 @endsection

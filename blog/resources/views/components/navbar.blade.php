@@ -17,16 +17,16 @@
                 <?php 
                 switch($uri = Request::getRequestUri()) {
                     case ($uri == '/'):
-                        echo ('BB | HOME');
+                        echo ('BB + HOME');
                     break;
                     case ($uri == '/posts'):
-                        echo ('BB | BLOG');
+                        echo ('BB + BLOG');
                     break;
                     case($uri == '/about'):
-                        echo ('BB | ABOUT US');
+                        echo ('BB + ABOUT US');
                     break;
                     case ($uri == '/contact'):
-                        echo ('BB | CONTACT US');
+                        echo ('BB + CONTACT US');
                     break;
                 }
                 ?>

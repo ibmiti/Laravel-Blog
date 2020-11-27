@@ -2,15 +2,43 @@
 @section ('title', 'get to know us')
 @section ('content')
 
-<x-header-image />
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
+    .col-lg  {
+        /* font-family: 'Raleway', 'Roboto'; */
+        font-family: 'Big Shoulders Stencil Display', cursive;
+        font-size: 40px;
+    }
 
-    <div class="container">
-  <div class="row">
-    <div class="col-lg">
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+    .col-md {
+      font-family: Verdana;
+      font-size: 11px;
+      color: #555555;
+      line-height: 1.5;
+      letter-spacing: .45px;
+      margin: 20px 20px 20px 20px;
+      padding: 20px 100px 20px 100px;
+    }
+
+</style>
+
+<x-header-image/>
+
+<div class="container">
+    <div class="row">
+        <h1 class="col-lg text-center">Get to know the Bassinet</h1>
     </div>
-    <div class="col-sm"></div>
-  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus in nulla iure est dasdasdasdad orem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus in nulla iure est dasdasdasdad
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi quis alias facere tempore dicta distinctio error, praesentium nihil deleniti rerum debitis nam ratione eius neque suscipit libero, consectetur asperiores?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore amet animi ad eius culpa ea officiis veritatis! Maiores laudantium itaque ab, rerum, laboriosam id voluptatibus minus at cumque, odio corporis!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam ratione repudiandae dolore ipsam deleniti libero corrupti. Voluptatibus aut autem repellendus. Soluta mollitia ullam id consequuntur, quis reiciendis ipsa. Nam, quia.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic sequi quasi vitae iusto harum omnis corporis iste eos, amet magnam, sint in libero a eveniet! Est doloribus aliquam exercitationem obcaecati?
+      </div>
+    </div>
 </div>
 @endsection
