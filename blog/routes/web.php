@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,9 +31,10 @@ Route::get('/', function () {
 Route::get('/articles', [ArticlesController::class, 'index']);    
 Route::get('/articles/{article}', [ArticlesController::class, 'show']);
 
-Route::get('/contact', function(){
-    return view('contact');
-});
+Route::get('/contact', function(){ return view('contact'); });
+Route::post('/contact/{request->firstname,...}', [ContactController::class, 'store']);
+
+
 
 Route::get('/about', function(){
     return view('about', [
@@ -40,6 +42,3 @@ Route::get('/about', function(){
     ]);
 });
 
-Route::get('/test', function(){
-    return view('test');
-});

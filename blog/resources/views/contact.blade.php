@@ -26,7 +26,7 @@
     </div>
 
     
-    <form class="row justify-content-center" method="POST" action="">
+    <form class="row justify-content-center" method="POST" action="{{ route('') }}">
         @csrf
         <div class="form-group">
             <input type="text" placeholder="First Name">

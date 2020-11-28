@@ -1,7 +1,7 @@
 @extends ('layout')
-@section('title', 'Keep up with us')
+<!-- make title unqique to article -->
+@section('title', 'Blog')
 @section ('content')
-
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
     .col-lg  {
@@ -9,8 +9,25 @@
         font-family: 'Big Shoulders Stencil Display', cursive;
         font-size: 40px;
     }
-</style>
 
+
+    .col-md {
+      font-family: Verdana;
+      font-size: 16px;
+      color: #555555;
+      line-height: 1.5;
+      letter-spacing: .45px;
+      margin: 20px 20px 20px 20px;
+      padding: 20px 100px 20px 100px;
+    }
+
+    #title {
+      line-height: 1.5;
+      letter-spacing: .45px;
+      font-family: 'Big Shoulders Stencil Display', cursive;
+    }
+
+</style>
 <x-header-image/>
 
 <div class="container">
@@ -19,16 +36,29 @@
     </div>
 
     <div class="row">
-        <h1 class="col-lg text-center">The Latest Articles From The Bassinet</h1>
+        <h2 class="col-lg text-center">The Latest Articles From The Bassinet</h2>
     </div>
     
+    @foreach ($articles as $article)
     <div class="row">
-      <div class="col-sm">
-          <ul>
-           
-          </ul>
-        </div>
+      <div class="col-md">
+            <h2 id="title">
+                <a href="/articles/{{ $article->id }}"
+                    {{ $article->title }} 
+                </a>
+                {{ $article->title}}
+            </h2>
+            <p>
+                <img src="images/pic01.jpg"
+                     alt=""
+                     class="image image-full"
+                />
+            </p>
+
+            <p>{!! $article->excerpt !!}</p>
+      </div>
     </div>
-</div>
+    @endforeach
 @endsection
+</div>
 
