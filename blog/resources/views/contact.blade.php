@@ -4,11 +4,47 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
-    .col-lg  {
-        /* font-family: 'Raleway', 'Roboto'; */
-        font-family: 'Big Shoulders Stencil Display', cursive;
-        font-size: 40px;
-    }
+.col-lg  {
+    /* font-family: 'Raleway', 'Roboto'; */
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 40px;
+}
+
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+/* form {
+    border: 1px solid #1A33FF;
+    background: #ecf5fc;
+    padding: 40px 50px 45px;
+}
+
+.form-control:focus {
+    border-color: #000;
+    box-shadow: none;
+}
+
+label {
+    font-weight: 600;
+}
+
+.error {
+    color: red;
+    font-weight: 400;
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+.form-control.error {
+    border-color: red;
+    padding: .375rem .75rem; */
+}
 </style>
 
 @section ('content')
@@ -26,12 +62,26 @@
     </div>
 
     
-    <form class="row justify-content-center" method="POST" action="">
+    <form class="justify-content-center" method="POST" action="{{ route('contact.store') }}">
         @csrf
         <div class="form-group">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Email">
-            <button type="button" class="btn btn-secondary btn-sm">Send</button>
+            <label for="name">First Name</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="John">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="theBestEmail@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="suject">Subject</label>
+            <input type="text" name="subject" id="subject" class="form-control" placeholder="whats the message about?">
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea type="textarea" name="message" id="message" class="form-control" rows="3" placeholder="Rant or Rave! =D"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">
         </div>
     </form>
 
