@@ -41,7 +41,7 @@ Route::get('/articles/{artcle}/delete', [ArticlesController::class, 'delete']);
 // route to contact view
 Route::get('/contact', [ContactController::class, 'show']);
  
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/contact', [ContactController::class, 'store_and_send'])->name('contact.store_and_send');
 
 
 Route::get('/about', function(){

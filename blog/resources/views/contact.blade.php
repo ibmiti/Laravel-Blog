@@ -62,23 +62,42 @@ label {
     </div>
 
     
-    <form class="justify-content-center" method="POST" action="{{ route('contact.store') }}">
+    <form class="justify-content-center" method="POST" action="{{ route('contact.store_and_send') }}">
         @csrf
         <div class="form-group">
             <label for="name">First Name</label>
-            <input type="text" name="name" id="name" class="form-control" placeholder="John">
+            <input type="text" name="name" id="name" class="form-control {{ $errors->has('name') ? 'error' : '' }}" placeholder="John">
+
+                @if($errors->has('name'))
+                <div class="error">{{ $errors->first('name') }}</div>
+                @endif
+
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="theBestEmail@gmail.com">
+            <input type="email" name="email" id="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" placeholder="theBestEmail@gmail.com">
+
+                @if ($errors->has('email'))
+                <div class="error">{{ $errors->first('email') }}</div>
+                @endif
+
         </div>
         <div class="form-group">
             <label for="suject">Subject</label>
-            <input type="text" name="subject" id="subject" class="form-control" placeholder="whats the message about?">
+            <input type="text" name="subject" id="subject" class="form-control {{ $errors->has('subject') ? 'error' : '' }}" placeholder="whats the message about?">
+
+                @if($errors->has('subject'))
+                <div class="error">{{ $errors->first('subject') }}</div>
+                @endif
+
         </div>
         <div class="form-group">
             <label for="message">Message</label>
-            <textarea type="textarea" name="message" id="message" class="form-control" rows="3" placeholder="Rant or Rave! =D"></textarea>
+            <textarea type="textarea" name="message" id="message" class="form-control {{ $errors->has('message') ? 'error' : '' }} " rows="3" placeholder="Rant or Rave! =D"></textarea>
+
+                @if($errors->has('message'))
+                <div class="error">{{ $errors->first('message') }}</div>
+                @endif
         </div>
         <div class="form-group">
             <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">

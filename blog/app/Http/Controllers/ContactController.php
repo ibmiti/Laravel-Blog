@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Mail; 
 
 class ContactController extends Controller
 {
@@ -13,17 +14,17 @@ class ContactController extends Controller
       }
 
 
-    public function store(Request $request) {
-
+    public function store_and_send(Request $request) {
+        
         // Form validation
+        // potentially place a try catch here
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'subject'=>'required',
             'message' => 'required'
          ]);
-
+        
         //  Store data in database
         Contact::create($request->all());
 
@@ -32,12 +33,12 @@ class ContactController extends Controller
          \Mail::send('mail', array(
             'name' => $request->get('name'),
             'email' => $request->get('email'),
-            'phone' => $request->get('phone'),
+            // 'phone' => $request->get('phone'),
             'subject' => $request->get('subject'),
             'user_query' => $request->get('message'),
         ), function($message) use ($request){
             $message->from($request->email);
-            $message->to('digambersingh126@gmail.com', 'Admin')->subject($request->get('subject'));
+            $message->to('dimitri.mcdaniel@gmail.com', 'Admin')->subject($request->get('subject'));
         });
 
 
