@@ -30,6 +30,12 @@ Route::get('/', function () {
 
 Route::get('/articles', [ArticlesController::class, 'index']);    
 Route::get('/articles/{article}', [ArticlesController::class, 'show']);
+Route::get('/articles/{artcle}/create', [ArticlesController::class, 'create']);
+Route::get('/articles/{artcle}/store', [ArticlesController::class, 'store']);
+Route::get('/articles/{artcle}/edit' , [ArticlesController::class, 'edit']);
+Route::get('/articles/{artcle}/update', [ArticlesController::class, 'update']); 
+Route::get('/articles/{artcle}/delete', [ArticlesController::class, 'delete']);
+
 
 Route::get('/contact', function(){ return view('contact'); });
 Route::post('/contact/{request->firstname,...}', [ContactController::class, 'store']);

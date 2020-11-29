@@ -59,7 +59,7 @@
                     echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG</strong></a></li>');
                     echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
-                case ($uri == '/articles/{article}'):
+                case ($uri == '/articles'):
                     echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
                     echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
                     echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG</strong></a></li>');
