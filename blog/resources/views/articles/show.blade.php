@@ -7,13 +7,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/a7bffd41d3.js"></script>
-    <title>BabyBassinet - @yield('title') </title>
+    <title>BabyBassinet - Blog {{ $article->title }} </title>
 </head>
-
-<body>
-
-
-<div class="container container-fluid">
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
     .col-lg  {
@@ -62,6 +57,9 @@
         text-decoration: none;
     }
 </style>
+
+<body>
+<div class="container container-fluid">
 
 <nav class="navbar navbar-light navbar">
 <a id="logo" href="/">

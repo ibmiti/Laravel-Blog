@@ -11,7 +11,6 @@
         font-size: 40px;
     }
 
-
     .col-md {
       font-family: Verdana;
       font-size: 16px;
