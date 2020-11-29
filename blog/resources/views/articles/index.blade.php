@@ -1,5 +1,6 @@
 @extends ('layout')
 <!-- make title unqique to article -->
+<!--  TODO: this view needs to be styled for all view sizes -->
 @section('title', 'Blog')
 @section ('content')
 <style>
@@ -27,10 +28,14 @@
       font-family: 'Big Shoulders Stencil Display', cursive;
     }
 
+    a {
+        text-decoration: none;
+    }
+
 </style>
 <x-header-image/>
 
-<div class="container">
+<div class="container container-fluid">
     <div class="row">
         <h1 class="col-lg text-center">Keeping up with the Bassinet</h1>
     </div>
@@ -40,20 +45,19 @@
     </div>
     
     @foreach ($articles as $article)
-    <div class="row">
-      <div class="col-md">
+    <div class="row container container-fluid">
+      <div class="col-md col-sm">
             <h2 id="title">
-                <a href="/articles/{{ $article->id }}"
+                <a href="/articles/{{ $article->id }}">
                     {{ $article->title }} 
                 </a>
-                {{ $article->title}}
             </h2>
-            <p>
+            <div class="container container-fluid">
                 <img src="images/pic01.jpg"
                      alt=""
                      class="image image-full"
                 />
-            </p>
+            </div>
 
             <p>{!! $article->excerpt !!}</p>
       </div>

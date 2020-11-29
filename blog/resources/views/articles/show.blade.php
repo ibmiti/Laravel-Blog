@@ -21,15 +21,45 @@
         font-family: 'Big Shoulders Stencil Display', cursive;
         font-size: 40px;
     }
-</style>
 
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
     nav ul li {
         /* font-family: 'Raleway', 'Roboto'; */
         font-family: 'Big Shoulders Stencil Display', cursive;
         font-size: 40px;
+    }
+
+    .col-lg  {
+        /* font-family: 'Raleway', 'Roboto'; */
+        font-family: 'Big Shoulders Stencil Display', cursive;
+        font-size: 40px;
+    }
+
+    .col-md {
+      font-family: Verdana;
+      font-size: 16px;
+      color: #555555;
+      line-height: 1.5;
+      letter-spacing: .45px;
+      margin: 20px 20px 20px 20px;
+      padding: 20px 100px 20px 100px;
+    }
+
+    .col-sm {
+      font-family: Verdana;
+      font-size: 16px;
+      color: #555555;
+      line-height: 1.5;
+      letter-spacing: .45px;
+      margin: 20px 20px 20px 20px;
+      padding: 20px 100px 20px 100px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
     }
 </style>
 

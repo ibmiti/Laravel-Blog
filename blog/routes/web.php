@@ -37,8 +37,10 @@ Route::get('/articles/{artcle}/update', [ArticlesController::class, 'update']);
 Route::get('/articles/{artcle}/delete', [ArticlesController::class, 'delete']);
 
 
-Route::get('/contact', function(){ return view('contact'); });
-Route::post('/contact/{request->firstname,...}', [ContactController::class, 'store']);
+Route::get('/contact', function(){ 
+    return view('contact');
+ });
+// Route::post('/contact/{request->firstname,...}', [ContactController::class, 'store']);
 
 
 
