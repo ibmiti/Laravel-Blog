@@ -31,37 +31,45 @@
         text-decoration: none;
     }
 
-</style>
-<x-header-image/>
+    #imgPost {
+        /* padding-right: 20px; */
+        width: 75%;
+    }
 
+</style>
 <div class="container container-fluid">
+    <x-header-image/>
+
+
     <div class="row">
         <h1 class="col-lg text-center">Keeping up with the Bassinet</h1>
     </div>
-
-    <div class="row">
-        <h2 class="col-lg text-center">The Latest Articles From The Bassinet</h2>
-    </div>
     
+    <div class="row">
+        <div class="col-lg text-center" style="padding-bottom: 40px;">
+            <h2>The Latest Articles From The Bassinet</h2>
+        </div>
+    </div>
+
     @foreach ($articles as $article)
-    <div class="row container container-fluid">
-      <div class="col-md col-sm">
-            <h2 id="title">
-                <a href="/articles/{{ $article->id }}">
-                    {{ $article->title }} 
-                </a>
-            </h2>
-            <div class="container container-fluid">
+    <div class="row">
+        <div class="col-lg">
+            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $article->id }}">{{ $article->title }}</a></h2>
                 <img src="images/pic01.jpg"
                      alt=""
-                     class="image image-full"
-                />
-            </div>
-
-            <p>{!! $article->excerpt !!}</p>
-      </div>
+                     id ="imgPost"
+                     class=""
+                    />                
+            <p style="font-size: 20px;">{!! $article->excerpt !!}</p>
+        </div>
     </div>
     @endforeach
-@endsection
 </div>
 
+@endsection
+
+
+
+   
+       
+    

@@ -33,7 +33,6 @@
     ul {
       list-style-type: none;
     }
-
 </style>
 
 <x-header-image/>
@@ -44,33 +43,33 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-      <div class="col-md">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus in nulla iure est dasdasdasdad orem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus in nulla iure est dasdasdasdad
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi quis alias facere tempore dicta distinctio error, praesentium nihil deleniti rerum debitis nam ratione eius neque suscipit libero, consectetur asperiores?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore amet animi ad eius culpa ea officiis veritatis! Maiores laudantium itaque ab, rerum, laboriosam id voluptatibus minus at cumque, odio corporis!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam ratione repudiandae dolore ipsam deleniti libero corrupti. Voluptatibus aut autem repellendus. Soluta mollitia ullam id consequuntur, quis reiciendis ipsa. Nam, quia.
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic sequi quasi vitae iusto harum omnis corporis iste eos, amet magnam, sint in libero a eveniet! Est doloribus aliquam exercitationem obcaecati?
-      </div>
+<div class="container container-fluid">
+  <div class="row">
+    <div class="col-md">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus libero qui et ullam accusantium inventore nisi facilis quia, exercitationem minus sed dolor aliquid ex, maiores aperiam amet repudiandae possimus odit!
+      </p>
     </div>
-    
+  </div>
+</div>   
+
+<div class="container container-fluid">
     <div class="row">
         <h1 class="col-lg text-center">The Latest Articles From The Bassinet</h1>
     </div>
-    
+  
     <div class="row">
       <div class="col-sm">
           <ul>
               @foreach($articles as $article)
                 <li>{{ $article->title }}</li>
-                <p>{{ $article->excerpt }}</p>
+                <p class="paragraph">{{ $article->excerpt }}</p>
                 <hr>
               @endforeach
           </ul>
         </div>
     </div>
-      
+</div>      
     
-</div>
+
 @endsection

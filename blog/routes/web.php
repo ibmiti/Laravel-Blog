@@ -43,10 +43,13 @@ Route::get('/contact', [ContactController::class, 'show']);
  
 Route::post('/contact', [ContactController::class, 'store_and_send'])->name('contact.store_and_send');
 
-
 Route::get('/about', function(){
     return view('about', [
         'articles' => $articles = App\Models\Article::take(3)->latest('created_at')->get()
     ]);
 });
 
+// admin login view 
+Route::get('/admin', function() {
+    return view('admin');
+});

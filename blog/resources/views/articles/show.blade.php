@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/a7bffd41d3.js"></script>
-    <title>BabyBassinet - Blog {{ $article->title }} </title>
+    <title>BabyBassinet - Blog {{ $article->title ?? '' }} </title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
@@ -35,8 +35,8 @@
       color: #555555;
       line-height: 1.5;
       letter-spacing: .45px;
-      margin: 20px 20px 20px 20px;
-      padding: 20px 100px 20px 100px;
+      /* margin: 20px 20px 20px 20px;
+      padding: 20px 100px 20px 100px; */
     }
 
     .col-sm {
@@ -45,8 +45,8 @@
       color: #555555;
       line-height: 1.5;
       letter-spacing: .45px;
-      margin: 20px 20px 20px 20px;
-      padding: 20px 100px 20px 100px;
+      /* margin: 20px 20px 20px 20px;
+      padding: 20px 100px 20px 100px; */
     }
 
     ul {
@@ -68,7 +68,7 @@
 <strong class="navbar-brand" 
                 style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
                 href="#">
-                BB + BLOG + ARTICLE {{ $article->id }}
+                BB + BLOG + ARTICLE {{ $article->id ?? '' }}
                 </strong>   
 
   <button class="navbar-toggler" 
@@ -86,11 +86,16 @@
     <ul class="navbar-nav ml-auto"> 
         <?php     
             $uri = Request::getRequestUri();
+            $article_id = $article->id ?? '';
+            
             switch ($uri) {
-                case ($uri == '/articles'. '/'. $article->id):
+                case ($uri == '/articles'. '/'. $article_id):
                     echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
-                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE </strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 }
@@ -98,19 +103,25 @@
    </ul> 
   </div>
 </nav>
+<!-- <hr class="my-5"> -->
+<div class="container container-fluid">
+    <div style="margin-top: 50px;" class="row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">{{ $article->title ?? ''}}</h1>
+    </div>
+</div>
 
 <div class="container container-fluid">
     <div class="row">
-        <h1 class="col-lg text-center">{{ $article->title }}</h1>
+    <div class="container container-fluid">
+      <div class="col-md">
+        <p> {{ $article->body ?? ''  }}</p>
+      </div>
     </div>
+    </div>
+</div>
 
-    <div class="row">
-        <div class="col-md">
-            <p>{{ $article->body }}</p>
-        </div>
-    </div>
-</div>
-</div>
+
+
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->
 
 <!-- bootstrap related scripts -->

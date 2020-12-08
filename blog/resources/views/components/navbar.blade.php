@@ -1,7 +1,6 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
     nav ul li {
-        /* font-family: 'Raleway', 'Roboto'; */
         font-family: 'Big Shoulders Stencil Display', cursive;
         font-size: 40px;
     }
@@ -20,7 +19,7 @@
                         echo ('BB + HOME');
                     break;
                     case ($uri == '/articles'):
-                        echo ('BB + BLOG / ARTICLES');
+                        echo ('BB + BLOG | ARTICLES');
                     break;
                     case($uri == '/about'):
                         echo ('BB + ABOUT US');
@@ -50,31 +49,45 @@
             switch ($uri) {
                 case ($uri == '/'):
                     echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT</strong></a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/articles"><strong>BLOG</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 case ($uri == '/articles'):
                     echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
-                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 case ($uri == '/articles'):
                     echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
-                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 case ($uri == '/about'):    
                     echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item active"><a class="nav-link" href="/about"><strong>ABOUT</strong></a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/articles"><strong>BLOG</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 case ($uri == '/contact'):
                     echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT</strong></a></li>');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/articles"><strong>BLOG</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
                     echo ('<li class="nav-item active"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
                     break;
                 }
