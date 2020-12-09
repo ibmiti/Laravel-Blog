@@ -53,3 +53,4 @@ Route::get('/about', function(){
 
 // admin login view 
 Route::get('/admin', [LoginController::class, 'show']);
+Route::post('/admin', [LoginController::class, 'login'])->name('login');

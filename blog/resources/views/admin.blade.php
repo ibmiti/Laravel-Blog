@@ -36,7 +36,7 @@
     </div>
 
     
-    <form class="justify-content-center" method="POST" action="{{ route('contact.store_and_send') }}">
+    <form class="justify-content-center" method="post" action="{{ route('login') }}">
         @csrf
         <div class="form-group">
             <label for="name">User Name</label>
