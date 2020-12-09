@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +44,7 @@ Route::get('/contact', [ContactController::class, 'show']);
  
 Route::post('/contact', [ContactController::class, 'store_and_send'])->name('contact.store_and_send');
 
+//  todo : refactor this - return articles from controller - not this file
 Route::get('/about', function(){
     return view('about', [
         'articles' => $articles = App\Models\Article::take(3)->latest('created_at')->get()
@@ -50,6 +52,4 @@ Route::get('/about', function(){
 });
 
 // admin login view 
-Route::get('/admin', function() {
-    return view('admin');
-});
+Route::get('/admin', [LoginController::class, 'show']);

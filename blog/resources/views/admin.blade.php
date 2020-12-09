@@ -39,20 +39,20 @@
     <form class="justify-content-center" method="POST" action="{{ route('contact.store_and_send') }}">
         @csrf
         <div class="form-group">
-            <label for="name">First Name</label>
-            <input type="text" name="name" id="name" class="form-control {{ $errors->has('name') ? 'error' : '' }}" placeholder="John">
+            <label for="name">User Name</label>
+            <input type="text" name="username" id="name" class="form-control {{ $errors->has('username') ? 'error' : '' }}" placeholder="what's your user name?">
 
-                @if($errors->has('name'))
-                <div class="error">{{ $errors->first('name') }}</div>
+                @if($errors->has('username'))
+                <div class="error">{{ $errors->first('username') }}</div>
                 @endif
 
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" placeholder="theBestEmail@gmail.com">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control {{ $errors->has('password') ? 'error' : '' }}" placeholder="what's your password?">
 
-                @if ($errors->has('email'))
-                <div class="error">{{ $errors->first('email') }}</div>
+                @if ($errors->has('password'))
+                <div class="error">{{ $errors->first('password') }}</div>
                 @endif
 
         </div>
