@@ -22,15 +22,49 @@ class ArticlesController extends Controller
         ]);
     }
     
-    public function create()
+    public function create_normal_article()
     {
-        return view('articles.create');
+        return view('articles.article_style.normal_article');
     }
 
-    public function store() 
+    // second type of article 
+    public function create_list_article(){
+        return view('articles.article_style.list_article');
+    }
+
+    public function store_normal_article(Request $request) 
     {
 
+        // Todo Validate The Data
+        // $this->validate($request, [
+        //     'title' => 'required|string|max:50|min:3',
+        //     'excerpt' => 'required|string|max:150|min:10',
+        //     'body' => 'required|string|min:10',
+        // ]);
+
+        
+        $title = $request->title;
+        $excerpt = $request->excerpt;
+        $body = $request->body;
+        
+
+        dd($title, 'made it');
     }
+
+    public function store_list_article(Request $request)
+    {
+        // Todo Validate The Data
+        // $this->validate($request, [
+        //     'title' => 'required|string|max:50|min:3',
+        //     'excerpt' => 'required|string|max:150|min:10',
+        //     'paragraph' => 'required|string|min:10',
+        // ]);
+
+        dd('list article', $request->title);
+
+
+    }
+
 
     public function edit()
     {

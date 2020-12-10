@@ -4,6 +4,12 @@
 
 @section('content')
 
+<style>
+    body {
+        background-color : pink;
+    }
+</style>
+
 <div class="jumbotron jumbotron-fluid justify-content-center text-center">
         <h1>Welcome to the List Article Creation Page</h1> 
     </div>
@@ -11,13 +17,13 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <h1>Create List Article</h1>
+            <h1 class="text-center">Create List Article</h1>
 
-            <form method="POST" action="{{ route('store_article') }}">
+            <form method="POST" action="{{ route('store_list_article') }}">
             @csrf
             <div class="row">
                 <label for="name" class="control-label">Article Title</label>
-                <input type="text" name="name" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting">
+                <input type="text" name="title" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting">
             </div>
 
             <div class="row mt-3">

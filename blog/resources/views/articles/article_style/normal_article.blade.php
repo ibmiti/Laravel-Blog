@@ -4,6 +4,13 @@
 
 @section('content')
 
+<style>
+    body {
+        background-color: lightblue;
+    }
+
+</style>
+
 <div class="jumbotron jumbotron-fluid justify-content-center text-center">
         <h1>Welcome to the Article Creation Page</h1> 
     </div>
@@ -11,9 +18,9 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <h1>Create Article</h1>
+            <h1 class="text-center">Create Article</h1>
 
-            <form method="POST" action="{{ route('store_article') }}">
+            <form method="POST" action="{{ route('store_normal_article') }}">
             @csrf
             <div class="row">
                 <label for="name" class="control-label">Article Title</label>

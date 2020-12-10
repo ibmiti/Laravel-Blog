@@ -19,7 +19,7 @@
         </button>
         <button class="btn btn-secondary">
             <a href="{{ url('create_list_article') }}">
-          List Style Article
+          List Article
           </a>
         </button>
     </div>

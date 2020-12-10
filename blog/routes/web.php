@@ -24,7 +24,8 @@ Route::get('/articles', [ArticlesController::class, 'index']);
 Route::get('/articles/{article}', [ArticlesController::class, 'show']);
 // Route::get('/articles/{article}/create', [ArticlesController::class, 'create']); # i may not need this route due to the login controller returning create view
 // Route::post('/articles/{article}/store', [ArticlesController::class, 'store'])->name('store_article');
-Route::post('/articles/', [ArticlesController::class, 'store'])->name('store_article');
+// Route::post('/articles/', [ArticlesController::class, 'store'])->name('store_article');
+
 Route::get('/articles/{article}/edit' , [ArticlesController::class, 'edit']);
 Route::get('/articles/{article}/update', [ArticlesController::class, 'update']); 
 Route::get('/articles/{article}/delete', [ArticlesController::class, 'delete']);
@@ -49,3 +50,12 @@ Route::get('/about', [ArticlesController::class, 'about']);
 // admin login view 
 Route::get('/admin', [LoginController::class, 'show']);
 Route::post('/admin', [LoginController::class, 'login'])->name('login');
+
+
+// Create articles
+Route::get('/create_normal_article', [ArticlesController::class, 'create_normal_article'])->name('create_normal_article');
+Route::post('/create_normal_article', [ArticlesController::class, 'store_normal_article'])->name('store_normal_article');
+
+Route::get('/create_list_article', [ArticlesController::class, 'create_list_article'])->name('create_list_article');
+Route::post('/create_list_article', [ArticlesController::class, 'store_list_article'])->name('store_list_article');
+
