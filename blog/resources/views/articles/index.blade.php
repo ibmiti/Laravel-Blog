@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('layouts.primary')
 <!-- make title unqique to article -->
 <!--  TODO: this view needs to be styled for all view sizes -->
 @section('title', 'Blog')

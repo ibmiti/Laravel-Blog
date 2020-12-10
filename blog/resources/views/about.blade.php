@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('layouts.primary')
 @section ('title', 'get to know us')
 @section ('content')
 

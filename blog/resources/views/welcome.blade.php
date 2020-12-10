@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('layouts.primary')
 
 @section('title', 'Welcome Home')
 @section('content')
