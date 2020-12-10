@@ -20,15 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
-
-// Route::get('/posts', function(){
-//     return view('blog');
-// });
-
-// Route::get('/posts', [PostsController::class, 'show']);
-
-// Route::get('posts/{post}', [PostsController::class, 'show']);
-
 Route::get('/articles', [ArticlesController::class, 'index']);    
 Route::get('/articles/{article}', [ArticlesController::class, 'show']);
 Route::get('/articles/{artcle}/create', [ArticlesController::class, 'create']);
@@ -38,18 +29,21 @@ Route::get('/articles/{artcle}/update', [ArticlesController::class, 'update']);
 Route::get('/articles/{artcle}/delete', [ArticlesController::class, 'delete']);
 
 
-
 // route to contact view
 Route::get('/contact', [ContactController::class, 'show']);
  
 Route::post('/contact', [ContactController::class, 'store_and_send'])->name('contact.store_and_send');
 
-//  todo : refactor this - return articles from controller - not this file
-Route::get('/about', function(){
-    return view('about', [
-        'articles' => $articles = App\Models\Article::take(3)->latest('created_at')->get()
-    ]);
-});
+//  todo : refactor this - return articles from controller - not this file -- done
+//  todo : once I am creating articles through create view then I will test too see if this method is working properly 
+Route::get('/about', [ArticlesController::class, 'about']);
+
+// this method will be removed once testing is complete
+// Route::get('/about', function(){
+//     return view('about', [
+//         'articles' => $articles = App\Models\Article::take(3)->latest('created_at')->get()
+//     ]);
+// });
 
 // admin login view 
 Route::get('/admin', [LoginController::class, 'show']);

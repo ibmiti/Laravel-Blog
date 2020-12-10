@@ -21,7 +21,7 @@ class ArticlesController extends Controller
             'article' => $article
         ]);
     }
-
+    
     public function create()
     {
 
@@ -45,5 +45,12 @@ class ArticlesController extends Controller
     public function delete()
     {
         
+    }
+
+    public function about() {
+        
+        return view('about', [
+                    'articles' => $articles = Article::take(3)->latest('created_at')->get()
+                ]);
     }
 }
