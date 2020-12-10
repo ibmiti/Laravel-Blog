@@ -30,3 +30,7 @@ https://colintoh.com/blog/map-custom-domain-to-elastic-beanstalk-application
 
 error page : instead of the default 404 page - I may want to return a custom page
 https://www.itsolutionstuff.com/post/how-to-create-custom-error-page-in-laravel-8example.html
+
+6. will also need to change database name to properly reflect the flow of data
+
+https://chartio.com/resources/tutorials/how-to-rename-a-database-in-mysql/
