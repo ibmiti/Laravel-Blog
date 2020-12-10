@@ -4,6 +4,11 @@
 
 @section('content')
 
+<div class="jumbotron jumbotron-fluid justify-content-center text-center">
+        <h1>Welcome to the Article Creation Page</h1> 
+    </div>
+
+
     <div class="row">
         <div class="col-sm-12">
             <h1>Create Article</h1>
