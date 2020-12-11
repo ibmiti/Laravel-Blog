@@ -59,8 +59,13 @@ class ArticlesController extends Controller
         //     'excerpt' => 'required|string|max:150|min:10',
         //     'paragraph' => 'required|string|min:10',
         // ]);
+        
+        $title = $request->title;
+        $header1 = $request->header1;
+        $image1 = $request->image1;
 
-        dd('list article', $request->title);
+
+        dd('list article', $request->title, $request->image1);
 
 
     }

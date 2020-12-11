@@ -11,6 +11,7 @@
 
 </style>
 
+
 <div class="jumbotron jumbotron-fluid justify-content-center text-center">
         <h1>Welcome to the Article Creation Page</h1> 
     </div>
