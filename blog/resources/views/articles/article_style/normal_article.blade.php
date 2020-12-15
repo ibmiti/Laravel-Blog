@@ -24,12 +24,12 @@
             <form method="POST" action="{{ route('store_normal_article') }}">
             @csrf
             <div class="row">
-                <label for="name" class="control-label">Article Title</label>
-                <input type="text" name="name" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting">
+                <label for="title" class="control-label">Article Title</label>
+                <input type="text" name="title" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting">
             </div>
 
             <div class="row mt-3">
-                <label for="excerpt" class="control-label">Task Excerpt</label>
+                <label for="excerpt" class="control-label">Article Excerpt</label>
                 <input type="textarea" name="excerpt" class="form-control form-control-lg mt-3" placeholder="A short snippet from the article">
             </div>
 
@@ -41,6 +41,13 @@
                 <div class="row justify-content-center mt-3">
                     <div class="col-sm-6">
                         <button class="btn btn-block btn-success" type="submit">Create Article</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="btn btn-block btn-primary" type="submit">
+                            <a style="color:white;" href="{{ url('create_list_article') }} ">
+                            Switch to List Article    
+                            </a>
+                        </button>
                     </div>
                 </div>
             </form>

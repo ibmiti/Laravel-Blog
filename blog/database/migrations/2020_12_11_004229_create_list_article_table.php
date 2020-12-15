@@ -13,7 +13,7 @@ class CreateListArticleTable extends Migration
      */
     public function up()
     {
-        Schema::create('list_article', function (Blueprint $table) {
+        Schema::table('article', function (Blueprint $table) {
             $table->id();
             $table->string('heading1')->nullable();
             $table->string('image_name')->nullable();

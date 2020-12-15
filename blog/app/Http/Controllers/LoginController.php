@@ -15,10 +15,15 @@ class LoginController extends Controller
         $passwordGiven = $request->password;
 
         $adminCreds = \App\Models\Login::all();
-        $adminUser = $adminCreds[0]->username;
-        $adminPass = $adminCreds[0]->password;
+
+        $superAdminUser = $adminCreds[0]->username;
+        $superAdminPass = $adminCreds[0]->password;
+        $adminUser1     = $adminCreds[1]->username;
+        $adminPass      = $adminCreds[1]->password;
         
-        if ( $usernameGiven == $adminUser && $passwordGiven == $adminPass){
+        if ( $usernameGiven == $superAdminUser && $passwordGiven == $superAdminPass){
+            return view('articles.article_style.selection');
+        } elseif ($usernameGiven == $adminUser1 && $passwordGiven == $adminPass) {
             return view('articles.article_style.selection');
         } else {
             return view('admin');
