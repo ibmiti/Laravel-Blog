@@ -25,7 +25,8 @@
                      
             <div class="row mt-3">
                 <label for="paragraph1" class="control-label">Paragraph 1</label>
-                <input type="textarea" name="paragraph1" class="form-control form-control-lg mt-3" placeholder="First Header">
+                <textarea name="paragraph1" cols="30" rows="5" name="paragraph1" class="form-control form-control-lg mt-3" placeholder="First Header"></textarea>
+                
             </div>
             <hr class="mt-4">
             <!-- beginning -->
@@ -44,7 +45,7 @@
                      
             <div class="row mt-3">
                 <label for="paragraph2" class="control-label">Paragraph 2</label>
-                <input type="textarea" name="paragraph2" class="form-control form-control-lg mt-3" placeholder="Second Header">
+                <textarea type="textarea" name="paragraph2" class="form-control form-control-lg mt-3" placeholder="Second Header" cols="30" rows="5"></textarea>
             </div>
             <hr>
             <!-- ending -->
@@ -65,7 +66,7 @@
                      
             <div class="row mt-3">
                 <label for="paragraph3" class="control-label">Paragraph 3</label>
-                <input type="textarea" name="paragraph3" class="form-control form-control-lg mt-3" placeholder="Third Header">
+                <textarea type="textarea" name="paragraph3" class="form-control form-control-lg mt-3" placeholder="Third Header" cols="30" rows="5"></textarea>
             </div>
             <hr class="mt-4">
             <!-- // ending  -->
@@ -86,7 +87,7 @@
                      
             <div class="row mt-3">
                 <label for="paragraph4" class="control-label">Paragraph 4</label>
-                <input type="textarea" name="paragraph4" class="form-control form-control-lg mt-3" placeholder="Fourth Header">
+                <textarea type="textarea" name="paragraph4" class="form-control form-control-lg mt-3" placeholder="Fourth Header" cols="30" rows="5"></textarea>
             </div>
             <hr class="mt-4">
             <!-- // ending  -->
@@ -108,7 +109,7 @@
                      
             <div class="row mt-3">
                 <label for="paragraph5" class="control-label">Paragraph 5</label>
-                <input type="textarea" name="paragraph5" class="form-control form-control-lg mt-3" placeholder="Fifth Header">
+                <textarea type="textarea" name="paragraph5" class="form-control form-control-lg mt-3" placeholder="Fifth Header" cols="30" rows="5"></textarea>
             </div>
             <hr class="mt-4">
             <!-- // ending  -->

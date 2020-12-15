@@ -28,15 +28,15 @@ class ArticlesController extends Controller
     }
 
     // second type of article 
-    public function create_list_article(){
-        return view('articles.article_style.list_article');
+    // public function create_list_article(){
+    //     return view('articles.article_style.list_article');
 
-        /*
+    //     /*
 
-            potentially have another 
+    //         potentially have another 
 
-        */
-    }
+    //     */
+    // }
 
     // public function article_list_size(int $size){
         // store list size from another view maybe? 
@@ -82,73 +82,73 @@ class ArticlesController extends Controller
         
     }
 
-    public function store_list_article(Request $request)
-    {
-        // Todo Validate The Data
-        // $this->validate($request, [
-        //     'title' => 'required|string|max:50|min:3',
-        //     'excerpt' => 'required|string|max:150|min:10',
-        //     'paragraph' => 'required|string|min:10',
-        // ]);
+    // public function store_list_article(Request $request)
+    // {
+    //     // Todo Validate The Data
+    //     // $this->validate($request, [
+    //     //     'title' => 'required|string|max:50|min:3',
+    //     //     'excerpt' => 'required|string|max:150|min:10',
+    //     //     'paragraph' => 'required|string|min:10',
+    //     // ]);
         
-        $article = new Article;
-        // dd($article);
+    //     $article = new Article;
+    //     // dd($article);
 
-        $article->title = $request->title;
-        $article->save();
+    //     $article->title = $request->title;
+    //     $article->save();
 
         
 
-        $article->title      = $request->title;
+    //     $article->title      = $request->title;
 
-        $article->heading1   = $request->heading1;
-        $article->image1     = $request->image1;
-        $article->paragraph1 = $request->paragraph1;
+    //     $article->heading1   = $request->heading1;
+    //     $article->image1     = $request->image1;
+    //     $article->paragraph1 = $request->paragraph1;
 
-        $article->heading2   = $request->heading2;
-        $article->image2     = $request->image2;
-        $article->paragraph2 = $request->paragraph2;
+    //     $article->heading2   = $request->heading2;
+    //     $article->image2     = $request->image2;
+    //     $article->paragraph2 = $request->paragraph2;
 
-        $article->heading3   = $request->heading3;
-        $article->image3     = $request->image3;
-        $article->paragraph3 = $request->paragraph3;
+    //     $article->heading3   = $request->heading3;
+    //     $article->image3     = $request->image3;
+    //     $article->paragraph3 = $request->paragraph3;
 
-        $article->heading4   = $request->heading4;
-        $article->image4     = $request->image4;
-        $article->paragraph4 = $request->paragraph4;
+    //     $article->heading4   = $request->heading4;
+    //     $article->image4     = $request->image4;
+    //     $article->paragraph4 = $request->paragraph4;
 
-        $article->heading5   = $request->heading5;
-        $article->image5     = $request->image5;
-        $article->paragraph5 = $request->paragraph5;
+    //     $article->heading5   = $request->heading5;
+    //     $article->image5     = $request->image5;
+    //     $article->paragraph5 = $request->paragraph5;
 
-        $article->heading6   = $request->heading6;
-        $article->image6     = $request->image6;
-        $article->paragraph6 = $request->paragraph6;
+    //     $article->heading6   = $request->heading6;
+    //     $article->image6     = $request->image6;
+    //     $article->paragraph6 = $request->paragraph6;
 
-        $article->heading7   = $request->heading7;
-        $article->image7     = $request->image7;
-        $article->paragraph7 = $request->paragraph7;
+    //     $article->heading7   = $request->heading7;
+    //     $article->image7     = $request->image7;
+    //     $article->paragraph7 = $request->paragraph7;
 
-        $article->heading8= $request->heading8;
-        $article->image8= $request->image8;
-        $article->paragraph8= $request->paragraph8;
+    //     $article->heading8= $request->heading8;
+    //     $article->image8= $request->image8;
+    //     $article->paragraph8= $request->paragraph8;
 
-        $article->heading9= $request->heading9;
-        $article->image9= $request->image9;
-        $article->paragraph9= $request->paragraph9;
+    //     $article->heading9= $request->heading9;
+    //     $article->image9= $request->image9;
+    //     $article->paragraph9= $request->paragraph9;
 
-        $article->heading10 = $request->heading10;
-        $article->image10 = $request->image10;
-        $article->paragraph10 = $request->paragraph10;
+    //     $article->heading10 = $request->heading10;
+    //     $article->image10 = $request->image10;
+    //     $article->paragraph10 = $request->paragraph10;
 
-        // save data to database
-        try {
-        $article->save();
-        } catch (Error $error){
-            dd($error->getMessage());
-        }
+    //     // save data to database
+    //     try {
+    //     $article->save();
+    //     } catch (Error $error){
+    //         dd($error->getMessage());
+    //     }
 
-    }
+    // }
 
 
     public function edit()

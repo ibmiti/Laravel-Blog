@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateListArticleTable extends Migration
+class CreateListArticle extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateListArticleTable extends Migration
      */
     public function up()
     {
-        Schema::table('article', function (Blueprint $table) {
+        Schema::create('list_article', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('excerpt');
             $table->string('heading1')->nullable();
             $table->string('image_name')->nullable();
             $table->string('paragraph1')->nullable();
