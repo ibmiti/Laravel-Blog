@@ -54,17 +54,30 @@
     @foreach ($articles as $article)
     <div class="row">
         <div class="col-lg">
-            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $article->id }}">{{ $article->title }}</a></h2>
-                <img src="images/pic01.jpg"
+            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $article->id }}">{{ $article->title ?? ''}}</a></h2>
+                <!-- <img src="images/pic01.jpg"
                      alt=""
                      id ="imgPost"
                      class=""
-                    />                
+                    />                 -->
             <p style="font-size: 20px;">{!! $article->excerpt !!}</p>
         </div>
     </div>
     @endforeach
-</div>
+
+   @foreach ($list_articles as $list_article)
+   <div class="row">
+        <div class="col-lg">
+            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $article->id }}">{{ $list_article->title ?? ''}}</a></h2>
+                <!-- <img src="images/pic01.jpg"
+                     alt=""
+                     id ="imgPost"
+                     class=""
+                    />                 -->
+            <p style="font-size: 20px;">{!! $list_article->excerpt !!}</p>
+        </div>
+    </div>
+   @endforeach
 
 @endsection
 

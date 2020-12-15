@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article as Article;
+use App\Models\ListArticle;
 
 class ArticlesController extends Controller
 {
     public function index(){
         
         return view('articles.index', [
-            'articles' => $articles = Article::take(6)->latest()->paginate()
+            'articles' => $articles = Article::take(6)->latest()->paginate(),
+            'list_articles' => $list_articles = ListArticle::take(6)->latest()->paginate()
         ]);
     }
 
