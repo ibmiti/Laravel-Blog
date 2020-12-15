@@ -116,10 +116,7 @@
 
             <!-- // beginning  --> 
             <!--  these will be optional  -->
-            <div class="mt-3">
-                <button class="btn btn-primary">Add a 6th List Item To Article</button>
-            </div>
-        
+  
             <div id="Heading6" class="row mt-3">
                 <label for="heading6" class="control-label">Heading 6</label>
                 <input type="textarea" name="heading6" class="form-control form-control-lg mt-3" placeholder="Sixth Header">

@@ -65,9 +65,7 @@
                 <x-form_10 />
             @break   
         @endswitch
-
-
-
+        
     </div>
 </div>
 
