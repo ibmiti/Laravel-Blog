@@ -195,12 +195,14 @@
                     <div class="col-sm-6">
                         <button class="btn btn-block btn-success" type="submit">Create Article</button>
                     </div>
-                    <div class="col-sm-6">
-                        <button class="btn btn-block btn-primary" type="submit">
-                            <a style="color:white;" href="{{ url('create_list_article') }} ">
-                            Switch to List Article    
-                            </a>
-                        </button>
-                    </div>
                 </div>
             </form>
+            <div class="row justify-content-center mt-3">
+                <div class="col-sm-6">
+                    <button class="btn btn-block btn-primary" type="submit">
+                        <a style="color:white;" href="{{ url('create_normal_article') }} ">
+                        Switch to Regular Article 
+                        </a>
+                    </button>
+                </div>
+            </div>
