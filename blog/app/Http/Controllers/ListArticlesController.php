@@ -8,13 +8,11 @@ use App\Models\ListArticle as ListArticle;
 class ListArticlesController extends Controller
 {
 
-    public function index(){
-        
-        
-        return view('articles.index', [
-            'list_articles' => dd($list_articles = \ListArticle::take(6)->latest()->paginate())
-        ]);
-    }
+    // public function index(){
+    //     return view('articles.index', [
+    //         'list_articles' => dd($list_articles = \ListArticle::take(6)->latest()->paginate())
+    //     ]);
+    // }
 
     public function create_list_article(){
         return view('articles.article_style.list_article');
@@ -24,6 +22,14 @@ class ListArticlesController extends Controller
             potentially have another 
 
         */
+    }
+
+    public function show_list_articles($id){
+        $list_article = ListArticle::find($id);
+        
+        return view('articles.show_list_article', [
+            'list_article' => $list_article
+        ]);
     }
 
     public function store_list_article(Request $request)

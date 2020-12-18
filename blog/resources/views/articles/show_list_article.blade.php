@@ -68,7 +68,7 @@
 <strong class="navbar-brand" 
                 style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
                 href="#">
-                BB + BLOG + ARTICLE {{ $article->id ?? '' }}
+                BB + BLOG + ARTICLE {{ $list_article->id ?? '' }}
                 </strong>   
 
   <button class="navbar-toggler" 
@@ -86,7 +86,7 @@
     <ul class="navbar-nav ml-auto"> 
         <?php     
             $uri = Request::getRequestUri();
-            $article_id = $article->id ?? '';
+            $article_id = $list_article->id;
             
             switch ($uri) {
                 case ($uri == '/articles'. '/'. $article_id):
@@ -106,7 +106,7 @@
 <!-- <hr class="my-5"> -->
 <div class="container container-fluid">
     <div style="margin-top: 50px;" class="row">
-        <h1 style="padding-bottom: 15px;" class="col-lg text-center">{{ $article->title ?? ''}}</h1>
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">{{ $list_article->title ?? ''}}</h1>
     </div>
 </div>
 
@@ -115,7 +115,7 @@
     <div class="container container-fluid">
       <div class="col-md">
     
-        <p> {{ $article->body ?? ''  }}</p>
+        <p> {{ $list_article->heading1 ?? ''  }}</p>
            
       </div>
     </div>
