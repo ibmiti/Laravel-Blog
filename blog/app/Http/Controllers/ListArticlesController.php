@@ -84,7 +84,7 @@ class ListArticlesController extends Controller
         $list_article = ListArticle::find($id);
         
         return view('articles.show_list_article', [
-            'list_article' => $list_articlegit
+            'list_article' => $list_article
         ]);
     }
 
