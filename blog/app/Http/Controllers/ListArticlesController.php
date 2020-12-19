@@ -24,14 +24,6 @@ class ListArticlesController extends Controller
         */
     }
 
-    public function show_list_articles($id){
-        $list_article = ListArticle::find($id);
-        
-        return view('articles.show_list_article', [
-            'list_article' => $list_article
-        ]);
-    }
-
     public function store_list_article(Request $request)
     {
         // Todo Validate The Data
@@ -86,6 +78,14 @@ class ListArticlesController extends Controller
             $error->getMessage();
         }
 
+    }
+
+    public function show_list_articles($id){
+        $list_article = ListArticle::find($id);
+        
+        return view('articles.show_list_article', [
+            'list_article' => $list_articlegit
+        ]);
     }
 
 }
