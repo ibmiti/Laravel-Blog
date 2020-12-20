@@ -1,4 +1,5 @@
-<form class="mt-4" method="POST" action="{{ route('store_list_article') }}" enctype="multipart/form-data">
+<!-- <form class="mt-4" method="POST" action="{{ route('store_list_article') }}" enctype="multipart/form-data"> -->
+<form class="mt-4" method="POST" action="{{ route('store_list_article') }}">
             @csrf
             <div class="row">
                 <label for="name" class="control-label">Article Title</label>
@@ -20,12 +21,14 @@
                 <label for="image">Image 1</label>
             </div>
             <div  class="row mt-3">    
-                <input type="file" name="image1" accept=".gif,.jpg,.jpeg,.png,.doc,.docx">
+            <!-- removing file input for now -- may use aws s3 for file storage in later update to applications architecture -->
+                <!-- <input type="file" name="image1" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
+                <input type="text" name="image1" class="form-control form-control-lg mt-3" placeholder="Url for image">
             </div>
                      
             <div class="row mt-3">
                 <label for="paragraph1" class="control-label">Paragraph 1</label>
-                <textarea name="paragraph1" cols="30" rows="5" name="paragraph1" class="form-control form-control-lg mt-3" placeholder="First Header"></textarea>
+                <textarea name="paragraph1" cols="30" rows="5" name="paragraph1" class="form-control form-control-lg mt-3" placeholder="Paragraph 1"></textarea>
                 
             </div>
             <hr class="mt-4">
@@ -40,12 +43,13 @@
             </div>
             <div  class="row mt-3">
            
-                <input type="file" name="image2" accept=".gif,.jpg,.jpeg,.png,.doc,.docx">
+                <!-- <input type="file" name="image2" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
+                <input type="text" name="image2" class="form-control form-control-lg mt-3" placeholder="Url for image">
             </div>
                      
             <div class="row mt-3">
                 <label for="paragraph2" class="control-label">Paragraph 2</label>
-                <textarea type="textarea" name="paragraph2" class="form-control form-control-lg mt-3" placeholder="Second Header" cols="30" rows="5"></textarea>
+                <textarea type="textarea" name="paragraph2" class="form-control form-control-lg mt-3" placeholder="Paragraph 2" cols="30" rows="5"></textarea>
             </div>
             <hr>
             <!-- ending -->
@@ -61,12 +65,13 @@
             </div>
             <div  class="row mt-3">
            
-                <input type="file" name="image3" accept=".gif,.jpg,.jpeg,.png,.doc,.docx">
+                <!-- <input type="file" name="image3" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
+                <input type="text" name="image3" class="form-control form-control-lg mt-3" placeholder="Url for image">
             </div>
                      
             <div class="row mt-3">
                 <label for="paragraph3" class="control-label">Paragraph 3</label>
-                <textarea type="textarea" name="paragraph3" class="form-control form-control-lg mt-3" placeholder="Third Header" cols="30" rows="5"></textarea>
+                <textarea type="textarea" name="paragraph3" class="form-control form-control-lg mt-3" placeholder="Paragraph 3" cols="30" rows="5"></textarea>
             </div>
             <hr class="mt-4">
             <!-- // ending  -->
@@ -80,14 +85,15 @@
             <div class="row mt-3">
                 <label for="image4">Image 4</label>
             </div>
-            <div  class="row mt-3">
+            <div  class="row mt-3" class="form-control form-control-lg mt-3" placeholder="Url for image">
            
-                <input type="file" name="image4" accept=".gif,.jpg,.jpeg,.png,.doc,.docx">
+                <!-- <input type="file" name="image4" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
+                <input type="text" name="image4" class="form-control form-control-lg mt-3" placeholder="Url for image">
             </div>
                      
             <div class="row mt-3">
                 <label for="paragraph4" class="control-label">Paragraph 4</label>
-                <textarea type="textarea" name="paragraph4" class="form-control form-control-lg mt-3" placeholder="Fourth Header" cols="30" rows="5"></textarea>
+                <textarea type="textarea" name="paragraph4" class="form-control form-control-lg mt-3" placeholder="Paragraph 4" cols="30" rows="5"></textarea>
             </div>
             <hr class="mt-4">
             <!-- // ending  -->
@@ -104,12 +110,13 @@
             </div>
             <div  class="row mt-3">
            
-                <input type="file" name="image5" accept=".gif,.jpg,.jpeg,.png,.doc,.docx">
+                <!-- <input type="file" name="image5" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
+                <input type="text" name="image5" class="form-control form-control-lg mt-3" placeholder="Url for image">
             </div>
                      
             <div class="row mt-3">
                 <label for="paragraph5" class="control-label">Paragraph 5</label>
-                <textarea type="textarea" name="paragraph5" class="form-control form-control-lg mt-3" placeholder="Fifth Header" cols="30" rows="5"></textarea>
+                <textarea type="textarea" name="paragraph5" class="form-control form-control-lg mt-3" placeholder="Paragraph 5" cols="30" rows="5"></textarea>
             </div>
             <hr class="mt-4">
             <!-- // ending  -->

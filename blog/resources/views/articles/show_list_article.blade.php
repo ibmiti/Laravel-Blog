@@ -116,7 +116,7 @@
       <div class="col-md">
     
         <h1> {{ $list_article->heading1 ?? ''  }}</h1>
-        {{dd($list_article->image_name )}}
+        
         <p> <img src="{{ $list_article->image_name ?? ''  }}"> </p>
            
       </div>

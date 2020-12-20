@@ -58,5 +58,5 @@ Route::get('/create_normal_article', [ArticlesController::class, 'create_normal_
 Route::post('/create_normal_article', [ArticlesController::class, 'store_normal_article'])->name('store_normal_article');
 
 Route::get('/create_list_article', [ListArticlesController::class, 'create_list_article'])->name('create_list_article');
-Route::post('/create_list_article', [ArticlesController::class, 'store_list_article'])->name('store_list_article');
+Route::post('/create_list_article', [ListArticlesController::class, 'store_list_article'])->name('store_list_article');
 
