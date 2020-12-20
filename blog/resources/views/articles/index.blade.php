@@ -45,13 +45,12 @@
         <h1 class="col-lg text-center">Keeping up with the Bassinet</h1>
     </div>
     
-    <div class="row">ListArticlesController
+    <div class="row">
         <div class="col-lg text-center" style="padding-bottom: 40px;">
             <h2>The Latest Articles From The Bassinet</h2>
         </div>
     </div>
 
-    <h2>Normal Articles</h2>
     @foreach ($articles as $article)
     <div class="row">
         <div class="col-lg">
@@ -70,7 +69,7 @@
    @foreach ($list_articles as $list_article)
    <div class="row">
         <div class="col-lg">
-            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/list_article/{{ $list_article->id }}">{{ $list_article->title ?? ''}}</a></h2>
+            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $list_article->id }}">{{ $list_article->title ?? ''}}</a></h2>
                 <!-- <img src="{{ $list_article->image_name}}"
                      alt=""
                      id ="imgPost"

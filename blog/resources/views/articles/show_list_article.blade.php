@@ -56,6 +56,12 @@
     a {
         text-decoration: none;
     }
+
+
+  img {
+    border-radius : 50%;
+  }
+
 </style>
 
 <body>
@@ -103,25 +109,239 @@
    </ul> 
   </div>
 </nav>
-<!-- <hr class="my-5"> -->
+
 <div class="container container-fluid">
     <div style="margin-top: 50px;" class="row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">{{ $list_article->title ?? ''}}</h1>
     </div>
 </div>
 
-<div class="container container-fluid">
-    <div class="row">
-    <div class="container container-fluid">
-      <div class="col-md">
-    
-        <h1> {{ $list_article->heading1 ?? ''  }}</h1>
-        <img src="{{ $list_article->image_name ?? ''  }}" height="800px" width="800px">
-        <p> {{ $list_article->paragraph1 }} </p>
+<hr width="300">
+<hr width="300">
+<hr width="300">
 
-            
+
+
+<div class="container container-fluid">
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading1 ?? ''  }}</h2s>
+      </div>               
+  </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image_name ?? ''  }}" height="400" width="400" object-fit="cover">  
+                    <!-- TODO place a image credit here -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph1 }} </p>              
+    </div>
+  </div>
+    
+
+    <!-- start  -->
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading2 ?? ''  }}</h2s>
+      </div>               
+  </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image2_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph2 }} </p>              
+    </div>
+  </div>
+
+  <!-- start  -->
+
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading3 ?? ''  }}</h2s>
+      </div>               
+  </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image3_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph3 }} </p>              
+    </div>
+  </div>      
+
+  
+  <!-- start  -->
+
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading4 ?? ''  }}</h2s>
+      </div>               
+  </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image4_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph4 }} </p>              
+    </div>
+  </div>     
+
+  <!-- start  -->
+
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading5 ?? ''  }}</h2s>
+      </div>               
+  </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image5_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph5 }} </p>              
+    </div>
+  </div>     
+
+  <!-- start  -->
+@if ( $list_article->heading6 )
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading6 ?? ''  }}</h2s>
+      </div>               
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image6_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph6 }} </p>              
+    </div>
+  </div>     
+@endif
+  <!-- start  -->
+
+  @if ( $list_article->heading7 )
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading7 ?? ''  }}</h2s>
+      </div>               
+  </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image7_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph7 }} </p>              
+    </div>
+  </div>     
+  @endif
+
+  <!-- start  -->
+
+  @if ( $list_article->heading8 )
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading8 ?? ''  }}</h2s>
+      </div>               
+  </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image8_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph8 }} </p>              
+    </div>
+  </div>     
+  @endif
+
+  <!-- start  -->
+
+
+@if ( $list_article->heading9 )
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading9 ?? ''  }}</h2s>
+      </div>               
+  </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image9_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph9 }} </p>              
+    </div>
+  </div>     
+@endif
+  <!-- start  -->
+
+@if ( $list_article->heading9 )
+  <div class="row mt-5">
+      <div class="col-lg">
+        <h2 class="text-center"> {{ $list_article->heading10 ?? ''  }}</h2s>
+      </div>               
+  </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <img class="mt-3 mx-auto d-block" src="{{ $list_article->image10_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+     <p class="mt-5"> {{ $list_article->paragraph10 }} </p>              
+    </div>
+  </div>    
+@endif
+
+</div>
+
+  
+
+    
+   
+
+    
+<!--             
         <h1> {{ $list_article->heading2 ?? ''  }}</h1>
-        <img src="{{ $list_article->image3_name ?? ''  }}" height="800px" width="800px">
+        <img src="{{ $list_article->image2_name ?? ''  }}" height="800px" width="800px">
         <p> {{ $list_article->paragraph2 }} </p>
 
             
@@ -167,12 +387,8 @@
         <h1> {{ $list_article->heading10 ?? ''  }}</h1>
         <img src="{{ $list_article->image10_name ?? ''  }}" height="800px" width="800px">
          <p> {{ $list_article->paragraph10 }} </p>
-      @endif   
-      </div>
-      
-    </div>
-    </div>
-</div>
+      @endif    -->
+
 
 
 
