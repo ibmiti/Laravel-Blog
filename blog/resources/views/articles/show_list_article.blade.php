@@ -116,10 +116,60 @@
       <div class="col-md">
     
         <h1> {{ $list_article->heading1 ?? ''  }}</h1>
-        
-        <p> <img src="{{ $list_article->image_name ?? ''  }}"> </p>
-           
+        <img src="{{ $list_article->image_name ?? ''  }}" height="800px" width="800px">
+        <p> {{ $list_article->paragraph1 }} </p>
+
+            
+        <h1> {{ $list_article->heading2 ?? ''  }}</h1>
+        <img src="{{ $list_article->image3_name ?? ''  }}" height="800px" width="800px">
+        <p> {{ $list_article->paragraph2 }} </p>
+
+            
+        <h1> {{ $list_article->heading3 ?? ''  }}</h1>
+        <img src="{{ $list_article->image3_name ?? ''  }}" height="800px" width="800px">
+        <p> {{ $list_article->paragraph3 }} </p>
+
+            
+        <h1> {{ $list_article->heading4 ?? ''  }}</h1>
+        <img src="{{ $list_article->image4_name ?? ''  }}" height="800px" width="800px">
+        <p> {{ $list_article->paragraph4 }} </p>
+
+            
+        <h1> {{ $list_article->heading5 ?? ''  }}</h1>
+        <img src="{{ $list_article->image5_name ?? ''  }}" height="800px" width="800px">
+        <p> {{ $list_article->paragraph5 }} </p>
+
+      @if( $list_article->heading6 )
+        <h1> {{ $list_article->heading6 ?? ''  }}</h1>
+        <img src="{{ $list_article->image6_name ?? ''  }}" height="800px" width="800px">
+        <p> {{ $list_article->paragraph6 }} </p>
+      @endif          
+
+      @if ( $list_article->heading7 )
+        <h1> {{ $list_article->heading7 ?? ''  }}</h1>
+        <img src="{{ $list_article->image7_name ?? ''  }}" height="800px" width="800px">
+        <p> {{ $list_article->paragraph7 }} </p>
+      @endif     
+
+      @if( $list_article->heading8 )          
+        <h1> {{ $list_article->heading8 ?? ''  }}</h1>
+        <img src="{{ $list_article->image8_name ?? ''  }}" height="800px" width="800px">
+        <p> {{ $list_article->paragraph8 }} </p>
+      @endif
+
+      @if ( $list_article->heading9 )          
+        <h1> {{ $list_article->heading9 ?? ''  }}</h1>
+        <img src="{{ $list_article->image9_name ?? ''  }}" height="800px" width="800px">
+        <p> {{ $list_article->paragraph9 }} </p>
+      @endif
+
+      @if ( $list_article->heading10 )
+        <h1> {{ $list_article->heading10 ?? ''  }}</h1>
+        <img src="{{ $list_article->image10_name ?? ''  }}" height="800px" width="800px">
+         <p> {{ $list_article->paragraph10 }} </p>
+      @endif   
       </div>
+      
     </div>
     </div>
 </div>
