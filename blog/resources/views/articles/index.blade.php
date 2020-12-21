@@ -36,10 +36,22 @@
         width: 75%;
     }
 
+    a:hover {
+  color: grey;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+
+a:visited {
+  text-decoration: none;
+}
+
 </style>
 <div class="container container-fluid">
     <x-header-image/>
-
 
     <div class="row">
         <h1 class="col-lg text-center">Keeping up with the Bassinet</h1>
@@ -51,6 +63,8 @@
         </div>
     </div>
 
+<div class="row">
+    <div class="col-lg-6 col-md-12">
     @foreach ($articles as $article)
     <div class="row">
         <div class="col-lg">
@@ -64,12 +78,14 @@
         </div>
     </div>
     @endforeach
+    </div>
 
+    <div class="col-lg-6 col-md-12">
     <h2>List articles</h2>
    @foreach ($list_articles as $list_article)
    <div class="row">
         <div class="col-lg">
-            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $list_article->id }}">{{ $list_article->title ?? ''}}</a></h2>
+            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/list_article/{{ $list_article->id }}">{{ $list_article->title ?? ''}}</a></h2>
                 <!-- <img src="{{ $list_article->image_name}}"
                      alt=""
                      id ="imgPost"
@@ -79,6 +95,15 @@
         </div>
     </div>
    @endforeach
+
+    </div> 
+
+
+   
+</div>
+   
+
+   
 
 @endsection
 

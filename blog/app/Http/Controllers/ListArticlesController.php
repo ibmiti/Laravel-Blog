@@ -82,7 +82,6 @@ class ListArticlesController extends Controller
 
     public function show_list_articles($id){
         $list_article = ListArticle::find($id);
-        
         return view('articles.show_list_article', [
             'list_article' => $list_article
         ]);
