@@ -56,6 +56,27 @@
     a {
         text-decoration: none;
     }
+
+    img {
+    border-radius : 5%;
+    /* -moz-border-radius:50%;
+    -webkit-border-radius:50%; */
+    }
+a {
+  color: white;
+}
+  a:hover {
+   color: pink;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+
+
+  a:visited {
+   text-decoration: none;
+  }
 </style>
 
 <body>
@@ -120,6 +141,12 @@
       </div>
     </div>
     </div>
+
+    <div class="row justify-content-center mt-3">
+      <div class="col-lg text-center">
+          <button class="btn btn-lg btn-dark"><a href="/articles">BACK TO ARTICLES</a></button>
+      </div>   
+  </div>        
 </div>
 
 

@@ -64,40 +64,41 @@ a:visited {
     </div>
 
 <div class="row">
-    <div class="col-lg-6 col-md-12">
-    @foreach ($articles as $article)
-    <div class="row">
-        <div class="col-lg">
-            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $article->id }}">{{ $article->title ?? ''}}</a></h2>
-                <!-- <img src="images/pic01.jpg"
-                     alt=""
-                     id ="imgPost"
-                     class=""
-                    />                 -->
-            <p style="font-size: 20px;">{!! $article->excerpt !!}</p>
+<div class="col-lg-3"></div>
+    <div class="col-lg-3">
+        <h2>Regular Articles</h2>
+        @foreach ($articles as $article)
+        <div class="row">
+            <div class="col-lg">
+                <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $article->id }}">{{ $article->title ?? ''}}</a></h2>
+                    <!-- <img src="images/pic01.jpg"
+                        alt=""
+                        id ="imgPost"
+                        class=""
+                        />                 -->
+                <p style="font-size: 20px;">{!! $article->excerpt !!}</p>
+            </div>
         </div>
-    </div>
-    @endforeach
+        @endforeach
     </div>
 
-    <div class="col-lg-6 col-md-12">
-    <h2>List articles</h2>
-   @foreach ($list_articles as $list_article)
-   <div class="row">
-        <div class="col-lg">
-            <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/list_article/{{ $list_article->id }}">{{ $list_article->title ?? ''}}</a></h2>
-                <!-- <img src="{{ $list_article->image_name}}"
-                     alt=""
-                     id ="imgPost"
-                     class=""
-                    />                 -->
-            <p style="font-size: 20px;">{!! $list_article->excerpt !!}</p>
-        </div>
-    </div>
-   @endforeach
-
+    <div class="col-lg-5">
+        <h2>List articles</h2>
+        @foreach ($list_articles as $list_article)
+        <div class="row">
+                <div class="col-lg">
+                    <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/list_article/{{ $list_article->id }}">{{ $list_article->title ?? ''}}</a></h2>
+                        <!-- <img src="{{ $list_article->image_name}}"
+                            alt=""
+                            id ="imgPost"
+                            class=""
+                            />                 -->
+                    <p style="font-size: 20px;">{!! $list_article->excerpt !!}</p>
+                </div>
+            </div>
+        @endforeach
     </div> 
-
+    <div class="col-lg-2"></div>
 
    
 </div>

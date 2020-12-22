@@ -53,29 +53,28 @@
       list-style-type: none;
     }
 
-    a {
-        text-decoration: none;
-    }
-
-
   img {
-    border-radius : 5%;
+    border-radius : 1%;
     /* -moz-border-radius:50%;
     -webkit-border-radius:50%; */
   }
 
-  a:hover {
+  a {
   color: white;
-}
-
-a:link {
   text-decoration: none;
 }
+  a:hover {
+   color: teal;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
 
 
-a:visited {
-  text-decoration: none;
-}
+  a:visited {
+   text-decoration: none;
+  }
 
 </style>
 
@@ -89,7 +88,7 @@ a:visited {
 <strong class="navbar-brand" 
                 style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
                 href="#">
-                BB + BLOG + ARTICLE {{ $list_article->id ?? '' }}
+                BB + BLOG + LIST ARTICLE {{ $list_article->id ?? '' }}
                 </strong>   
 
   <button class="navbar-toggler" 
@@ -102,24 +101,22 @@ a:visited {
           style="border: none;outline: none;"
           >
     <span class="navbar-toggler-icon"></span></button>
-
+<!-- TODO add classes on click to show navbar -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent15">
     <ul class="navbar-nav ml-auto"> 
+      
         <?php     
             $uri = Request::getRequestUri();
-            $article_id = $list_article->id;
-            
-            switch ($uri) {
-                case ($uri == '/articles'. '/'. $article_id):
-                    echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
-                    echo ('_____________');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
-                    echo ('_____________');
-                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE </strong></a></li>');
-                    echo ('_____________');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
-                    break;
-                }
+            $article_id = $list_article->id; 
+            if ($uri){
+              echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+              echo ('_____________');
+              echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
+              echo ('_____________');
+              echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE </strong></a></li>');
+              echo ('_____________');
+              echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
+            }
         ?>
    </ul> 
   </div>
@@ -358,6 +355,8 @@ a:visited {
 
     
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->
+
+<!-- bootstrap related scripts -->
 
 <!-- bootstrap related scripts -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
