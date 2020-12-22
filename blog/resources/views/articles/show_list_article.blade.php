@@ -100,11 +100,9 @@
           aria-label="Toggle navigation"
           style="border: none;outline: none;"
           >
-    <span class="navbar-toggler-icon"></span></button>
-<!-- TODO add classes on click to show navbar -->
+  <span class="navbar-toggler-icon"></span></button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent15">
-    <ul class="navbar-nav ml-auto"> 
-      
+    <ul class="navbar-nav ml-auto">
         <?php     
             $uri = Request::getRequestUri();
             $article_id = $list_article->id; 
