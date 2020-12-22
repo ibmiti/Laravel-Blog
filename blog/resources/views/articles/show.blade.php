@@ -133,14 +133,47 @@ a {
 
 <div class="container container-fluid">
     <div class="row">
-    <div class="container container-fluid">
-      <div class="col-md">
-    
-        <p> {{ $article->body ?? ''  }}</p>
-           
+       <div class="col-md">
+                <img src="{{ $article->image }}" alt="">
+       </div>         
+    </div>
+
+    <div class="row">
+      <div class="container container-fluid">
+        <div class="col-md">
+          
+<!-- TODO will remove this field from database , and allow individual paragraphs...  -->
+          <p> {{ $article->body ?? ''  }}</p>
+            
+        </div>
       </div>
     </div>
+
+<!-- there should always be a p1 -->
+@if ($article->p1 )
+    <div class="row">
+      <div class="col-md">
+          <p> {{ $article-p1}} </p>
+      </div>
     </div>
+@endif
+
+@if ($article->p2 )
+    <div class="row">
+      <div class="col-md">
+          <p> {{ $article-p2}} </p>
+      </div>
+    </div>
+@endif
+
+<!-- if there is a paragraph 3 then show it -->
+@if ($article->p3)
+    <div class="row">
+      <div class="col-md">
+          <p> {{ $article-p3}} </p>
+      </div>
+    </div>
+@endif
 
     <div class="row justify-content-center mt-3">
       <div class="col-lg text-center">
