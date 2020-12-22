@@ -17,12 +17,10 @@ class ArticlesController extends Controller
     }
 
     public function show($id){
-
         $article = Article::find($id);
-        // $list_article = ListArticle::find($id);
+
         return view('articles.show', [
-            'article'      => $article 
-            // 'list_article' => $list_article
+            'article' => $article 
         ]);
     }
     
@@ -31,38 +29,6 @@ class ArticlesController extends Controller
         return view('articles.article_style.normal_article');
     }
 
-    // second type of article 
-    // public function create_list_article(){
-    //     return view('articles.article_style.list_article');
-
-    //     /*
-
-    //         potentially have another 
-
-    //     */
-    // }
-
-    // public function article_list_size(int $size){
-        // store list size from another view maybe? 
-        // may have to create another view which sends data from form to this list 
-        // return component based on size 
-
-
-        //  store these in array?
-        // [
-        // 'default_size' => '<x-default_form />',
-        
-        // '<x-form_6 />'
-
-        // '<x-form_7 />'
-
-        // '<x-form_8 />'
-
-        // '<x-form_9 />'
-
-        // '<x-form_10 />'
-        // ]
-    // }
 
     public function store_normal_article(Request $request) 
     {
@@ -78,7 +44,9 @@ class ArticlesController extends Controller
 
         $article->title = $request->title;
         $article->excerpt = $request->excerpt;
-        $article->body = $request->body;
+        $article->p1 = $request->p1;
+        $article->p2 = $request->p2;
+        $article->p3 = $request->p3;
         
         $article->save();
         

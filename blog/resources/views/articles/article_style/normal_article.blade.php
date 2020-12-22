@@ -34,10 +34,19 @@
             </div>
 
             <div class="row mt-3">
-                <label for="excerpt" class="control-label">Body</label>
-                <input type="textarea" name="body" class="form-control form-control-lg mt-3" placeholder="The entire sha-bang">
+                <label for="paragraph 1" class="control-label">Paragraph 1</label>
+                <input type="textarea" name="p1" class="form-control form-control-lg mt-3" placeholder="First Paragraph Here">
             </div>
 
+            <div class="row mt-3">
+                <label for="paragraph 2" class="control-label">Paragraph 2</label>
+                <input type="textarea" name="p2" class="form-control form-control-lg mt-3" placeholder="Second Paragraph Here">
+            </div>
+
+            <div class="row mt-3">
+                <label for="paragraph 3" class="control-label">Paragraph 3</label>
+                <input type="textarea" name="p3" class="form-control form-control-lg mt-3" placeholder="Third Paragraph Here">
+            </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-sm-6">
                         <button class="btn btn-block btn-success" type="submit">Create Article</button>

@@ -138,22 +138,12 @@ a {
        </div>         
     </div>
 
-    <div class="row">
-      <div class="container container-fluid">
-        <div class="col-md">
-          
-<!-- TODO will remove this field from database , and allow individual paragraphs...  -->
-          <p> {{ $article->body ?? ''  }}</p>
-            
-        </div>
-      </div>
-    </div>
-
 <!-- there should always be a p1 -->
+<!-- TODO this may be throwing an error - it is not currently being displayed -->
 @if ($article->p1 )
     <div class="row">
       <div class="col-md">
-          <p> {{ $article-p1}} </p>
+          <p> {{ $article->p1 }} </p>
       </div>
     </div>
 @endif
@@ -161,7 +151,7 @@ a {
 @if ($article->p2 )
     <div class="row">
       <div class="col-md">
-          <p> {{ $article-p2}} </p>
+          <p> {{ $article->p2}} </p>
       </div>
     </div>
 @endif
@@ -170,7 +160,7 @@ a {
 @if ($article->p3)
     <div class="row">
       <div class="col-md">
-          <p> {{ $article-p3}} </p>
+          <p> {{ $article->p3}} </p>
       </div>
     </div>
 @endif
