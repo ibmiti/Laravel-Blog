@@ -125,24 +125,32 @@ a {
   </div>
 </nav>
 <!-- <hr class="my-5"> -->
+
+
 <div class="container container-fluid">
+    <div class="row">
+       <div class="col-md text-center">
+                <img src="{{ $article->image }}" alt="article image">
+       </div>         
+    </div>
+
+
+    <div class="container container-fluid">
     <div style="margin-top: 50px;" class="row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">{{ $article->title ?? ''}}</h1>
     </div>
 </div>
-
-<div class="container container-fluid">
-    <div class="row">
-       <div class="col-md">
-                <img src="{{ $article->image }}" alt="">
-       </div>         
-    </div>
-
 <!-- there should always be a p1 -->
 <!-- TODO this may be throwing an error - it is not currently being displayed -->
 @if ($article->p1 )
     <div class="row">
-      <div class="col-md">
+      <div class="col-md text-center">
+          <h2> {{ $article->heading1 }} </h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md text-center">
           <p> {{ $article->p1 }} </p>
       </div>
     </div>
@@ -150,7 +158,13 @@ a {
 
 @if ($article->p2 )
     <div class="row">
-      <div class="col-md">
+      <div class="col-md text-center">
+          <h2> {{ $article->heading2 }} </h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md text-center">
           <p> {{ $article->p2}} </p>
       </div>
     </div>
@@ -158,8 +172,15 @@ a {
 
 <!-- if there is a paragraph 3 then show it -->
 @if ($article->p3)
+
     <div class="row">
-      <div class="col-md">
+      <div class="col-md text-center">
+          <h2> {{ $article->heading3 }} </h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md text-center">
           <p> {{ $article->p3}} </p>
       </div>
     </div>

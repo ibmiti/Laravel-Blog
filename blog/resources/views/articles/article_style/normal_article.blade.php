@@ -23,7 +23,13 @@
 
             <form method="POST" action="{{ route('store_normal_article') }}">
             @csrf
+
             <div class="row">
+                    <label for="title" class="control-label">Article Image</label>
+                    <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">    
+            </div>
+
+            <div class="row mt-3">
                 <label for="title" class="control-label">Article Title</label>
                 <input type="text" name="title" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting">
             </div>
@@ -34,13 +40,28 @@
             </div>
 
             <div class="row mt-3">
+                <label for="header 1" class="control-label">Header 1</label>
+                <input type="textarea" name="h1" class="form-control form-control-lg mt-3" placeholder="Header 1">
+            </div>
+
+            <div class="row mt-3">
                 <label for="paragraph 1" class="control-label">Paragraph 1</label>
                 <input type="textarea" name="p1" class="form-control form-control-lg mt-3" placeholder="First Paragraph Here">
             </div>
 
             <div class="row mt-3">
+                <label for="header 2" class="control-label">Header 2</label>
+                <input type="textarea" name="h2" class="form-control form-control-lg mt-3" placeholder="Header 2">
+            </div>
+
+            <div class="row mt-3">
                 <label for="paragraph 2" class="control-label">Paragraph 2</label>
                 <input type="textarea" name="p2" class="form-control form-control-lg mt-3" placeholder="Second Paragraph Here">
+            </div>
+
+            <div class="row mt-3">
+                <label for="heading 3" class="control-label">Header 3</label>
+                <input type="textarea" name="h3" class="form-control form-control-lg mt-3" placeholder="Header 3">
             </div>
 
             <div class="row mt-3">

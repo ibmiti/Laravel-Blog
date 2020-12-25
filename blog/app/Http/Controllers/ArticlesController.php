@@ -41,11 +41,15 @@ class ArticlesController extends Controller
         // ]);
 
         $article = new Article;
-
+        
+        $article->image = $request->image;
         $article->title = $request->title;
         $article->excerpt = $request->excerpt;
+        $article->heading1 = $request->h1;
         $article->p1 = $request->p1;
+        $article->heading2 = $request->h2;
         $article->p2 = $request->p2;
+        $article->heading3 = $request->h3;
         $article->p3 = $request->p3;
         
         $article->save();
