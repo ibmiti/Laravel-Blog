@@ -43,6 +43,7 @@ class ArticlesController extends Controller
         $article = new Article;
         
         $article->image = $request->image;
+        $article->image_credit = $request->image_credit;
         $article->title = $request->title;
         $article->excerpt = $request->excerpt;
         $article->heading1 = $request->h1;

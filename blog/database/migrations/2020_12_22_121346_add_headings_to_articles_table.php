@@ -28,9 +28,9 @@ class AddHeadingsToArticlesTable extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->string('heading1');
-            $table->string('heading2');
-            $table->string('heading3');
+            $table->dropColumn('heading1');
+            $table->dropColumn('heading2');
+            $table->dropColumn('heading3');
         });
     }
 }

@@ -26,7 +26,7 @@ class AddImageUrlToArticlesTable extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->string('image');
+            $table->dropColumn('image');
         });
     }
 }

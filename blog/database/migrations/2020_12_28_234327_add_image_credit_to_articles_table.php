@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSourceLinkToArticlesTable extends Migration
+class AddImageCreditToArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddSourceLinkToArticlesTable extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            //
+            $table->text('image_credit')->nullable(false);
         });
     }
 
@@ -26,7 +26,7 @@ class AddSourceLinkToArticlesTable extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
-            //
+            $table->dropColumn('image_credit');
         });
     }
 }

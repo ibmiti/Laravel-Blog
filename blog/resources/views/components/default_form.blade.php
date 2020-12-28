@@ -109,11 +109,15 @@
                 <label for="image5">Image 5</label>
             </div>
             <div  class="row mt-3">
-           
                 <!-- <input type="file" name="image5" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
                 <input type="text" name="image5" class="form-control form-control-lg mt-3" placeholder="Url for image">
             </div>
-                     
+
+            <div  class="row mt-3">
+                <!-- <input type="file" name="image5" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
+                <input type="text" name="image_credit" class="form-control form-control-lg mt-3" placeholder="Give credit for image">
+            </div>
+
             <div class="row mt-3">
                 <label for="paragraph5" class="control-label">Paragraph 5</label>
                 <textarea type="textarea" name="paragraph5" class="form-control form-control-lg mt-3" placeholder="Paragraph 5" cols="30" rows="5"></textarea>

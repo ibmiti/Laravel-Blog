@@ -20,6 +20,7 @@
 
 }
 </style>
+<!-- TODO fix error with navbar not working - find a good solution -->
 
 @section ('content')
 

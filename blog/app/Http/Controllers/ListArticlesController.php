@@ -26,7 +26,9 @@ class ListArticlesController extends Controller
 
     public function store_list_article(Request $request)
     {
-        // Todo Validate The Data
+
+        // TODO - Validate The Data
+        // --------------------------
         // $this->validate($request, [
         //     'title' => 'required|string|max:50|min:3',
         //     'excerpt' => 'required|string|max:150|min:10',
@@ -34,7 +36,6 @@ class ListArticlesController extends Controller
         // ]);
         
         $article = new ListArticle;
-        // dd($article);
 
         $article->title          = $request->title;
         $article->excerpt        = $request->excerpt;

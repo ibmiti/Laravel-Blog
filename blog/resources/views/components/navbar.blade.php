@@ -4,9 +4,10 @@
         font-family: 'Big Shoulders Stencil Display', cursive;
         font-size: 40px;
     }
+
 </style>
 
-<nav class="navbar navbar-light navbar">
+<nav id="navbar" class="navbar navbar-light navbar">
 <a id="logo" href="/">
         <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="80" style="padding-top:15px" /> 
 </a>

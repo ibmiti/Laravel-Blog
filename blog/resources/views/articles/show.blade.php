@@ -131,6 +131,7 @@ a {
     <div class="row">
        <div class="col-md text-center">
                 <img src="{{ $article->image }}" alt="article image">
+                <p style="color:grey; font-size: 1em;">{{ $article->image_credit }}</p>
        </div>         
     </div>
 

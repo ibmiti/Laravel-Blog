@@ -26,7 +26,7 @@ class DropBodyColumnFromArticlesTable extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->text('body');
+            $table->dropColumn('body');
         });
     }
 }
