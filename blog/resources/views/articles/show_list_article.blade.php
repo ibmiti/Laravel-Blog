@@ -133,7 +133,7 @@
 <div class="container container-fluid">
   <div class="row mt-5">
       <div class="col-lg">
-        <h2 class="text-center"> {{ $list_article->heading1 ?? '' }}</h2s>
+        <h2 class="text-center"> {{ $list_article->heading1 ?? '' }}</h2>
       </div>               
   </div>
   
