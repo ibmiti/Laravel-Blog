@@ -28,9 +28,9 @@ class AddParagraphsToArticlesTable extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->text('p1');
-            $table->text('p2')->nullable();
-            $table->text('p3')->nullable();
+            $table->dropColumn('p1');
+            $table->dropColumn('p2');
+            $table->dropColumn('p3');
         });
     }
 }

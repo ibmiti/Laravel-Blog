@@ -26,7 +26,7 @@ class AddTitleToPostsTable extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('title')->after('slug');
+            $table->dropColumn('title');
         });
     }
 }

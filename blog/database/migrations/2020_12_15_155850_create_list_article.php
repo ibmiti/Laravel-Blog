@@ -59,5 +59,6 @@ class CreateListArticle extends Migration
     public function down()
     {
         Schema::dropIfExists('list_article');
+        // TODO - add all fields to down method
     }
 }
