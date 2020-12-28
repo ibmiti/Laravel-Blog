@@ -14,7 +14,6 @@
     window.onload = () => {
         document.getElementById("exampleModal").className += " show";
     }
-
 </script>
 
 <div class="jumbotron jumbotron-fluid justify-content-center text-center">

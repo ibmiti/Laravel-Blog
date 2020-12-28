@@ -31,6 +31,11 @@ Route::get('/articles/{article}/delete', [ArticlesController::class, 'delete']);
 
 Route::get('/articles/list_article/{list_article}', [ListArticlesController::class, 'show_list_articles']); // show
 
+// all articles 
+// Route::get('articles/show_all_articles', [ArticlesController::class, 'show_all_articles']);
+
+// all list articles 
+
 
 // route to contact view
 Route::get('/contact', [ContactController::class, 'show']);

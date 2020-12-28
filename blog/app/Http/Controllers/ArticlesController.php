@@ -52,12 +52,15 @@ class ArticlesController extends Controller
         $article->heading3 = $request->h3;
         $article->p3 = $request->p3;
         
-        $article->save();
-        
-
-        
+        $article->save();        
     }
 
+
+    public function show_all_articles(){
+        return view('articles.show_all_articles', [
+            'articles' => $articles = Article::take(6)->latest()
+        ]);
+    }
     // public function store_list_article(Request $request)
     // {
     //     // Todo Validate The Data
