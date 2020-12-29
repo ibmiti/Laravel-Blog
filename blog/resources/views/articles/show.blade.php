@@ -132,6 +132,7 @@ a {
        <div class="col-md text-center">
                 <img src="{{ $article->image }}" alt="article image">
                 <p style="color:grey; font-size: 1em;">{{ $article->image_credit }}</p>
+                <!-- TODO : truncate and style the url -->
        </div>         
     </div>
 
