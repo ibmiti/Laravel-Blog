@@ -46,6 +46,7 @@
 <div class="container container-fluid">
   <div class="row">
     <div class="col-md">
+    <!-- TODO  will add a way to change the information here via admin  -->
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus libero qui et ullam accusantium inventore nisi facilis quia, exercitationem minus sed dolor aliquid ex, maiores aperiam amet repudiandae possimus odit!
       </p>
