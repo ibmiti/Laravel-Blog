@@ -65,14 +65,13 @@ a:visited {
 <style>
 img {
     border-radius : 7%;
-    /* -moz-border-radius:50%;
-    -webkit-border-radius:50%; */
+    -moz-border-radius: 7%;
+    -webkit-border-radius:7%;
   }
-
-
 </style>
+
 <div class="row">
-<div class="col-lg-3"></div>
+<div class="col-lg-2"></div>
     <div class="col-lg-3 mt-2">
         <h2>Regular Articles</h2>
         @foreach ($articles as $article)
@@ -95,8 +94,9 @@ img {
             </div>
         </div> -->
     </div>
-
-    <div class="col-lg-5 mt-2">
+    
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3 mt-2">
         <h2>List articles</h2>
         @foreach ($list_articles as $list_article)
         <div class="row">
@@ -118,7 +118,7 @@ img {
             </div>
         </div>
     </div>  -->
-    <div class="col-lg-2"></div>
+
 
    
 </div>

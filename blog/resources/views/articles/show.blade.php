@@ -10,6 +10,8 @@
     <title>BabyBassinet - Blog {{ $article->title ?? '' }} </title>
 </head>
 <style>
+/* may use this later roboto */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,100&display=swap'); */
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
     .col-lg  {
         /* font-family: 'Raleway', 'Roboto'; */

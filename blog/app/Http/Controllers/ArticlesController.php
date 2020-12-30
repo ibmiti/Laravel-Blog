@@ -24,16 +24,13 @@ class ArticlesController extends Controller
         ]);
     }
     
-    public function create_normal_article()
-    {
+    public function create_normal_article(){
         return view('articles.article_style.normal_article');
     }
 
-
-    public function store_normal_article(Request $request) 
-    {
+    public function store_normal_article(Request $request){
         
-        // Todo Validate The Data
+        // TODO - Validate The Data
         // $this->validate($request, [
         //     'title' => 'required|string|max:50|min:3',
         //     'excerpt' => 'required|string|max:150|min:10',
@@ -42,8 +39,6 @@ class ArticlesController extends Controller
 
         $article = new Article;
         
-
-
         $article->image = $request->image;
         $article->image_credit = $request->image_credit;
         $article->title = $request->title;
@@ -56,18 +51,19 @@ class ArticlesController extends Controller
         $article->p2 = $request->p2;
         $article->heading3 = $request->h3;
         $article->p3 = $request->p3;
+    
         // saving the article
         $article->save();        
     }
-
 
     public function show_all_articles(){
         return view('articles.show_all_articles', [
             'articles' => $articles = Article::take(6)->latest()
         ]);
     }
-    // public function store_list_article(Request $request)
-    // {
+
+    // public function store_list_article(Request $request){
+        
     //     // Todo Validate The Data
     //     // $this->validate($request, [
     //     //     'title' => 'required|string|max:50|min:3',

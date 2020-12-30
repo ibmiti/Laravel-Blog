@@ -62,7 +62,7 @@
       <div class="col-sm">
           <ul>
               @foreach($articles as $article)
-                <li>{{ $article->title }}</li>
+                <li><a href="/articles/{{ $article->id }}">{{ $article->title }}</a></li>
                 <p class="paragraph">{{ $article->excerpt }}</p>
                 <hr>
               @endforeach
