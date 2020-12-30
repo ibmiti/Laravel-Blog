@@ -42,17 +42,21 @@ class ArticlesController extends Controller
 
         $article = new Article;
         
+
+
         $article->image = $request->image;
         $article->image_credit = $request->image_credit;
         $article->title = $request->title;
-        $article->excerpt = $request->excerpt;
+        // truncating || limiting the excerpt
+        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
+        $article->excerpt = $excerpt;
         $article->heading1 = $request->h1;
         $article->p1 = $request->p1;
         $article->heading2 = $request->h2;
         $article->p2 = $request->p2;
         $article->heading3 = $request->h3;
         $article->p3 = $request->p3;
-        
+        // saving the article
         $article->save();        
     }
 

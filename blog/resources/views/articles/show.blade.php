@@ -77,6 +77,11 @@ a {
   a:visited {
    text-decoration: none;
   }
+
+/* for image_credit */
+  p a {
+        color: black;
+      }
 </style>
 
 <body>
@@ -129,16 +134,13 @@ a {
 
 <div class="container container-fluid">
     <div class="row">
-       <div class="col-md text-center">
-                <img src="{{ $article->image }}" alt="article image">
-                <p style="color:grey; font-size: 1em;">{{ $article->image_credit }}</p>
-                <!-- TODO : truncate and style the url -->
+       <div class="col-md text-center mt-5 mb-5">
+          <img src="{{ $article->image }}" alt="article image">
+          <p class="mt-1"> {!! $article->image_credit !!} </p>
        </div>         
     </div>
-
-
     <div class="container container-fluid">
-    <div style="margin-top: 50px;" class="row">
+      <div style="margin-top: 50px;" class="row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">{{ $article->title ?? ''}}</h1>
     </div>
 </div>

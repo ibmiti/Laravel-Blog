@@ -83,7 +83,7 @@ img {
                         alt=""
                         id ="imgPost"
                         class=""
-                        />                
+                        />                    
                 <p style="font-size: 20px;">{!! $article->excerpt !!}</p>
             </div>
         </div>
