@@ -10,4 +10,4 @@
   </section>
   <!--Section: Jumbotron-->
   <div class='mt-2 text-center'><p>Our world revolves around baby and the special ones making them smile.</p></div>
-  <hr class="my-5">
+  <!-- <hr class="my-5"> -->
