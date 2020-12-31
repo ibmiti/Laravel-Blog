@@ -23,8 +23,8 @@
 <div class="row">
     <div class="col-sm-12">
     <hr>
-        <h1 class="text-center">Create List Article</h1>
-        <p class="text-center">Below you can choose the length of your list blog</p>
+        <h1 class="text-center">Create Your Guide</h1>
+        <p class="text-center">Below you can choose the length of your List blog</p>
     <hr>
 
         <div class="container container-fluid">

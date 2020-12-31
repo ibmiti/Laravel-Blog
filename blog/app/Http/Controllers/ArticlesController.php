@@ -25,7 +25,7 @@ class ArticlesController extends Controller
     }
     
     public function create_normal_article(){
-        return view('articles.article_style.normal_article');
+        return view('articles.article_type.normal_article');
     }
 
     public function store_normal_article(Request $request){

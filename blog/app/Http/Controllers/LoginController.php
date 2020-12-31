@@ -22,9 +22,9 @@ class LoginController extends Controller
         $adminPass      = $adminCreds[1]->password;
         
         if ( $usernameGiven == $superAdminUser && $passwordGiven == $superAdminPass){
-            return view('articles.article_style.selection');
+            return view('articles.article_type.selection');
         } elseif ($usernameGiven == $adminUser1 && $passwordGiven == $adminPass) {
-            return view('articles.article_style.selection');
+            return view('articles.article_type.selection');
         } else {
             return view('admin');
         }

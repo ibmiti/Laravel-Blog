@@ -15,7 +15,7 @@ class ListArticlesController extends Controller
     // }
 
     public function create_list_article(){
-        return view('articles.article_style.list_article');
+        return view('articles.article_type.list_article');
 
         /*
 
@@ -73,7 +73,7 @@ class ListArticlesController extends Controller
         // save data to database
         try {
             $article->save();
-            return view('articles.article_style.list_article');
+            return view('articles.article_type.list_article');
         } catch (Error $error){
             // setup a system later in which will catch all logged errors
             $error->getMessage();
