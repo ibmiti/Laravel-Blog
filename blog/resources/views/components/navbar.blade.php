@@ -17,7 +17,7 @@
                 <?php 
                 switch($uri = Request::getRequestUri()) {
                     case ($uri == '/'):
-                        echo ('BB + HOME');
+                        echo ('BB + HOME | For The Love Of Baby');
                     break;
                     case ($uri == '/articles'):
                         echo ('BB + BLOG | ARTICLES');
