@@ -42,6 +42,8 @@ class ArticlesController extends Controller
         $article->image = $request->image;
         $article->image_credit = $request->image_credit;
         $article->title = $request->title;
+        $article->quip = $request->quip;
+        
         // truncating || limiting the excerpt
         $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
         $article->excerpt = $excerpt;

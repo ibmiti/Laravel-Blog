@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/a7bffd41d3.js"></script>
-    <title>BabyBassinet - Blog {{ $article->title ?? '' }} </title>
+    <title>BabyBassinet - Blog {{ $baby_articles->title ?? '' }} </title>
 </head>
 <style>
 /* may use this later roboto */
@@ -181,7 +181,7 @@ p {
   </a>
 <strong class="navbar-brand" 
     style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
-    href="#">BB + BABY BLOG | ARTICLE {{ $article->id ?? '' }}
+    href="#">BB + BABY BLOG | ARTICLE {{ $baby_articles->id ?? '' }}
 </strong>   
 
   <button class="navbar-toggler" 
@@ -199,10 +199,10 @@ p {
     <ul class="navbar-nav ml-auto"> 
         <?php     
             $uri = Request::getRequestUri();
-            $article_id = $article->id ?? '';
+            $baby_articles_id = $baby_articles->id ?? '';
             
             switch ($uri) {
-                case ($uri == '/articles'. '/'. $article_id):
+                case ($uri == '/articles'. '/'. $baby_articles_id):
                     echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
                     echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
@@ -222,73 +222,73 @@ p {
 <div class="container-fluid">
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
-          {{ $article->title ?? ''}}
+          {{ $baby_articles->title ?? ''}}
         </h1>
       </div> 
       
     <div class="row">
       <div class="col-12 text-center">
-      <blockquote class="blockquote">{{ $article->quip ?? '' }}</blockquote>
+      <blockquote class="blockquote">{{ $baby_articles->quip ?? '' }}</blockquote>
       </div>
     </div>
   
     <div class="row">
        <div class="col-md text-center mt-5 mb-5">
-          <img class="image featured" src="{{ $article->image }}" alt="article image" max-width="100%" max-height="100%">
-          <p class="mt-1"> {!! $article->image_credit !!} </p>
+          <img class="image featured" src="{{ $baby_articles->image }}" alt="article image" max-width="100%" max-height="100%">
+          <p class="mt-1"> {!! $baby_articles->image_credit !!} </p>
        </div>         
     </div>
   
 </div>
 <!-- there should always be a p1 -->
 <!-- TODO this may be throwing an error - it is not currently being displayed -->
-@if ($article->p1 )
+@if ($baby_articles->p1 )
     <div class="row">
       <div class="col-md mb-3 text-center">
-          <h2> {{ $article->heading1 }} </h2>
+          <h2> {{ $baby_articles->heading1 }} </h2>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md text-center">
-          <p> {{ $article->p1 }} </p>
+          <p> {{ $baby_articles->p1 }} </p>
       </div>
     </div>
 @endif
 
-@if ($article->p2 )
+@if ($baby_articles->p2 )
     <div class="row">
       <div class="col-md mb-3 text-center">
-          <h2> {{ $article->heading2 }} </h2>
+          <h2> {{ $baby_articles->heading2 }} </h2>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md text-center">
-          <p> {{ $article->p2}} </p>
+          <p> {{ $baby_articles->p2}} </p>
       </div>
     </div>
 @endif
 
 <!-- if there is a paragraph 3 then show it -->
-@if ($article->p3)
+@if ($baby_articles->p3)
 
     <div class="row">
       <div class="col-md mb-3 text-center">
-          <h2> {{ $article->heading3 }} </h2>
+          <h2> {{ $baby_articles->heading3 }} </h2>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md text-center">
-          <p> {{ $article->p3}} </p>
+          <p> {{ $baby_articles->p3}} </p>
       </div>
     </div>
 @endif
 
     <div class="row justify-content-center mt-3">
       <div class="col-lg text-center">
-          <button class="btn btn-lg btn-dark"><a href="/articles">BACK TO ARTICLES</a></button>
+          <button class="btn btn-lg btn-dark"><a href="/baby_articles">BACK TO BABY ARTICLES</a></button>
       </div>   
   </div>        
 </div>

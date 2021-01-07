@@ -24,9 +24,9 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="text-center">Create Article</h1>
+            <h1 class="text-center">Create Baby Article</h1>
 
-            <form method="POST" action="{{ route('store_normal_article') }}">
+            <form method="POST" action="{{ route('store_baby_article') }}">
             @csrf
 
             <div class="row">
@@ -41,17 +41,17 @@
             
             <div class="row mt-4">
                 <!-- <label for="title" class="control-label">Article Title</label> -->
-                <input type="text" name="title" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting">
+                <input type="text" name="title" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting for the Title">
             </div>
 
             <div class="row mt-4">
                 <!-- <label for="title" class="control-label">Article Title</label> -->
-                <input type="text" name="quip" class="form-control form-control-lg" placeholder="Something short and interesting maybe even a quote?">
+                <input type="text" name="quip" class="form-control form-control-lg" placeholder="Something short and interesting maybe even a quote for the quip field?">
             </div>
 
             <div class="row mt-3">
                 <!-- <label for="excerpt" class="control-label">Article Excerpt</label> -->
-                <input type="textarea" name="excerpt" class="form-control form-control-lg mt-3" placeholder="A short snippet from the article">
+                <input type="textarea" name="excerpt" class="form-control form-control-lg mt-3" placeholder="A short snippet from the article for the excerpt">
             </div>
 
             <div class="row mt-3">

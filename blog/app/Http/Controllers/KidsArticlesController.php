@@ -14,7 +14,9 @@ class KidsArticlesController extends Controller
      */
     public function index()
     {
-        //
+        return view('articles.kids_index', [
+            'kids_articles' => $kids_articles = KidsArticles::take(6)->latest()->paginate()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class KidsArticlesController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.article_type.kid_article');
     }
 
     /**
@@ -35,7 +37,25 @@ class KidsArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kid_article = new KidsArticles;
+        
+        $kid_article->image = $request->image;
+        $kid_article->image_credit = $request->image_credit;
+        $kid_article->title = $request->title;
+        $kid_article->quip = $request->quip;
+        
+        // truncating || limiting the excerpt
+        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
+        $kid_article->excerpt = $excerpt;
+        $kid_article->heading1 = $request->h1;
+        $kid_article->p1 = $request->p1;
+        $kid_article->heading2 = $request->h2;
+        $kid_article->p2 = $request->p2;
+        $kid_article->heading3 = $request->h3;
+        $kid_article->p3 = $request->p3;
+    
+        // saving the article
+        $kid_article->save();        
     }
 
     /**
@@ -44,9 +64,13 @@ class KidsArticlesController extends Controller
      * @param  \App\Models\KidsArticles  $kidsArticles
      * @return \Illuminate\Http\Response
      */
-    public function show(KidsArticles $kidsArticles)
+    public function show($id)
     {
-        //
+        $kids_articles = KidsArticles::find($id);
+
+        return view('articles.kids_articles_show', [
+            'kids_article' => dd($kids_article)
+        ]);
     }
 
     /**
