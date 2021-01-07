@@ -38,25 +38,27 @@ class BabyArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        $baby_article = new BabyArticles;
-        
-        $baby_article->image = $request->image;
-        $baby_article->image_credit = $request->image_credit;
-        $baby_article->title = $request->title;
-        $baby_article->quip = $request->quip;
-        
-        // truncating || limiting the excerpt
-        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
-        $baby_article->excerpt = $excerpt;
-        $baby_article->heading1 = $request->h1;
-        $baby_article->p1 = $request->p1;
-        $baby_article->heading2 = $request->h2;
-        $baby_article->p2 = $request->p2;
-        $baby_article->heading3 = $request->h3;
-        $baby_article->p3 = $request->p3;
-    
-        // saving the article
-        $baby_article->save();        
+        try { 
+            $baby_article = new BabyArticles;
+            $baby_article->image = $request->image;
+            $baby_article->image_credit = $request->image_credit;
+            $baby_article->title = $request->title;
+            $baby_article->quip = $request->quip;
+            // truncating || limiting the excerpt
+            $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
+            $baby_article->excerpt = $excerpt;
+            $baby_article->heading1 = $request->h1;
+            $baby_article->p1 = $request->p1;
+            $baby_article->heading2 = $request->h2;
+            $baby_article->p2 = $request->p2;
+            $baby_article->heading3 = $request->h3;
+            $baby_article->p3 = $request->p3;
+            $baby_article->save();
+        } catch (\Exception $e) {
+            // maybe include emailing ofRoot or send data into error catching and reporting service
+            return $e->getMessage();
+        }
+        return view('articles.article_type.selection');
     }
 
     /**

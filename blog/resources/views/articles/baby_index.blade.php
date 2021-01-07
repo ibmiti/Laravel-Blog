@@ -73,6 +73,7 @@ img {
 
     <div class="col-lg-3 mt-2">
         <h2>Regular Articles</h2>
+        @if(isset($baby_articles))
          @foreach ($baby_articles as $b_article)
         <div class="row">
             <div class="col-lg">
@@ -86,6 +87,7 @@ img {
             </div>
         </div>
         @endforeach
+        @endif
 
         <!-- <div class="row">
             <div class="col-lg">

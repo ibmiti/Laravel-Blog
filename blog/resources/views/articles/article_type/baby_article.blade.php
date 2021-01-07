@@ -26,7 +26,7 @@
         <div class="col-sm-12">
             <h1 class="text-center">Create Baby Article</h1>
 
-            <form method="POST" action="{{ route('store_baby_article') }}">
+            <form method="POST" action="{{ route('store_baby_articles') }}">
             @csrf
 
             <div class="row">
