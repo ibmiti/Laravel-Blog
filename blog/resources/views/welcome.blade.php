@@ -4,7 +4,6 @@
 @section('content')
 
 <style>
- 
  #color-overlay {
    position: absolute;
    top: 0;
@@ -54,7 +53,6 @@ body, input, select, textarea {
   margin-bottom: -150px;
 } */
 }
-
 </style>
 
 <!-- <main class="mt-5 pt-5"> -->
@@ -70,14 +68,12 @@ body, input, select, textarea {
   <section class="container">
     <div id="row-1" class="row">
       <div class="col-1"></div>
-      
       <div class="col-5">
       <h5 class="mt-2">Baby latest</h5>
         <img src="https://images.unsplash.com/photo-1527620743113-fac8dd0f8d17?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" alt="baby bassinet" height="350" width="100%"/>
         <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
         <button class="btn btn-dark"><a href="/baby_articles">More</a></button>
-      </div>
-      
+      </div>   
       <div class="col-5">
       <h5 class="mt-2">Kids latest</h5>
         <img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTF8fGtpZHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=90" alt="kids article" height="350" width="100%"/>

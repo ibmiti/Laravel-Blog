@@ -60,6 +60,9 @@ Route::get('/kids_articles/{k_article}', [KidsArticlesController::class,'show'])
 Route::get('/contact', [ContactController::class, 'show']);
 Route::post('/contact', [ContactController::class, 'store_and_send'])->name('contact.store_and_send');
 
+// Master Controller for Articles
+Route::get('/select_articles');
+
 // Assorted links - TODO : clean up later
 // Route::get('articles/show_all_articles', [ArticlesController::class, 'show_all_articles']);
 Route::get('/articles/list_article/{list_article}', [ListArticlesController::class, 'show_list_articles']); // show

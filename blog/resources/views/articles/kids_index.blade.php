@@ -75,13 +75,13 @@ img {
          @foreach ($kids_articles as $k_article)
         <div class="row">
             <div class="col-lg">
-                <h2 style="padding-bottom: 15px;" id="title"><a href="/kid_articles/{{ $k_article->id }}">{{ $k_article->title ?? ''}}</a></h2>
-                    <img src="{{ $k_articlecle->image }}"
+                <h2 style="padding-bottom: 15px;" id="title"><a href="/kid_articles/{{ $k_article->id ?? '' }}">{{ $k_article->title ?? ''}}</a></h2>
+                    <img src="{{ $k_article->image ?? '' }}"
                         alt=""
                         id ="imgPost"
                         class=""
                     />                    
-                <p style="font-size: 20px;">{!! $k_articlecle->excerpt !!}</p>
+                <p style="font-size: 20px;">{!! $k_article->excerpt !!}</p>
             </div>
         </div>
         @endforeach

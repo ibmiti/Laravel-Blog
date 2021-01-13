@@ -40,8 +40,7 @@ class ContactController extends Controller
             $message->from($request->email);
             $message->to('dimitri.mcdaniel@gmail.com', 'Admin')->subject($request->get('subject'));
         });
-
-
+        
         return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
     }
 

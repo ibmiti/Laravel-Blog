@@ -37,25 +37,26 @@ class KidsArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        $kid_article = new KidsArticles;
-        
-        $kid_article->image = $request->image;
-        $kid_article->image_credit = $request->image_credit;
-        $kid_article->title = $request->title;
-        $kid_article->quip = $request->quip;
-        
-        // truncating || limiting the excerpt
-        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
-        $kid_article->excerpt = $excerpt;
-        $kid_article->heading1 = $request->h1;
-        $kid_article->p1 = $request->p1;
-        $kid_article->heading2 = $request->h2;
-        $kid_article->p2 = $request->p2;
-        $kid_article->heading3 = $request->h3;
-        $kid_article->p3 = $request->p3;
-    
-        // saving the article
-        $kid_article->save();        
+        try {
+            $kid_article = new KidsArticles;
+            $kid_article->image = $request->image;
+            $kid_article->image_credit = $request->image_credit;
+            $kid_article->title = $request->title;
+            $kid_article->quip = $request->quip;
+            // truncating || limiting the excerpt
+            $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
+            $kid_article->excerpt = $excerpt;
+            $kid_article->heading1 = $request->h1;
+            $kid_article->p1 = $request->p1;
+            $kid_article->heading2 = $request->h2;
+            $kid_article->p2 = $request->p2;
+            $kid_article->heading3 = $request->h3;
+            $kid_article->p3 = $request->p3;
+            $kid_article->save();        
+         } catch (\Exception $e){
+            return $e->getMessage();
+         }
+         return view('articles.article_type.selection');
     }
 
     /**
