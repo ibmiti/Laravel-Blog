@@ -26,7 +26,7 @@ use App\Http\Controllers\KidsArticlesController;
 | will potentialy add more routes 
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 }); 
 
 /*
@@ -68,16 +68,6 @@ Route::post('/create_normal_article', [ArticlesController::class, 'store_normal_
 
 /*
 |--------------------------------------------------------------------------
-| List|Guide Article related routes 
-|--------------------------------------------------------------------------
-| refactor the name within this set to 'create_guide' and 'GuideArticlesController'
-*/
-Route::get('/create_list_article', [ListArticlesController::class, 'create_list_article'])->name('create_list_article');
-Route::post('/create_list_article', [ListArticlesController::class, 'store_list_article'])->name('store_list_article');
-Route::get('/articles/list_article/{list_article}', [ListArticlesController::class, 'show_list_articles'])->name('show_guide');
-
-/*
-|--------------------------------------------------------------------------
 | Baby Article related routes
 |--------------------------------------------------------------------------
 */
@@ -95,6 +85,17 @@ Route::get('/kids_articles', [KidsArticlesController::class, 'index'])->name('ki
 Route::get('/create_kid_article', [KidsArticlesController::class, 'create'])->name('create_kid_article');
 Route::post('/store_kid_article', [KidsArticlesController::class, 'store'])->name('store_kid_article');
 Route::get('/kids_articles/{k_article}', [KidsArticlesController::class,'show']);
+
+/*
+|--------------------------------------------------------------------------
+| Guide Article related routes 
+|--------------------------------------------------------------------------
+| refactor the name within this set to 'create_guide' and 'GuideArticlesController'
+*/
+Route::get('/all_guides', [ListArticlesController::class, 'index'])->name('all_guides');
+Route::get('/create_list_article', [ListArticlesController::class, 'create_list_article'])->name('create_list_article');
+Route::post('/create_list_article', [ListArticlesController::class, 'store_list_article'])->name('store_list_article');
+Route::get('/articles/list_article/{list_article}', [ListArticlesController::class, 'show_list_articles'])->name('show_guide');
 
 /*
 |--------------------------------------------------------------------------

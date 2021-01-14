@@ -12,6 +12,7 @@ class ListArticle extends Model
     protected $table = 'list_article';
 
     protected $fillable = [ 
+        'id',
         'title',
         'excerpt', 
         'body',

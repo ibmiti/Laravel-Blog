@@ -16,7 +16,7 @@ class BabyArticlesController extends Controller
     {
 
         return view('articles.baby_index', [
-            'baby_articles' => $baby_articles = BabyArticles::take(6)->latest()->paginate()
+            'baby_articles' => dd($baby_articles = BabyArticles::take(6)->latest()->paginate())
         ]);
     }
 
