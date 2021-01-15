@@ -92,7 +92,7 @@ Route::get('/kids_articles/{k_article}', [KidsArticlesController::class,'show'])
 |--------------------------------------------------------------------------
 | refactor the name within this set to 'create_guide' and 'GuideArticlesController'
 */
-Route::get('/all_guides', [ListArticlesController::class, 'index'])->name('all_guides');
+Route::get('/guides_articles', [ListArticlesController::class, 'index'])->name('guides_articles');
 Route::get('/create_list_article', [ListArticlesController::class, 'create_list_article'])->name('create_list_article');
 Route::post('/create_list_article', [ListArticlesController::class, 'store_list_article'])->name('store_list_article');
 Route::get('/articles/list_article/{list_article}', [ListArticlesController::class, 'show_list_articles'])->name('show_guide');

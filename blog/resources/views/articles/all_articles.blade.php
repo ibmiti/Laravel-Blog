@@ -140,7 +140,7 @@
   </div>        
 </div>
 
-  
+  <!-- Remove -->
 
     
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->
