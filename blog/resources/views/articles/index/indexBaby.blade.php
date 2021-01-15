@@ -1,7 +1,7 @@
 @extends ('layouts.primary')
 <!-- make title unqique to article -->
 <!--  TODO: this view needs to be styled for all view sizes -->
-@section('title', 'Blog')
+@section('title', 'All About Baby!')
 @section ('content')
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');

@@ -15,7 +15,7 @@ class ListArticlesController extends Controller
 | returns all_guides view
 */
     public function index(){
-        return view('articles.all_guides', [
+        return view('articles.index.indexGuide', [
             'guide_article' => $guide_article = ListArticle::take(6)->latest()->paginate()
         ]);
     }

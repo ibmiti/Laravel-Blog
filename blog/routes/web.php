@@ -71,7 +71,7 @@ Route::post('/create_normal_article', [ArticlesController::class, 'store_normal_
 | Baby Article related routes
 |--------------------------------------------------------------------------
 */
-Route::get('/baby_articles', [BabyArticlesController::class,'index'])->name('baby_articles');
+Route::get('/babies', [BabyArticlesController::class,'index'])->name('babies');
 Route::get('/baby_articles/{b_article}', [BabyArticlesController::class,'show']);
 Route::get('/create_baby_article', [BabyArticlesController::class, 'create']);
 Route::post('/store_baby_article', [BabyArticlesController::class, 'store'])->name('store_baby_articles');
@@ -81,7 +81,7 @@ Route::post('/store_baby_article', [BabyArticlesController::class, 'store'])->na
 | Kids Article related routes
 |--------------------------------------------------------------------------
 */
-Route::get('/kids_articles', [KidsArticlesController::class, 'index'])->name('kids_articles');
+Route::get('/kids', [KidsArticlesController::class, 'index'])->name('kids');
 Route::get('/create_kid_article', [KidsArticlesController::class, 'create'])->name('create_kid_article');
 Route::post('/store_kid_article', [KidsArticlesController::class, 'store'])->name('store_kid_article');
 Route::get('/kids_articles/{k_article}', [KidsArticlesController::class,'show']);
@@ -92,10 +92,33 @@ Route::get('/kids_articles/{k_article}', [KidsArticlesController::class,'show'])
 |--------------------------------------------------------------------------
 | refactor the name within this set to 'create_guide' and 'GuideArticlesController'
 */
-Route::get('/guides_articles', [ListArticlesController::class, 'index'])->name('guides_articles');
+Route::get('/guides', [ListArticlesController::class, 'index'])->name('guides');
 Route::get('/create_list_article', [ListArticlesController::class, 'create_list_article'])->name('create_list_article');
 Route::post('/create_list_article', [ListArticlesController::class, 'store_list_article'])->name('store_list_article');
 Route::get('/articles/list_article/{list_article}', [ListArticlesController::class, 'show_list_articles'])->name('show_guide');
+
+/*
+|--------------------------------------------------------------------------
+| Guide Article related routes v2
+|--------------------------------------------------------------------------
+| These will be the set of new routes going to the new GuideArticlesController
+*/
+Route::get('/guide', [GuideArticlesController::class, 'index'])->name('health');
+Route::get('/create_list_article', [GuideArticlesController::class, 'create_list_article'])->name('create_list_article');
+Route::post('/create_list_article', [GuideArticlesController::class, 'store_list_article'])->name('store_list_article');
+Route::get('/articles/list_article/{list_article}', [GuideArticlesController::class, 'show_list_articles'])->name('show_guide');
+
+/*
+|--------------------------------------------------------------------------
+| Health Article related routes 
+|--------------------------------------------------------------------------
+| refactor the name within this set to 'create_guide' and 'GuideArticlesController'
+*/
+Route::get('/health', [HealthArticlesController::class, 'index'])->name('health');
+Route::get('/create_list_article', [HealthArticlesController::class, 'create_list_article'])->name('create_list_article');
+Route::post('/create_list_article', [HealthArticlesController::class, 'store_list_article'])->name('store_list_article');
+Route::get('/articles/list_article/{list_article}', [HealthArticlesController::class, 'show_list_articles'])->name('show_guide');
+
 
 /*
 |--------------------------------------------------------------------------

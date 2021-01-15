@@ -72,13 +72,13 @@ body, input, select, textarea {
       <h5 class="mt-2">Baby latest</h5>
         <img src="https://images.unsplash.com/photo-1527620743113-fac8dd0f8d17?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" alt="baby bassinet" height="350" width="100%"/>
         <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
-        <button class="btn btn-dark"><a href="/baby_articles">More</a></button>
+        <button class="btn btn-dark"><a href="/babies">More</a></button>
       </div>   
       <div class="col-5">
       <h5 class="mt-2">Kids latest</h5>
         <img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTF8fGtpZHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=90" alt="kids article" height="350" width="100%"/>
         <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
-        <button class="btn btn-dark"><a href="/kids_articles">More</a></button>
+        <button class="btn btn-dark"><a href="/kids">More</a></button>
       </div>
       <div class="col-1"></div>
     </div> <!-- end of row -->
@@ -88,13 +88,13 @@ body, input, select, textarea {
       <h5 class="">Guides latest</h5>
           <img id="guides" src="https://images.unsplash.com/photo-1607211851821-8be3cd6146f0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="crafts" height="350" width="100%"/>
           <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
-        <button class="btn btn-dark"><a href="/guides_articles">More</a></button>
+        <button class="btn btn-dark"><a href="/guides">More</a></button>
       </div>
       <div class="col-5">
         <h5 class="">Health latest</h5>
           <img id="guides" src="https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80" alt="health" height="350" width="100%"/>
           <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
-        <button class="btn btn-dark">More</button>
+        <button class="btn btn-dark"><a href="/health">More</a></button>
           
       </div>
     </div>
