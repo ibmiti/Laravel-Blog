@@ -14,7 +14,7 @@ class KidsArticlesController extends Controller
      */
     public function index()
     {
-        return view('articles.kids_index', [
+        return view('articles.index.indexKids', [
             'kids_articles' => $kids_articles = KidsArticles::take(6)->latest()->paginate()
         ]);
     }
