@@ -26,7 +26,7 @@
         <div class="col-sm-12">
             <h1 class="text-center">Create Baby Article</h1>
 
-            <form method="POST" action="{{ route('store_baby_articles') }}">
+            <form method="POST" action="{{ route('storeBabyArticle') }}">
             @csrf
 
             <div class="row">
@@ -93,8 +93,8 @@
             <div class="row justify-content-center mt-3">
                 <div class="col-sm-6">
                     <button class="btn btn-block btn-primary" type="submit">
-                        <a style="color:white;" href="{{ url('create_list_article') }} ">
-                        Switch to List Article 
+                        <a style="color:white;" href="{{ url('viewSelectArticlePage') }} ">
+                        Back
                         </a>
                     </button>
                 </div>

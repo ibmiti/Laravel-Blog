@@ -17,7 +17,7 @@
 <div class="row">
     <div class="col-sm-12">
         <h1 class="text-center">Create Kid Article</h1>
-    <form method="POST" action="{{ route('store_kid_article') }}">
+    <form method="POST" action="{{ route('storeKidArticle') }}">
             @csrf
     <div class="row">
         <!-- <label for="title" class="control-label">Article Image</label> -->
@@ -103,13 +103,13 @@
     <div class="row justify-content-center mt-3">
         <div class="col-sm-6">
             <button class="btn btn-block btn-primary" type="submit">
-                <a style="color:white;" href="{{ url('select_article') }} ">
-                Back to Article Select 
+                <a style="color:white;" href="{{ url('viewSelectArticlePage') }} ">
+                Back
                 </a>
             </button>
         </div>
     </div>
-    </div>
+    <!-- </div> -->
 </div>
 @endsection
 <!-- TODO - before sending to production remove test values from forms -->

@@ -14,7 +14,9 @@ class HealthArticlesController extends Controller
      */
     public function index()
     {
-        //
+        return view('articles.index.indexHealth', [
+            'healthArticle' => $healthArticle = HealthArticles::take(6)->latest()->paginate()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class HealthArticlesController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create.createHealth');
     }
 
     /**

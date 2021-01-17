@@ -15,7 +15,7 @@ class KidsArticlesController extends Controller
     public function index()
     {
         return view('articles.index.indexKids', [
-            'kids_articles' => $kids_articles = KidsArticles::take(6)->latest()->paginate()
+            'kidsArticles' => $kidsArticles = KidsArticles::take(6)->latest()->paginate()
         ]);
     }
 
@@ -26,7 +26,7 @@ class KidsArticlesController extends Controller
      */
     public function create()
     {
-        return view('articles.article_type.kid_article');
+        return view('articles.create.createKid');
     }
 
     /**
@@ -56,7 +56,13 @@ class KidsArticlesController extends Controller
          } catch (\Exception $e){
             return $e->getMessage();
          }
-         return view('articles.article_type.selection');
+/* 
+|   ---------------------------------------------
+|   FUTURE FEATURE?
+|   ---------------------------------------------
+|   potentially give them an option to create another article?   
+*/
+         return view('articles.create.selection');
     }
 
     /**
@@ -67,10 +73,9 @@ class KidsArticlesController extends Controller
      */
     public function show($id)
     {
-        $kids_articles = KidsArticles::find($id);
-
-        return view('articles.kids_articles_show', [
-            'kids_article' => dd($kids_article)
+        $kidArticle = KidsArticles::find($id);
+        return view('articles.show.showKidsArticle', [
+            'kidArticle' => $kidArticle
         ]);
     }
 

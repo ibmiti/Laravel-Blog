@@ -342,7 +342,7 @@
 
   <div class="row justify-content-center mt-3">
     <div class="col-lg text-center">
-        <button class="btn btn-lg btn-dark"><a href="/articles">BACK TO ARTICLES</a></button>
+        <button class="btn btn-lg btn-dark"><a href="/articles">Go Back</a></button>
     </div>   
   </div>        
 </div>

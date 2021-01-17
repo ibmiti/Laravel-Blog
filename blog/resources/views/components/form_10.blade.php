@@ -1,4 +1,4 @@
-<form class="mt-4" method="POST" action="{{ route('store_list_article') }}" enctype="multipart/form-data">
+<form class="mt-4" method="POST" action="{{ route('storeGuideArticle') }}" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <label for="name" class="control-label">Article Title</label>
@@ -219,7 +219,7 @@
                     </div>
                 </div>
             </form>
-            <div class="row justify-content-center mt-3">
+            <!-- <div class="row justify-content-center mt-3">
                 <div class="col-sm-6">
                     <button class="btn btn-block btn-primary" type="submit">
                         <a style="color:white;" href="{{ url('create_normal_article') }} ">
@@ -227,4 +227,4 @@
                         </a>
                     </button>
                 </div>
-            </div>
+            </div> -->

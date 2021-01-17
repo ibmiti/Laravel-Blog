@@ -1,5 +1,5 @@
-<!-- <form class="mt-4" method="POST" action="{{ route('store_list_article') }}" enctype="multipart/form-data"> -->
-<form class="mt-4" method="POST" action="{{ route('store_list_article') }}">
+
+<form class="mt-4" method="POST" action="{{ route('storeGuideArticle') }}">
             @csrf
             <div class="row">
                 <label for="name" class="control-label">Article Title</label>
@@ -20,11 +20,18 @@
             <div class="row mt-3">
                 <label for="image">Image 1</label>
             </div>
-            <div  class="row mt-3">    
-            <!-- removing file input for now -- may use aws s3 for file storage in later update to applications architecture -->
-                <!-- <input type="file" name="image1" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
-                <input type="text" name="image1" class="form-control form-control-lg mt-3" placeholder="Url for image">
+            <div class="row">
+                    <!-- <label for="title" class="control-label">Article Image</label> -->
+                    <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">    
             </div>
+
+            <!-- 
+            | TODO - later add in the ability on front end and back end to add captions to each image
+             -->
+            <!-- <div  class="row mt-3">
+                <input type="text" name="image_credit" class="form-control form-control-lg mt-3" placeholder="Give credit for image">
+            </div> -->
+            
                      
             <div class="row mt-3">
                 <label for="paragraph1" class="control-label">Paragraph 1</label>
@@ -132,7 +139,7 @@
                    
                 </div>
             </form>
-            <div class="row justify-content-center mt-3">
+            <!-- <div class="row justify-content-center mt-3">
                 <div class="col-sm-6">
                     <button class="btn btn-block btn-primary" type="submit">
                         <a style="color:white;" href="{{ url('create_normal_article') }} ">
@@ -140,4 +147,4 @@
                         </a>
                     </button>
                 </div>
-            </div>
+            </div> -->

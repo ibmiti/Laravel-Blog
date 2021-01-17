@@ -72,16 +72,16 @@ img {
 
     <div class="col-lg-3 mt-2">
         <h2>Regular Articles</h2>
-         @foreach ($kids_articles as $k_article)
+         @foreach ($kidsArticles as $kidArticle)
         <div class="row">
             <div class="col-lg">
-                <h2 style="padding-bottom: 15px;" id="title"><a href="/kid_articles/{{ $k_article->id ?? '' }}">{{ $k_article->title ?? ''}}</a></h2>
-                    <img src="{{ $k_article->image ?? '' }}"
+                <h2 style="padding-bottom: 15px;" id="title"><a href="/kidArticle/{{ $kidArticle->id ?? '' }}">{{ $kidArticle->title ?? ''}}</a></h2>
+                    <img src="{{ $kidArticle->image ?? '' }}"
                         alt=""
                         id ="imgPost"
                         class=""
                     />                    
-                <p style="font-size: 20px;">{!! $k_article->excerpt !!}</p>
+                <p style="font-size: 20px;">{!! $kidArticle->excerpt !!}</p>
             </div>
         </div>
         @endforeach

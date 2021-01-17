@@ -98,16 +98,16 @@ img {
     <div class="col-lg-2"></div>
     <div class="col-lg-3 mt-2">
         <h2>List articles</h2>
-        @foreach ($list_articles as $list_article)
+        @foreach ($guideArticles as $guideArticle)
         <div class="row">
                 <div class="col-lg">
-                    <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/list_article/{{ $list_article->id }}">{{ $list_article->title ?? ''}}</a></h2>
-                        <img src="{{ $list_article->image_name}}"
+                    <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/guideArticle/{{ $guideArticle->id }}">{{ $guideArticle->title ?? ''}}</a></h2>
+                        <img src="{{ $guideArticle->image_name}}"
                             alt=""
                             id ="imgPost"
                             class=""
                             />                
-                    <p style="font-size: 20px;">{!! $list_article->excerpt !!}</p>
+                    <p style="font-size: 20px;">{!! $guideArticle->excerpt !!}</p>
                 </div>
             </div>
         @endforeach

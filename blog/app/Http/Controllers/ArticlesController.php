@@ -4,33 +4,62 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article as Article;
-use App\Models\ListArticle;
+use App\Models\ListArticle; // | may delete this 
+use App\Models\GuideArticles;
+use App\Models\HealthArticles;
+use App\Models\KidsArticles;
+use App\Models\BabyArticles;
 
+/*
+|------------------
+| Master Article Controller 
+|------------------
+| This Controller file will act as a way to manipulate multiple 
+| types of articles.
+*/
 class ArticlesController extends Controller
 {
+/*      
+| ---------------
+| We're wanting to return a limited amount of articles from each category so far, this list 
+| may change over time.
+| ---------------
+*/
     public function index(){
-        
-        return view('articles.index', [
-            'articles' => $articles = Article::take(6)->latest()->paginate(),
-            'list_articles' => $list_articles = ListArticle::take(6)->latest()->paginate()
+        return view('articles.index.index', [
+            'articles'      => $articles       = Article::take(2)->latest()->paginate(),
+            'babyArticles'  => $babyArticles   = BabyArticles::take(2),
+            'kidsArticles'  => $kidsArticles   = KidsArticles::take(2)->latest()->paginate(),
+            'guideArticles' => $guideArticles  = GuideArticles::take(2)->latest()->paginate(),
+            'healthArticles'=> $healthArticles = HealthArticles::take(2)->latest()->paginate()
         ]);
     }
 
+/*
+| ---------------
+| with this we want to send one individual article.
+| ---------------
+| i'm not too sure this will stay... 
+*/
     public function show($id){
         $article = Article::find($id);
-
-        return view('articles.show', [
+        return view('articles.show.showArticle', [
             'article' => $article 
         ]);
     }
     
-    public function create_normal_article(){
-        return view('articles.article_type.normal_article');
+/*
+| ---------------
+| these may not stay.
+| --------------- 
+*/
+    public function create(){
+        return view('articles.create.createNormal');
     }
 
-    public function store_normal_article(Request $request){
+    public function store(Request $request){
         
-        // TODO - Validate The Data
+        //| TODO - Validate The Data
         // $this->validate($request, [
         //     'title' => 'required|string|max:50|min:3',
         //     'excerpt' => 'required|string|max:150|min:10',
@@ -58,100 +87,46 @@ class ArticlesController extends Controller
         $article->save();        
     }
 
-    public function show_all_articles(){
-        return view('articles.show_all_articles', [
-            'articles' => $articles = Article::take(6)->latest()
-        ]);
-    }
+/*
+|-------------------------------------------------
+|   This may become a future feature - where 
+|   6 of all the various articles are shown on a
+|   on a single page 
+|-------------------------------------------------
+*/
+    // public function show(){
+    //     return view('articles.show_all_articles', [
+    //         'articles' => $articles = Article::take(6)->latest()
+    //     ]);
+    // }
 
-    // public function store_list_article(Request $request){
-        
-    //     // Todo Validate The Data
-    //     // $this->validate($request, [
-    //     //     'title' => 'required|string|max:50|min:3',
-    //     //     'excerpt' => 'required|string|max:150|min:10',
-    //     //     'paragraph' => 'required|string|min:10',
-    //     // ]);
-        
-    //     $article = new Article;
-    //     // dd($article);
-
-    //     $article->title = $request->title;
-    //     $article->save();
-
-        
-
-    //     $article->title      = $request->title;
-
-    //     $article->heading1   = $request->heading1;
-    //     $article->image1     = $request->image1;
-    //     $article->paragraph1 = $request->paragraph1;
-
-    //     $article->heading2   = $request->heading2;
-    //     $article->image2     = $request->image2;
-    //     $article->paragraph2 = $request->paragraph2;
-
-    //     $article->heading3   = $request->heading3;
-    //     $article->image3     = $request->image3;
-    //     $article->paragraph3 = $request->paragraph3;
-
-    //     $article->heading4   = $request->heading4;
-    //     $article->image4     = $request->image4;
-    //     $article->paragraph4 = $request->paragraph4;
-
-    //     $article->heading5   = $request->heading5;
-    //     $article->image5     = $request->image5;
-    //     $article->paragraph5 = $request->paragraph5;
-
-    //     $article->heading6   = $request->heading6;
-    //     $article->image6     = $request->image6;
-    //     $article->paragraph6 = $request->paragraph6;
-
-    //     $article->heading7   = $request->heading7;
-    //     $article->image7     = $request->image7;
-    //     $article->paragraph7 = $request->paragraph7;
-
-    //     $article->heading8= $request->heading8;
-    //     $article->image8= $request->image8;
-    //     $article->paragraph8= $request->paragraph8;
-
-    //     $article->heading9= $request->heading9;
-    //     $article->image9= $request->image9;
-    //     $article->paragraph9= $request->paragraph9;
-
-    //     $article->heading10 = $request->heading10;
-    //     $article->image10 = $request->image10;
-    //     $article->paragraph10 = $request->paragraph10;
-
-    //     // save data to database
-    //     try {
-    //     $article->save();
-    //     } catch (Error $error){
-    //         dd($error->getMessage());
-    //     }
+    // public function edit()
+    // {
 
     // }
 
+    // public function update()
+    // {
 
-    public function edit()
-    {
+    // }
 
-    }
-
-    public function update()
-    {
-
-    }
-
-    public function delete()
-    {
+    // public function delete()
+    // {
         
-    }
+    // }
 
+/* 
+| ----------------------------
+|  Non Article Crud Operations
+| ----------------------------
+*/
     public function about() {
-        
         return view('about', [
                     'articles' => $articles = Article::take(3)->latest('created_at')->get()
                 ]);
+    }
+
+    public function viewSelectArticlePage(){
+        return view('articles.create.selection');
     }
 }

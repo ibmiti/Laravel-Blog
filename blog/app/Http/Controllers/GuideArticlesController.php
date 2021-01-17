@@ -14,7 +14,9 @@ class GuideArticlesController extends Controller
      */
     public function index()
     {
-        //
+        return view('articles.index.indexGuide', [
+            'guideArticles' => $guideArticles = GuideArticles::take(6)->latest()->paginate()
+        ]);
     }
 
     /**
@@ -24,8 +26,9 @@ class GuideArticlesController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create.createGuide');
     }
+
 
     /**
      * Store a newly created resource in storage.

@@ -7,30 +7,42 @@
 
     <style>
         a { 
-
             color: white;   
+        }
+        button {
+            padding : 5px;
+            margin : 2px;
         }
     </style>
     <div class="container container-fluid">
-        <button class="btn btn-primary">
+        <!-- <button class="btn btn-primary">
             <a href="{{ route('create_normal_article') }}">
             Normal Article
             </a>
-        </button>
-        <button class="btn btn-secondary">
-            <a href="{{ url('create_list_article') }}">
-          Guide | List Article
-          </a>
-        </button>
-        <button class="btn btn-secondary">
-            <a href="{{ url('create_baby_article') }}">
-          Baby Article
-          </a>
-        </button>
-        <button class="btn btn-secondary">
-            <a href="{{ url('create_kid_article') }}">
-          Kid Article
-          </a>
-        </button>
+        </button> -->
+        <div class="row">
+            <div class="col-3"></div>
+            <button class="btn btn-secondary">
+                <a href="{{ url('createBabyArticle') }}">
+            Baby
+            </a>
+            </button>
+            <button class="btn btn-secondary">
+                <a href="{{ url('createKidArticle') }}">
+            Kid
+            </a>
+            </button>
+            <button class="btn btn-secondary">
+                <a href="{{ url('createGuideArticle') }}">
+            Guide
+            </a>
+            </button>
+            <button class="btn btn-secondary">
+                <a href="{{ url('createHealthArticle') }}">
+            Health
+            </a>
+            </button>
+            <div class="col-2"></div>
+        </div>
     </div>
 @endsection
