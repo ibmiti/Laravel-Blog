@@ -11,13 +11,13 @@
 </style>
 
 <div id="jumbo" class="jumbotron jumbotron-fluid justify-content-center text-center">
-    <h1>Welcome to the Kid Article Creation Page</h1> 
+    <h1>Welcome to the Health Article Creation Page</h1> 
 </div>
 
 <div class="row">
     <div class="col-sm-12">
-        <h1 class="text-center">Create Kid Article</h1>
-    <form method="POST" action="{{ route('storeKidArticle') }}">
+        <h1 class="text-center">Create Health Article</h1>
+    <form method="POST" action="{{ route('storeHealthArticle') }}">
             @csrf
     <div class="row">
         <!-- <label for="title" class="control-label">Article Image</label> -->

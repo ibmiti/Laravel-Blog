@@ -1,7 +1,7 @@
 @extends ('layouts.primary')
 <!-- make title unqique to article -->
 <!--  TODO: this view needs to be styled for all view sizes -->
-@section('title', 'Little Helpers')
+@section('title', 'Be Healthy')
 @section ('content')
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
@@ -44,6 +44,7 @@ a:link {
   text-decoration: none;
 }
 
+
 a:visited {
   text-decoration: none;
 }
@@ -64,27 +65,28 @@ img {
     
     <div class="row">
         <div class="col-lg text-center" style="padding-bottom: 40px;">
-            <h2>The Latest Articles About Baby From The Bassinet</h2>
+            <h2>The Latest Health Articles From The Bassinet</h2>
         </div>
     </div>
 
     <div class="row">
 
     <div class="col-lg-3 mt-2">
-        <h2>Regular Articles</h2>
-         @foreach ($kidsArticles as $kidArticle)
+        @if(isset($healthArticles))
+         @foreach ($healthArticles as $healthArticle)
         <div class="row">
             <div class="col-lg">
-                <h2 style="padding-bottom: 15px;" id="title"><a href="/kidArticle/{{ $kidArticle->id ?? '' }}">{{ $kidArticle->title ?? ''}}</a></h2>
-                    <img src="{{ $kidArticle->image ?? '' }}"
+                <h2 style="padding-bottom: 15px;" id="title"><a href="/healthArticle/{{ $healthArticle->id }}">{{ $healthArticle->title ?? ''}}</a></h2>
+                    <img src="{{ $healthArticle->image }}"
                         alt=""
                         id ="imgPost"
                         class=""
-                    />                    
-                <p style="font-size: 20px;">{!! $kidArticle->excerpt !!}</p>
+                        />                    
+                <p style="font-size: 20px;">{!! $healthArticle->excerpt !!}</p>
             </div>
         </div>
         @endforeach
+        @endif
 
         <!-- <div class="row">
             <div class="col-lg">
@@ -93,7 +95,12 @@ img {
         </div> -->
     </div>
     <div class="col-lg-2"></div>
-    <!-- </div>  -- we may not need this  -->
+</div>
+   
+
+
+
+   
 </div>
    
 

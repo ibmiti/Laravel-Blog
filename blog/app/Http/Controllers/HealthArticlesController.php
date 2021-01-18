@@ -14,8 +14,8 @@ class HealthArticlesController extends Controller
      */
     public function index()
     {
-        return view('articles.index.indexHealth', [
-            'healthArticle' => $healthArticle = HealthArticles::take(6)->latest()->paginate()
+        return view('articles.actions.index.indexHealth', [
+            'healthArticles' => $healthArticles = HealthArticles::take(6)->latest()->paginate()
         ]);
     }
 
@@ -26,7 +26,7 @@ class HealthArticlesController extends Controller
      */
     public function create()
     {
-        return view('articles.create.createHealth');
+        return view('articles.actions.create.createHealth');
     }
 
     /**
@@ -37,7 +37,26 @@ class HealthArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $healthArticle = new HealthArticles;
+        $healthArticle->image = $request->image;
+        $healthArticle->image_credit = $request->image_credit;
+        $healthArticle->title = $request->title;
+        $healthArticle->quip = $request->quip;
+        // truncating || limiting the excerpt
+        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
+        $healthArticle->excerpt = $excerpt;
+        $healthArticle->heading1 = $request->h1;
+        $healthArticle->p1 = $request->p1;
+        $healthArticle->heading2 = $request->h2;
+        $healthArticle->p2 = $request->p2;
+        $healthArticle->heading3 = $request->h3;
+        $healthArticle->p3 = $request->p3;
+    try {
+        $healthArticle->save();    
+        return view('articles.actions.create.selection');    
+     } catch (\Exception $e){
+        return $e->getMessage();
+     }
     }
 
     /**
@@ -46,9 +65,12 @@ class HealthArticlesController extends Controller
      * @param  \App\Models\HealthArticles  $healthArticles
      * @return \Illuminate\Http\Response
      */
-    public function show(HealthArticles $healthArticles)
+    public function show($id)
     {
-        //
+        $healthArticle = HealthArticles::find($id);
+        return view('articles.actions.show.showHealthArticle', [
+            'healthArticle' => $healthArticle
+        ]);
     }
 
     /**

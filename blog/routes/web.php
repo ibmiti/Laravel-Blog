@@ -62,6 +62,7 @@ Route::post('/create_normal_article', [ArticlesController::class, 'store'])->nam
 
 //| Return to the select articles view
 Route::get('/viewSelectArticlePage', [ArticlesController::class, 'viewSelectArticlePage'])->name('viewSelectArticlePage');
+Route::get('/viewEditArticlePage', [ArticlesController::class, 'viewEditArticlePage'])->name('viewEditArticlePage');
 
 /*
 |------------------------------------------------------------------
@@ -71,8 +72,11 @@ Route::get('/viewSelectArticlePage', [ArticlesController::class, 'viewSelectArti
 */
 Route::get('/babies', [BabyArticlesController::class,'index'])->name('babies');
 Route::get('/createBabyArticle', [BabyArticlesController::class, 'create']);
+Route::get('/editBabyArticle', [BabyArticlesController::class, 'edit']);
+Route::post('/updateBabyArticle', [BabyArticlesController::class, 'update'])->name('updateBabyArticle');
+Route::post('/deleteBabyArticle', [BabyArticlesController::class, 'delete'])->name('deleteBabyArticle');
 Route::post('/storeBabyArticle', [BabyArticlesController::class, 'store'])->name('storeBabyArticle');
-Route::get('/babyArticle/{babyArticleId}', [BabyArticlesController::class,'show'])->name('showBabyArticle');
+Route::get('/babyArticle/{babyArticleId}', [BabyArticlesController::class,'show']);
 
 /*
 |-----------------------------------------------------------------
@@ -94,7 +98,7 @@ Route::get('/kidArticle/{kidArticleId}', [KidsArticlesController::class,'show'])
 Route::get('/guides', [GuideArticlesController::class, 'index'])->name('guides');
 Route::get('/createGuideArticle', [GuideArticlesController::class, 'create'])->name('createGuideArticle');
 Route::post('/storeGuideArticle', [GuideArticlesController::class, 'store'])->name('storeGuideArticle');
-Route::get('/articles/list_article/{list_article}', [GuideArticlesController::class, 'show'])->name('show_guide');
+Route::get('/guideArticle/{guideArticleId}', [GuideArticlesController::class, 'show']);
 
 /*
 |------------------------------------------------------------------
@@ -107,7 +111,7 @@ Route::get('/articles/list_article/{list_article}', [GuideArticlesController::cl
 Route::get('/health', [HealthArticlesController::class, 'index'])->name('health');
 Route::get('/createHealthArticle', [HealthArticlesController::class, 'create'])->name('createHealthArticle');
 Route::post('/storeHealthArticle', [HealthArticlesController::class, 'store'])->name('storeHealthArticle');
-Route::get('/articles/list_article/{list_article}', [HealthArticlesController::class, 'show'])->name('show_guide');
+Route::get('/healthArticle/{healthArticleId}', [HealthArticlesController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------

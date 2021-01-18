@@ -19,6 +19,7 @@ use App\Models\BabyArticles;
 */
 class ArticlesController extends Controller
 {
+
 /*      
 | ---------------
 | We're wanting to return a limited amount of articles from each category so far, this list 
@@ -127,6 +128,12 @@ class ArticlesController extends Controller
     }
 
     public function viewSelectArticlePage(){
-        return view('articles.create.selection');
+        return view('articles.actions.select.selectArticleCreate');
+    }
+
+    public function viewEditArticlePage(){
+        // dd('hello ');
+        return view('articles.actions.select.selectArticleEdit');
     }
 }
+// blog/resources/views/articles/actions/select/selectArticleEdit

@@ -14,7 +14,7 @@ class BabyArticlesController extends Controller
      */
     public function index()
     {
-        return view('articles.index.indexBaby', [
+        return view('articles.actions.index.indexBaby', [
             'babyArticles' => $babyArticles = BabyArticles::take(6)->latest()->paginate()
         ]);
     }
@@ -26,7 +26,7 @@ class BabyArticlesController extends Controller
      */
     public function create()
     {
-        return view('articles.create.createBaby');
+        return view('articles.actions.create.createBaby');
     }
 
     /**
@@ -37,7 +37,7 @@ class BabyArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        try { 
+        
             $babyArticle = new BabyArticles;
             $babyArticle->image = $request->image;
             $babyArticle->image_credit = $request->image_credit;
@@ -52,12 +52,20 @@ class BabyArticlesController extends Controller
             $babyArticle->p2 = $request->p2;
             $babyArticle->heading3 = $request->h3;
             $babyArticle->p3 = $request->p3;
+
+/*
+|---
+|   TODO - Flesh this out later
+|------
+|   Suggestion : maybe include emailing ofRoot or send data into error catching and reporting service
+|     // setup a system later in which will catch all logged errors
+*/
+        try { 
             $babyArticle->save();
+            return view('articles.create.selection');
         } catch (\Exception $e) {
-            // maybe include emailing ofRoot or send data into error catching and reporting service
             return $e->getMessage();
         }
-        return view('articles.create.selection');
     }
 
     /**
@@ -69,7 +77,7 @@ class BabyArticlesController extends Controller
     public function show($id)
     {
         $babyArticle = BabyArticles::find($id);
-        return view('articles.show.showBabyArticle', [
+        return view('articles.actions.show.showBabyArticle', [
             'babyArticle' => $babyArticle 
         ]);
     }
@@ -82,7 +90,7 @@ class BabyArticlesController extends Controller
      */
     public function edit(BabyArticles $babyArticles)
     {
-        //
+        return view('editBabyArticle', ['babyArticles' => $babyArticles]);
     }
 
     /**

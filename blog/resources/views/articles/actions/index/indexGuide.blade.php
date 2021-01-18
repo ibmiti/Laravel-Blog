@@ -1,7 +1,7 @@
 @extends ('layouts.primary')
 <!-- make title unqique to article -->
 <!--  TODO: this view needs to be styled for all view sizes -->
-@section('title', 'Be Healthy')
+@section('title', 'Guides | Tutorials')
 @section ('content')
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
@@ -65,25 +65,25 @@ img {
     
     <div class="row">
         <div class="col-lg text-center" style="padding-bottom: 40px;">
-            <h2>The Latest Articles About Baby From The Bassinet</h2>
+            <h2>The Latest Guides From The Bassinet</h2>
         </div>
     </div>
 
     <div class="row">
 
     <div class="col-lg-3 mt-2">
-        <h2>Regular Articles</h2>
-        @if(isset($baby_articles))
-         @foreach ($baby_articles as $b_article)
+        <!-- <h2>latest Guides</h2> -->
+        @if(isset($guideArticles))
+         @foreach ($guideArticles as $guideArticle)
         <div class="row">
             <div class="col-lg">
-                <h2 style="padding-bottom: 15px;" id="title"><a href="/baby_articles/{{ $b_article->id }}">{{ $b_article->title ?? ''}}</a></h2>
-                    <img src="{{ $b_article->image }}"
+                <h2 style="padding-bottom: 15px;" id="title"><a href="/guideArticle/{{ $guideArticle->id }}">{{ $guideArticle->title ?? ''}}</a></h2>
+                    <img src="{{ $guideArticle->image }}"
                         alt=""
                         id ="imgPost"
                         class=""
                         />                    
-                <p style="font-size: 20px;">{!! $b_article->excerpt !!}</p>
+                <p style="font-size: 20px;">{!! $guideArticle->excerpt !!}</p>
             </div>
         </div>
         @endforeach
@@ -95,13 +95,8 @@ img {
             </div>
         </div> -->
     </div>
-    <div class="col-lg-2"></div>
-</div>
-   
-
-
-
-   
+    <div class="col-lg-2"></div>    
+    </div>
 </div>
    
 

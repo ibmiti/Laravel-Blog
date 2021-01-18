@@ -14,7 +14,7 @@ class KidsArticlesController extends Controller
      */
     public function index()
     {
-        return view('articles.index.indexKids', [
+        return view('articles.actions.index.indexKids', [
             'kidsArticles' => $kidsArticles = KidsArticles::take(6)->latest()->paginate()
         ]);
     }
@@ -26,7 +26,7 @@ class KidsArticlesController extends Controller
      */
     public function create()
     {
-        return view('articles.create.createKid');
+        return view('articles.actions.create.createKid');
     }
 
     /**
@@ -37,7 +37,6 @@ class KidsArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        try {
             $kid_article = new KidsArticles;
             $kid_article->image = $request->image;
             $kid_article->image_credit = $request->image_credit;
@@ -52,17 +51,12 @@ class KidsArticlesController extends Controller
             $kid_article->p2 = $request->p2;
             $kid_article->heading3 = $request->h3;
             $kid_article->p3 = $request->p3;
-            $kid_article->save();        
+        try {
+            $kid_article->save();    
+            return view('articles.actions.create.selection');    
          } catch (\Exception $e){
             return $e->getMessage();
          }
-/* 
-|   ---------------------------------------------
-|   FUTURE FEATURE?
-|   ---------------------------------------------
-|   potentially give them an option to create another article?   
-*/
-         return view('articles.create.selection');
     }
 
     /**
@@ -74,7 +68,7 @@ class KidsArticlesController extends Controller
     public function show($id)
     {
         $kidArticle = KidsArticles::find($id);
-        return view('articles.show.showKidsArticle', [
+        return view('articles.actions.show.showKidsArticle', [
             'kidArticle' => $kidArticle
         ]);
     }
