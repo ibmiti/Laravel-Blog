@@ -117,18 +117,18 @@ class ArticlesController extends Controller
             );
         }
         if ($type == 'kid' ){
-            return view('articles.actions.edit.editKidsArticle',
-                ['kidsArticles' => $kidsArticles = KidsArticles::take($count)->latest()->paginate()]
+            return view('articles.actions.edit.editKids.editKidsArticle',
+                ['kidsArticles' => $kidsArticles = KidsArticles::take($count)->latest()->get()]
             );
         }
         if ($type == 'guide'){
-            return view('articles.actions.edit.editGuideArticle',
-                ['guideArticles' => $guideArticles = GuideArticles::take($count)->latest()->paginate()]
+            return view('articles.actions.edit.editGuide.editGuideArticle',
+                ['guideArticles' => $guideArticles = GuideArticles::take($count)->latest()->get()]
             );
         }
         if ($type == 'health'){
-            return view('articles.actions.edit.editHealthArticle',
-                ['healthArticles' => $healthArticles = healthArticles::take($count)->latest()->paginate()]
+            return view('articles.actions.edit.editHealth.editHealthArticle',
+                ['healthArticles' => $healthArticles = healthArticles::take($count)->latest()->get()]
             ); 
         }
     }

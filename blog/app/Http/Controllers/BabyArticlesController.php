@@ -88,14 +88,16 @@ class BabyArticlesController extends Controller
      * @param  \App\Models\BabyArticles  $babyArticles
      * @return \Illuminate\Http\Response
      */
-    public function edit(BabyArticles $babyArticles)
-    {
-        return view('editBabyArticle', ['babyArticles' => $babyArticles]);
-    }
+    // public function edit(BabyArticles $babyArticles)
+    // {
+    //     dd('step 1');
+    //     return view('editBabyArticle', ['babyArticles' => $babyArticles]);
+    // }
 
     // | This method will return the specified article with the new view
-    public function editBabyArticle(Request $request, $babyArticleId)
+    public function edit(Request $request, $babyArticleId)
     {   
+        // dd('step 2');
         // | use the id to return the individual article
         return view('articles.actions.edit.editBaby.edit', ['babyArticle'=>BabyArticles::find($babyArticleId)]);
     }

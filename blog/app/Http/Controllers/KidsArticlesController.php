@@ -79,9 +79,9 @@ class KidsArticlesController extends Controller
      * @param  \App\Models\KidsArticles  $kidsArticles
      * @return \Illuminate\Http\Response
      */
-    public function edit(KidsArticles $kidsArticles)
+    public function edit(Request $request, $kidsArticleId)
     {
-        //
+        return view('articles.actions.edit.editKids.edit', ['kidsArticle' => KidsArticles::find($kidsArticleId)]);
     }
 
     /**
@@ -93,7 +93,35 @@ class KidsArticlesController extends Controller
      */
     public function update(Request $request, KidsArticles $kidsArticles)
     {
-        //
+        $kidsArticle = new kidsArticles;
+        $kidsArticle->image = $request->image;
+        $kidsArticle->image_credit = $request->image_credit;
+        $kidsArticle->title = $request->title;
+        $kidsArticle->quip = $request->quip;
+        // truncating || limiting the excerpt
+        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
+        $kidsArticle->excerpt = $excerpt;
+        $kidsArticle->heading1 = $request->h1;
+        $kidsArticle->p1 = $request->p1;
+        $kidsArticle->heading2 = $request->h2;
+        $kidsArticle->p2 = $request->p2;
+        $kidsArticle->heading3 = $request->h3;
+        $kidsArticle->p3 = $request->p3;
+
+/*
+|---
+|   TODO - Flesh this out later
+|------
+|   Suggestion : maybe include emailing ofRoot or send data into error catching and reporting service
+|     // setup a system later in which will catch all logged errors
+*/
+        try { 
+            $kidsArticle->save();
+            // $editedkidsArticle = kidsArticles::find($kidsArticle->id);
+            return view('articles.actions.edit.editKids.edit', ['kidsArticle'=> $kidsArticle]);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**

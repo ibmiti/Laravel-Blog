@@ -71,10 +71,11 @@ img {
     <div class="row">
 
     <div class="col-lg-3 mt-2">
+    @if(isset($kidsArticles))
          @foreach ($kidsArticles as $kidArticle)
         <div class="row">
             <div class="col-lg">
-                <h2 style="padding-bottom: 15px;" id="title"><a href="/kidArticle/{{ $kidArticle->id ?? '' }}">{{ $kidArticle->title ?? ''}}</a></h2>
+                <h2 style="padding-bottom: 15px;" id="title"><a href="/editKidsArticle/{{ $kidArticle->id ?? '' }}/edit">{{ $kidArticle->title ?? ''}}</a></h2>
                     <img src="{{ $kidArticle->image ?? '' }}"
                         alt=""
                         id ="imgPost"
@@ -84,6 +85,7 @@ img {
             </div>
         </div>
         @endforeach
+     @endif
 
         <!-- <div class="row">
             <div class="col-lg">

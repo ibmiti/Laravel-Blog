@@ -75,8 +75,8 @@ Route::get('/viewEditArticlePage', [ArticlesController::class, 'viewEditArticleP
 Route::get('/babies', [BabyArticlesController::class,'index'])->name('babies');
 Route::get('/createBabyArticle', [BabyArticlesController::class, 'create']);
 Route::post('/storeBabyArticle', [BabyArticlesController::class, 'store'])->name('storeBabyArticle');
-Route::get('/editBabyArticle', [BabyArticlesController::class, 'edit']);
-Route::get('/editBabyArticle/{babyArticleId}/edit', [BabyArticlesController::class, 'editBabyArticle']);
+Route::get('/editBabyArticle/{babyArticleId}/edit', [BabyArticlesController::class, 'edit']);
+// Route::get('/editBabyArticle/{babyArticleId}/edit', [BabyArticlesController::class, 'editBabyArticle']);
 Route::post('/updateBabyArticle', [BabyArticlesController::class, 'update'])->name('updateBabyArticle');
 Route::post('/deleteBabyArticle', [BabyArticlesController::class, 'delete'])->name('deleteBabyArticle');
 Route::get('/babyArticle/{babyArticleId}', [BabyArticlesController::class,'show']);
@@ -91,7 +91,8 @@ Route::get('/kids', [KidsArticlesController::class, 'index'])->name('kids');
 Route::get('/createKidArticle', [KidsArticlesController::class, 'create'])->name('createKidArticle ');
 Route::post('/storeKidArticle', [KidsArticlesController::class, 'store'])->name('storeKidArticle');
 Route::get('/kidArticle/{kidArticleId}', [KidsArticlesController::class,'show']);
-Route::get('/editKidArticle/{kidArticleId}/edit', [KidsArticlesController::class, 'editKidArticle']);
+Route::get('/editKidsArticle/{kidArticleId}/edit', [KidsArticlesController::class, 'edit']);
+Route::post('/updatekidsArticle', [KidsArticlesController::class, 'update'])->name('updatekidsArticle');
 
 
 /*
