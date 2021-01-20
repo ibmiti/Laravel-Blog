@@ -93,6 +93,13 @@ class BabyArticlesController extends Controller
         return view('editBabyArticle', ['babyArticles' => $babyArticles]);
     }
 
+    // | This method will return the specified article with the new view
+    public function editBabyArticle(Request $request, $babyArticleId)
+    {   
+        // | use the id to return the individual article
+        return view('articles.actions.edit.editBaby.edit', ['babyArticle'=>BabyArticles::find($babyArticleId)]);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -102,7 +109,35 @@ class BabyArticlesController extends Controller
      */
     public function update(Request $request, BabyArticles $babyArticles)
     {
-        //
+        $babyArticle = new BabyArticles;
+        $babyArticle->image = $request->image;
+        $babyArticle->image_credit = $request->image_credit;
+        $babyArticle->title = $request->title;
+        $babyArticle->quip = $request->quip;
+        // truncating || limiting the excerpt
+        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
+        $babyArticle->excerpt = $excerpt;
+        $babyArticle->heading1 = $request->h1;
+        $babyArticle->p1 = $request->p1;
+        $babyArticle->heading2 = $request->h2;
+        $babyArticle->p2 = $request->p2;
+        $babyArticle->heading3 = $request->h3;
+        $babyArticle->p3 = $request->p3;
+
+/*
+|---
+|   TODO - Flesh this out later
+|------
+|   Suggestion : maybe include emailing ofRoot or send data into error catching and reporting service
+|     // setup a system later in which will catch all logged errors
+*/
+        try { 
+            $babyArticle->save();
+            $editedBabyArticle = BabyArticles::find($babyArticle->id);
+            return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> $babyArticle]);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**

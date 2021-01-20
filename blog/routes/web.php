@@ -50,12 +50,14 @@ Route::get('/about', [ArticlesController::class, 'about']);
 |------------------------------------------------------------------
 | this set of routes may be removed in time
 | update: 1/15/2021 - these routes are not currently in use
+| update: 1/18/2021 - these routes may become used by all the other resources
 */
-Route::get('/articles', [ArticlesController::class, 'index']);    
-Route::get('/articles/{article}', [ArticlesController::class, 'show']);
-Route::get('/articles/{article}/edit' , [ArticlesController::class, 'edit']);
-Route::get('/articles/{article}/update', [ArticlesController::class, 'update']); 
-Route::get('/articles/{article}/delete', [ArticlesController::class, 'delete']);
+Route::get('/articles', [ArticlesController::class, 'index']); 
+Route::get('/editArticle', [ArticlesController::class, 'edit']);
+// Route::get('/articles/{article}', [ArticlesController::class, 'show']);
+// Route::get('/articles/{article}/edit' , [ArticlesController::class, 'edit']);
+// Route::get('/articles/{article}/update', [ArticlesController::class, 'update']); 
+// Route::get('/articles/{article}/delete', [ArticlesController::class, 'delete']);
 
 Route::get('/create_normal_article', [ArticlesController::class, 'create'])->name('create_normal_article');
 Route::post('/create_normal_article', [ArticlesController::class, 'store'])->name('store_normal_article');
@@ -72,10 +74,11 @@ Route::get('/viewEditArticlePage', [ArticlesController::class, 'viewEditArticleP
 */
 Route::get('/babies', [BabyArticlesController::class,'index'])->name('babies');
 Route::get('/createBabyArticle', [BabyArticlesController::class, 'create']);
+Route::post('/storeBabyArticle', [BabyArticlesController::class, 'store'])->name('storeBabyArticle');
 Route::get('/editBabyArticle', [BabyArticlesController::class, 'edit']);
+Route::get('/editBabyArticle/{babyArticleId}/edit', [BabyArticlesController::class, 'editBabyArticle']);
 Route::post('/updateBabyArticle', [BabyArticlesController::class, 'update'])->name('updateBabyArticle');
 Route::post('/deleteBabyArticle', [BabyArticlesController::class, 'delete'])->name('deleteBabyArticle');
-Route::post('/storeBabyArticle', [BabyArticlesController::class, 'store'])->name('storeBabyArticle');
 Route::get('/babyArticle/{babyArticleId}', [BabyArticlesController::class,'show']);
 
 /*
@@ -88,6 +91,8 @@ Route::get('/kids', [KidsArticlesController::class, 'index'])->name('kids');
 Route::get('/createKidArticle', [KidsArticlesController::class, 'create'])->name('createKidArticle ');
 Route::post('/storeKidArticle', [KidsArticlesController::class, 'store'])->name('storeKidArticle');
 Route::get('/kidArticle/{kidArticleId}', [KidsArticlesController::class,'show']);
+Route::get('/editKidArticle/{kidArticleId}/edit', [KidsArticlesController::class, 'editKidArticle']);
+
 
 /*
 |------------------------------------------------------------------

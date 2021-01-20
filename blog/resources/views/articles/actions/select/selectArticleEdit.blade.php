@@ -95,6 +95,8 @@ button {
 
     <!-- 
         | The Modal 
+        |----------
+        | the form within will as
      -->
 <div class="modal" id="myModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -106,7 +108,15 @@ button {
         </button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+      
+        <form id="myForm" method="GET" class="form-group" action="{{ url('/editArticle') }}">
+        @csrf
+          <p style="font-size:13px;">The default would be all</p>
+          <input type="text" name="count" class="form-control" placeholder="How many articles would you like to see?">
+          <!-- <input type="text" name="year" class="form-control mt-1" placeholder="Which year was the article written?"> -->
+          <input id="article-type" type="text" name="type">
+          <button class="btn btn-dark mt-3" type="submit">Submit</button>
+        </form>
       </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-primary">Save changes</button>
@@ -121,9 +131,9 @@ button {
     // | get the modal 
     let modal = document.getElementById('myModal');
     // | collect the buttons into variables
-    let babyBtn = document.getElementById('baby');
-    let kidBtn = document.getElementById('kid');
-    let guideBtn = document.getElementById('guide');
+    let babyBtn   = document.getElementById('baby');
+    let kidBtn    = document.getElementById('kid');
+    let guideBtn  = document.getElementById('guide');
     let healthBtn = document.getElementById('health');
     // | store buttons witin array
     const btns = [babyBtn,kidBtn,guideBtn,healthBtn];
@@ -132,27 +142,39 @@ button {
     // | if button clicked is x-article-button then run operations
     // |------------
     btns[0].onclick = () => {
-        // | show modal 
-         modal.style.display = 'block';
-        // | write data to modal
-        document.getElementById('modal-type').innerHTML = 'Edit Baby Articles'
-        // | send data to related controller
-
+      // | show modal 
+      modal.style.display = 'block';
+      // | write data to modal - change h5 value
+      document.getElementById('modal-type').innerHTML = 'Edit Baby Articles'
+      let x = document.getElementById('article-type');
+      x.style.display = 'none';
+      x.value = 'baby';
      }
     btns[1].onclick = () => {
-         modal.style.display = 'block';
-         document.getElementById('modal-type').innerHTML = 'Edit Kid Articles'
-
-         }
-    btns[2].onclick = () => { modal.style.display = 'block'; }
-    btns[3].onclick = () => { modal.style.display = 'block'; }
+      modal.style.display = 'block';
+      document.getElementById('modal-type').innerHTML = 'Edit Kid Articles';
+      let x = document.getElementById('article-type');
+      x.style.display = 'none';
+      x.value = 'kid';
+    }
+    btns[2].onclick = () => { 
+      modal.style.display = 'block'; 
+      document.getElementById('modal-type').innerHTML = 'Edit Guide Articles';
+      let x = document.getElementById('article-type');
+      x.style.display = 'none';
+      x.value = 'guide';
+    }
+    btns[3].onclick = () => {
+      modal.style.display = 'block'; 
+      document.getElementById('modal-type').innerHTML = 'Edit Health Articles';
+      let x = document.getElementById('article-type');
+      x.style.display = 'none';
+      x.value = 'health';
+    }
     // console.log(btns);
 
     // | Get id of button
     // | use array indices to output 
-
-
-
 
     // | select first span with class of close
     let span = document.getElementsByClassName("close")[0];

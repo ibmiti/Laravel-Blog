@@ -58,6 +58,7 @@ class ArticlesController extends Controller
         return view('articles.create.createNormal');
     }
 
+    // | May delete this method
     public function store(Request $request){
         
         //| TODO - Validate The Data
@@ -101,10 +102,36 @@ class ArticlesController extends Controller
     //     ]);
     // }
 
-    // public function edit()
-    // {
-
-    // }
+    public function edit(Request $request)
+    {
+        /* 
+        |------
+        |  based off type of article and count, query the database
+        |------
+        */
+        $type  = $request->type;
+        $count = $request->count; 
+        if ($type == 'baby'){
+            return view('articles.actions.edit.editBaby.editBabyArticle' ,
+             ['babyArticles' => $babyArticles = BabyArticles::take($count)->latest()->get()]
+            );
+        }
+        if ($type == 'kid' ){
+            return view('articles.actions.edit.editKidsArticle',
+                ['kidsArticles' => $kidsArticles = KidsArticles::take($count)->latest()->paginate()]
+            );
+        }
+        if ($type == 'guide'){
+            return view('articles.actions.edit.editGuideArticle',
+                ['guideArticles' => $guideArticles = GuideArticles::take($count)->latest()->paginate()]
+            );
+        }
+        if ($type == 'health'){
+            return view('articles.actions.edit.editHealthArticle',
+                ['healthArticles' => $healthArticles = healthArticles::take($count)->latest()->paginate()]
+            ); 
+        }
+    }
 
     // public function update()
     // {

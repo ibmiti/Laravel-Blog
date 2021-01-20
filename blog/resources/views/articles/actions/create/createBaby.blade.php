@@ -31,7 +31,7 @@
 
             <div class="row">
                     <!-- <label for="title" class="control-label">Article Image</label> -->
-                    <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">    
+                    <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">
             </div>
 
             <div  class="row mt-3">
