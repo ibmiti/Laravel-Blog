@@ -37,6 +37,10 @@ class BabyArticlesController extends Controller
      */
     public function store(Request $request)
     {
+        // | add server side validation
+
+        // | add event listener 
+        // | - this event listener will notify by email those signed up that a new article has been created
         
             $babyArticle = new BabyArticles;
             $babyArticle->image = $request->image;
@@ -97,9 +101,8 @@ class BabyArticlesController extends Controller
     // | This method will return the specified article with the new view
     public function edit(Request $request, $babyArticleId)
     {   
-        // dd('step 2');
         // | use the id to return the individual article
-        return view('articles.actions.edit.editBaby.edit', ['babyArticle'=>BabyArticles::find($babyArticleId)]);
+        return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> BabyArticles::find($babyArticleId)]);
     }
 
     /**

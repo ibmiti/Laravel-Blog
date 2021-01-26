@@ -76,7 +76,7 @@ img {
          @foreach ($healthArticles as $healthArticle)
         <div class="row">
             <div class="col-lg">
-                <h2 style="padding-bottom: 15px;" id="title"><a href="/healthArticle/{{ $healthArticle->id }}">{{ $healthArticle->title ?? ''}}</a></h2>
+                <h2 style="padding-bottom: 15px;" id="title"><a href="/editHealthArticle/{{ $healthArticle->id }}/edit">{{ $healthArticle->title ?? ''}}</a></h2>
                     <img src="{{ $healthArticle->image }}"
                         alt=""
                         id ="imgPost"

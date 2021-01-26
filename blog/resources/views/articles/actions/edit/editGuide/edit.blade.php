@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/a7bffd41d3.js"></script>
-    <title>BabyBassinet - Blog {{ $babyArticle->title ?? '' }} </title>
+    <title>BabyBassinet - Blog {{ $guideArticle->title ?? '' }} </title>
 </head>
 <style>
 /* may use this later roboto */
@@ -181,7 +181,7 @@ p {
   </a>
 <strong class="navbar-brand" 
     style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
-    href="#">BB + BABY BLOG | ARTICLE {{ $babyArticle->id ?? '' }}
+    href="#">BB + BABY BLOG | ARTICLE {{ $guideArticle->id ?? '' }}
 </strong>   
 
   <button class="navbar-toggler" 
@@ -199,10 +199,10 @@ p {
     <ul class="navbar-nav ml-auto"> 
         <?php     
             $uri = Request::getRequestUri();
-            $babyArticleId = $babyArticle->id ?? '';
+            $guideArticleId = $guideArticle->id ?? '';
             
             switch ($uri) {
-                case ($uri == '/articles'. '/'. $babyArticleId):
+                case ($uri == '/articles'. '/'. $guideArticleId):
                     echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
                     echo ('_____________');
                     echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
@@ -222,73 +222,73 @@ p {
 <div class="container-fluid">
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
-          {{ $babyArticle->title ?? ''}}
+          {{ $guideArticle->title ?? ''}}
         </h1>
       </div> 
       
     <div class="row">
       <div class="col-12 text-center">
-      <blockquote class="blockquote">{{ $babyArticle->quip ?? '' }}</blockquote>
+      <blockquote class="blockquote">{{ $guideArticle->quip ?? '' }}</blockquote>
       </div>
     </div>
   
     <div class="row">
        <div class="col-md text-center mt-5 mb-5">
-          <img class="image featured" src="{{ $babyArticle->image }}" alt="article image" max-width="100%" max-height="100%">
-          <p class="mt-1"> {!! $babyArticle->image_credit !!} </p>
+          <img class="image featured" src="{{ $guideArticle->image }}" alt="article image" max-width="100%" max-height="100%">
+          <p class="mt-1"> {!! $guideArticle->image_credit !!} </p>
        </div>         
     </div>
   
 </div>
 <!-- there should always be a p1 -->
 <!-- TODO this may be throwing an error - it is not currently being displayed -->
-@if ($babyArticle->p1 )
+@if ($guideArticle->p1 )
     <div class="row">
       <div class="col-md mb-3 text-center">
-          <h2> {{ $babyArticle->heading1 }} </h2>
+          <h2> {{ $guideArticle->heading1 }} </h2>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md text-center">
-          <p> {{ $babyArticle->p1 }} </p>
+          <p> {{ $guideArticle->p1 }} </p>
       </div>
     </div>
 @endif
 
-@if ($babyArticle->p2 )
+@if ($guideArticle->p2 )
     <div class="row">
       <div class="col-md mb-3 text-center">
-          <h2> {{ $babyArticle->heading2 }} </h2>
+          <h2> {{ $guideArticle->heading2 }} </h2>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md text-center">
-          <p> {{ $babyArticle->p2}} </p>
+          <p> {{ $guideArticle->p2}} </p>
       </div>
     </div>
 @endif
 
 <!-- if there is a paragraph 3 then show it -->
-@if ($babyArticle->p3)
+@if ($guideArticle->p3)
 
     <div class="row">
       <div class="col-md mb-3 text-center">
-          <h2> {{ $babyArticle->heading3 }} </h2>
+          <h2> {{ $guideArticle->heading3 }} </h2>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md text-center">
-          <p> {{ $babyArticle->p3}} </p>
+          <p> {{ $guideArticle->p3}} </p>
       </div>
     </div>
 @endif 
 </div>
 <hr>
 <div class="container mt-1">
-<form method="POST" action="{{ route('updateBabyArticle', $babyArticle->id) }}">
+<form method="POST" action="{{ route('updateGuideArticle', $guideArticle->id) }}">
     @csrf
 
 <div class="row">
@@ -345,9 +345,6 @@ p {
     <!-- <label for="paragraph 3" class="control-label">Paragraph 3</label> -->
     <input type="textarea" name="p3" class="form-control form-control-lg mt-3" placeholder="Third Paragraph Here">
 </div>
-
-
-
     <div class="row justify-content-center mt-3">
         <div class="col-sm-6">
             <button class="btn btn-block btn-success" type="submit">Edit Article</button>

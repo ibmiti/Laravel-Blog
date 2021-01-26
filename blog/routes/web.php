@@ -105,6 +105,8 @@ Route::get('/guides', [GuideArticlesController::class, 'index'])->name('guides')
 Route::get('/createGuideArticle', [GuideArticlesController::class, 'create'])->name('createGuideArticle');
 Route::post('/storeGuideArticle', [GuideArticlesController::class, 'store'])->name('storeGuideArticle');
 Route::get('/guideArticle/{guideArticleId}', [GuideArticlesController::class, 'show']);
+Route::get('/editGuideArticle/{guideArticleId}/edit', [GuideArticlesController::class, 'edit']);
+Route::post('/updateGuideArticle', [GuideArticlesController::class, 'update'])->name('updateGuideArticle');
 
 /*
 |------------------------------------------------------------------
@@ -118,6 +120,7 @@ Route::get('/health', [HealthArticlesController::class, 'index'])->name('health'
 Route::get('/createHealthArticle', [HealthArticlesController::class, 'create'])->name('createHealthArticle');
 Route::post('/storeHealthArticle', [HealthArticlesController::class, 'store'])->name('storeHealthArticle');
 Route::get('/healthArticle/{healthArticleId}', [HealthArticlesController::class, 'show']);
+Route::get('/editHealthArticle/{healthArticleId}/edit', [HealthArticlesController::class, 'edit']);
 
 /*
 |--------------------------------------------------------------------------
