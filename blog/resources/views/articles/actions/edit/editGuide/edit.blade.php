@@ -228,16 +228,16 @@ p {
       
     <div class="row">
       <div class="col-12 text-center">
-      <blockquote class="blockquote">{{ $guideArticle->quip ?? '' }}</blockquote>
+      <blockquote class="blockquote">{{ $guideArticle->image_name ?? '' }}</blockquote>
       </div>
     </div>
   
-    <div class="row">
+    <!-- <div class="row"> add this
        <div class="col-md text-center mt-5 mb-5">
           <img class="image featured" src="{{ $guideArticle->image }}" alt="article image" max-width="100%" max-height="100%">
           <p class="mt-1"> {!! $guideArticle->image_credit !!} </p>
        </div>         
-    </div>
+    </div> -->
   
 </div>
 <!-- there should always be a p1 -->

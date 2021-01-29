@@ -159,7 +159,6 @@ class ArticlesController extends Controller
     }
 
     public function viewEditArticlePage(){
-        // dd('hello ');
         return view('articles.actions.select.selectArticleEdit');
     }
 }
