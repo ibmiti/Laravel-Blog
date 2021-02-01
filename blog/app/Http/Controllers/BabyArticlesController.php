@@ -99,7 +99,7 @@ class BabyArticlesController extends Controller
     // }
 
     // | This method will return the specified article with the new view
-    public function edit(Request $request, $babyArticleId)
+    public function edit($babyArticleId)
     {   
         // | use the id to return the individual article
         return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> BabyArticles::find($babyArticleId)]);

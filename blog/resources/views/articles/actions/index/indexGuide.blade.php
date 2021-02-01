@@ -78,7 +78,7 @@ img {
         <div class="row">
             <div class="col-lg">
                 <h2 style="padding-bottom: 15px;" id="title"><a href="/guideArticle/{{ $guideArticle->id }}">{{ $guideArticle->title ?? ''}}</a></h2>
-                    <img src="{{ $guideArticle->image }}"
+                    <img src="{{ $guideArticle->image_name }}"
                         alt=""
                         id ="imgPost"
                         class=""

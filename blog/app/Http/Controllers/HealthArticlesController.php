@@ -79,9 +79,10 @@ class HealthArticlesController extends Controller
      * @param  \App\Models\HealthArticles  $healthArticles
      * @return \Illuminate\Http\Response
      */
-    public function edit(HealthArticles $healthArticles)
+    public function edit( $healthArticleId)
     {
-        //
+        // | use the id to return the individual article
+        return view('articles.actions.edit.editHealth.edit', ['healthArticle'=> HealthArticles::find($healthArticleId)]);
     }
 
     /**

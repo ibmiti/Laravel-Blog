@@ -226,11 +226,11 @@ p {
         </h1>
       </div> 
       
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-12 text-center">
         <img src="{{ $guideArticle->image_name ?? '' }}"></img>
       </div>
-    </div>
+    </div> -->
 
     <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
@@ -259,7 +259,7 @@ p {
 
     <div class="row">
       <div class="col-12 text-center">
-        <img src="{{ $guideArticle->image_name2 ?? '' }}"></img>
+        <img src="{{ $guideArticle->image2_name ?? '' }}"></img>
       </div>
     </div>
     
@@ -278,7 +278,7 @@ p {
 
     <div class="row">
       <div class="col-12 text-center">
-        <img src="{{ $guideArticle->image_name3 ?? '' }}"></img>
+        <img src="{{ $guideArticle->image3_name ?? '' }}"></img>
       </div>
     </div>
     
@@ -297,7 +297,7 @@ p {
 
   <div class="row">
     <div class="col-12 text-center">
-      <img src="{{ $guideArticle->image_name4 ?? '' }}"></img>
+      <img src="{{ $guideArticle->image4_name ?? '' }}"></img>
     </div>
   </div>
   
@@ -316,7 +316,7 @@ p {
 
       <div class="row">
       <div class="col-12 text-center">
-      <img src="{{ $guideArticle->image_name5 ?? '' }}"></img>
+      <img src="{{ $guideArticle->image5_name ?? '' }}"></img>
       </div>
     </div>
     
@@ -335,7 +335,7 @@ p {
 
       <div class="row">
       <div class="col-12 text-center">
-      <img src="{{ $guideArticle->image_name6 ?? '' }}"></img>
+      <img src="{{ $guideArticle->image6_name ?? '' }}"></img>
       </div>
     </div>
     
@@ -354,7 +354,7 @@ p {
 
       <div class="row">
       <div class="col-12 text-center">
-      <img src="{{ $guideArticle->image_name7 ?? '' }}"></img>
+      <img src="{{ $guideArticle->image7_name ?? '' }}"></img>
       </div>
     </div>
     
@@ -373,7 +373,7 @@ p {
 
       <div class="row">
       <div class="col-12 text-center">
-      <img src="{{ $guideArticle->image_name8 ?? '' }}"></img>
+      <img src="{{ $guideArticle->image8_name ?? '' }}"></img>
       </div>
     </div>
     
@@ -392,7 +392,7 @@ p {
 
       <div class="row">
       <div class="col-12 text-center">
-      <img src="{{ $guideArticle->image_name9 ?? '' }}"></img>
+      <img src="{{ $guideArticle->image9_name ?? '' }}"></img>
       </div>
     </div>
     
@@ -411,7 +411,7 @@ p {
 
       <div class="row">
       <div class="col-12 text-center">
-      <img src="{{ $guideArticle->image_name10 ?? '' }}"></img>
+      <img src="{{ $guideArticle->image10_name ?? '' }}"></img>
       </div>
     </div>
     
@@ -443,10 +443,10 @@ p {
         <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">
 </div>
 
-<div  class="row mt-3">
-    <!-- <input type="file" name="image5" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
+<!-- | update this later so that this functionality is available -->
+<!-- <div  class="row mt-3">
     <input type="text" name="image_credit" class="form-control form-control-lg mt-3" placeholder="Give credit for image">
-</div>
+</div> -->
 
 <div class="row mt-4">
     <!-- <label for="title" class="control-label">Article Title</label> -->

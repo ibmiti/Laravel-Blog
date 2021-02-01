@@ -155,6 +155,7 @@ class GuideArticlesController extends Controller
         $guideArticle->heading8       = $request->heading8;
         $guideArticle->heading9       = $request->heading9;
         $guideArticle->heading10      = $request->heading10;
+        // | Primary image 
         $guideArticle->image_name     = $request->image;
         $guideArticle->image2_name    = $request->image2;
         $guideArticle->image3_name    = $request->image3;
