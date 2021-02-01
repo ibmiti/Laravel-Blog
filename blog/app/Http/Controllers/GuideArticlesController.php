@@ -116,12 +116,11 @@ class GuideArticlesController extends Controller
      * @param  \App\Models\GuideArticles  $guideArticles
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $guideArticleId)
+    public function edit($guideArticleId)
     {
         
         // | use the id to return the individual article
         $guideArticle = GuideArticles::find($guideArticleId);
-        dd($guideArticle, true, $guideArticle->title, $guideArticle->image_name);
         return view('articles.actions.edit.editGuide.edit', ['guideArticle'=>$guideArticle]);
     }
 
@@ -167,16 +166,16 @@ class GuideArticlesController extends Controller
         $guideArticle->image9_name    = $request->image9;
         $guideArticle->image10_name   = $request->image10;
         // $guideArticle->image_credit   = $request->image_credit; | add this 
-        $guideArticle->paragraph1     = $request->paragraph1; 
-        $guideArticle->paragraph2     = $request->paragraph2;  
-        $guideArticle->paragraph3     = $request->paragraph3; 
-        $guideArticle->paragraph4     = $request->paragraph4; 
-        $guideArticle->paragraph5     = $request->paragraph5;  
-        $guideArticle->paragraph6     = $request->paragraph6; 
-        $guideArticle->paragraph7     = $request->paragraph7; 
-        $guideArticle->paragraph8     = $request->paragraph8;    
-        $guideArticle->paragraph9     = $request->paragraph9;   
-        $guideArticle->paragraph10    = $request->paragraph10;
+        $guideArticle->paragraph1     = $request->p1; 
+        $guideArticle->paragraph2     = $request->p2;  
+        $guideArticle->paragraph3     = $request->p3; 
+        $guideArticle->paragraph4     = $request->p4; 
+        $guideArticle->paragraph5     = $request->p5;  
+        $guideArticle->paragraph6     = $request->p6; 
+        $guideArticle->paragraph7     = $request->p7; 
+        $guideArticle->paragraph8     = $request->p8;    
+        $guideArticle->paragraph9     = $request->p9;   
+        $guideArticle->paragraph10    = $request->p10;
 
 
 /*

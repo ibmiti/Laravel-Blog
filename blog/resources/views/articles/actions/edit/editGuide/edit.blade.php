@@ -228,9 +228,199 @@ p {
       
     <div class="row">
       <div class="col-12 text-center">
-      <blockquote class="blockquote">{{ $guideArticle->image_name ?? '' }}</blockquote>
+        <img src="{{ $guideArticle->image_name ?? '' }}"></img>
       </div>
     </div>
+
+    <div class="mt-5 row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+          {{ $guideArticle->heading1 ?? ''}}
+        </h1>
+      </div> 
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <img src="{{ $guideArticle->image_name ?? '' }}"></img>
+      </div>
+    </div>
+    
+      <div class="mt-5 row">
+        <p>        
+          {{ $guideArticle->paragraph1 ?? ''}}
+        </p>
+      </div>
+      <!-- start of next -->
+
+      <div class="mt-5 row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+          {{ $guideArticle->heading2 ?? ''}}
+        </h1>
+      </div> 
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <img src="{{ $guideArticle->image_name2 ?? '' }}"></img>
+      </div>
+    </div>
+    
+      <div class="mt-5 row">
+        <p>        
+          {{ $guideArticle->paragraph2 ?? ''}}
+        </p>
+      </div>
+      <!-- start of next -->
+
+      <div class="mt-5 row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+          {{ $guideArticle->heading3 ?? ''}}
+        </h1>
+      </div> 
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <img src="{{ $guideArticle->image_name3 ?? '' }}"></img>
+      </div>
+    </div>
+    
+    <div class="mt-5 row">
+      <p>        
+        {{ $guideArticle->paragraph3 ?? ''}}
+      </p>
+    </div>
+      <!-- start of next -->
+
+    <div class="mt-5 row">
+      <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+        {{ $guideArticle->heading4 ?? ''}}
+      </h1>
+    </div> 
+
+  <div class="row">
+    <div class="col-12 text-center">
+      <img src="{{ $guideArticle->image_name4 ?? '' }}"></img>
+    </div>
+  </div>
+  
+      <div class="mt-5 row">
+        <p>        
+          {{ $guideArticle->paragraph4 ?? ''}}
+        </p>
+      </div>
+      <!-- start of next -->
+
+      <div class="mt-5 row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+          {{ $guideArticle->heading5 ?? ''}}
+        </h1>
+      </div> 
+
+      <div class="row">
+      <div class="col-12 text-center">
+      <img src="{{ $guideArticle->image_name5 ?? '' }}"></img>
+      </div>
+    </div>
+    
+      <div class="mt-5 row">
+        <p>        
+          {{ $guideArticle->paragraph5 ?? ''}}
+        </p>
+      </div>
+      <!-- start of next -->
+
+      <div class="mt-5 row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+          {{ $guideArticle->heading6 ?? ''}}
+        </h1>
+      </div> 
+
+      <div class="row">
+      <div class="col-12 text-center">
+      <img src="{{ $guideArticle->image_name6 ?? '' }}"></img>
+      </div>
+    </div>
+    
+      <div class="mt-5 row">
+        <p>        
+          {{ $guideArticle->paragraph6 ?? ''}}
+        </p>
+      </div>
+      <!-- start of next -->
+
+      <div class="mt-5 row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+          {{ $guideArticle->heading7 ?? ''}}
+        </h1>
+      </div> 
+
+      <div class="row">
+      <div class="col-12 text-center">
+      <img src="{{ $guideArticle->image_name7 ?? '' }}"></img>
+      </div>
+    </div>
+    
+      <div class="mt-5 row">
+        <p>        
+          {{ $guideArticle->paragraph7 ?? ''}}
+        </p>
+      </div>
+      <!-- start of next -->
+
+      <div class="mt-5 row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+          {{ $guideArticle->heading8 ?? ''}}
+        </h1>
+      </div> 
+
+      <div class="row">
+      <div class="col-12 text-center">
+      <img src="{{ $guideArticle->image_name8 ?? '' }}"></img>
+      </div>
+    </div>
+    
+      <div class="mt-5 row">
+        <p>        
+          {{ $guideArticle->paragraph8 ?? ''}}
+        </p>
+      </div>
+      <!-- start of next -->
+
+      <div class="mt-5 row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+          {{ $guideArticle->heading9 ?? ''}}
+        </h1>
+      </div> 
+
+      <div class="row">
+      <div class="col-12 text-center">
+      <img src="{{ $guideArticle->image_name9 ?? '' }}"></img>
+      </div>
+    </div>
+    
+      <div class="mt-5 row">
+        <p>        
+          {{ $guideArticle->paragraph9 ?? ''}}
+        </p>
+      </div>
+      <!-- start of next -->
+
+      <div class="mt-5 row">
+        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+          {{ $guideArticle->heading10 ?? ''}}
+        </h1>
+      </div> 
+
+      <div class="row">
+      <div class="col-12 text-center">
+      <img src="{{ $guideArticle->image_name10 ?? '' }}"></img>
+      </div>
+    </div>
+    
+      <div class="mt-5 row">
+        <p>        
+          {{ $guideArticle->paragraph10 ?? ''}}
+        </p>
+      </div>
+      
   
     <!-- <div class="row"> add this
        <div class="col-md text-center mt-5 mb-5">
@@ -242,50 +432,7 @@ p {
 </div>
 <!-- there should always be a p1 -->
 <!-- TODO this may be throwing an error - it is not currently being displayed -->
-@if ($guideArticle->p1 )
-    <div class="row">
-      <div class="col-md mb-3 text-center">
-          <h2> {{ $guideArticle->heading1 }} </h2>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md text-center">
-          <p> {{ $guideArticle->p1 }} </p>
-      </div>
-    </div>
-@endif
-
-@if ($guideArticle->p2 )
-    <div class="row">
-      <div class="col-md mb-3 text-center">
-          <h2> {{ $guideArticle->heading2 }} </h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md text-center">
-          <p> {{ $guideArticle->p2}} </p>
-      </div>
-    </div>
-@endif
-
-<!-- if there is a paragraph 3 then show it -->
-@if ($guideArticle->p3)
-
-    <div class="row">
-      <div class="col-md mb-3 text-center">
-          <h2> {{ $guideArticle->heading3 }} </h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md text-center">
-          <p> {{ $guideArticle->p3}} </p>
-      </div>
-    </div>
-@endif 
-</div>
 <hr>
 <div class="container mt-1">
 <form method="POST" action="{{ route('updateGuideArticle', $guideArticle->id) }}">
@@ -306,10 +453,10 @@ p {
     <input type="text" name="title" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting for the Title">
 </div>
 
-<div class="row mt-4">
-    <!-- <label for="title" class="control-label">Article Title</label> -->
+<!-- | TODO - add this later -->
+<!-- <div class="row mt-4">
     <input type="text" name="quip" class="form-control form-control-lg" placeholder="Something short and interesting maybe even a quote for the quip field?">
-</div>
+</div> -->
 
 <div class="row mt-3">
     <!-- <label for="excerpt" class="control-label">Article Excerpt</label> -->
@@ -323,7 +470,7 @@ p {
 
 <div class="row mt-3">
     <!-- <label for="paragraph 1" class="control-label">Paragraph 1</label> -->
-    <input type="textarea" name="p1" class="form-control form-control-lg mt-3" placeholder="First Paragraph Here">
+    <input type="textarea" name="paragraph1" class="form-control form-control-lg mt-3" placeholder="First Paragraph Here">
 </div>
 
 <div class="row mt-3">
@@ -333,7 +480,7 @@ p {
 
 <div class="row mt-3">
     <!-- <label for="paragraph 2" class="control-label">Paragraph 2</label> -->
-    <input type="textarea" name="p2" class="form-control form-control-lg mt-3" placeholder="Second Paragraph Here">
+    <input type="textarea" name="paragraph2" class="form-control form-control-lg mt-3" placeholder="Second Paragraph Here">
 </div>
 
 <div class="row mt-3">
@@ -343,8 +490,14 @@ p {
 
 <div class="row mt-3">
     <!-- <label for="paragraph 3" class="control-label">Paragraph 3</label> -->
-    <input type="textarea" name="p3" class="form-control form-control-lg mt-3" placeholder="Third Paragraph Here">
+    <input type="textarea" name="paragraph3" class="form-control form-control-lg mt-3" placeholder="Third Paragraph Here">
 </div>
+
+<div class="row mt-3">
+    <!-- <label for="paragraph 3" class="control-label">Paragraph 3</label> -->
+    <input type="textarea" name="paragraph3" class="form-control form-control-lg mt-3" placeholder="Third Paragraph Here">
+</div>
+
     <div class="row justify-content-center mt-3">
         <div class="col-sm-6">
             <button class="btn btn-block btn-success" type="submit">Edit Article</button>
@@ -354,7 +507,7 @@ p {
 
 <div class="row justify-content-center mt-3">
       <div class="col-lg text-center">
-          <button class="btn btn-lg btn-dark"><a href="/babies">Go Back</a></button>
+          <button class="btn btn-lg btn-dark"><a href="/guides">Go Back</a></button>
       </div>   
     </div>       
 </div>
