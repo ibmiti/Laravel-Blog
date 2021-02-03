@@ -90,7 +90,9 @@ class GuideArticlesController extends Controller
 */
         try {
             $guideArticle->save();
-            return view('articles.actions.index.indexGuide');
+            return view('articles.actions.edit.editGuide.edit',
+             ['guideArticle' => GuideArticles::find($guideArticle->id)]
+        );
         } catch (Error $error){
             $error->getMessage();
         }
@@ -140,6 +142,7 @@ class GuideArticlesController extends Controller
         //     'excerpt' => 'required|string|max:150|min:10',
         //     'paragraph' => 'required|string|min:10',
         // ]);
+
         
         $guideArticle = new GuideArticles;
 
@@ -188,7 +191,9 @@ class GuideArticlesController extends Controller
 */
         try {
             $guideArticle->save();
-            return view('articles.actions.edit.editGuide.edit');
+            return view('articles.actions.edit.editGuide.edit',
+             ['guideArticle' => GuideArticles::find($guideArticle->id)]
+        );
         } catch (Error $error){
             $error->getMessage();
         }
@@ -202,6 +207,17 @@ class GuideArticlesController extends Controller
      */
     public function destroy(GuideArticles $guideArticles)
     {
-        //
+        $message = [];
+        try {
+            DB::delete("delete from baby_articles where id = " . $babyArticleId);
+           $message['success'] = 'Successfully deleted the article';
+        } catch (Exception $e) {
+            //  | TODO - log this
+            $message['failure'] = 'failed to delete article. Contact ofRoot customer service!';
+            $message['err'] = $e->getmessage();
+        }
+        return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> BabyArticles::find($babyArticleId),
+         'messages'   => $message
+        ]);
     }
 }

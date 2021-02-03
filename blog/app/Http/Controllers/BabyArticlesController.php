@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BabyArticles;
 use Illuminate\Http\Request;
+use DB;
 
 class BabyArticlesController extends Controller
 {
@@ -51,10 +52,10 @@ class BabyArticlesController extends Controller
             $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
             $babyArticle->excerpt = $excerpt;
             $babyArticle->heading1 = $request->h1;
-            $babyArticle->p1 = $request->p1;
             $babyArticle->heading2 = $request->h2;
-            $babyArticle->p2 = $request->p2;
             $babyArticle->heading3 = $request->h3;
+            $babyArticle->p1 = $request->p1;
+            $babyArticle->p2 = $request->p2;
             $babyArticle->p3 = $request->p3;
 
 /*
@@ -66,7 +67,10 @@ class BabyArticlesController extends Controller
 */
         try { 
             $babyArticle->save();
-            return view('articles.create.selection');
+              /*
+            | after article is saved give the option to immediately view and edit or destroy
+            */
+            return view('articles.actions.edit.editBaby.edit', ['babyArticle' => BabyArticles::find($babyArticle->id)]);
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -114,21 +118,20 @@ class BabyArticlesController extends Controller
      */
     public function update(Request $request, BabyArticles $babyArticles)
     {
-        $babyArticle = new BabyArticles;
-        $babyArticle->image = $request->image;
+        $babyArticle               = new BabyArticles;
+        $babyArticle->image        = $request->image;
         $babyArticle->image_credit = $request->image_credit;
-        $babyArticle->title = $request->title;
-        $babyArticle->quip = $request->quip;
+        $babyArticle->title        = $request->title;
+        $babyArticle->quip         = $request->quip;
         // truncating || limiting the excerpt
-        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
-        $babyArticle->excerpt = $excerpt;
-        $babyArticle->heading1 = $request->h1;
-        $babyArticle->p1 = $request->p1;
-        $babyArticle->heading2 = $request->h2;
-        $babyArticle->p2 = $request->p2;
-        $babyArticle->heading3 = $request->h3;
-        $babyArticle->p3 = $request->p3;
-
+        $excerpt                   = \Illuminate\Support\Str::limit($request->excerpt, 40);
+        $babyArticle->excerpt      = $excerpt;
+        $babyArticle->heading1     = $request->h1;
+        $babyArticle->p1           = $request->p1;
+        $babyArticle->heading2     = $request->h2;
+        $babyArticle->p2           = $request->p2;
+        $babyArticle->heading3     = $request->h3;
+        $babyArticle->p3           = $request->p3;
 /*
 |---
 |   TODO - Flesh this out later
@@ -151,8 +154,19 @@ class BabyArticlesController extends Controller
      * @param  \App\Models\BabyArticles  $babyArticles
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BabyArticles $babyArticles)
+    public function destroy($babyArticleId)
     {
-        //
+        $message = [];
+        try {
+            DB::delete("delete from baby_articles where id = " . $babyArticleId);
+           $message['success'] = 'Successfully deleted the article';
+        } catch (Exception $e) {
+            //  | TODO - log this
+            $message['failure'] = 'failed to delete article. Contact ofRoot customer service!';
+            $message['err'] = $e->getmessage();
+        }
+        return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> BabyArticles::find($babyArticleId),
+         'messages'   => $message
+        ]);
     }
 }

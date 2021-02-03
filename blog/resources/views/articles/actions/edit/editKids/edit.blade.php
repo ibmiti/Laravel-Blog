@@ -218,14 +218,14 @@ p {
 </nav>
 <!-- <hr class="my-5"> -->
 
-
+@if($kidsArticle)
 <div class="container-fluid">
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
           {{ $kidsArticle->title ?? ''}}
         </h1>
       </div> 
-      
+
     <div class="row">
       <div class="col-12 text-center">
       <blockquote class="blockquote">{{ $kidsArticle->quip ?? '' }}</blockquote>
@@ -286,6 +286,9 @@ p {
     </div>
 @endif 
 </div>
+
+
+<!--  EDIT | DELETE FORM  -->
 <hr>
 <div class="container mt-1">
 <form method="POST" action="{{ route('updatekidsArticle', $kidsArticle->id) }}">
@@ -361,6 +364,19 @@ p {
       </div>   
     </div>       
 </div>
+@endif
+@if(!$kidsArticle)
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <p style="font-weight: bold;">{{ $messages['success'] ?? '' }}</p>
+  </div>
+
+  <div class="col-sm-3">
+    <button id="return-btn" class="btn btn-dark"><a href="/kids ">Go Back</a></button>
+  </div>   
+</div>
+</div>
+@endif
 <!-- <script type="text/javascript">
     let x = document.getElementById('id');
     console.log(x);

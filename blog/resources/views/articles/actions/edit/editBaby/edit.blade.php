@@ -218,7 +218,7 @@ p {
 </nav>
 <!-- <hr class="my-5"> -->
 
-
+@if($babyArticle)
 <div class="container-fluid">
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
@@ -234,8 +234,8 @@ p {
   
     <div class="row">
        <div class="col-md text-center mt-5 mb-5">
-          <img class="image featured" src="{{ $babyArticle->image }}" alt="article image" max-width="100%" max-height="100%">
-          <p class="mt-1"> {!! $babyArticle->image_credit !!} </p>
+          <img class="image featured" src="{{ $babyArticle->image ?? '' }}" alt="article image" max-width="100%" max-height="100%">
+            <p class="mt-1"> {!! $babyArticle->image_credit !!} </p>
        </div>         
     </div>
   
@@ -346,26 +346,49 @@ p {
     <input type="textarea" name="p3" class="form-control form-control-lg mt-3" placeholder="Third Paragraph Here">
 </div>
 
-
-
-    <div class="row justify-content-center mt-3">
-        <div class="col-sm-6">
-            <button class="btn btn-block btn-success" type="submit">Edit Article</button>
-        </div>
-    </div>
-</form>
-
 <div class="row justify-content-center mt-3">
-      <div class="col-lg text-center">
-          <button class="btn btn-lg btn-dark"><a href="/babies">Go Back</a></button>
-      </div>   
-    </div>       
+  <div class="col-sm-3">
+    <button class="btn btn-primary" type="submit">Edit</button>
+  </div>
+  <div class="col-sm-3">
+    <button id="delete-btn" class="btn btn-primary">
+    <a href="/deleteBabyArticle/{{$babyArticle->id}}/delete">Delete</a>
+    </button>
+  </div>
+  <div class="col-sm-3">
+    <button id="return-btn" class="btn btn-dark"><a href="/babies">Go Back</a></button>
+  </div>   
 </div>
-<!-- <script type="text/javascript">
-    let x = document.getElementById('id');
-    console.log(x);
-    x.style.display = 'none';
-</script> -->
+</form>
+@endif
+@if(!$babyArticle)
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <p style="font-weight: bold;">{{ $messages['success'] ?? '' }}</p>
+  </div>
+
+  <div class="col-sm-3">
+    <button id="return-btn" class="btn btn-dark"><a href="/babies">Go Back</a></button>
+  </div>   
+</div>
+</div>
+@endif
+
+<script type="text/javascript">
+// | Prevent form from submitting to edit method, instead send id to 
+// | ... destroy method within BabyArticles controller
+    let delete_btn = document.getElementById('delete-btn');
+    delete_btn.onclick(function(event) {
+      event.preventDefault();
+    });
+    
+    //  | prevent from from submitting - allow button to function
+    let return_btn = document.getElementById('return-btn');
+    return_btn.onclick(function(event) {
+      event.preventDefault();
+    });
+
+</script>
 
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->
 

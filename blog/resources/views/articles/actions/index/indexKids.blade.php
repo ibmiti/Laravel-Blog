@@ -68,23 +68,32 @@ img {
         </div>
     </div>
 
-    <div class="row">
-
+<div class="row">
+    @if(isset($kidsArticles))
     <div class="col-lg-3 mt-2">
-         @foreach ($kidsArticles as $kidArticle)
-        <div class="row">
-            <div class="col-lg">
-                <h2 style="padding-bottom: 15px;" id="title"><a href="/kidArticle/{{ $kidArticle->id ?? '' }}">{{ $kidArticle->title ?? ''}}</a></h2>
-                    <img src="{{ $kidArticle->image ?? '' }}"
-                        alt=""
-                        id ="imgPost"
-                        class=""
-                    />                    
-                <p style="font-size: 20px;">{!! $kidArticle->excerpt !!}</p>
+        @foreach ($kidsArticles as $kidArticle)
+            <div class="row">
+                <div class="col-lg">
+                    <h2 style="padding-bottom: 15px;" id="title"><a href="/kidArticle/{{ $kidArticle->id ?? '' }}">{{ $kidArticle->title ?? ''}}</a></h2>
+                        <img src="{{ $kidArticle->image ?? '' }}"
+                            alt=""
+                            id ="imgPost"
+                            class=""
+                        />                    
+                    <p style="font-size: 20px;">{!! $kidArticle->excerpt !!}</p>
+                </div>
             </div>
+            @endforeach
+    </div>
+</div>
+    @endif
+@if(!isset($kidsArticles))
+<div class="row">
+        <div class="col-sm-12 " style="padding-bottom: 40px;">
+            <h6>Sign up to be notified when we stock our shelves!</h6>
         </div>
-        @endforeach
-
+    </div>
+@endif
         <!-- <div class="row">
             <div class="col-lg">
                 <button class="btn btn-dark mt-2 mb-3"><a href="/articles/show_all_article">More Articles</button>        

@@ -218,7 +218,7 @@ p {
 </nav>
 <!-- <hr class="my-5"> -->
 
-
+@if($guideArticle)
 <div class="container-fluid">
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
@@ -498,19 +498,35 @@ p {
     <input type="textarea" name="paragraph3" class="form-control form-control-lg mt-3" placeholder="Third Paragraph Here">
 </div>
 
-    <div class="row justify-content-center mt-3">
-        <div class="col-sm-6">
-            <button class="btn btn-block btn-success" type="submit">Edit Article</button>
-        </div>
-    </div>
-</form>
-
 <div class="row justify-content-center mt-3">
-      <div class="col-lg text-center">
-          <button class="btn btn-lg btn-dark"><a href="/guides">Go Back</a></button>
-      </div>   
-    </div>       
+  <div class="col-sm-3">
+      <button class="btn btn-block btn-primary" type="submit">Edit</button>
+  </div>
+  <div class="col-sm-3">
+    <button id="delete-btn" class="btn btn-block btn-primary">
+    <a href="/deleteGuideArticle/{{$guideArticle->id}}/delete">Delete</a>
+    </button>
+  </div>
+  <div class="col-sm-3">
+    <button class="btn btn-block btn-dark"><a href="/guides">Go Back</a></button>
+  </div>   
 </div>
+
+</form>
+@endif
+@if(!$guideArticle)
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <p style="font-weight: bold;">{{ $messages['success'] ?? '' }}</p>
+  </div>
+
+  <div class="col-sm-3">
+    <button id="return-btn" class="btn btn-dark"><a href="/guides">Go Back</a></button>
+  </div>   
+</div>
+</div>
+@endif
+
 <!-- <script type="text/javascript">
     let x = document.getElementById('id');
     console.log(x);

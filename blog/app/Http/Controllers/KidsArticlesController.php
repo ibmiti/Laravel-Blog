@@ -37,23 +37,27 @@ class KidsArticlesController extends Controller
      */
     public function store(Request $request)
     {
-            $kid_article = new KidsArticles;
-            $kid_article->image = $request->image;
-            $kid_article->image_credit = $request->image_credit;
-            $kid_article->title = $request->title;
-            $kid_article->quip = $request->quip;
-            // truncating || limiting the excerpt
-            $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
-            $kid_article->excerpt = $excerpt;
-            $kid_article->heading1 = $request->h1;
-            $kid_article->p1 = $request->p1;
-            $kid_article->heading2 = $request->h2;
-            $kid_article->p2 = $request->p2;
-            $kid_article->heading3 = $request->h3;
-            $kid_article->p3 = $request->p3;
+        $kidsArticle = new KidsArticles;
+        $kidsArticle->image        = $request->image;
+        $kidsArticle->image_credit = $request->image_credit;
+        $kidsArticle->title        = $request->title;
+        $kidsArticle->quip         = $request->quip;
+        // truncating the excerpt.
+        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
+        $kidsArticle->excerpt      = $request->excerpt;
+        $kidsArticle->heading1     = $request->h1;
+        $kidsArticle->heading2     = $request->h2;
+        $kidsArticle->heading3     = $request->h3;
+        $kidsArticle->p1           = $request->p1;
+        $kidsArticle->p2           = $request->p2;
+        $kidsArticle->p3           = $request->p3;
+
         try {
-            $kid_article->save();    
-            return view('articles.actions.create.selection');    
+            $kidsArticle->save();    
+            /*
+            | after article is saved give the option to immediately view and edit or destroy
+            */
+            return view('articles.actions.edit.editKids.edit', ['kidsArticle' => KidsArticles::find($kidsArticle->id)]);
          } catch (\Exception $e){
             return $e->getMessage();
          }
@@ -67,9 +71,9 @@ class KidsArticlesController extends Controller
      */
     public function show($id)
     {
-        $kidArticle = KidsArticles::find($id);
+        $kidsArticle = KidsArticles::find($id);
         return view('articles.actions.show.showKidsArticle', [
-            'kidArticle' => $kidArticle
+            'kidsArticle' => $kidsArticle
         ]);
     }
 
@@ -102,10 +106,10 @@ class KidsArticlesController extends Controller
         $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
         $kidsArticle->excerpt = $excerpt;
         $kidsArticle->heading1 = $request->h1;
-        $kidsArticle->p1 = $request->p1;
         $kidsArticle->heading2 = $request->h2;
-        $kidsArticle->p2 = $request->p2;
         $kidsArticle->heading3 = $request->h3;
+        $kidsArticle->p1 = $request->p1;
+        $kidsArticle->p2 = $request->p2;
         $kidsArticle->p3 = $request->p3;
 
 /*
