@@ -508,7 +508,7 @@ p {
     </button>
   </div>
   <div class="col-sm-3">
-    <button class="btn btn-block btn-dark"><a href="/guides">Go Back</a></button>
+    <button id="return-btn" class="btn btn-block btn-dark"><a href="/guides">Go Back</a></button>
   </div>   
 </div>
 
@@ -527,12 +527,21 @@ p {
 </div>
 @endif
 
-<!-- <script type="text/javascript">
-    let x = document.getElementById('id');
-    console.log(x);
-    x.style.display = 'none';
-</script> -->
+<script type="text/javascript">
+// | Prevent form from submitting to edit method, instead send id to 
+// | ... destroy method within BabyArticles controller
+    let delete_btn = document.getElementById('delete-btn');
+    delete_btn.onclick(function(event) {
+      event.preventDefault();
+    });
+    
+    //  | prevent from from submitting - allow button to function
+    let return_btn = document.getElementById('return-btn');
+    return_btn.onclick(function(event) {
+      event.preventDefault();
+    });
 
+</script>
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->
 
 <!-- bootstrap related scripts -->

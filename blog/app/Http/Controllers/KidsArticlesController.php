@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KidsArticles;
 use Illuminate\Http\Request;
+use DB;
 
 class KidsArticlesController extends Controller
 {
@@ -131,11 +132,20 @@ class KidsArticlesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\KidsArticles  $kidsArticles
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(KidsArticles $kidsArticles)
+    public function destroy($kidsArticlesId)
     {
-        //
+        $message = [];
+        try {
+            DB::delete("delete from kids_articles where id = " . $kidsArticlesId);
+           $message['success'] = 'Successfully deleted the article';
+        } catch (Exception $e) {
+            //  | TODO - log this
+            $message['failure'] = 'failed to delete article. Contact ofRoot customer service!';
+            $message['err'] = $e->getmessage();
+        }
+        return redirect()->route('kids')->with([
+         'messages'   => $message
+        ]);
     }
 }

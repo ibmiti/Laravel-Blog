@@ -288,7 +288,7 @@ p {
 </div>
 <hr>
 <div class="container mt-1">
-<form method="POST" action="{{ route('updateBabyArticle', $healthArticle->id) }}">
+<form method="POST" action="{{ route('updateHealthArticle', $healthArticle->id) }}">
     @csrf
 
 <div class="row">
@@ -348,19 +348,27 @@ p {
 
 
 
-    <div class="row justify-content-center mt-3">
+    <!-- <div class="row justify-content-center mt-3">
         <div class="col-sm-6">
             <button class="btn btn-block btn-success" type="submit">Edit Article</button>
         </div>
+    </div> -->
+
+  <div class="row justify-content-center mt-3">
+    <div class="col-sm-3">
+        <button class="btn btn-block btn-primary" type="submit">Edit</button>
     </div>
+    <div class="col-sm-3">
+      <button id="delete-btn" class="btn btn-block btn-primary">
+      <a href="/deleteHealthArticle/{{$healthArticle->id}}/delete">Delete</a>
+      </button>
+    </div>
+    <div class="col-sm-3">
+      <button id="return-btn" class="btn btn-block btn-dark"><a href="/health">Go Back</a></button>
+    </div>   
+</div>
 </form>
 
-<div class="row justify-content-center mt-3">
-      <div class="col-lg text-center">
-          <button class="btn btn-lg btn-dark"><a href="/babies">Go Back</a></button>
-      </div>   
-    </div>       
-</div>
 @endif
 @if(!$healthArticle)
 <div class="row">
@@ -369,7 +377,7 @@ p {
   </div>
 
   <div class="col-sm-3">
-    <button id="return-btn" class="btn btn-dark"><a href="/health">Go Back</a></button>
+    <button id="" class="btn btn-dark"><a href="/health">Go Back</a></button>
   </div>   
 </div>
 </div>

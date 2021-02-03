@@ -127,8 +127,6 @@
 </div>
 
 <hr width="300">
-<hr width="300">
-<hr width="300">
 
 <div class="container container-fluid">
   <div class="row mt-5">

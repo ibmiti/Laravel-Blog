@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\GuideArticles;
 use Illuminate\Http\Request;
+use DB;
 
 class GuideArticlesController extends Controller
 {
@@ -142,7 +143,6 @@ class GuideArticlesController extends Controller
         //     'excerpt' => 'required|string|max:150|min:10',
         //     'paragraph' => 'required|string|min:10',
         // ]);
-
         
         $guideArticle = new GuideArticles;
 
@@ -202,22 +202,22 @@ class GuideArticlesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\GuideArticles  $guideArticles
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(GuideArticles $guideArticles)
+    public function destroy($guideArticleId)
     {
+
         $message = [];
         try {
-            DB::delete("delete from baby_articles where id = " . $babyArticleId);
+            DB::delete("delete from baby_articles where id = " . $guideArticleId);
            $message['success'] = 'Successfully deleted the article';
         } catch (Exception $e) {
             //  | TODO - log this
             $message['failure'] = 'failed to delete article. Contact ofRoot customer service!';
             $message['err'] = $e->getmessage();
+            dd($message['err']);
         }
-        return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> BabyArticles::find($babyArticleId),
-         'messages'   => $message
-        ]);
+        return redirect()->route('guides')->with([
+            'messages'   => $message
+           ]);
     }
 }

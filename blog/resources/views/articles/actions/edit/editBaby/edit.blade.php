@@ -292,18 +292,20 @@ p {
     @csrf
 
 <div class="row">
-        <!-- <label for="title" class="control-label">Article Image</label> -->
-        <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">
+  <!-- <label for="title" class="control-label">Article Image</label> -->
+  <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">
 </div>
 
 <div  class="row mt-3">
     <!-- <input type="file" name="image5" accept=".gif,.jpg,.jpeg,.png,.doc,.docx"> -->
     <input type="text" name="image_credit" class="form-control form-control-lg mt-3" placeholder="Give credit for image">
+   
 </div>
 
 <div class="row mt-4">
     <!-- <label for="title" class="control-label">Article Title</label> -->
-    <input type="text" name="title" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting for the Title">
+    <input type="text" name="title" class="form-control form-control-lg" placeholder="Something Spookey scary or exciting for the Title"
+    >
 </div>
 
 <div class="row mt-4">

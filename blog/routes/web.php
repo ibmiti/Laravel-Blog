@@ -93,7 +93,7 @@ Route::post('/storeKidArticle', [KidsArticlesController::class, 'store'])->name(
 Route::get('/kidArticle/{kidArticleId}', [KidsArticlesController::class,'show']);
 Route::get('/editKidsArticle/{kidArticleId}/edit', [KidsArticlesController::class, 'edit']);
 Route::post('/updatekidsArticle', [KidsArticlesController::class, 'update'])->name('updatekidsArticle');
-Route::get('/deleteKidArticle/{kidId}/delete', [BabyArticlesController::class, 'destroy'])->name('deleteKidArticle');
+Route::get('/deleteKidsArticle/{kidId}/delete', [KidsArticlesController::class, 'destroy'])->name('deleteKidsArticle');
 
 /*
 |------------------------------------------------------------------
@@ -107,7 +107,7 @@ Route::post('/storeGuideArticle', [GuideArticlesController::class, 'store'])->na
 Route::get('/guideArticle/{guideArticleId}', [GuideArticlesController::class, 'show']);
 Route::get('/editGuideArticle/{guideArticleId}/edit', [GuideArticlesController::class, 'edit']);
 Route::post('/updateGuideArticle', [GuideArticlesController::class, 'update'])->name('updateGuideArticle');
-Route::get('/deleteGuideArticle/{guideArticleId}/delete', [BabyArticlesController::class, 'destroy'])->name('deleteGuideArticle');
+Route::get('/deleteGuideArticle/{guideArticleId}/delete', [GuideArticlesController::class, 'destroy'])->name('deleteGuideArticle');
 
 /*
 |------------------------------------------------------------------
@@ -123,7 +123,7 @@ Route::post('/storeHealthArticle', [HealthArticlesController::class, 'store'])->
 Route::get('/healthArticle/{healthArticleId}', [HealthArticlesController::class, 'show']);
 Route::get('/editHealthArticle/{healthArticleId}/edit', [HealthArticlesController::class, 'edit']);
 Route::post('/updateHealthArticle', [HealthArticlesController::class, 'update'])->name('updateHealthArticle');
-Route::get('/deleteHealthArticle/{healthArticleId}/delete', [BabyArticlesController::class, 'destroy'])->name('deleteHealthArticle');
+Route::get('/deleteHealthArticle/{healthArticleId}/delete', [HealthArticlesController::class, 'destroy'])->name('deleteHealthArticle');
 
 /*
 |--------------------------------------------------------------------------

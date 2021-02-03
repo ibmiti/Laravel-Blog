@@ -16,7 +16,7 @@ class BabyArticlesController extends Controller
     public function index()
     {
         return view('articles.actions.index.indexBaby', [
-            'babyArticles' => $babyArticles = BabyArticles::take(6)->latest()->paginate()
+            'babyArticles' => BabyArticles::take(6)->latest()->paginate()
         ]);
     }
 
@@ -127,10 +127,10 @@ class BabyArticlesController extends Controller
         $excerpt                   = \Illuminate\Support\Str::limit($request->excerpt, 40);
         $babyArticle->excerpt      = $excerpt;
         $babyArticle->heading1     = $request->h1;
-        $babyArticle->p1           = $request->p1;
         $babyArticle->heading2     = $request->h2;
-        $babyArticle->p2           = $request->p2;
         $babyArticle->heading3     = $request->h3;
+        $babyArticle->p1           = $request->p1;
+        $babyArticle->p2           = $request->p2;
         $babyArticle->p3           = $request->p3;
 /*
 |---
@@ -141,7 +141,7 @@ class BabyArticlesController extends Controller
 */
         try { 
             $babyArticle->save();
-            $editedBabyArticle = BabyArticles::find($babyArticle->id);
+            // $editedBabyArticle = BabyArticles::find($babyArticle->id);
             return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> $babyArticle]);
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -165,7 +165,7 @@ class BabyArticlesController extends Controller
             $message['failure'] = 'failed to delete article. Contact ofRoot customer service!';
             $message['err'] = $e->getmessage();
         }
-        return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> BabyArticles::find($babyArticleId),
+        return redirect()->route('babies')->with([
          'messages'   => $message
         ]);
     }

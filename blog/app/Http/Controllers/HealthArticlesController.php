@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HealthArticles;
 use Illuminate\Http\Request;
+use DB;
 
 class HealthArticlesController extends Controller
 {
@@ -15,7 +16,7 @@ class HealthArticlesController extends Controller
     public function index()
     {
         return view('articles.actions.index.indexHealth', [
-            'healthArticles' => $healthArticles = HealthArticles::take(6)->latest()->paginate()
+            'healthArticles' => HealthArticles::take(6)->latest()->paginate()
         ]);
     }
 
@@ -37,23 +38,23 @@ class HealthArticlesController extends Controller
      */
     public function store(Request $request)
     {
+        // truncating || limiting the excerpt
+        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
         $healthArticle = new HealthArticles;
         $healthArticle->image = $request->image;
         $healthArticle->image_credit = $request->image_credit;
         $healthArticle->title = $request->title;
         $healthArticle->quip = $request->quip;
-        // truncating || limiting the excerpt
-        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
         $healthArticle->excerpt = $excerpt;
         $healthArticle->heading1 = $request->h1;
-        $healthArticle->p1 = $request->p1;
         $healthArticle->heading2 = $request->h2;
-        $healthArticle->p2 = $request->p2;
         $healthArticle->heading3 = $request->h3;
+        $healthArticle->p1 = $request->p1;
+        $healthArticle->p2 = $request->p2;
         $healthArticle->p3 = $request->p3;
     try {
-        $healthArticle->save();    
-        return view('articles.actions.create.selection');    
+        $healthArticle->save();
+        return view('articles.actions.edit.editHealth.edit', ['healthArticle' => HealthArticles::find($healthArticle->id)]);
      } catch (\Exception $e){
         return $e->getMessage();
      }
@@ -76,10 +77,8 @@ class HealthArticlesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\HealthArticles  $healthArticles
-     * @return \Illuminate\Http\Response
      */
-    public function edit( $healthArticleId)
+    public function edit($healthArticleId)
     {
         // | use the id to return the individual article
         return view('articles.actions.edit.editHealth.edit', ['healthArticle'=> HealthArticles::find($healthArticleId)]);
@@ -94,20 +93,20 @@ class HealthArticlesController extends Controller
      */
     public function update(Request $request, HealthArticles $healthArticles)
     {
-        $babyArticle = new BabyArticles;
-        $babyArticle->image = $request->image;
-        $babyArticle->image_credit = $request->image_credit;
-        $babyArticle->title = $request->title;
-        $babyArticle->quip = $request->quip;
+        $healthArticle = new HealthArticles;
+        $healthArticle->image = $request->image;
+        $healthArticle->image_credit = $request->image_credit;
+        $healthArticle->title = $request->title;
+        $healthArticle->quip = $request->quip;
         // truncating || limiting the excerpt
         $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
-        $babyArticle->excerpt = $excerpt;
-        $babyArticle->heading1 = $request->h1;
-        $babyArticle->p1 = $request->p1;
-        $babyArticle->heading2 = $request->h2;
-        $babyArticle->p2 = $request->p2;
-        $babyArticle->heading3 = $request->h3;
-        $babyArticle->p3 = $request->p3;
+        $healthArticle->excerpt = $excerpt;
+        $healthArticle->heading1 = $request->h1;
+        $healthArticle->p1 = $request->p1;
+        $healthArticle->heading2 = $request->h2;
+        $healthArticle->p2 = $request->p2;
+        $healthArticle->heading3 = $request->h3;
+        $healthArticle->p3 = $request->p3;
 
 /*
 |---
@@ -117,9 +116,9 @@ class HealthArticlesController extends Controller
 |     // setup a system later in which will catch all logged errors
 */
         try { 
-            $babyArticle->save();
-            $editedBabyArticle = BabyArticles::find($babyArticle->id);
-            return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> $babyArticle]);
+            $healthArticle->save();
+            $editedhealthArticle = HealthArticles::find($healthArticle->id);
+            return view('articles.actions.edit.editHealth.edit', ['healthArticle'=> $healthArticle]);
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -128,22 +127,20 @@ class HealthArticlesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\HealthArticles  $healthArticles
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(HealthArticles $healthArticles)
+    public function destroy($healthArticleId)
     {
         $message = [];
         try {
-            DB::delete("delete from baby_articles where id = " . $babyArticleId);
+            DB::delete("delete from baby_articles where id = " . $healthArticleId);
            $message['success'] = 'Successfully deleted the article';
         } catch (Exception $e) {
             //  | TODO - log this
             $message['failure'] = 'failed to delete article. Contact ofRoot customer service!';
             $message['err'] = $e->getmessage();
         }
-        return view('articles.actions.edit.editBaby.edit', ['babyArticle'=> BabyArticles::find($babyArticleId),
-         'messages'   => $message
-        ]);
+        return redirect()->route('health')->with([
+            'messages'   => $message
+           ]);
     }
 }
