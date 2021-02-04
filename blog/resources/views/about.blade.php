@@ -54,23 +54,36 @@
   </div>
 </div>   
 
-<div class="container container-fluid">
-    <div class="row">
-        <h1 class="col-lg text-center">The Latest Articles From The Bassinet</h1>
+<div class="row">
+  <div class="col-sm">
+      <ul>
+            <li><a href="/babyArticle/{{ $articles[0][0]->id ?? '' }}">{{ $articles[0][0]->title ?? '' }}</a></li>
+            <p class="paragraph">{{ $articles[0][0]->excerpt ?? '' }}</p>
+            <hr>
+            <li><a href="/babyArticle/{{ $articles[0][1]->id ?? '' }}">{{ $articles[0][1]->title ?? '' }}</a></li>
+            <p class="paragraph">{{ $articles[0][1]->excerpt ?? '' }}</p>
+            <hr>
+            <li><a href="/kidArticle/{{ $articles[1][0]->id ?? '' }}">{{ $articles[1][0]->title ?? '' }}</a></li>
+            <p class="paragraph">{{ $articles[1][0]->excerpt ?? '' }}</p>
+            <hr>
+            <li><a href="/kidArticle/{{ $articles[1][1]->id ?? '' }}">{{ $articles[1][1]->title ?? '' }}</a></li>
+            <p class="paragraph">{{ $articles[1][1]->excerpt ?? '' }}</p>
+            <hr>
+            <li><a href="/guideArticle/{{ $articles[2][0]->id ?? '' }}">{{ $articles[2][0]->title ?? '' }}</a></li>
+            <p class="paragraph">{{ $articles[2][0]->excerpt ?? '' }}</p>
+            <hr>
+            <li><a href="/guideArticle/{{ $articles[2][1]->id ?? '' }}">{{ $articles[2][1]->title ?? '' }}</a></li>
+            <p class="paragraph">{{ $articles[2][1]->excerpt ?? '' }}</p>
+            <hr>
+            <li><a href="/healthArticle/{{ $articles[3][0]->id ?? '' }}">{{ $articles[3][0]->title ?? '' }}</a></li>
+            <p class="paragraph">{{ $articles[3][0]->excerpt ?? '' }}</p>
+            <hr>
+            <li><a href="/healthArticle/{{ $articles[3][1]->id ?? '' }}">{{ $articles[3][1]->title ?? '' }}</a></li>
+            <p class="paragraph">{{ $articles[3][1]->excerpt ?? '' }}</p>
+            <hr>
+      </ul>
     </div>
-  
-    <div class="row">
-      <div class="col-sm">
-          <ul>
-              @foreach($articles as $article)
-                <li><a href="/articles/{{ $article->id }}">{{ $article->title }}</a></li>
-                <p class="paragraph">{{ $article->excerpt }}</p>
-                <hr>
-              @endforeach
-          </ul>
-        </div>
-    </div>
-</div>      
+</div>   
     
 
 @endsection

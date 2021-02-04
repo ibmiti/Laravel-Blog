@@ -3,102 +3,120 @@
 @section('title', 'Welcome Home')
 @section('content')
 
-<style>
- #color-overlay {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: grey;
-   opacity: 0.1;
-}
+ <Style>
+ a {
+   color: white;
+ }
 
-/* Type */
-body, input, select, textarea {
-  color: #7f888f;
-  font-family: "Open Sans", sans-serif;
-  font-size: 13pt;
-  font-weight: 400;
-  line-height: 1.65; }
-  @media screen and (max-width: 1680px) {
-    body, input, select, textarea {
-      font-size: 11pt; } }
-  @media screen and (max-width: 1280px) {
-    body, input, select, textarea {
-      font-size: 10pt; } }
-  @media screen and (max-width: 360px) {
-    body, input, select, textarea {
-      font-size: 9pt; } }
+ p a {
+   color: grey;
+ }
 
-  img {
-    border-radius : 2%;
-    
-  }
-
-  hr.style-one {
-    border: 0;
-    height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
-}
-
-/* 
-@media screen and (max-width:400px) {
-  #row-1 {
-  margin-bottom: -30px;
-}
-
-#row-1 {
-  margin-bottom: -150px;
-} */
-}
+ ul li a {
+  color: black;
+  font-weight: bold;
+ }
 </style>
 
 <!-- <main class="mt-5 pt-5"> -->
-<div class="container-fluid">
+<div class="container">
 
   <x-header-image/>
   <div class="row mt-5">
-    <h1 class="mb-2">Good Reads</h1>
+    <div class="col-12">
+      <h1>Latest Article Categories</h1>
+    </div>
+    <div class="col-12">
+      <h5 style="color:grey;">For the latest articles navigate here or 
+          subscribe for future notifications.
+      </h5>
+    </div>
   </div>
+  <hr style="border:red 2px solid; margin-top: 7px;">
+  
  
   <!-- <hr class=" style-one">s -->
   <!-- <hr style="color:black"width="10px"> -->
   <section class="container">
-    <div id="row-1" class="row">
-      <div class="col-1"></div>
-      <div class="col-5">
-      <h5 class="mt-2">Baby latest</h5>
-        <img src="https://images.unsplash.com/photo-1527620743113-fac8dd0f8d17?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" alt="baby bassinet" height="350" width="100%"/>
+    <div class="row">
+      <div class="mt-4 col-sm-12">
+      <h4><a style="color: black;" href="/babies">Baby</a></h4>
+      <h6>All About Baby</h6>
+      <a href="/babies">
+        <img src="https://images.unsplash.com/photo-1588420343624-8b15ebd3573d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80" height="350" width="100%"/>
+        </a>
+        <p><span>Photo by <a style="color:grey" href="https://unsplash.com/@sincerelymedia?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sincerely Media</a> on <a href="https://unsplash.com/s/photos/blue?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
         <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
         <button class="btn btn-dark"><a href="/babies">More</a></button>
       </div>   
-      <div class="col-5">
-      <h5 class="mt-2">Kids latest</h5>
-        <img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTF8fGtpZHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=90" alt="kids article" height="350" width="100%"/>
+      <div class="mt-4 col-sm-12">
+      <h4><a style="color:black;" href="/kids">The Kids</a></h4>
+      <h6 class="mt-2">Navigating Early Years</h6>
+      <a href="/kids">
+        <img src="https://images.unsplash.com/photo-1503455637927-730bce8583c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="kids article" height="350" width="100%"/>
+        </a>
+        <p><span>Photo by <a href="https://unsplash.com/@ewxy?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">W</a> on <a href="https://unsplash.com/s/photos/pink?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+        </p>
         <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
-        <button class="btn btn-dark"><a href="/kids">More</a></button>
+        
+        <button class="mb-3 btn btn-dark"><a href="/kids">More</a></button>
       </div>
-      <div class="col-1"></div>
     </div> <!-- end of row -->
-    <div class="row mt-4"> <!-- second row -->
-      <div class="col-1"></div>
-      <div class="col-5">
-      <h5 class="">Guides latest</h5>
-          <img id="guides" src="https://images.unsplash.com/photo-1607211851821-8be3cd6146f0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="crafts" height="350" width="100%"/>
-          <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
-        <button class="btn btn-dark"><a href="/guides">More</a></button>
+    <div class="row"> <!-- second row -->
+      <div class="mt-4 col-sm-12">
+        <h4><a style="color:black;" href="/guides">The Guides</a></h4>
+        <h6 class="mt-2">Getting Thing's Done</h6>
+        <a href="/guides">
+            <img id="guides" src="https://images.unsplash.com/photo-1604079681864-c6fbd7eb109c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="crafts" height="350" width="100%"/>
+        </a>
+            <p><span>Photo by <a href="https://unsplash.com/@mymind?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">mymind</a> on <a href="https://unsplash.com/s/photos/red?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+            </p>
+            <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
+          <button class="mb-3 btn btn-dark"><a href="/guides">More</a></button>
       </div>
-      <div class="col-5">
-        <h5 class="">Health latest</h5>
-          <img id="guides" src="https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80" alt="health" height="350" width="100%"/>
+    </div>
+    <div class="row">
+      <div class="mt-4 col-sm-12">
+        <h4><a style="color:black;" href="/health">Health latest</a></h4>
+        <h6>Staying Healthy Is Hard</h6>
+        <a href="/health">
+          <img id="guides" src="https://images.unsplash.com/photo-1598940603846-a1edd0ef2574?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" alt="health" height="350" width="100%"/>
+          </a>
+          <p>
+          <span>Photo by <a href="https://unsplash.com/@rohitranwa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Rohit Ranwa</a> on <a href="https://unsplash.com/s/photos/green?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+          </p>
           <p class="mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic architecto, cum aperiam laudantium quia nisi quod totam repellat eos, placeat neque facere quae earum aut pariatur laborum dignissimos debitis dolore.</p>
-        <button class="btn btn-dark"><a href="/health">More</a></button>
-          
+        <button class="mb-3 btn btn-dark"><a href="/health">More</a></button> 
       </div>
     </div>
   </section>                
 </div>
+
+<div class="mt-4 container">
+    <div class="row">
+        <h1 class="col-lg text-center">The Latest Articles From The Bassinet</h1>
+       
+    </div>
+    <hr style="border:red 2px solid; margin-top: 7px;">
+  
+    <div class="row">
+      <div class="col-sm">
+          <ul>
+                <li><a href="/babyArticle/{{ $articles[0][0]->id }}">{{ $articles[0][0]->title }}</a></li>
+                <p class="paragraph">{{ $articles[0][0]->excerpt }}</p>
+                <hr>
+                <li><a href="/kidArticle/{{ $articles[1][0]->id }}">{{ $articles[1][0]->title }}</a></li>
+                <p class="paragraph">{{ $articles[1][0]->excerpt }}</p>
+                <hr>
+                <li><a href="/guideArticle/{{ $articles[2][0]->id }}">{{ $articles[2][0]->title }}</a></li>
+                <p class="paragraph">{{ $articles[2][0]->excerpt }}</p>
+                <hr>
+                <li><a href="/healthArticle/{{ $articles[3][0]->id }}">{{ $articles[3][0]->title }}</a></li>
+                <p class="paragraph">{{ $articles[3][0]->excerpt }}</p>
+                <hr>
+          </ul>
+        </div>
+    </div>
+</div>      
 
 @endsection

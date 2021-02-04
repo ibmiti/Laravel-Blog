@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <div class="container container-fluid">
+<div class="container">
     <x-navbar/>
 </div>
 
-<div class="container container-fluid">
+<div class="container">
     @yield ('content')
 </div>
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->

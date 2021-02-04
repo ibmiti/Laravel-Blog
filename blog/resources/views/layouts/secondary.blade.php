@@ -1,1 +1,0 @@
-<!-- this layout may be specific to articles  -->

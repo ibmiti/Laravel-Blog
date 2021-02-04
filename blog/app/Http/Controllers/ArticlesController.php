@@ -27,7 +27,7 @@ class ArticlesController extends Controller
 | ---------------
 */
     public function index(){
-        return view('articles.index.index', [
+        return view('about', [
             'articles'      => $articles       = Article::take(2)->latest()->paginate(),
             'babyArticles'  => $babyArticles   = BabyArticles::take(2),
             'kidsArticles'  => $kidsArticles   = KidsArticles::take(2)->latest()->paginate(),
@@ -149,9 +149,18 @@ class ArticlesController extends Controller
 | ----------------------------
 */
     public function about() {
-        return view('about', [
-                    'articles' => $articles = Article::take(3)->latest('created_at')->get()
-                ]);
+        $articles = [];
+        $babyArticles = BabyArticles::take(2)->latest()->get();
+        $kidArticles  = KidsArticles::take(2)->latest()->get();
+        $guideArticles = GuideArticles::take(2)->latest()->get();
+        $healthArticles = HealthArticles::take(2)->latest()->get();
+        // - push articles to articles array
+        $articles[] = $babyArticles;
+        $articles[] = $kidArticles;
+        $articles[] = $guideArticles;
+        $articles[] = $healthArticles;
+
+        return view('about', ['articles' => $articles]);
     }
 
     public function viewSelectArticlePage(){

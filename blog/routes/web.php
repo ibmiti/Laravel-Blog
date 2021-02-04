@@ -9,6 +9,11 @@ use App\Http\Controllers\BabyArticlesController;
 use App\Http\Controllers\KidsArticlesController;
 use App\Http\Controllers\HealthArticlesController;
 use App\Http\Controllers\GuideArticlesController;
+use App\Models\BabyArticles;
+use App\Models\KidsArticles;
+use App\Models\GuideArticles;
+use App\Models\HealthArticles;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +31,17 @@ use App\Http\Controllers\GuideArticlesController;
 | will potentialy add more routes 
 */
 Route::get('/', function () {
-    return view('home');
+    $articles = [];
+    $babyArticles = BabyArticles::take(1)->latest()->get();
+    $kidArticles  = KidsArticles::take(1)->latest()->get();
+    $guideArticles = GuideArticles::take(1)->latest()->get();
+    $healthArticles = HealthArticles::take(1)->latest()->get();
+
+    $articles[] = $babyArticles;
+    $articles[] = $kidArticles;
+    $articles[] = $guideArticles;
+    $articles[] = $healthArticles;
+    return view('home', ['articles' => $articles]);
 }); 
 
 /*
