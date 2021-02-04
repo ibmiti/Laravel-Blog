@@ -71,46 +71,71 @@ img {
 </style>
 
 <div class="row">
-<div class="col-lg-2"></div>
-    <div class="col-lg-3 mt-2">
-        <h2>Regular Articles</h2>
-        @foreach ($articles as $article)
+    <div class="col-lg-12 mt-2">
+        <h2>Baby Articles</h2>
+        <hr style="border: 2px solid red;">
+        @foreach ($babyArticles as $babyArticle)
         <div class="row">
             <div class="col-lg">
-                <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $article->id }}">{{ $article->title ?? ''}}</a></h2>
-                    <img src="{{ $article->image }}"
-                        alt=""
-                        id ="imgPost"
-                        class=""
-                        />                    
-                <p style="font-size: 20px;">{!! $article->excerpt !!}</p>
+                <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $babyArticle->id ?? '' }}">{{ $babyArticle->title ?? ''}}</a></h2>                
             </div>
         </div>
+        <hr>
         @endforeach
 
+        <div class="col-lg-12 mt-2">
+        <h2>Kids Articles</h2>
+        <hr style="border: 2px solid red;">
+        @foreach ($kidsArticles as $kidsArticle)
+        <div class="row">
+                <div class="col-lg">
+                    <h2 style="padding-bottom: 15px;" id="title"><a href="/kidsArticle/{{ $kidsArticle->id ?? '' }}">{{ $kidsArticle->title ?? ''}}</a></h2>              
+                </div>
+            </div>
+            <hr>
+        @endforeach
         <!-- <div class="row">
             <div class="col-lg">
                 <button class="btn btn-dark mt-2 mb-3"><a href="/articles/show_all_article">More Articles</button>        
             </div>
         </div> -->
     </div>
-    
-    <div class="col-lg-2"></div>
-    <div class="col-lg-3 mt-2">
-        <h2>List articles</h2>
+
+    <div class="col-lg-12 mt-2">
+        <h2>Guide Articles</h2>
+        <hr style="border: 2px solid red;">
         @foreach ($guideArticles as $guideArticle)
         <div class="row">
                 <div class="col-lg">
-                    <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/guideArticle/{{ $guideArticle->id }}">{{ $guideArticle->title ?? ''}}</a></h2>
-                        <img src="{{ $guideArticle->image_name}}"
-                            alt=""
-                            id ="imgPost"
-                            class=""
-                            />                
-                    <p style="font-size: 20px;">{!! $guideArticle->excerpt !!}</p>
+                    <h2 style="padding-bottom: 15px;" id="title"><a href="/guideArticle/{{ $guideArticle->id ?? '' }}">{{ $guideArticle->title ?? ''}}</a></h2>              
                 </div>
             </div>
+            <hr>
         @endforeach
+
+        <div class="col-lg-12 mt-2">
+        <h2>Health Articles</h2>
+        <hr style="border: 2px solid red;">
+        @foreach ($healthArticles as $healthArticle)
+        <div class="row">
+                <div class="col-lg">
+                    <h2 style="padding-bottom: 15px;" id="title"><a href="/healthArticle/{{ $healthArticle->id ?? '' }}">{{ $healthArticle->title ?? ''}}</a></h2>              
+                </div>
+            </div>
+            <hr>
+        @endforeach
+
+        <!-- <div class="col-lg-3 mt-2">
+        <h2>Guides</h2>
+        @foreach ($guideArticles as $guideArticle)
+        <div class="row">
+                <div class="col-lg">
+                    <h2 style="padding-bottom: 15px;" id="title"><a href="/guideArticle/{{ $guideArticle->id ?? '' }}">{{ $guideArticle->title ?? ''}}</a></h2>              
+                    <p style="font-size: 20px;">{!! $guideArticle->excerpt ?? '' !!}</p>
+                </div>
+            </div>
+            <hr>
+        @endforeach -->
 
         <!-- <div class="row">
             <div class="col-lg">

@@ -27,12 +27,12 @@ class ArticlesController extends Controller
 | ---------------
 */
     public function index(){
-        return view('about', [
-            'articles'      => $articles       = Article::take(2)->latest()->paginate(),
-            'babyArticles'  => $babyArticles   = BabyArticles::take(2),
-            'kidsArticles'  => $kidsArticles   = KidsArticles::take(2)->latest()->paginate(),
-            'guideArticles' => $guideArticles  = GuideArticles::take(2)->latest()->paginate(),
-            'healthArticles'=> $healthArticles = HealthArticles::take(2)->latest()->paginate()
+        return view('articles.actions.index.index', [
+            // 'articles'      => Article::take(6)->latest()->paginate(),
+            'babyArticles'  => $babyArticles = BabyArticles::take(6)->get(),
+            'kidsArticles'  => $kidsArticles = KidsArticles::take(6)->get(),
+            'guideArticles' => $guideArticles = GuideArticles::take(6)->get(),
+            'healthArticles'=> $healthArticles = HealthArticles::take(6)->get()
         ]);
     }
 
@@ -159,8 +159,7 @@ class ArticlesController extends Controller
         $articles[] = $kidArticles;
         $articles[] = $guideArticles;
         $articles[] = $healthArticles;
-
-        return view('about', ['articles' => $articles]);
+    return view('about', ['articles' => $articles]);
     }
 
     public function viewSelectArticlePage(){

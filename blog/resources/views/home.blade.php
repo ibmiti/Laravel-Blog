@@ -16,6 +16,10 @@
   color: black;
   font-weight: bold;
  }
+
+ ul {
+  list-style-type: none;
+ }
 </style>
 
 <!-- <main class="mt-5 pt-5"> -->

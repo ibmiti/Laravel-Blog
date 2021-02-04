@@ -4,10 +4,9 @@
 
 @section('content')
 
+<!-- | add links to products at bottom of form  - ask product owner -->
+
 <style>
-    body {
-        background-color : pink;
-    }
 </style>
 
 <script>

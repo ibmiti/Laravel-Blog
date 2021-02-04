@@ -53,9 +53,10 @@
     </div>
   </div>
 </div>   
-
+<h2 class="text-center">What We're Writing About</h2>
+<hr style="border: 2px solid red;">
 <div class="row">
-  <div class="col-sm">
+  <div class="col-sm-12">
       <ul>
             <li><a href="/babyArticle/{{ $articles[0][0]->id ?? '' }}">{{ $articles[0][0]->title ?? '' }}</a></li>
             <p class="paragraph">{{ $articles[0][0]->excerpt ?? '' }}</p>
