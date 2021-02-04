@@ -208,7 +208,7 @@ class GuideArticlesController extends Controller
 
         $message = [];
         try {
-            DB::delete("delete from baby_articles where id = " . $guideArticleId);
+            DB::delete("delete from guides where id = " . $guideArticleId);
            $message['success'] = 'Successfully deleted the article';
         } catch (Exception $e) {
             //  | TODO - log this

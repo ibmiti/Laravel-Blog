@@ -132,7 +132,7 @@ class HealthArticlesController extends Controller
     {
         $message = [];
         try {
-            DB::delete("delete from baby_articles where id = " . $healthArticleId);
+            DB::delete("delete from health where id = " . $healthArticleId);
            $message['success'] = 'Successfully deleted the article';
         } catch (Exception $e) {
             //  | TODO - log this
