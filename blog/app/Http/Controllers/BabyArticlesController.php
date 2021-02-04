@@ -156,17 +156,16 @@ class BabyArticlesController extends Controller
      */
     public function destroy($babyArticleId)
     {
-        $message = [];
-        try {
-            DB::delete("delete from baby_articles where id = " . $babyArticleId);
-           $message['success'] = 'Successfully deleted the article';
-        } catch (Exception $e) {
-            //  | TODO - log this
-            $message['failure'] = 'failed to delete article. Contact ofRoot customer service!';
-            $message['err'] = $e->getmessage();
+        $query = DB::delete("delete from baby_articles where id = " . $babyArticleId);
+        $message = ['success' => false, 'failure' => false ];
+        if ($query){
+            $message['success'] = true;
+            $message['failure'] = false;
+            return redirect()->route('babies', $message); 
+        } else { 
+            $message['success'] = false;
+            $message['failure'] = true;
+            return redirect()->route('babies', $message);
         }
-        return redirect()->route('babies')->with([
-         'messages'   => $message
-        ]);
     }
 }

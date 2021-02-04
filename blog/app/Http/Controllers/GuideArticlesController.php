@@ -205,19 +205,17 @@ class GuideArticlesController extends Controller
      */
     public function destroy($guideArticleId)
     {
-
-        $message = [];
-        try {
-            DB::delete("delete from guides where id = " . $guideArticleId);
-           $message['success'] = 'Successfully deleted the article';
-        } catch (Exception $e) {
-            //  | TODO - log this
-            $message['failure'] = 'failed to delete article. Contact ofRoot customer service!';
-            $message['err'] = $e->getmessage();
-            dd($message['err']);
+        $query = DB::delete("delete from guides where id = " . $guideArticleId);
+        $message = ['success' => false, 'failure' => false ];
+        // - test if query was success or failiure
+        if ($query){
+            $message['success'] = true;
+            $message['failure'] = false;
+            return redirect()->route('guides', $message); 
+        } else { 
+            $message['success'] = false;
+            $message['failure'] = true;
+            return redirect()->route('guides', $message);
         }
-        return redirect()->route('guides')->with([
-            'messages'   => $message
-           ]);
     }
 }

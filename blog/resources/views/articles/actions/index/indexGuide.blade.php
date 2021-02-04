@@ -69,6 +69,43 @@ img {
         </div>
     </div>
 
+<!-- IF Article deleted from admin display div -->
+@if(!$errors->any())
+<div class="row">
+    <div id="success-div"
+        class="col-lg text-center"
+        style="padding-bottom: 40px; padding-top: 40px; background-color: red; color: white;">
+            <h2>Guide Article Deleted</h2>
+    </div>
+</div>
+
+<div id="post-success-div" class="row">
+    <div class="col-lg text-center" style="padding-bottom: 40px; color: red;">
+        <h4>Make More Changes?</h4>
+            <button class="btn btn-lg btn-block"><a href="/admin">yes </a></button>
+            <button id="reject" class="btn btn-lg btn-block">no</button>
+    </div>
+</div>
+
+<!-- Remove above div after 3 seconds -->
+    <script type="text/javascript">
+          let ad = document.getElementById('success-div');
+        setTimeout(()=> {
+            ad.style.display = 'none';
+        }, 2000);
+        let psd = document.getElementById('post-success-div');
+        window.onload = psd.style.display = 'none';
+        setTimeout(() => {
+            psd.style.display = 'block';
+        },2200);
+         // - reject further changes
+         let reject = document.getElementById('reject');
+        reject.onclick = function(event){
+            psd.remove();
+        };
+    </script>
+@endif
+
     <div class="row">
 
     <div class="col-lg-3 mt-2">
