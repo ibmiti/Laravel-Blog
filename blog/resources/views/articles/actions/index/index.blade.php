@@ -37,7 +37,6 @@
         /* padding-right: 20px; */
         width: 75%;
     }
-
     a:hover {
   color: grey;
 }
@@ -56,6 +55,10 @@ img {
     -moz-border-radius: 7%;
     -webkit-border-radius:7%;
   }
+
+  p {
+      color: grey;
+  }
 </style>
 <!-- | end of style for this file -->
 
@@ -73,84 +76,34 @@ img {
     </div>
 
 <div class="row">
-    <div class="col-lg-12 mt-2">
-        <h2>Baby Articles</h2>
-        <hr style="border: 2px solid red;">
-        @foreach($babyArticles as $babyArticle)
-        <div class="row">
-            <div class="col-lg">
-                <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $babyArticle->id ?? '' }}">{{ $babyArticle->title ?? ''}}</a></h2>                
-            </div>
-        </div>
-        <hr>
-        @endforeach
-
-        <div class="col-lg-12 mt-2">
-        <h2>Kids Articles</h2>
-        <hr style="border: 2px solid red;">
-        @foreach ($kidsArticles as $kidsArticle)
-        <div class="row">
-                <div class="col-lg">
-                    <h2 style="padding-bottom: 15px;" id="title"><a href="/kidsArticle/{{ $kidsArticle->id ?? '' }}">{{ $kidsArticle->title ?? ''}}</a></h2>              
-                </div>
-            </div>
-            <hr>
-        @endforeach
-        <!-- <div class="row">
-            <div class="col-lg">
-                <button class="btn btn-dark mt-2 mb-3"><a href="/articles/show_all_article">More Articles</button>        
-            </div>
-        </div> -->
+    <div class="text-center col-sm-12">
+        <button type="button" class="btn btn-outline-primary">Popular</button>
+        <button type="button" class="btn btn-outline-secondary">Recent</button>
+        <button type="button" class="btn btn-outline-success">Guides</button>
+        <button type="button" class="btn btn-outline-danger">Baby</button>
+        <button type="button" class="btn btn-outline-warning">Kids</button>
+        <button type="button" class="btn btn-outline-info">Health</button>
     </div>
+</div>
 
-    <div class="col-lg-12 mt-2">
-        <h2>Guide Articles</h2>
-        <hr style="border: 2px solid red;">
-        @foreach ($guideArticles as $guideArticle)
-        <div class="row">
-                <div class="col-lg">
-                    <h2 style="padding-bottom: 15px;" id="title"><a href="/guideArticle/{{ $guideArticle->id ?? '' }}">{{ $guideArticle->title ?? ''}}</a></h2>              
+<div class="mt-3 row">
+    <div class="col-lg-12 mt-2 card container-fluid;">
+        <div class="container"> 
+    <!-- | This data to be swapped out based on button push -->
+            <h2 class="mt-3">BABY</h2>
+            <p>Find the latest articles written by BabyBassinet</p>
+            <hr style="border: 2px solid red;">
+            @foreach($babyArticles as $babyArticle)
+                <div class="row">
+                    <div class="col-lg">
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $babyArticle->id ?? '' }}">{{ $babyArticle->title ?? ''}}</a></h2>                
+                    </div>
                 </div>
-            </div>
-            <hr>
+                <hr>
         @endforeach
-
-        <div class="col-lg-12 mt-2">
-        <h2>Health Articles</h2>
-        <hr style="border: 2px solid red;">
-        @foreach ($healthArticles as $healthArticle)
-        <div class="row">
-                <div class="col-lg">
-                    <h2 style="padding-bottom: 15px;" id="title"><a href="/healthArticle/{{ $healthArticle->id ?? '' }}">{{ $healthArticle->title ?? ''}}</a></h2>              
-                </div>
-            </div>
-            <hr>
-        @endforeach
-
-        <!-- <div class="col-lg-3 mt-2">
-        <h2>Guides</h2>
-        @foreach ($guideArticles as $guideArticle)
-        <div class="row">
-                <div class="col-lg">
-                    <h2 style="padding-bottom: 15px;" id="title"><a href="/guideArticle/{{ $guideArticle->id ?? '' }}">{{ $guideArticle->title ?? ''}}</a></h2>              
-                    <p style="font-size: 20px;">{!! $guideArticle->excerpt ?? '' !!}</p>
-                </div>
-            </div>
-            <hr>
-        @endforeach -->
-
-        <!-- <div class="row">
-            <div class="col-lg">
-                <button class="btn btn-dark mt-3">More List Articles</button>        
-            </div>
         </div>
-    </div>  -->
-
-<!-- 
-|  Adding more articles here | 
--->
-
-   
+    </div>
+  </div>
 </div>
    
 
