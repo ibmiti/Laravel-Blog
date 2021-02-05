@@ -1,9 +1,10 @@
+<!-- | Imports  -->
 @extends ('layouts.primary')
-
 @section('title', 'Welcome Home')
 @section('content')
 
- <Style>
+<!-- | Styles for this file  -->
+ <style>
  a {
    color: white;
  }
@@ -21,6 +22,7 @@
   list-style-type: none;
  }
 </style>
+<!--  | End of Styles for  file -->
 
 <!-- <main class="mt-5 pt-5"> -->
 <div class="container">

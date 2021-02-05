@@ -3,6 +3,8 @@
 <!--  TODO: this view needs to be styled for all view sizes -->
 @section('title', 'Blog')
 @section ('content')
+
+<!-- | Styles for this file -->
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
     .col-lg  {
@@ -49,8 +51,15 @@ a:visited {
   text-decoration: none;
 }
 
+img {
+    border-radius : 7%;
+    -moz-border-radius: 7%;
+    -webkit-border-radius:7%;
+  }
 </style>
-<div class="container container-fluid">
+<!-- | end of style for this file -->
+
+<div class="container">
     <x-header-image/>
 
     <div class="row">
@@ -62,19 +71,12 @@ a:visited {
             <h2>The Latest Articles From The Bassinet</h2>
         </div>
     </div>
-<style>
-img {
-    border-radius : 7%;
-    -moz-border-radius: 7%;
-    -webkit-border-radius:7%;
-  }
-</style>
 
 <div class="row">
     <div class="col-lg-12 mt-2">
         <h2>Baby Articles</h2>
         <hr style="border: 2px solid red;">
-        @foreach ($babyArticles as $babyArticle)
+        @foreach($babyArticles as $babyArticle)
         <div class="row">
             <div class="col-lg">
                 <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $babyArticle->id ?? '' }}">{{ $babyArticle->title ?? ''}}</a></h2>                

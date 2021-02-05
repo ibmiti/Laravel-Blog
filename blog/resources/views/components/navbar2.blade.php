@@ -1,67 +1,97 @@
 <style>
-.navbar.navbar-1 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger6.svg?color=000');
-}
-.navbar.navbar-2 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff');
-}
-.navbar.navbar-3 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger1.svg?color=6a1b9a');
-}
-.navbar.navbar-4 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=BFE100');
-}
-.navbar.navbar-5 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger5.svg?color=f3e5f5');
-}
-.navbar.navbar-6 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger8.svg?color=E3005C');
-}
-.navbar.navbar-7 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger9.svg?color=FF2C00');
-}
-.navbar.navbar-8 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger4.svg?color=1729B0');
-}
-.navbar.navbar-9 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
-}
-
-
+    @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
+    nav ul li {
+        font-family: 'Big Shoulders Stencil Display', cursive;
+        font-size: 40px;
+    }
 </style>
 
-<!--Navbar-->
-<nav class="container container-fluid navbar navbar-light navbar-1 white">
+<nav id="navbar" class="navbar navbar-light navbar">
 <a id="logo" href="/">
-        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="60" style="padding-top:15px"/>   
-        <strong>BABY BASSINET</strong>   
-    </a>
-  <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Navbar</a>
+        <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="80" style="padding-top:15px" /> 
+</a>
+<strong class="navbar-brand" 
+                style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
+                href="#">
+                <?php 
+                switch($uri = Request::getRequestUri()) {
+                    case ($uri == '/'):
+                        echo ('BB + HOME | For The Love Of Baby');
+                    break;
+                    case ($uri == '/articles'):
+                        echo ('BB + BLOG | ARTICLES');
+                    break;
+                    case($uri == '/about'):
+                        echo ('BB + ABOUT US');
+                    break;
+                    case ($uri == '/contact'):
+                        echo ('BB + CONTACT US');
+                    break;
+                }
+                ?>
+                </strong>   
 
-  <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
-    aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <button class="navbar-toggler" 
+          type="button" 
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent15"
+          aria-controls="navbarSupportedContent15"
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+          style="border: none;outline: none;"
+          >
+    <span class="navbar-toggler-icon"></span></button>
 
-  <!-- Collapsible content -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent15">
-
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-    </ul>
-    <!-- Links -->
-
+    <ul class="navbar-nav ml-auto"> 
+        <?php     
+            $uri = Request::getRequestUri();
+            switch ($uri) {
+                case ($uri == '/'):
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
+                    break;
+                case ($uri == '/articles'):
+                    echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
+                    break;
+                case ($uri == '/articles'):
+                    echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
+                    break;
+                case ($uri == '/about'):    
+                    echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/about"><strong>ABOUT</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
+                    break;
+                case ($uri == '/contact'):
+                    echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE</strong></a></li>');
+                    echo ('_____________');
+                    echo ('<li class="nav-item active"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
+                    break;
+                }
+        ?>
+   </ul> 
   </div>
-  <!-- Collapsible content -->
-
 </nav>
-<!--/.Navbar-->

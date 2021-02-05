@@ -1,13 +1,9 @@
+<!-- | Imports -->
 @extends('layouts.primary')
-
 @section('title', 'Create List Article')
-
 @section('content')
 
 <!-- | add links to products at bottom of form  - ask product owner -->
-
-<style>
-</style>
 
 <script>
     window.onload = () => {

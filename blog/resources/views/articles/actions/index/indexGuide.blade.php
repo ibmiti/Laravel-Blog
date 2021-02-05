@@ -1,8 +1,10 @@
-@extends ('layouts.primary')
+@extends('layouts.primary')
 <!-- make title unqique to article -->
 <!--  TODO: this view needs to be styled for all view sizes -->
 @section('title', 'Guides | Tutorials')
-@section ('content')
+@section('content')
+
+<!-- | Styles for file -->
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
     .col-lg  {
@@ -54,8 +56,9 @@ img {
     -moz-border-radius: 7%;
     -webkit-border-radius:7%;
   }
-
 </style>
+<!-- end of styles for file -->
+
 <div class="container container-fluid">
     <x-header-image/>
 

@@ -12,11 +12,40 @@
 
 <body>
 <div class="container">
-    <x-navbar/>
+<div class="container">
+<!-- | details which navbar is served -->
+    @switch($uri = Request::getRequestUri()) 
+        @case($uri == '/')
+            <x-navbar/>
+        @break
+        @case ($uri == '/babies')
+            <x-navbar/>
+        @break
+        @case($uri == '/kids')
+            <x-navbar/>
+        @break
+        @case($uri == '/guides')
+            <x-navbar/>
+        @break
+        @case($uri == '/health')
+            <x-navbar/>
+        @break
+        @case($uri == '/about')
+            <x-navbar/>
+        @break
+        @case ($uri == '/contact')
+            <x-navbar/>
+        @break
+        <!-- | turn off navbar -->
+        @case ($uri == '/articles')
+            <x-navbar/>
+        @break
+    @endswitch
+</div>
 </div>
 
 <div class="container">
-    @yield ('content')
+    @yield('content')
 </div>
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->
 
@@ -24,6 +53,10 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<x-footer />
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <x-footer />
+    </div>
+</div>
 </body>
 </html>
