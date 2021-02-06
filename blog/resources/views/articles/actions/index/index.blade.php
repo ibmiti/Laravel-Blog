@@ -59,6 +59,13 @@ img {
   p {
       color: grey;
   }
+
+  .card {
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 20px #ccc;
+  }
+
 </style>
 <!-- | end of style for this file -->
 
@@ -76,8 +83,8 @@ img {
 
 <div class="row">
     <div class="text-center col-sm-12">
-        <button id="popular" onclick="aac()" type="button" class="btn btn-outline-primary">Popular</button>
-        <button id="recent" onclick="aac(r)" type="button" class="btn btn-outline-secondary">Recent</button>
+        <button id="popular" type="button" class="btn btn-outline-primary">Popular</button>
+        <button id="recent" type="button" class="btn btn-outline-secondary">Recent</button>
         <button id="guides" type="button" class="btn btn-outline-success">Guides</button>
         <button id="baby" type="button" class="btn btn-outline-danger">Baby</button>
         <button id="kids" type="button" class="btn btn-outline-warning">Kids</button>
@@ -89,93 +96,248 @@ img {
     <div class="col-lg-12 mt-2 card container-fluid;">
         <div class="container"> 
     <!-- | This data to be swapped out based on button push -->
-            <h2 id="article-type" class="mt-3">
+            <h2 id="article-type" class="col-lg mt-3">
                 <!-- this h2 filled with script on button click -->
             </h2>
-            <p id="discription-type">
+            <p style="color: grey;" id="discription-type">
                 <!-- this p filled with data based off button click -->
             </p>
             <hr style="border: 2px solid red;">
-            <?php 
-
-            ?>
-            @foreach($babyArticles as $babyArticle)
+            <div id="po">
+            @foreach($babyArticles as $a)
                 <div class="row">
                     <div class="col-lg">
-                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $babyArticle->id ?? '' }}">{{ $babyArticle->title ?? ''}}</a></h2>                
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>  
+                        <p style="color: grey; font-size: 15px;">{{ $a->excerpt }}</p>              
                     </div>
                 </div>
                 <hr>
             @endforeach
+            </div>
+            <div id="re">
+            @foreach($babyArticles as $a)
+                <div class="row">
+                    <div class="col-lg">
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>                
+                    </div>
+                </div>
+                <hr>
+            @endforeach
+            </div>
+            <div id="gu">
+            @foreach($guideArticles as $a)
+                <div class="row">
+                    <div class="col-lg">
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>                
+                    </div>
+                </div>
+                <hr>
+            @endforeach
+            </div>
+            <div id="ba">
+            @foreach($babyArticles as $a)
+                <div class="row">
+                    <div class="col-lg">
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>                
+                    </div>
+                </div>
+                <hr>
+            @endforeach
+            </div>
+            <div id="ki">
+            @foreach($kidsArticles as $a)
+                <div class="row">
+                    <div class="col-lg">
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>                
+                    </div>
+                </div>
+                <hr>
+            @endforeach
+            </div>
+            <div id="he">
+            @foreach($healthArticles as $a)
+                <div class="row">
+                    <div class="col-lg">
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>                
+                    </div>
+                </div>
+                <hr>
+            @endforeach
+            </div>
+
+
+ 
         </div>
     </div>
   </div>
 </div>
 
 <script type="text/javascript">
+ 
+
+    // - Use these to target elements to place title for articles tab
     let p = document.getElementById('popular');
     let r = document.getElementById('recent');
     let g = document.getElementById('guides');
     let b = document.getElementById('baby');
     let k = document.getElementById('kids');
     let h = document.getElementById('health');
- 
-
-    // - add active class 
-    function aac(x){
-        x.className += " active";
-        // - remove active class
-        setTimeout(()=>{
-            console.log(x);
-            x.classList.remove("active");
-        }, 1500);
-    }
-   
+    // - will use these in the hiding of divs 
+    let po = document.getElementById('po');
+    let re = document.getElementById('re');
+    let gu = document.getElementById('gu');
+    let ba = document.getElementById('ba');
+    let ki = document.getElementById('ki');
+    let he = document.getElementById('he');
     //  | default article selection
     window.onload = () =>  {   
         p.click();
         aac(p);
      }
+    // - hide div with articles
+    function hdwa(x) {
+        x.style.display = "none";
+    }
+    hdwa(po);
+    hdwa(re);
+    hdwa(gu);
+    hdwa(ba);
+    hdwa(ki);
+    hdwa(he);
+
+    // - add active class to buttons on click
+    function aac(x){
+        x.className += " active";
+    // - remove active class
+         setTimeout(()=>{
+            x.classList.remove("active");
+        }, 1500);
+    }   
+
+    // - show div with articles on click
+   function sdwa(x){
+         x.style.display = 'inline';
+    }
+
 
 // - on click write to element popular articles
     p.onclick = () => {
         document.getElementById('article-type').innerHTML = 'Popular articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Popular articles from Baby Bassinet';
         aac(p);  
+        // - show div with articles
+        sdwa(po);
+
+        // - add active class to div 
+        po.className += " active";
+        if (po.className == " active"){
+            // - hide all other articles if this po is active
+            hdwa(re);
+            hdwa(gu);
+            hdwa(ba);
+            hdwa(ki);
+            hdwa(he);
+        }
     }
 
     r.onclick = () => {
+
         document.getElementById('article-type').innerHTML = 'Recent articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest articles from Baby Bassinet';
-       return aac(r);
+        aac(r);
+        // - show div with articles
+        sdwa(re);
+        
+        // - add active class to div 
+        re.className += " active";
+        if (re.className == " active"){
+            // - hide all other articles if this po is active
+            hdwa(po);
+            hdwa(gu);
+            hdwa(ba);
+            hdwa(ki);
+            hdwa(he);
+        }
     }
 
     g.onclick = () => {
         document.getElementById('article-type').innerHTML = 'Guide articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Guide articles';
         aac(g);
-        rmvac(p);
+        // - show div with articles
+        sdwa(gu);
+
+        // - add active class to div 
+        gu.className += " active";
+        if (gu.className == " active"){
+            // - hide all other articles if this po is active
+            hdwa(po);
+            hdwa(re);
+            hdwa(ba);
+            hdwa(ki);
+            hdwa(he);
+        }
     }
 
     b.onclick = () => {
         document.getElementById('article-type').innerHTML = 'Baby articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Baby articles';
         aac(b);
-        rmvac(b);
+        // - show div with articles
+        sdwa(ba);
+        // - add active class to div 
+        ba.className += " active";
+        if (ba.className == " active"){
+            // - hide all other articles if this po is active
+            hdwa(po);
+            hdwa(gu);
+            hdwa(re);
+            hdwa(ki);
+            hdwa(he);
+        }
     }
 
     k.onclick = () => {
         document.getElementById('article-type').innerHTML = 'Kids articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Kids articles';
         aac(k);
-        rmvac(k);
+        // - show div with articles
+        sdwa(ki);
+        // - add active class to div 
+        ki.className += " active";
+        if (ki.className == " active"){
+            // - hide all other articles if this po is active
+            hdwa(po);
+            hdwa(gu);
+            hdwa(ba);
+            hdwa(re);
+            hdwa(he);
+        }
     }
     h.onclick = () => {
         document.getElementById('article-type').innerHTML = 'Health articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Health articles';
         aac(h);
-        rmvac(h);
+        // - show div with articles
+        sdwa(he);
+        // - add active class to div 
+        he.className += " active";
+        if (he.className == " active"){
+            // - hide all other articles if this po is active
+            hdwa(po);
+            hdwa(gu);
+            hdwa(ba);
+            hdwa(ki);
+            hdwa(re);
+        }
     }
+
+
+
+
+
+
+
 
 
 // - work on adding more ids for the buttons 
