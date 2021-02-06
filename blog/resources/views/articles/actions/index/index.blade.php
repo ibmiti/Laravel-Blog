@@ -64,7 +64,6 @@ img {
 
 <div class="container">
     <x-header-image/>
-
     <div class="row">
         <h1 class="col-lg text-center">Keeping up with the Bassinet</h1>
     </div>
@@ -77,12 +76,12 @@ img {
 
 <div class="row">
     <div class="text-center col-sm-12">
-        <button type="button" class="btn btn-outline-primary">Popular</button>
-        <button type="button" class="btn btn-outline-secondary">Recent</button>
-        <button type="button" class="btn btn-outline-success">Guides</button>
-        <button type="button" class="btn btn-outline-danger">Baby</button>
-        <button type="button" class="btn btn-outline-warning">Kids</button>
-        <button type="button" class="btn btn-outline-info">Health</button>
+        <button id="popular" onclick="aac()" type="button" class="btn btn-outline-primary">Popular</button>
+        <button id="recent" onclick="aac(r)" type="button" class="btn btn-outline-secondary">Recent</button>
+        <button id="guides" type="button" class="btn btn-outline-success">Guides</button>
+        <button id="baby" type="button" class="btn btn-outline-danger">Baby</button>
+        <button id="kids" type="button" class="btn btn-outline-warning">Kids</button>
+        <button id="health" type="button" class="btn btn-outline-info">Health</button>
     </div>
 </div>
 
@@ -90,9 +89,16 @@ img {
     <div class="col-lg-12 mt-2 card container-fluid;">
         <div class="container"> 
     <!-- | This data to be swapped out based on button push -->
-            <h2 class="mt-3">BABY</h2>
-            <p>Find the latest articles written by BabyBassinet</p>
+            <h2 id="article-type" class="mt-3">
+                <!-- this h2 filled with script on button click -->
+            </h2>
+            <p id="discription-type">
+                <!-- this p filled with data based off button click -->
+            </p>
             <hr style="border: 2px solid red;">
+            <?php 
+
+            ?>
             @foreach($babyArticles as $babyArticle)
                 <div class="row">
                     <div class="col-lg">
@@ -100,14 +106,83 @@ img {
                     </div>
                 </div>
                 <hr>
-        @endforeach
+            @endforeach
         </div>
     </div>
   </div>
 </div>
-   
 
+<script type="text/javascript">
+    let p = document.getElementById('popular');
+    let r = document.getElementById('recent');
+    let g = document.getElementById('guides');
+    let b = document.getElementById('baby');
+    let k = document.getElementById('kids');
+    let h = document.getElementById('health');
+ 
+
+    // - add active class 
+    function aac(x){
+        x.className += " active";
+        // - remove active class
+        setTimeout(()=>{
+            console.log(x);
+            x.classList.remove("active");
+        }, 1500);
+    }
    
+    //  | default article selection
+    window.onload = () =>  {   
+        p.click();
+        aac(p);
+     }
+
+// - on click write to element popular articles
+    p.onclick = () => {
+        document.getElementById('article-type').innerHTML = 'Popular articles';
+        document.getElementById('discription-type').innerHTML = 'Read the latest Popular articles from Baby Bassinet';
+        aac(p);  
+    }
+
+    r.onclick = () => {
+        document.getElementById('article-type').innerHTML = 'Recent articles';
+        document.getElementById('discription-type').innerHTML = 'Read the latest articles from Baby Bassinet';
+       return aac(r);
+    }
+
+    g.onclick = () => {
+        document.getElementById('article-type').innerHTML = 'Guide articles';
+        document.getElementById('discription-type').innerHTML = 'Read the latest Guide articles';
+        aac(g);
+        rmvac(p);
+    }
+
+    b.onclick = () => {
+        document.getElementById('article-type').innerHTML = 'Baby articles';
+        document.getElementById('discription-type').innerHTML = 'Read the latest Baby articles';
+        aac(b);
+        rmvac(b);
+    }
+
+    k.onclick = () => {
+        document.getElementById('article-type').innerHTML = 'Kids articles';
+        document.getElementById('discription-type').innerHTML = 'Read the latest Kids articles';
+        aac(k);
+        rmvac(k);
+    }
+    h.onclick = () => {
+        document.getElementById('article-type').innerHTML = 'Health articles';
+        document.getElementById('discription-type').innerHTML = 'Read the latest Health articles';
+        aac(h);
+        rmvac(h);
+    }
+
+
+// - work on adding more ids for the buttons 
+
+</script>
+
+ 
 
 @endsection
 
