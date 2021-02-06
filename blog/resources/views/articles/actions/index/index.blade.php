@@ -104,21 +104,28 @@ img {
             </p>
             <hr style="border: 2px solid red;">
             <div id="po">
+            <?php 
+            //  - article type(s)
+            //  - baby,kids,guides,health,
+            //  - there will be 2 articles within each index
+            //  - use these to 
+            $mplr = $mostPopular;
+            $b  = $mplr[0][0];
+            // $b1 = $mplr[0][1];
+            $k  = $mplr[1][0];
+            // $k1 = $mplr[1][1];
+            $g  = $mplr[2][0];
+            // $g1 = $mplr[2][1];
+            $h  = $mplr[3][0];
+            // $h1 = $mplr[3][1];      
+
+            ?>
             @foreach($mostPopular as $a)
                 <div class="row">
                     <div class="col-lg">
                         <h2 style="padding-bottom: 15px;" id="title">
-                        <?php 
-                            //  - article type(s)
-                            //  - baby,kids,guides,health,
-                            //  - there will be 2 articles within each index
-                            // $b  = $a[0];
-                            // $b1 = $a[1];
 
-                            // dd($b,$b1);
-                            
-                        ?>
-                            <a href="/articles/{{ $a[0]->id ?? '' }}">
+                            <a href="/babyArticle/{{ $a[0]->id ?? '' }}">
                                 {{ $a[0]->title ?? ''}}
                             </a>
                         </h2>  
@@ -155,7 +162,7 @@ img {
             @foreach($guideArticles as $a)
                 <div class="row">
                     <div class="col-lg">
-                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>                
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/kidsArticle/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>                
                     </div>
                 </div>
                 <hr>
