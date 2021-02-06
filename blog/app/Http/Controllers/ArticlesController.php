@@ -27,12 +27,32 @@ class ArticlesController extends Controller
 | ---------------
 */
     public function index(){
+        // - get most recent article out of all articles 
+        $mostRecent = [];
+        // - push articles to articles array
+        $mostRecent[] = BabyArticles::take(2)->latest()->get();
+        $mostRecent[] = KidsArticles::take(2)->latest()->get();
+        $mostRecent[] = GuideArticles::take(2)->latest()->get();
+        $mostRecent[] = HealthArticles::take(2)->latest()->get();
+
+        // - get most popular article out of all-time popular articles
+        // - this feature may be fully implemented when more users are active
+        // - get with founder to plan out how to implement features
+        $mostPopular = [];
+        // - push articles to articles array
+        $mostPopular[] = BabyArticles::take(2)->latest()->get();
+        $mostPopular[] = KidsArticles::take(2)->latest()->get();
+        $mostPopular[] = GuideArticles::take(2)->latest()->get();
+        $mostPopular[] = HealthArticles::take(2)->latest()->get();
+     
         return view('articles.actions.index.index', [
             // 'articles'      => Article::take(6)->latest()->paginate(),
             'babyArticles'  => $babyArticles = BabyArticles::take(6)->get(),
             'kidsArticles'  => $kidsArticles = KidsArticles::take(6)->get(),
             'guideArticles' => $guideArticles = GuideArticles::take(6)->get(),
-            'healthArticles'=> $healthArticles = HealthArticles::take(6)->get()
+            'healthArticles'=> $healthArticles = HealthArticles::take(6)->get(),
+            'mostRecent'    => $mostRecent,
+            'mostPopular'   => $mostPopular
         ]);
     }
 
@@ -79,10 +99,10 @@ class ArticlesController extends Controller
         $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
         $article->excerpt = $excerpt;
         $article->heading1 = $request->h1;
-        $article->p1 = $request->p1;
         $article->heading2 = $request->h2;
-        $article->p2 = $request->p2;
         $article->heading3 = $request->h3;
+        $article->p1 = $request->p1;
+        $article->p2 = $request->p2;
         $article->p3 = $request->p3;
     
         // saving the article

@@ -104,21 +104,48 @@ img {
             </p>
             <hr style="border: 2px solid red;">
             <div id="po">
-            @foreach($babyArticles as $a)
+            @foreach($mostPopular as $a)
                 <div class="row">
                     <div class="col-lg">
-                        <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>  
-                        <p style="color: grey; font-size: 15px;">{{ $a->excerpt }}</p>              
+                        <h2 style="padding-bottom: 15px;" id="title">
+                        <?php 
+                            //  - article type(s)
+                            //  - baby,kids,guides,health,
+                            //  - there will be 2 articles within each index
+                            // $b  = $a[0];
+                            // $b1 = $a[1];
+
+                            // dd($b,$b1);
+                            
+                        ?>
+                            <a href="/articles/{{ $a[0]->id ?? '' }}">
+                                {{ $a[0]->title ?? ''}}
+                            </a>
+                        </h2>  
+                        <p style="color: grey; font-size: 15px;">{{ $a[0]->excerpt }}</p>              
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg">
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/articles/{{ $a[1]->id ?? '' }}">{{ $a[1]->title ?? ''}}</a></h2>  
+                        <p style="color: grey; font-size: 15px;">{{ $a[1]->excerpt }}</p>              
                     </div>
                 </div>
                 <hr>
             @endforeach
             </div>
             <div id="re">
-            @foreach($babyArticles as $a)
+            @foreach($mostRecent as $a)
                 <div class="row">
                     <div class="col-lg">
-                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a></h2>                
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $a[0]->id ?? '' }}">{{ $a[0]->title ?? ''}}</a></h2>                
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg">
+                        <h2 style="padding-bottom: 15px;" id="title"><a href="/babyArticle/{{ $a[1]->id ?? '' }}">{{ $a[1]->title ?? ''}}</a></h2>                
                     </div>
                 </div>
                 <hr>
