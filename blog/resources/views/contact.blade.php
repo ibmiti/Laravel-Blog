@@ -11,49 +11,27 @@
 }
 
 
-.container {
+/* .container {
     max-width: 500px;
     margin: 50px auto;
     text-align: left;
     font-family: sans-serif;
-}
-
-/* form {
-    border: 1px solid #1A33FF;
-    background: #ecf5fc;
-    padding: 40px 50px 45px;
-}
-
-.form-control:focus {
-    border-color: #000;
-    box-shadow: none;
-}
-
-label {
-    font-weight: 600;
-}
-
-.error {
-    color: red;
-    font-weight: 400;
-    display: block;
-    padding: 6px 0;
-    font-size: 14px;
-}
+} */
 
 .form-control.error {
     border-color: red;
     padding: .375rem .75rem; */
 }
+
 </style>
 
 @section ('content')
 
 <x-header-image/>
 
-<div class="container">
+<div class="container card mt-4">
     
-    <div class="row">
+    <div class="row mt-3">
         <h1 class="col-lg text-center">Contacting the Bassinet</h1>
     </div>
     
@@ -61,6 +39,7 @@ label {
         <h1 class="col-lg text-center">We Wont Share Your Deets</h1>
     </div>
 
+<hr style="border: 2px solid red;">
     
     <form class="justify-content-center" method="POST" action="{{ route('contact.store_and_send') }}">
         @csrf
