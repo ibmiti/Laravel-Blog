@@ -65,76 +65,74 @@
     -webkit-border-radius:50%; */
     }
 
-
-
     .image {
 		border: 0;
 		display: inline-block;
 		position: relative;
 	}
 
-		.image img {
-			display: block;
-		}
+  .image img {
+    display: block;
+  }
 
-		.image.left, .image.right {
-			max-width: 40%;
-		}
+  .image.left, .image.right {
+    max-width: 40%;
+  }
 
-			.image.left img, .image.right img {
-				width: 100%;
-			}
+    .image.left img, .image.right img {
+      width: 100%;
+    }
 
-		.image.left {
-			float: left;
-			padding: 0 1.5em 1em 0;
-			top: 0.25em;
-		}
+  .image.left {
+    float: left;
+    padding: 0 1.5em 1em 0;
+    top: 0.25em;
+  }
 
-		.image.right {
-			float: right;
-			padding: 0 0 1em 1.5em;
-			top: 0.25em;
-		}
+  .image.right {
+    float: right;
+    padding: 0 0 1em 1.5em;
+    top: 0.25em;
+  }
 
-		.image.fit {
-			display: block;
-			margin: 0 0 2em 0;
-			width: 100%;
-		}
+  .image.fit {
+    display: block;
+    margin: 0 0 2em 0;
+    width: 100%;
+  }
 
-			.image.fit img {
-				width: 100%;
-			}
+  .image.fit img {
+    width: 100%;
+  }
 
-		.image.featured {
-			display: block;
-			margin: 0 0 3em 0;
-			width: 100%;
-		}
+.image.featured {
+  display: block;
+  margin: 0 0 3em 0;
+  width: 100%;
+}
 
-			.image.featured img {
-				width: 100%;
-			}
+  .image.featured img {
+    width: 100%;
+  }
 
-			@media screen and (max-width: 736px) {
+  @media screen and (max-width: 736px) {
 
-				.image.featured {
-					margin: 0 0 1.5em 0;
-				}
+    .image.featured {
+      margin: 0 0 1.5em 0;
+    }
 
-      }
-      
-		.image.main {
-			display: block;
-			margin: 0 0 3em 0;
-			width: 100%;
-		}
+  }
+  
+.image.main {
+  display: block;
+  margin: 0 0 3em 0;
+  width: 100%;
+}
 
-			.image.main img {
-				width: 100%;
-      }
-      
+  .image.main img {
+    width: 100%;
+  }
+  
 
 a {
   color: white;
@@ -371,9 +369,12 @@ p {
   </div>
 
   <div class="col-sm-3">
-    <button id="return-btn" class="btn btn-dark"><a href="/kids">Go Back</a></button>
-  </div>   
+    <button id="return-btn" class="btn btn-dark">
+     <a href="/kids">Go Back</a>
+    </button>
+  </div>              
 </div>
+
 </div>
 @endif
 

@@ -197,21 +197,18 @@ p {
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent15">
     <ul class="navbar-nav ml-auto"> 
-        <?php     
+    <?php     
             $uri = Request::getRequestUri();
-            $babyArticleId = $babyArticle->id ?? '';
-            
-            switch ($uri) {
-                case ($uri == '/articles'. '/'. $babyArticleId):
-                    echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
-                    echo ('_____________');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
-                    echo ('_____________');
-                    echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE </strong></a></li>');
-                    echo ('_____________');
-                    echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
-                    break;
-                }
+            $article_id = $babyArticle->id ?? ''; 
+            if ($uri){
+              echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
+              echo ('_____________');
+              echo ('<li class="nav-item"><a class="nav-link" href="/about"><strong>ABOUT </strong></a></li>');
+              echo ('_____________');
+              echo ('<li class="nav-item active"><a class="nav-link" href="/articles"><strong>BLOG | ARTICLE </strong></a></li>');
+              echo ('_____________');
+              echo ('<li class="nav-item"><a class="nav-link" href="/contact"><strong>CONTACT</strong></a></li>');
+            }
         ?>
    </ul> 
   </div>
@@ -219,7 +216,7 @@ p {
 <!-- <hr class="my-5"> -->
 
 
-<div class="container-fluid">
+<div class="container container-fluid">
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
           {{ $babyArticle->title ?? ''}}

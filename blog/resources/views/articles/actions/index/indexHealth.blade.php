@@ -69,7 +69,7 @@ img {
         </div>
     </div>
 
-    <!-- IF Article deleted from admin display div -->
+<!-- IF Article deleted from admin display div -->
 @if(!$errors->any())
 <div class="row">
     <div id="success-div"
@@ -106,13 +106,12 @@ img {
     </script>
 @endif
 
-    <div class="row">
-
-    <div class="col-lg-3 mt-2">
+<div class="row">
+    <div class="col-sm-12 col-lg-12 mt-2">
         @if(isset($healthArticles))
          @foreach ($healthArticles as $healthArticle)
         <div class="row">
-            <div class="col-lg">
+            <div class="col-lg text-center">
                 <h2 style="padding-bottom: 15px;" id="title"><a href="/healthArticle/{{ $healthArticle->id }}">{{ $healthArticle->title ?? ''}}</a></h2>
                     <img src="{{ $healthArticle->image }}"
                         alt=""
@@ -131,7 +130,6 @@ img {
             </div>
         </div> -->
     </div>
-    <div class="col-lg-2"></div>
 </div>
    
 

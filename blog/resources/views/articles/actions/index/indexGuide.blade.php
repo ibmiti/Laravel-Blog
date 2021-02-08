@@ -109,9 +109,8 @@ img {
     </script>
 @endif
 
-    <div class="row">
-
-    <div class="col-lg-3 mt-2">
+<div class="row">
+    <div class="col-lg-12 text-center mt-2">
         <!-- <h2>latest Guides</h2> -->
         @if(isset($guideArticles))
          @foreach ($guideArticles as $guideArticle)

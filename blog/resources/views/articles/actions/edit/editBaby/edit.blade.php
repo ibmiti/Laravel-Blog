@@ -219,7 +219,7 @@ p {
 <!-- <hr class="my-5"> -->
 
 @if($babyArticle)
-<div class="container-fluid">
+<div class="container col-sm-12">
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
           {{ $babyArticle->title ?? ''}}
@@ -349,7 +349,7 @@ p {
 </div>
 
 <div class="row justify-content-center mt-3">
-  <div class="col-sm-3">
+  <div class="col-sm-">
     <button class="btn btn-primary" type="submit">Edit</button>
   </div>
   <div class="col-sm-3">

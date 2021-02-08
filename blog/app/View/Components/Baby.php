@@ -3,6 +3,12 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Illuminate\Http\Request;
+use App\Models\Article;
+use App\Models\GuideArticles;
+use App\Models\HealthArticles;
+use App\Models\KidsArticles;
+use App\Models\BabyArticles;
 
 class Baby extends Component
 {
@@ -23,6 +29,8 @@ class Baby extends Component
      */
     public function render()
     {
-        return view('components.baby');
+       return view('components.baby', [
+           'babyArticles'  => $babyArticles = BabyArticles::take(6)->get()
+       ]);
     }
 }

@@ -122,7 +122,7 @@
 
 <div class="container container-fluid">
    
-<div class="container-fluid">
+<div class="container">
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
           {{ $healthArticle->title ?? ''}}
@@ -136,7 +136,7 @@
     </div>
   
     <div class="row">
-       <div class="col-md text-center mt-5 mb-5">
+       <div class="col-sm-12 text-center mt-5 mb-5">
           <img class="image featured" src="{{ $healthArticle->image }}" alt="article image" max-width="100%" max-height="100%">
           <p class="mt-1"> {!! $healthArticle->image_credit !!} </p>
        </div>         
@@ -153,7 +153,7 @@
     </div>
 
     <div class="row">
-      <div class="col-md text-center">
+      <div class="col-md col-lg text-center">
           <p> {{ $healthArticle->p1 }} </p>
       </div>
     </div>
@@ -161,7 +161,7 @@
 
 @if ($healthArticle->p2 )
     <div class="row">
-      <div class="col-md mb-3 text-center">
+      <div class="col-sm-12 col-lg mb-3 text-center">
           <h2> {{ $healthArticle->heading2 }} </h2>
       </div>
     </div>

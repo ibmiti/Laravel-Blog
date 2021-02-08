@@ -110,7 +110,7 @@ img {
 
 <div class="row">
     @if(isset($kidsArticles))
-    <div class="col-lg-3 mt-2">
+    <div class="col-lg-12 text-center mt-2">
         @foreach ($kidsArticles as $kidArticle)
             <div class="row">
                 <div class="col-lg">

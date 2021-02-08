@@ -105,7 +105,7 @@
     <ul class="navbar-nav ml-auto">
         <?php     
             $uri = Request::getRequestUri();
-            $article_id = $guideArticle->id; 
+            $article_id = $guideArticle->id ?? ''; 
             if ($uri){
               echo ('<li class="nav-item"><a class="nav-link" href="/"><strong>HOME</strong></a></li>');
               echo ('_____________');
@@ -340,7 +340,7 @@
 
   <div class="row justify-content-center mt-3">
     <div class="col-lg text-center">
-        <button class="btn btn-lg btn-dark"><a href="/guides">Go Back</a></button>
+        <button class="btn btn-lg btn-dark"><a href="/babies">Go Back</a></button>
     </div>   
   </div>        
 </div>

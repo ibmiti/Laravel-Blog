@@ -60,11 +60,13 @@ img {
       color: grey;
   }
 
-  .card {
-    -moz-box-shadow: 0 0 3px #ccc;
-    -webkit-box-shadow: 0 0 3px #ccc;
-    box-shadow: 0 0 20px #ccc;
-  }
+
+.card-articles {
+    -moz-box-shadow: 0 0 3px grey !important;
+    -webkit-box-shadow: 0 0 3px grey !important ;
+    box-shadow: 0 0 20px grey !important;
+}
+
 
 </style>
 <!-- | end of style for this file -->
@@ -92,9 +94,37 @@ img {
     </div>
 </div>
 
-<!-- | Logical structure determining which group of articles to show -->
-<x-most-popular/>
 
+<div class="mt-4 row card card-articles">
+    <div class="col-lg-12 mt-2 container">
+        <div class="container"> 
+    <!-- | This data to be swapped out based on button push -->
+            <h2 id="article-type" class="col-lg">
+                <!-- this h2 filled with script on button click -->
+            </h2>
+            <p style="color: grey;" id="discription-type">
+                <!-- this p filled with data based off button click -->
+            </p>
+            <hr style="border: 2px solid red;">
+<!-- | Logical structure determining which group of articles to show -->
+<!-- | add something to variable to show which is clicked. -->
+
+            <div id="po"><x-most-popular/></div>
+            <div id="re"><x-most-recent/></div>
+            <div id="gu"><x-guides/></div>
+            <div id="ba"><x-baby/></div>
+            <div id="ki"><x-kids/></div>
+            <div id="he"><x-health/></div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- if mp button clicked then show this -->
+   
+
+<!-- | etc...as above e.g shows -->
 
 <script type="text/javascript">
 
@@ -121,6 +151,7 @@ img {
     function hdwa(x) {
         x.style.display = "none";
     }
+    //  - this will hide all divs onload
     hdwa(po);
     hdwa(re);
     hdwa(gu);
@@ -128,33 +159,45 @@ img {
     hdwa(ki);
     hdwa(he);
 
-    // - add active class to buttons on click
+let count = 0;
+// - add active class to buttons on click
     function aac(x){
+        //  reload dom - to keep card carrying articles fresh.
+        count++;
+        console.log(count);
+        if(count>10){
+            window.location.reload();
+        }
+//  - so that we can refresh document to be able to refresh card on click
         x.className += " active";
-    // - remove active class
+// - remove active class
          setTimeout(()=>{
             x.classList.remove("active");
         }, 1500);
+    
     }   
+    
+    console.log(count);
 
-    // - show div with articles on click
+// - show div with articles on click
    function sdwa(x){
          x.style.display = 'inline';
     }
 
-
-// - on click write to element popular articles
+// - on click run func.
     p.onclick = () => {
+// - write to element popular articles
         document.getElementById('article-type').innerHTML = 'Popular articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Popular articles from Baby Bassinet';
-        aac(p);  
-        // - show div with articles
-        sdwa(po);
 
-        // - add active class to div 
+// - add active class 
+        aac(p);  
+// - show div with articles
+        sdwa(po);
+// - add active class to div 
         po.className += " active";
         if (po.className == " active"){
-            // - hide all other articles if this po is active
+// - hide all other articles if this po is active
             hdwa(re);
             hdwa(gu);
             hdwa(ba);
@@ -163,15 +206,18 @@ img {
         }
     }
 
+// - when button with class r is clicked
     r.onclick = () => {
 
         document.getElementById('article-type').innerHTML = 'Recent articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest articles from Baby Bassinet';
+
+// - add active class r
         aac(r);
-        // - show div with articles
+// - show div with articles
         sdwa(re);
         
-        // - add active class to div 
+// - add active class to div 
         re.className += " active";
         if (re.className == " active"){
             // - hide all other articles if this po is active
@@ -183,17 +229,21 @@ img {
         }
     }
 
+// - when btn#g clicked run func.
     g.onclick = () => {
+        
         document.getElementById('article-type').innerHTML = 'Guide articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Guide articles';
+
+// - add .active onclick func.
         aac(g);
-        // - show div with articles
+// - show div with articles
         sdwa(gu);
 
-        // - add active class to div 
+// - add active class to div 
         gu.className += " active";
         if (gu.className == " active"){
-            // - hide all other articles if this po is active
+// - hide all other articles if this po is active
             hdwa(po);
             hdwa(re);
             hdwa(ba);
@@ -206,12 +256,12 @@ img {
         document.getElementById('article-type').innerHTML = 'Baby articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Baby articles';
         aac(b);
-        // - show div with articles
+// - show div with articles
         sdwa(ba);
-        // - add active class to div 
+// - add active class to div 
         ba.className += " active";
         if (ba.className == " active"){
-            // - hide all other articles if this po is active
+// - hide all other articles if this po is active
             hdwa(po);
             hdwa(gu);
             hdwa(re);
@@ -224,12 +274,12 @@ img {
         document.getElementById('article-type').innerHTML = 'Kids articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Kids articles';
         aac(k);
-        // - show div with articles
+// - show div with articles
         sdwa(ki);
-        // - add active class to div 
+// - add active class to div 
         ki.className += " active";
         if (ki.className == " active"){
-            // - hide all other articles if this po is active
+// - hide all other articles if this po is active
             hdwa(po);
             hdwa(gu);
             hdwa(ba);
@@ -241,12 +291,12 @@ img {
         document.getElementById('article-type').innerHTML = 'Health articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Health articles';
         aac(h);
-        // - show div with articles
+// - show div with articles
         sdwa(he);
-        // - add active class to div 
+// - add active class to div 
         he.className += " active";
         if (he.className == " active"){
-            // - hide all other articles if this po is active
+// - hide all other articles if this po is active
             hdwa(po);
             hdwa(gu);
             hdwa(ba);
@@ -254,17 +304,6 @@ img {
             hdwa(re);
         }
     }
-
-
-
-
-
-
-
-
-
-// - work on adding more ids for the buttons 
-
 </script>
 
  

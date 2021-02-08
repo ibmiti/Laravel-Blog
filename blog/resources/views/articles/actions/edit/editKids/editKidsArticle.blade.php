@@ -70,7 +70,7 @@ img {
 
     <div class="row">
 
-    <div class="col-lg-3 mt-2">
+    <div class="col-lg-12 mt-2">
     @if(isset($kidsArticles))
          @foreach ($kidsArticles as $kidArticle)
         <div class="row">

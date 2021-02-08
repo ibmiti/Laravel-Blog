@@ -154,14 +154,16 @@ class BabyArticlesController extends Controller
      * @param  \App\Models\BabyArticles  $babyArticles
      * @return \Illuminate\Http\Response
      */
-    public function destroy($babyArticleId)
+    public function destroy($babyArticleId, request $request)
     {
         $query = DB::delete("delete from baby_articles where id = " . $babyArticleId);
+        // dd($request);
+        
         $message = ['success' => false, 'failure' => false ];
         if ($query){
             $message['success'] = true;
             $message['failure'] = false;
-            return redirect()->route('babies', $message); 
+            return redirect()->route('babies', $request); 
         } else { 
             $message['success'] = false;
             $message['failure'] = true;

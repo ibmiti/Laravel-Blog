@@ -70,7 +70,11 @@ img {
         </div>
     </div>
 
-    <!-- IF Article deleted from admin display div -->
+<!-- IF Article deleted from admin display div -->
+<?php 
+
+
+?>
 @if(!$errors->any())
 <div class="row">
     <div id="success-div"
@@ -104,6 +108,7 @@ img {
     reject.onclick = function(event){
         psd.remove();
     };
+
 </script>
 @endif
 

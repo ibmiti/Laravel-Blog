@@ -71,7 +71,7 @@ img {
 
     <div class="row">
 
-    <div class="col-lg-3 mt-2">
+    <div class="text-center col-sm-12 col-lg mt-2">
         @if(isset($healthArticles))
          @foreach ($healthArticles as $healthArticle)
         <div class="row">
