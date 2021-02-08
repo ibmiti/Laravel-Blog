@@ -174,11 +174,13 @@ class ArticlesController extends Controller
         $kidArticles  = KidsArticles::take(2)->latest()->get();
         $guideArticles = GuideArticles::take(2)->latest()->get();
         $healthArticles = HealthArticles::take(2)->latest()->get();
+        
         // - push articles to articles array
         $articles[] = $babyArticles;
         $articles[] = $kidArticles;
         $articles[] = $guideArticles;
         $articles[] = $healthArticles;
+
     return view('about', ['articles' => $articles]);
     }
 

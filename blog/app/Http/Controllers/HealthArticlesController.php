@@ -130,17 +130,16 @@ class HealthArticlesController extends Controller
      */
     public function destroy($healthArticleId)
     {
-        $query = DB::delete("delete from health where id = " . $healthArticleId);
-        $message['success'] = 'Successfully deleted the article';
-        // - test if query was success or failiure
-        if ($query){
-            $message['success'] = true;
-            $message['failure'] = false;
-            return redirect()->route('health', $message); 
-        } else { 
-            $message['success'] = false;
-            $message['failure'] = true;
-            return redirect()->route('health', $message);
+       
+          // - try running query to database
+          try {
+            $query = DB::delete("delete from health where id = " . $healthArticleId);
+            return redirect()->route('health')->with('message', 'Health article deleted.');
+        } catch (Exception $e) {
+            //  - in case of error do...
+            $log_error = $e->getmessage();
+            //  - return with custom error 
+           return redirect()->route('health')->with('message', 'Failed to delete article - contact ofRoot customer service, or try again.');
         }
     }
 }

@@ -68,14 +68,14 @@ img {
         </div>
     </div>  
 
-    <!-- IF Article deleted from admin display div -->
-@if(!$errors->any())
+<!-- IF Article deleted from admin display div -->
+@if(session()->has('message'))
 <div class="row">
-  <div id="success-div"
-       class="col-lg text-center"
-       style="padding-bottom: 40px; padding-top: 40px; background-color: red; color: white;">
-        <h2>Kids Article Deleted</h2>
-  </div>
+    <div id="success-div"
+        class="col-lg text-center alert alert-success"
+        style="padding-bottom: 40px; padding-top: 40px; background-color: red; color: white;">
+        <h2>{{ session()->get('message') }}</h2>
+    </div>
 </div>
 
 <div id="post-success-div" class="row">

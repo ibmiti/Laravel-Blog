@@ -135,17 +135,15 @@ class KidsArticlesController extends Controller
      */
     public function destroy($kidsArticlesId)
     {
-        $message = [];
+        // - try running query to database
         try {
             DB::delete("delete from kids_articles where id = " . $kidsArticlesId);
-           $message['success'] = 'Successfully deleted the article';
+            return redirect()->route('kids')->with('message', 'Kids article deleted.');
         } catch (Exception $e) {
-            //  | TODO - log this
-            $message['failure'] = 'failed to delete article. Contact ofRoot customer service!';
-            $message['err'] = $e->getmessage();
+            //  - in case of error do...
+            $log_error = $e->getmessage();
+            //  - return with custom error 
+           return redirect()->route('kids')->with('message', 'Failed to delete article - contact ofRoot customer service, or try again.');
         }
-        return redirect()->route('kids')->with([
-         'messages'   => $message
-        ]);
     }
 }
