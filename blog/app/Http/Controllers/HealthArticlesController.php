@@ -98,25 +98,30 @@ class HealthArticlesController extends Controller
         $healthArticle->image_credit = $request->image_credit;
         $healthArticle->title = $request->title;
         $healthArticle->quip = $request->quip;
+
         // truncating || limiting the excerpt
         $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
         $healthArticle->excerpt = $excerpt;
+
         $healthArticle->heading1 = $request->h1;
-        $healthArticle->p1 = $request->p1;
         $healthArticle->heading2 = $request->h2;
-        $healthArticle->p2 = $request->p2;
         $healthArticle->heading3 = $request->h3;
+        $healthArticle->p1 = $request->p1;
+        $healthArticle->p2 = $request->p2;
         $healthArticle->p3 = $request->p3;
 
 /*
 |---
 |   TODO - Flesh this out later
 |------
-|   Suggestion : maybe include emailing ofRoot or send data into error catching and reporting service
-|     // setup a system later in which will catch all logged errors
+|   Suggestion : send error to ofRoot:email or send data into error 
+|   catching &  reporting service
+|   // setup a system later in which will catch all logged errors
 */
         try { 
+            //  - try to save 
             $healthArticle->save();
+            //  - try to find 
             $editedhealthArticle = HealthArticles::find($healthArticle->id);
             return view('articles.actions.edit.editHealth.edit', ['healthArticle'=> $healthArticle]);
         } catch (\Exception $e) {
@@ -130,10 +135,9 @@ class HealthArticlesController extends Controller
      */
     public function destroy($healthArticleId)
     {
-       
           // - try running query to database
           try {
-            $query = DB::delete("delete from health where id = " . $healthArticleId);
+            DB::delete("delete from health where id = " . $healthArticleId);
             return redirect()->route('health')->with('message', 'Health article deleted.');
         } catch (Exception $e) {
             //  - in case of error do...

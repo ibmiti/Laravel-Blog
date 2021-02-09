@@ -52,7 +52,7 @@ class ArticlesController extends Controller
             'guideArticles' => $guideArticles = GuideArticles::take(6)->get(),
             'healthArticles'=> $healthArticles = HealthArticles::take(6)->get(),
             'mostRecent'    => $mostRecent,
-            'mostPopular'   => $mostPopular
+            'mostPopular'   => $mostPopular,
         ]);
     }
 

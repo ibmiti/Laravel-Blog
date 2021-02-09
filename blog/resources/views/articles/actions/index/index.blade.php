@@ -12,7 +12,6 @@
         font-family: 'Big Shoulders Stencil Display', cursive;
         font-size: 40px;
     }
-
     .col-md {
       font-family: Verdana;
       font-size: 16px;
@@ -22,17 +21,14 @@
       margin: 20px 20px 20px 20px;
       padding: 20px 100px 20px 100px;
     }
-
     #title {
       line-height: 1.5;
       letter-spacing: .45px;
       font-family: 'Big Shoulders Stencil Display', cursive;
     }
-
     a {
         text-decoration: none;
     }
-
     #imgPost {
         /* padding-right: 20px; */
         width: 75%;
@@ -40,34 +36,25 @@
     a:hover {
   color: grey;
 }
-
 a:link {
   text-decoration: none;
 }
-
-
 a:visited {
   text-decoration: none;
 }
-
 img {
     border-radius : 7%;
     -moz-border-radius: 7%;
     -webkit-border-radius:7%;
   }
-
   p {
       color: grey;
   }
-
-
 .card-articles {
     -moz-box-shadow: 0 0 3px grey !important;
     -webkit-box-shadow: 0 0 3px grey !important ;
     box-shadow: 0 0 20px grey !important;
 }
-
-
 </style>
 <!-- | end of style for this file -->
 
@@ -127,7 +114,6 @@ img {
 <!-- | etc...as above e.g shows -->
 
 <script type="text/javascript">
-
     // - Use these to target elements to place title for articles tab
     let p = document.getElementById('popular');
     let r = document.getElementById('recent');
@@ -158,7 +144,6 @@ img {
     hdwa(ba);
     hdwa(ki);
     hdwa(he);
-
 let count = 0;
 // - add active class to buttons on click
     function aac(x){
@@ -178,18 +163,15 @@ let count = 0;
     }   
     
     console.log(count);
-
 // - show div with articles on click
    function sdwa(x){
          x.style.display = 'inline';
     }
-
 // - on click run func.
     p.onclick = () => {
 // - write to element popular articles
         document.getElementById('article-type').innerHTML = 'Popular articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Popular articles from Baby Bassinet';
-
 // - add active class 
         aac(p);  
 // - show div with articles
@@ -205,13 +187,10 @@ let count = 0;
             hdwa(he);
         }
     }
-
 // - when button with class r is clicked
     r.onclick = () => {
-
         document.getElementById('article-type').innerHTML = 'Recent articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest articles from Baby Bassinet';
-
 // - add active class r
         aac(r);
 // - show div with articles
@@ -228,18 +207,15 @@ let count = 0;
             hdwa(he);
         }
     }
-
 // - when btn#g clicked run func.
     g.onclick = () => {
         
         document.getElementById('article-type').innerHTML = 'Guide articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Guide articles';
-
 // - add .active onclick func.
         aac(g);
 // - show div with articles
         sdwa(gu);
-
 // - add active class to div 
         gu.className += " active";
         if (gu.className == " active"){
@@ -251,7 +227,6 @@ let count = 0;
             hdwa(he);
         }
     }
-
     b.onclick = () => {
         document.getElementById('article-type').innerHTML = 'Baby articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Baby articles';
@@ -269,7 +244,6 @@ let count = 0;
             hdwa(he);
         }
     }
-
     k.onclick = () => {
         document.getElementById('article-type').innerHTML = 'Kids articles';
         document.getElementById('discription-type').innerHTML = 'Read the latest Kids articles';
@@ -309,9 +283,3 @@ let count = 0;
  
 
 @endsection
-
-
-
-   
-       
-    

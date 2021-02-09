@@ -40,11 +40,7 @@ class MostRecent extends Component
         $mostRecent[] = HealthArticles::take(2)->latest()->get();
 
        return view('components.most-recent', [
-           'mostRecent'    => $mostRecent,
-           'babyArticles'  => $babyArticles = BabyArticles::take(6)->get(),
-           'kidsArticles'  => $kidsArticles = KidsArticles::take(6)->get(),
-           'guideArticles' => $guideArticles = GuideArticles::take(6)->get(),
-           'healthArticles'=> $healthArticles = HealthArticles::take(6)->get()
+           'mostRecent'    => $mostRecent
        ]);
     }
 }

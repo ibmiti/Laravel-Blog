@@ -207,7 +207,7 @@ class GuideArticlesController extends Controller
     {
         // - try running query to database
         try {
-            $query = DB::delete("delete from guides where id = " . $guideArticleId);
+            DB::delete("delete from guides where id = " . $guideArticleId);
             return redirect()->route('guides')->with('message', 'Guide article deleted.');
         } catch (Exception $e) {
             //  - in case of error do...
