@@ -36,6 +36,7 @@
             <a href="/kidArticle/{{ $mostPopular[1][0]->id ?? '' }}">
             {{ $mostPopular[1][0]->title ?? ''}}
             </a>
+            <p style="color: grey; font-size: 15px;">{{ $mostPopular[1][0]->excerpt  ?? '' }}</p>   
         </h2>                
     </div>
 </div>
