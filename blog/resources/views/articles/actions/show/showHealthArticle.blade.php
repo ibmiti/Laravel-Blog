@@ -71,15 +71,19 @@
     text-decoration: none;
   }
 
-
   a:visited {
    text-decoration: none;
   }
 
-</style>
+ #credit { 
+  color: grey;
+  }
 
-<body>
-<div class="container container-fluid">
+  #credit a {
+    color: black;
+  }
+
+</style>
 
 <nav class="navbar navbar-light navbar">
 <a id="logo" href="/">
@@ -120,31 +124,37 @@
   </div>
 </nav>
 
-<div class="container container-fluid">
-   
-<div class="container">
-      <div class="mt-5 row">
-        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
-          {{ $healthArticle->title ?? ''}}
-        </h1>
-      </div> 
+<body >
+<div class="container-fluid">
+<div class="mt-5 row">
+  <div class="col-12 text-center">
+    <h1 style="padding-bottom: 15px;" class="col-lg text-center">   
+      {{ $healthArticle->title ?? ''}}
+    </h1>
+  </div>  
+</div> 
       
-    <div class="row">
-      <div class="col-12 text-center">
-      <blockquote class="blockquote">{{ $healthArticle->quip ?? '' }}</blockquote>
-      </div>
-    </div>
-  
-    <div class="row">
-       <div class="col-sm-12 text-center mt-5 mb-5">
-          <img class="image featured" src="{{ $healthArticle->image }}" alt="article image" max-width="100%" max-height="100%">
-          <p class="mt-1"> {!! $healthArticle->image_credit !!} </p>
-       </div>         
-    </div>
-  
+<div class="row">
+  <div class="col-12 text-center">
+    <blockquote class="blockquote">
+        {{ $healthArticle->quip ?? '' }}
+    </blockquote>
+  </div>
 </div>
-<!-- there should always be a p1 -->
-<!-- TODO this may be throwing an error - it is not currently being displayed -->
+  
+<div class="row">
+    <div class="text-center col-sm-12 mt-5 mb-5">
+      <img class="image featured" 
+            src="{{ $healthArticle->image }}" 
+            alt="article image"
+            max-width="100%"
+            max-height="100%">
+      <p id="credit" class="mt-1 text-center"> 
+        {!! $healthArticle->image_credit !!} </p>
+    </div>         
+</div>
+
+
 @if ($healthArticle->p1 )
     <div class="row">
       <div class="col-md mb-3 text-center">
@@ -165,9 +175,8 @@
           <h2> {{ $healthArticle->heading2 }} </h2>
       </div>
     </div>
-
     <div class="row">
-      <div class="col-md text-center">
+      <div class="col-sm-12 text-center">
           <p> {{ $healthArticle->p2}} </p>
       </div>
     </div>
@@ -175,39 +184,32 @@
 
 <!-- if there is a paragraph 3 then show it -->
 @if ($healthArticle->p3)
-
-    <div class="row">
-      <div class="col-md mb-3 text-center">
-          <h2> {{ $healthArticle->heading3 }} </h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md text-center">
-          <p> {{ $healthArticle->p3}} </p>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-sm-12 mb-3 text-center">
+      <h2> {{ $healthArticle->heading3 }} </h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 text-center">
+      <p> {{ $healthArticle->p3}} </p>
+  </div>
+</div>
 @endif
 
-    <div class="row justify-content-center mt-3">
-      <div class="col-lg text-center">
-          <button class="btn btn-lg btn-dark"><a href="/health">Go Back</a></button>
-      </div>   
-  </div>        
+<div class="row justify-content-center mt-3">
+  <div class="col-lg text-center">
+      <button class="btn btn-lg btn-dark">
+        <a href="/health">Go Back</a>
+      </button>
+  </div>   
+</div> 
 </div>
-
-  
-
-    
-<!-- <script src="{{ asset('js/main.js') }}"></script> -->
-
-<!-- bootstrap related scripts -->
 
 <!-- bootstrap related scripts -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <x-footer />
-</body>
+</body> 
 </html>
 

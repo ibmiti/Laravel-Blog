@@ -16,7 +16,7 @@ class GuideArticlesController extends Controller
     public function index()
     {
         return view('articles.actions.index.indexGuide', [
-            'guideArticles' => $guideArticles = GuideArticles::take(6)->latest()->get()
+            'guideArticles' => $guideArticles = GuideArticles::latest()->paginate(10)
         ]);
     }
 
@@ -39,13 +39,11 @@ class GuideArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        // TODO - Validate The Data
-        // --------------------------
-        // $this->validate($request, [
-        //     'title' => 'required|string|max:50|min:3',
-        //     'excerpt' => 'required|string|max:150|min:10',
-        //     'paragraph' => 'required|string|min:10',
-        // ]);
+        // | add server side validation
+        $this->validate($request, [
+            'title' => 'required|string|max:50|min:3',
+            'excerpt' => 'required|string|max:150|min:10',
+        ]);
         
         $guideArticle = new GuideArticles;
 

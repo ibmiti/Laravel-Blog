@@ -16,7 +16,7 @@ class BabyArticlesController extends Controller
     public function index()
     {
         return view('articles.actions.index.indexBaby', [
-            'babyArticles' => BabyArticles::take(6)->latest()->paginate()
+            'babyArticles' => BabyArticles::latest()->paginate(10)
         ]);
     }
 
@@ -39,6 +39,10 @@ class BabyArticlesController extends Controller
     public function store(Request $request)
     {
         // | add server side validation
+        $this->validate($request, [
+            'title' => 'required|string|max:50|min:3',
+            'excerpt' => 'required|string|max:150|min:10',
+        ]);
 
         // | add event listener 
         // | - this event listener will notify by email those signed up that a new article has been created

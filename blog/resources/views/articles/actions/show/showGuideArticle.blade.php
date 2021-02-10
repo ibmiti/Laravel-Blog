@@ -77,10 +77,6 @@
   }
 
 </style>
-
-<body>
-<div class="container container-fluid">
-
 <nav class="navbar navbar-light navbar">
 <a id="logo" href="/">
         <img src="{{asset('images/bbLogo.png')}}" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="80" style="padding-top:15px" /> 
@@ -119,6 +115,10 @@
    </ul> 
   </div>
 </nav>
+<body>
+<div class="container container-fluid">
+
+
 
 <div class="container container-fluid">
     <div style="margin-top: 50px;" class="row">

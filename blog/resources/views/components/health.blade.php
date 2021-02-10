@@ -9,5 +9,5 @@
         </p>                  
     </div>
 </div>
-<hr>
+
 @endforeach

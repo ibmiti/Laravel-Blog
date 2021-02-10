@@ -16,7 +16,7 @@ class HealthArticlesController extends Controller
     public function index()
     {
         return view('articles.actions.index.indexHealth', [
-            'healthArticles' => HealthArticles::take(6)->latest()->paginate()
+            'healthArticles' => HealthArticles::latest()->paginate(10)
         ]);
     }
 
@@ -38,6 +38,12 @@ class HealthArticlesController extends Controller
      */
     public function store(Request $request)
     {
+        // | add server side validation
+        $this->validate($request, [
+            'title' => 'required|string|max:50|min:3',
+            'excerpt' => 'required|string|max:150|min:10',
+        ]);
+
         // truncating || limiting the excerpt
         $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
         $healthArticle = new HealthArticles;

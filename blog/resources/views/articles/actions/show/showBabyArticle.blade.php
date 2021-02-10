@@ -65,9 +65,7 @@
     -webkit-border-radius:50%; */
     }
 
-
-
-    .image {
+  .image {
 		border: 0;
 		display: inline-block;
 		position: relative;
@@ -152,24 +150,14 @@ a {
    text-decoration: none;
   }
 
-/* p{
-  line-
-} */
+  #credit { 
+  color: grey;
+  }
 
-p {
-  margin-left:  8%;
-  margin-right: 8%;
-  font-weight: lighter;
-}
-
-/* for image_credit */
-  p a {
-        color: black;
+  #credit a {
+    color: black;
   }
 </style>
-
-<body>
-<div class="container-fluid">
 
 <nav class="navbar navbar-light navbar">
   <a id="logo" href="/">
@@ -213,15 +201,15 @@ p {
    </ul> 
   </div>
 </nav>
-<!-- <hr class="my-5"> -->
 
 
-<div class="container container-fluid">
-      <div class="mt-5 row">
-        <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
-          {{ $babyArticle->title ?? ''}}
-        </h1>
-      </div> 
+<body>
+<div class="container-fluid">
+    <div class="mt-5 row">
+      <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
+        {{ $babyArticle->title ?? ''}}
+      </h1>
+    </div> 
       
     <div class="row">
       <div class="col-12 text-center">
@@ -232,7 +220,7 @@ p {
     <div class="row">
        <div class="col-md text-center mt-5 mb-5">
           <img class="image featured" src="{{ $babyArticle->image }}" alt="article image" max-width="100%" max-height="100%">
-          <p class="mt-1"> {!! $babyArticle->image_credit !!} </p>
+          <p id="credit" class="mt-1"> {!! $babyArticle->image_credit !!} </p>
        </div>         
     </div>
   
@@ -283,11 +271,12 @@ p {
     </div>
 @endif
 
-    <div class="row justify-content-center mt-3">
+   <div class="row justify-content-center mt-3">
       <div class="col-lg text-center">
           <button class="btn btn-lg btn-dark"><a href="/babies">Go Back</a></button>
       </div>   
-  </div>        
+  </div> 
+
 </div>
 
 

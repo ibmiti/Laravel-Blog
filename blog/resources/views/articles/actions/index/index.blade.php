@@ -93,23 +93,15 @@ img {
                 <!-- this p filled with data based off button click -->
             </p>
             <hr style="border: 2px solid red;">
-<!-- | Logical structure determining which group of articles to show -->
-<!-- | add something to variable to show which is clicked. -->
-
             <div id="po"><x-most-popular/></div>
             <div id="re"><x-most-recent/></div>
             <div id="gu"><x-guides/></div>
             <div id="ba"><x-baby/></div>
             <div id="ki"><x-kids/></div>
             <div id="he"><x-health/></div>
-
     </div>
   </div>
 </div>
-
-
-<!-- if mp button clicked then show this -->
-   
 
 <!-- | etc...as above e.g shows -->
 

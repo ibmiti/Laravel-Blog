@@ -101,28 +101,33 @@
 <div class="mt-4 container">
     <div class="row">
         <h1 class="col-lg text-center">The Latest Articles From The Bassinet</h1>
-       
     </div>
     <hr style="border:red 2px solid; margin-top: 7px;">
   
+  @if($articles)
     <div class="row">
       <div class="col-sm">
           <ul>
-                <li><a href="/babyArticle/{{ $articles[0][0]->id }}">{{ $articles[0][0]->title }}</a></li>
-                <p class="paragraph">{{ $articles[0][0]->excerpt }}</p>
+                <li><a href="/babyArticle/{{ $articles[0][0]->id ?? '' }}">{{ $articles[0][0]->title ?? ''  }}</a></li>
+                <p class="paragraph">{{ $articles[0][0]->excerpt ?? '' }}</p>
                 <hr>
-                <li><a href="/kidArticle/{{ $articles[1][0]->id }}">{{ $articles[1][0]->title }}</a></li>
-                <p class="paragraph">{{ $articles[1][0]->excerpt }}</p>
+                <li><a href="/kidArticle/{{ $articles[1][0]->id ?? '' }}">{{ $articles[1][0]->title ?? '' }}</a></li>
+                <p class="paragraph">{{ $articles[1][0]->excerpt ?? ''  }}</p>
                 <hr>
-                <li><a href="/guideArticle/{{ $articles[2][0]->id }}">{{ $articles[2][0]->title }}</a></li>
-                <p class="paragraph">{{ $articles[2][0]->excerpt }}</p>
+                <li><a href="/guideArticle/{{ $articles[2][0]->id ?? ''  }}">{{ $articles[2][0]->title ?? '' }}</a></li>
+                <p class="paragraph">{{ $articles[2][0]->excerpt ?? '' }}</p>
                 <hr>
-                <li><a href="/healthArticle/{{ $articles[3][0]->id }}">{{ $articles[3][0]->title }}</a></li>
-                <p class="paragraph">{{ $articles[3][0]->excerpt }}</p>
+                <li><a href="/healthArticle/{{ $articles[3][0]->id ?? ''  }}">{{ $articles[3][0]->title ?? '' }}</a></li>
+                <p class="paragraph">{{ $articles[3][0]->excerpt ?? '' }}</p>
                 <hr>
           </ul>
         </div>
     </div>
 </div>      
+@else 
+<div class="row">
+    <h1 class="col-lg text-center">No articles to show</h1>
+ </div>
+@endif
 
 @endsection

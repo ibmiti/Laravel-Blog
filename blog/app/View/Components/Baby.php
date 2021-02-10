@@ -30,7 +30,7 @@ class Baby extends Component
     public function render()
     {
        return view('components.baby', [
-           'babyArticles'  => $babyArticles = BabyArticles::take(6)->get()
+           'babyArticles'  => $babyArticles = BabyArticles::paginate(6)
        ]);
     }
 }

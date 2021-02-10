@@ -16,7 +16,7 @@ class KidsArticlesController extends Controller
     public function index()
     {
         return view('articles.actions.index.indexKids', [
-            'kidsArticles' => $kidsArticles = KidsArticles::take(6)->latest()->paginate()
+            'kidsArticles' => $kidsArticles = KidsArticles::latest()->paginate(10),
         ]);
     }
 
@@ -38,6 +38,12 @@ class KidsArticlesController extends Controller
      */
     public function store(Request $request)
     {
+        // | add server side validation
+        $this->validate($request, [
+            'title' => 'required|string|max:50|min:3',
+            'excerpt' => 'required|string|max:150|min:10',
+        ]);
+
         $kidsArticle = new KidsArticles;
         $kidsArticle->image        = $request->image;
         $kidsArticle->image_credit = $request->image_credit;

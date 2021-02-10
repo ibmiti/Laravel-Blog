@@ -14,7 +14,8 @@
     </div>
 </div>
 <!--  | separator  -->
-<hr>
+<!-- <hr> -->
+
 <!-- | row for second most-popular baby article -->
 <div class="row">
     <div class="col-lg">
@@ -28,9 +29,9 @@
         </p>              
     </div>
 </div>
-
+<!-- <hr>  -->
 <!-- | Second set of articles | Kids articles -->
-<hr> 
+
 <div class="row">
     <div class="col-lg">
         <h2 style="padding-bottom: 15px;" id="title">
@@ -40,7 +41,8 @@
         </h2>                
     </div>
 </div>
-<hr>
+<!-- <hr> -->
+
 <div class="row">
     <div class="col-lg">
         <h2 style="padding-bottom: 15px;" id="title">
@@ -51,7 +53,8 @@
         <p style="color: grey; font-size: 15px;">{{ $mostRecent[1][1]->excerpt ?? '' }}</p>              
     </div>
 </div>
-<hr>
+<!-- <hr> -->
+
 <div class="row">
     <div class="col-lg">
         <h2 style="padding-bottom: 15px;" id="title">
@@ -62,7 +65,8 @@
         <p style="color: grey; font-size: 15px;">{{ $mostRecent[2][0]->excerpt ?? '' }}</p>              
     </div>
 </div>
-<hr>
+<!-- <hr> -->
+
 <div class="row">
     <div class="col-lg">
         <h2 style="padding-bottom: 15px;" id="title">
@@ -73,7 +77,8 @@
         <p style="color: grey; font-size: 15px;">{{ $mostRecent[2][1]->excerpt ?? '' }}</p>              
     </div>
 </div>
-<hr>
+<!-- <hr> -->
+
 <div class="row">
     <div class="col-lg">
         <h2 style="padding-bottom: 15px;" id="title">
@@ -84,7 +89,8 @@
         <p style="color: grey; font-size: 15px;">{{ $mostRecent[3][0]->excerpt ?? '' }}</p>              
     </div>
 </div>
-<hr>
+<!-- <hr> -->
+
 <div class="row">
     <div class="col-lg">
         <h2 style="padding-bottom: 15px;" id="title">

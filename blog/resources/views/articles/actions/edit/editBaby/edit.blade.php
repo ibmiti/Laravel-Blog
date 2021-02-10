@@ -349,7 +349,7 @@ p {
 </div>
 
 <div class="row justify-content-center mt-3">
-  <div class="col-sm-">
+  <div class="col-sm-3">
     <button class="btn btn-primary" type="submit">Edit</button>
   </div>
   <div class="col-sm-3">

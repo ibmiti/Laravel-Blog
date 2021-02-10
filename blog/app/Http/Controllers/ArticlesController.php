@@ -47,7 +47,7 @@ class ArticlesController extends Controller
      
         return view('articles.actions.index.index', [
             // 'articles'      => Article::take(6)->latest()->paginate(),
-            'babyArticles'  => $babyArticles = BabyArticles::take(6)->get(),
+            'babyArticles'  => $babyArticles = BabyArticles::latest(6)->get(),
             'kidsArticles'  => $kidsArticles = KidsArticles::take(6)->get(),
             'guideArticles' => $guideArticles = GuideArticles::take(6)->get(),
             'healthArticles'=> $healthArticles = HealthArticles::take(6)->get(),
@@ -55,6 +55,21 @@ class ArticlesController extends Controller
             'mostPopular'   => $mostPopular,
         ]);
     }
+
+// - get most popular article out of all-time popular articles
+// - this feature may be fully implemented when more users are active
+// - get with founder to plan out how to implement features
+    public function mostPopular(){
+        //
+    }
+
+// - get most recent articles out of all articles
+// - this feature may be fully implemented when more users are active
+// - get with founder to plan out how to implement features
+    public function mostRecent(){
+        //
+    }
+
 
 /*
 | ---------------
@@ -69,64 +84,12 @@ class ArticlesController extends Controller
         ]);
     }
     
-/*
-| ---------------
-| these may not stay.
-| --------------- 
-*/
-    public function create(){
-        return view('articles.create.createNormal');
-    }
-
-    // | May delete this method
-    public function store(Request $request){
-        
-        //| TODO - Validate The Data
-        // $this->validate($request, [
-        //     'title' => 'required|string|max:50|min:3',
-        //     'excerpt' => 'required|string|max:150|min:10',
-        //     'body' => 'required|string|min:10',
-        // ]);
-
-        $article = new Article;
-        
-        $article->image = $request->image;
-        $article->image_credit = $request->image_credit;
-        $article->title = $request->title;
-        $article->quip = $request->quip;
-        
-        // truncating || limiting the excerpt
-        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
-        $article->excerpt = $excerpt;
-        $article->heading1 = $request->h1;
-        $article->heading2 = $request->h2;
-        $article->heading3 = $request->h3;
-        $article->p1 = $request->p1;
-        $article->p2 = $request->p2;
-        $article->p3 = $request->p3;
-    
-        // saving the article
-        $article->save();        
-    }
-
-/*
-|-------------------------------------------------
-|   This may become a future feature - where 
-|   6 of all the various articles are shown on a
-|   on a single page 
-|-------------------------------------------------
-*/
-    // public function show(){
-    //     return view('articles.show_all_articles', [
-    //         'articles' => $articles = Article::take(6)->latest()
-    //     ]);
-    // }
-
+    // - general edit :method allowing various edits of multiple resources; e.g, (:type baby == baby article, which chooses to :edit baby )
     public function edit(Request $request)
     {
         /* 
         |------
-        |  based off type of article and count, query the database
+        |  use type and count to choose which type of article to take count from
         |------
         */
         $type  = $request->type;
@@ -153,21 +116,7 @@ class ArticlesController extends Controller
         }
     }
 
-    // public function update()
-    // {
-
-    // }
-
-    // public function delete()
-    // {
-        
-    // }
-
-/* 
-| ----------------------------
-|  Non Article Crud Operations
-| ----------------------------
-*/
+    // - return about :view with various sets of article :types; e.g, ( baby :articles, kid :articles, etc. )
     public function about() {
         $articles = [];
         $babyArticles = BabyArticles::take(2)->latest()->get();
@@ -184,12 +133,13 @@ class ArticlesController extends Controller
     return view('about', ['articles' => $articles]);
     }
 
+    // - returns selectArticleCreate :view 
     public function viewSelectArticlePage(){
         return view('articles.actions.select.selectArticleCreate');
     }
 
+    //  - returns selectArticleEdit :view 
     public function viewEditArticlePage(){
         return view('articles.actions.select.selectArticleEdit');
     }
 }
-// blog/resources/views/articles/actions/select/selectArticleEdit
