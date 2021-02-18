@@ -20,18 +20,17 @@
         <label for="image">Image 1</label>
     </div>
     <div class="row">
-            <!-- <label for="title" class="control-label">Article Image</label> -->
             <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">    
     </div>
 
-    <!-- 
-    | TODO - later add in the ability on front end and back end to add captions to each image
-        -->
-    <!-- <div  class="row mt-3">
-        <input type="text" name="image_credit" class="form-control form-control-lg mt-3" placeholder="Give credit for image">
-    </div> -->
-
-                
+    <div class="row mt-3">
+        <label for="imageCredit1">Image Credit 1</label>
+    </div>
+    <div class="row">
+            <!-- <label for="title" class="control-label">Article Image</label> -->
+            <input type="text" name="imageCredit1" class="form-control form-control-lg" placeholder="A cool image here">    
+    </div>
+          
     <div class="row mt-3">
         <label for="paragraph1" class="control-label">Paragraph 1</label>
         <textarea name="paragraph1" cols="30" rows="5" name="paragraph1" class="form-control form-control-lg mt-3" placeholder="Paragraph 1"></textarea>
@@ -47,9 +46,15 @@
     <div class="row mt-3">
         <label for="image2">Image 2</label>
     </div>
+
     <div class="row">
-            <!-- <label for="title" class="control-label">Article Image</label> -->
-            <input type="text" name="image2" class="form-control form-control-lg" placeholder="A cool image here">    
+        <input type="text" name="image2" class="form-control form-control-lg" placeholder="A cool image here">    
+    </div>
+    <div class="row mt-3">
+        <label for="imageCredit2">Image Credit 2</label>
+    </div>
+    <div class="row">
+            <input type="text" name="imageCredit2" class="form-control form-control-lg" placeholder="A cool image here">    
     </div>
                 
     <div class="row mt-3">
@@ -70,6 +75,13 @@
     </div>
     <div class="row">
             <input type="text" name="image3" class="form-control form-control-lg" placeholder="A cool image here">    
+    </div>
+    <div class="row mt-3">
+        <label for="imageCredit3">Image Credit 3</label>
+    </div>
+    <div class="row">
+            <!-- <label for="title" class="control-label">Article Image</label> -->
+            <input type="text" name="imageCredit3" class="form-control form-control-lg" placeholder="A cool image here">    
     </div>
 
     <div class="row mt-3">
@@ -92,6 +104,13 @@
     <div class="row">
             <input type="text" name="image4" class="form-control form-control-lg" placeholder="A cool image here">    
     </div>
+    <div class="row mt-3">
+        <label for="imageCredit4">Image Credit 4</label>
+    </div>
+    <div class="row">
+            <!-- <label for="title" class="control-label">Article Image</label> -->
+            <input type="text" name="imageCredit4" class="form-control form-control-lg" placeholder="A cool image here">    
+    </div>
                 
     <div class="row mt-3">
         <label for="paragraph4" class="control-label">Paragraph 4</label>
@@ -108,10 +127,18 @@
 
     <div class="row mt-3">
         <label for="image5">Image 5</label>
-    </div>
+    </div>            
     <div class="row">
             <input type="text" name="image5" class="form-control form-control-lg" placeholder="A cool image here">    
     </div>
+    <div class="row mt-3">
+        <label for="imageCredit5">Image Credit 5</label>
+    </div>
+    <div class="row">
+            <!-- <label for="title" class="control-label">Article Image</label> -->
+            <input type="text" name="imageCredit5" class="form-control form-control-lg" placeholder="A cool image here">    
+    </div>
+
     <div class="row mt-3">
         <label for="paragraph5" class="control-label">Paragraph 5</label>
         <textarea type="textarea" name="paragraph5" class="form-control form-control-lg mt-3" placeholder="Paragraph 5" cols="30" rows="5"></textarea>
@@ -132,6 +159,13 @@
     <div class="row">
             <input type="text" name="image6" class="form-control form-control-lg" placeholder="A cool image here">    
     </div>
+    <div class="row mt-3">
+        <label for="imageCredit6">Image Credit 6</label>
+    </div>
+    <div class="row">
+            <input type="text" name="imageCredit6" class="form-control form-control-lg" placeholder="A cool image here">    
+    </div>
+
                 
     <div class="row mt-3">
         <label for="paragraph6" class="control-label">Paragraph 6</label>
@@ -144,12 +178,3 @@
         </div>
     </div>
 </form>
-            <!-- <div class="row justify-content-center mt-3">
-                <div class="col-sm-6">
-                    <button class="btn btn-block btn-primary" type="submit">
-                        <a style="color:white;" href="{{ url('create_normal_article') }} ">
-                        Switch to Regular Article 
-                        </a>
-                    </button>
-                </div>
-            </div> -->

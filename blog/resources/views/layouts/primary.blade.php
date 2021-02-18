@@ -9,12 +9,9 @@
     <script src="https://use.fontawesome.com/a7bffd41d3.js"></script>
     <title>BabyBassinet - @yield('title') </title>
 </head>
-
-<body>
-<div class="container">
-<div class="container">
 <!-- | details which navbar is served -->
-    @switch($uri = Request::getRequestUri()) 
+<!-- | this is a feature which can be turned on for various navbar setups -->
+@switch($uri = Request::getRequestUri()) 
         @case($uri == '/')
             <x-navbar/>
         @break
@@ -36,18 +33,19 @@
         @case ($uri == '/contact')
             <x-navbar/>
         @break
-        <!-- | turn off navbar -->
         @case ($uri == '/articles')
             <x-navbar/>
         @break
+        <!-- this is temp. -->
+        @case($uri)        
+            <x-navbar/>
+        @break
     @endswitch
-</div>
-</div>
+<body>
 
 <div class="container">
     @yield('content')
 </div>
-<!-- <script src="{{ asset('js/main.js') }}"></script> -->
 
 <!-- bootstrap related scripts -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

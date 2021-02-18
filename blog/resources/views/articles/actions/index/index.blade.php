@@ -6,55 +6,67 @@
 
 <!-- | Styles for this file -->
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
-    .col-lg  {
-        /* font-family: 'Raleway', 'Roboto'; */
-        font-family: 'Big Shoulders Stencil Display', cursive;
-        font-size: 40px;
-    }
-    .col-md {
-      font-family: Verdana;
-      font-size: 16px;
-      color: #555555;
-      line-height: 1.5;
-      letter-spacing: .45px;
-      margin: 20px 20px 20px 20px;
-      padding: 20px 100px 20px 100px;
-    }
-    #title {
-      line-height: 1.5;
-      letter-spacing: .45px;
-      font-family: 'Big Shoulders Stencil Display', cursive;
-    }
-    a {
-        text-decoration: none;
-    }
-    #imgPost {
-        /* padding-right: 20px; */
-        width: 75%;
-    }
-    a:hover {
-  color: grey;
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
+
+.col-lg  {
+/* font-family: 'Raleway', 'Roboto'; */
+font-family: 'Big Shoulders Stencil Display', cursive;
+font-size: 40px;
 }
+
+.col-md {
+font-family: Verdana;
+font-size: 16px;
+color: #555555;
+line-height: 1.5;
+letter-spacing: .45px;
+margin: 20px 20px 20px 20px;
+padding: 20px 100px 20px 100px;
+}
+
+#title {
+line-height: 1.5;
+letter-spacing: .45px;
+font-family: 'Big Shoulders Stencil Display', cursive;
+}
+
+a {
+text-decoration: none;
+}
+
+#imgPost {
+/* padding-right: 20px; */
+width: 75%;
+}
+
+a:hover {
+color: grey;
+}
+
 a:link {
-  text-decoration: none;
+text-decoration: none;
 }
+
 a:visited {
-  text-decoration: none;
+text-decoration: none;
 }
+
 img {
-    border-radius : 7%;
-    -moz-border-radius: 7%;
-    -webkit-border-radius:7%;
-  }
-  p {
-      color: grey;
-  }
-.card-articles {
-    -moz-box-shadow: 0 0 3px grey !important;
-    -webkit-box-shadow: 0 0 3px grey !important ;
-    box-shadow: 0 0 20px grey !important;
+border-radius : 7%;
+-moz-border-radius: 7%;
+-webkit-border-radius:7%;
 }
+
+p {
+color: grey;
+}
+
+.card-articles {
+-moz-box-shadow: 0 0 3px grey !important;
+-webkit-box-shadow: 0 0 3px grey !important ;
+box-shadow: 0 0 20px grey !important;
+}
+
 </style>
 <!-- | end of style for this file -->
 
@@ -70,38 +82,37 @@ img {
         </div>
     </div>
 
-<div class="row">
-    <div class="text-center col-sm-12">
-        <button id="popular" type="button" class="btn btn-outline-primary">Popular</button>
-        <button id="recent" type="button" class="btn btn-outline-secondary">Recent</button>
-        <button id="guides" type="button" class="btn btn-outline-success">Guides</button>
-        <button id="baby" type="button" class="btn btn-outline-danger">Baby</button>
-        <button id="kids" type="button" class="btn btn-outline-warning">Kids</button>
-        <button id="health" type="button" class="btn btn-outline-info">Health</button>
+    <div class="row">
+        <div class="text-center col-sm-12">
+            <button id="popular" type="button" class="btn btn-outline-primary">Popular</button>
+            <button id="recent"  type="button" class="btn btn-outline-secondary">Recent</button>
+            <button id="guides"  type="button" class="btn btn-outline-success">Guides</button>
+            <button id="baby"    type="button" class="btn btn-outline-danger">Baby</button>
+            <button id="kids"    type="button" class="btn btn-outline-warning">Kids</button>
+            <button id="health"  type="button" class="btn btn-outline-info">Health</button>
+        </div>
     </div>
-</div>
 
-
-<div class="mt-4 row card card-articles">
-    <div class="col-lg-12 mt-2 container">
-        <div class="container"> 
-    <!-- | This data to be swapped out based on button push -->
-            <h2 id="article-type" class="col-lg">
-                <!-- this h2 filled with script on button click -->
-            </h2>
-            <p style="color: grey;" id="discription-type">
-                <!-- this p filled with data based off button click -->
-            </p>
-            <hr style="border: 2px solid red;">
-            <div id="po"><x-most-popular/></div>
-            <div id="re"><x-most-recent/></div>
-            <div id="gu"><x-guides/></div>
-            <div id="ba"><x-baby/></div>
-            <div id="ki"><x-kids/></div>
-            <div id="he"><x-health/></div>
+    <div class="mt-4 row card card-articles">
+        <div class="col-lg-12 mt-2 container">
+            <div class="container"> 
+        <!-- | This data to be swapped out based on button push -->
+                <h2 id="article-type" class="col-lg">
+                    <!-- this h2 filled with script on button click -->
+                </h2>
+                <p style="color: grey;" id="discription-type">
+                    <!-- this p filled with data based off button click -->
+                </p>
+                <hr style="border: 2px solid red;">
+                <div id="po"><x-most-popular/></div>
+                <div id="re"><x-most-recent/></div>
+                <div id="gu"><x-guides/></div>
+                <div id="ba"><x-baby/></div>
+                <div id="ki"><x-kids/></div>
+                <div id="he"><x-health/></div>
+        </div>
     </div>
-  </div>
-</div>
+    </div>
 
 <!-- | etc...as above e.g shows -->
 
@@ -153,8 +164,7 @@ let count = 0;
         }, 1500);
     
     }   
-    
-    console.log(count);
+
 // - show div with articles on click
    function sdwa(x){
          x.style.display = 'inline';

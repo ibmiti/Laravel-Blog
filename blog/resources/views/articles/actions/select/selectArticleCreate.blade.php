@@ -15,36 +15,35 @@
         }
     </style>
     <div class="container container-fluid">
-        <!-- <button class="btn btn-primary">
-            <a href="{{ route('create_normal_article') }}">
-            Normal Article
-            </a>
-        </button> -->
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
-            <button class="btn btn-secondary">
-                <a href="{{ url('createBabyArticle') }}">
-            Baby
-            </a>
-            </button>
-            <button class="btn btn-secondary">
-                <a href="{{ url('createKidArticle') }}">
-            Kid
-            </a>
-            </button>
-            <button class="btn btn-secondary">
-                <a href="{{ url('createGuideArticle') }}">
-            Guide
-            </a>
-            </button>
-            <button class="btn btn-secondary">
-                <a href="{{ url('createHealthArticle') }}">
-            Health
-            </a>
-            </button>
+        <div class="row text-center">
+            <div class="col-sm-3">
+                <button class="btn btn-secondary btn-lg">
+                    <a href="{{ url('createBabyArticle') }}">
+                         Baby
+                    </a>
+                </button>
             </div>
-            <div class="col-4"></div>
+            <div class="col-sm-3">
+                <button class="btn btn-secondary btn-lg">
+                    <a href="{{ url('createKidArticle') }}">
+                        Kid
+                    </a>
+                </button>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn-secondary btn-lg">
+                    <a href="{{ url('createGuideArticle') }}">
+                        Guide
+                    </a>
+                </button>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn-secondary btn-lg">
+                    <a href="{{ url('createHealthArticle') }}">
+                        Health
+                    </a>
+                </button>
+            </div>
         </div>
     </div>
 @endsection

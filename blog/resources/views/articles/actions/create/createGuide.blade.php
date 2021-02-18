@@ -1,6 +1,7 @@
 <!-- | Imports -->
 @extends('layouts.primary')
 @section('title', 'Create List Article')
+
 @section('content')
 
 <!-- | add links to products at bottom of form  - ask product owner -->
@@ -61,7 +62,7 @@
         @endswitch
         <div class="row justify-content-center mt-3">
         <div class="col-sm-6">
-            <button class="btn btn-block btn-primary" type="submit">
+            <button class="btn btn-block btn-dark" type="submit">
                 <a style="color:white;" href="{{ url('viewSelectArticlePage') }} ">
                 Back
                 </a>

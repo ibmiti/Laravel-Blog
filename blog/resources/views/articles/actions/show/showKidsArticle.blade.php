@@ -166,14 +166,15 @@ p {
   }
 </style>
 <nav class="navbar navbar-light navbar">
-<a id="logo" href="/">
-        <img src="{{asset('images/bbLogo.png')}}" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="80" style="padding-top:15px" /> 
-</a>
+  <a id="logo" href="/">
+    <img src="{{asset('images/bbLogo.png')}}"       class="navbar-brand d-inline-block align-to waves-effect" width="60" height="80" style="padding-top:15px"
+     /> 
+  </a>
 <strong class="navbar-brand" 
-                style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
-                href="#">
-                BB + BLOG + LIST ARTICLE {{ $guideArticle->id ?? '' }}
-                </strong>   
+        style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
+        href="#">
+        BB + BLOG + LIST ARTICLE {{ $guideArticle->id ?? '' }}
+</strong>   
 
   <button class="navbar-toggler" 
           type="button" 
@@ -184,8 +185,9 @@ p {
           aria-label="Toggle navigation"
           style="border: none;outline: none;"
           >
-  <span class="navbar-toggler-icon"></span></button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent15">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse"            id="navbarSupportedContent15">
     <ul class="navbar-nav ml-auto">
         <?php     
             $uri = Request::getRequestUri();
@@ -205,8 +207,6 @@ p {
 </nav>
 <body>
 <div class="container-fluid">
-
-
 <div class="container-fluid">
     <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
@@ -234,7 +234,7 @@ p {
       </div>
     </div>
     <div class="row">
-      <div class="col-md text-center">
+      <div class="col-sm-12 text-center">
           <p> {{ $kidsArticle->p1 }} </p>
       </div>
     </div>
@@ -242,12 +242,12 @@ p {
 
 @if ($kidsArticle->p2 )
     <div class="row">
-      <div class="col-md mb-3 text-center">
+      <div class="col-sm-12 mb-3 text-center">
           <h2> {{ $kidsArticle->heading2 }} </h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-md text-center">
+      <div class="col-sm-12 text-center">
           <p> {{ $kidsArticle->p2}} </p>
       </div>
     </div>
@@ -256,12 +256,12 @@ p {
 <!-- if there is a paragraph 3 then show it -->
 @if ($kidsArticle->p3)
     <div class="row">
-      <div class="col-md mb-3 text-center">
+      <div class="col-sm-12 mb-3 text-center">
           <h2> {{ $kidsArticle->heading3 }} </h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-md text-center">
+      <div class="col-sm-12 text-center">
           <p> {{ $kidsArticle->p3}} </p>
       </div>
     </div>

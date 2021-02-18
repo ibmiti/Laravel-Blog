@@ -104,20 +104,30 @@ class KidsArticlesController extends Controller
      */
     public function update(Request $request, KidsArticles $kidsArticles)
     {
-        $kidsArticle = new kidsArticles;
-        $kidsArticle->image = $request->image;
-        $kidsArticle->image_credit = $request->image_credit;
-        $kidsArticle->title = $request->title;
-        $kidsArticle->quip = $request->quip;
-        // truncating || limiting the excerpt
-        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
-        $kidsArticle->excerpt = $excerpt;
-        $kidsArticle->heading1 = $request->h1;
-        $kidsArticle->heading2 = $request->h2;
-        $kidsArticle->heading3 = $request->h3;
-        $kidsArticle->p1 = $request->p1;
-        $kidsArticle->p2 = $request->p2;
-        $kidsArticle->p3 = $request->p3;
+        //  - grow this validation
+        $this->validate($request, [
+            'title' => 'required|string|max:50|min:3',
+            'excerpt' => 'required|string|max:150|min:10',
+         ]);
+            
+        $kidsArticle                = new kidsArticles;
+
+        //  - image and image credit
+        $kidsArticle->image         = $request->image;
+        $kidsArticle->image_credit  = $request->image_credit;
+
+        $kidsArticle->title         = $request->title;
+        $kidsArticle->quip          = $request->quip;
+
+        // limiting string size going into db
+        $kidsArticle->excerpt       =  \Illuminate\Support\Str::limit($request->excerpt, 40);
+        
+        $kidsArticle->heading1      = $request->h1;
+        $kidsArticle->heading2      = $request->h2;
+        $kidsArticle->heading3      = $request->h3;
+        $kidsArticle->p1            = $request->p1;
+        $kidsArticle->p2            = $request->p2;
+        $kidsArticle->p3            = $request->p3;
 
 /*
 |---

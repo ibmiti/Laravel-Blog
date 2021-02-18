@@ -27,6 +27,7 @@ class ArticlesController extends Controller
 | ---------------
 */
     public function index(){
+        
         // - get most recent article out of all articles 
         $mostRecent = [];
         // - push articles to articles array
@@ -46,8 +47,8 @@ class ArticlesController extends Controller
         $mostPopular[] = HealthArticles::take(2)->latest()->get();
      
         return view('articles.actions.index.index', [
-            // 'articles'      => Article::take(6)->latest()->paginate(),
-            'babyArticles'  => $babyArticles = BabyArticles::latest(6)->get(),
+            'articles'      => Article::take(6)->latest()->paginate(),
+            'babyArticles'  => $babyArticles = BabyArticles::take(6)->get(),
             'kidsArticles'  => $kidsArticles = KidsArticles::take(6)->get(),
             'guideArticles' => $guideArticles = GuideArticles::take(6)->get(),
             'healthArticles'=> $healthArticles = HealthArticles::take(6)->get(),

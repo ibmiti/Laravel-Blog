@@ -92,7 +92,7 @@
             </form>
             <div class="row justify-content-center mt-3">
                 <div class="col-sm-6">
-                    <button class="btn btn-block btn-primary" type="submit">
+                    <button class="btn btn-block btn-dark" type="submit">
                         <a style="color:white;" href="{{ url('viewSelectArticlePage') }} ">
                         Back
                         </a>

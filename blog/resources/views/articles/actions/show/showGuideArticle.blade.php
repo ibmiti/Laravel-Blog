@@ -76,6 +76,9 @@
    text-decoration: none;
   }
 
+  p a {
+    color: grey;
+  }
 </style>
 <nav class="navbar navbar-light navbar">
 <a id="logo" href="/">
@@ -116,19 +119,17 @@
   </div>
 </nav>
 <body>
-<div class="container container-fluid">
 
+<!-- first div -->
+<div class="container">
+  <div class="row">
+      <div style="margin-top: 50px;" class="col-sm-12">
+          <h1 style="padding-bottom: 15px;" class="col-lg text-center">{{ $guideArticle->title ?? ''}}</h1>
+      </div>
+  </div>
+  <hr width="300">
 
-
-<div class="container container-fluid">
-    <div style="margin-top: 50px;" class="row">
-        <h1 style="padding-bottom: 15px;" class="col-lg text-center">{{ $guideArticle->title ?? ''}}</h1>
-    </div>
-</div>
-
-<hr width="300">
-
-<div class="container container-fluid">
+<!-- last div -->
   <div class="row mt-5">
       <div class="col-lg">
         <h2 class="text-center"> {{ $guideArticle->heading1 ?? '' }}</h2>
@@ -136,39 +137,40 @@
   </div>
   
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image_name ?? ''  }}" height="400" width="400" object-fit="cover">  
-                    <!-- TODO place a image credit here -->
+    <div class="col-sm-12 text-center">
+      <img class="mt-3 mx-auto d-block"
+          src="{{ $guideArticle->image_name ?? ''  }}"   
+      >  
+      <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit1 !!} </p>       
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-12">
      <p class="mt-5"> {{ $guideArticle->paragraph1 }} </p>              
     </div>
   </div>
-    
 
-    <!-- start  -->
-  <div class="row mt-5">
-      <div class="col-lg">
+<div class="row mt-5">
+      <div class="col-sm-12">
         <h2 class="text-center"> {{ $guideArticle->heading2 ?? '' }}</h2s>
       </div>               
   </div>
   
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image2_name ?? ''  }}" height="400" width="400" object-fit="cover">                
-    </div>
+    <div class="col-sm-12">
+      <img class="mt-3 mx-auto d-block text-center" src="{{ $guideArticle->image2_name ?? ''  }}"  object-fit="cover">    
+      <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit2 !!} </p>             
+    </div> 
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-12">
      <p class="mt-5"> {{ $guideArticle->paragraph2 }} </p>              
     </div>
   </div>
 
-  <!-- start  -->
+  
 
   <div class="row mt-5">
       <div class="col-lg">
@@ -177,19 +179,20 @@
   </div>
   
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image3_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    <div class="col-sm-12">
+      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image3_name ?? ''  }}"  object-fit="cover">      
+      <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit3 !!} </p>          
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-12">
      <p class="mt-5"> {{ $guideArticle->paragraph3 }} </p>              
     </div>
   </div>      
 
   
-  <!-- start  -->
+  
 
   <div class="row mt-5">
       <div class="col-lg">
@@ -198,18 +201,19 @@
   </div>
   
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image4_name ?? ''  }}" height="400" width="400" object-fit="cover">                
-    </div>
+    <div class="col-sm-12">
+      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image4_name ?? ''  }}"  object-fit="cover">    
+      <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit3 !!} </p>            
+    </div> 
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-12">
      <p class="mt-5"> {{ $guideArticle->paragraph4 }} </p>              
     </div>
   </div>     
 
-  <!-- start  -->
+  
 
   <div class="row mt-5">
       <div class="col-lg">
@@ -218,132 +222,136 @@
   </div>
   
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image5_name ?? ''  }}" height="400" width="400" object-fit="cover">                
-    </div>
+    <div class="col-sm-12">
+      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image5_name ?? ''  }}"  object-fit="cover">    
+      <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit4 !!} </p>            
+    </div> 
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-12">
      <p class="mt-5"> {{ $guideArticle->paragraph5 }} </p>              
     </div>
   </div>     
 
-  <!-- start  -->
+  
 @if ( $guideArticle->heading6 )
   <div class="row mt-5">
-      <div class="col-lg">
+      <div class="col-sm-12">
         <h2 class="text-center"> {{ $guideArticle->heading6 ?? ''  }}</h2s>
       </div>               
   </div>
 
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image6_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    <div class="col-sm-12">
+      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image6_name ?? ''  }}"  object-fit="cover">      
+      <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit6 !!} </p>          
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-12">
      <p class="mt-5"> {{ $guideArticle->paragraph6 }} </p>              
     </div>
   </div>     
 @endif
-  <!-- start  -->
+  
 
   @if ( $guideArticle->heading7 )
   <div class="row mt-5">
-      <div class="col-lg">
+      <div class="col-sm-12">
         <h2 class="text-center"> {{ $guideArticle->heading7 ?? ''  }}</h2s>
       </div>               
   </div>
   
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image7_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    <div class="col-sm-12">
+      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image7_name ?? ''  }}"  object-fit="cover">        
+      <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit6 !!} </p>        
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-12">
      <p class="mt-5"> {{ $guideArticle->paragraph7 }} </p>              
     </div>
   </div>     
   @endif
-
-  <!-- start  -->
-
+  
   @if ( $guideArticle->heading8 )
   <div class="row mt-5">
-      <div class="col-lg">
+      <div class="col-sm-12">
         <h2 class="text-center"> {{ $guideArticle->heading8 ?? ''  }}</h2s>
       </div>               
   </div>
   
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image8_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    <div class="col-sm-12">
+      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image8_name ?? ''  }}"  object-fit="cover">      
+      <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit7 !!} </p>          
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-12">
      <p class="mt-5"> {{ $guideArticle->paragraph8 }} </p>              
     </div>
   </div>     
   @endif
 
-  <!-- start  -->
-
-
 @if ( $guideArticle->heading9 )
   <div class="row mt-5">
-      <div class="col-lg">
+      <div class="col-sm-12">
         <h2 class="text-center"> {{ $guideArticle->heading9 ?? ''  }}</h2s>
       </div>               
   </div>
   
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image9_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    <div class="col-sm-12">
+      <img class="mt-3 mx-auto d-block" 
+           src="{{ $guideArticle->image9_name ?? ''  }}"  object-fit="cover">                
+      <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit9 !!} </p>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-12">
      <p class="mt-5"> {{ $guideArticle->paragraph9 }} </p>              
     </div>
   </div>     
 @endif
-  <!-- start  -->
+  
 
 @if ( $guideArticle->heading9 )
   <div class="row mt-5">
-      <div class="col-lg">
+      <div class="col-sm-12">
         <h2 class="text-center"> {{ $guideArticle->heading10 ?? ''  }}</h2s>
       </div>               
   </div>
   
   <div class="row">
-    <div class="col-sm">
-      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image10_name ?? ''  }}" height="400" width="400" object-fit="cover">                
+    <div class="col-sm-12">
+      <img class="mt-3 mx-auto d-block" src="{{ $guideArticle->image10_name ?? ''  }}"  object-fit="cover">    
+        <p id="credit" class="mt-1"> {!! $guideArticle->imageCredit10 !!} </p>            
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm">
-     <p class="mt-5"> {{ $guideArticle->paragraph10 }} </p>              
-    </div>
-  </div>    
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="mt-5"> {{ $guideArticle->paragraph10 }} </p>              
+      </div>
+    </div>    
 @endif
-</div>
+<!-- </div> -->
 
-  <div class="row justify-content-center mt-3">
-    <div class="col-lg text-center">
-        <button class="btn btn-lg btn-dark"><a href="/babies">Go Back</a></button>
+    <div class="row justify-content-center mt-3">
+      <div class="col-lg text-center">
+          <button class="btn btn-lg btn-dark"><a href="/babies">Go Back</a></button>
+      </div>   
     </div>   
-  </div>        
-</div>
+
+</div> 
+<!--  last div el -->
 
   
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->

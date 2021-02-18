@@ -122,6 +122,7 @@ class BabyArticlesController extends Controller
      */
     public function update(Request $request, BabyArticles $babyArticles)
     {
+        // on update crete new instance of model 
         $babyArticle               = new BabyArticles;
         $babyArticle->image        = $request->image;
         $babyArticle->image_credit = $request->image_credit;

@@ -4,7 +4,6 @@
         font-family: 'Big Shoulders Stencil Display', cursive;
         font-size: 40px;
     }
-
 </style>
 
 <nav id="navbar" class="navbar navbar-light navbar">
@@ -12,37 +11,37 @@
         <img src="images/bbLogo.png" class="navbar-brand d-inline-block align-to waves-effect" width="60" height="80" style="padding-top:15px" /> 
 </a>
 <strong class="navbar-brand" 
-                style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
-                href="#">
-                <?php 
-                switch($uri = Request::getRequestUri()) {
-                    case ($uri == '/'):
-                        echo ('BB + HOME | For The Love Of Baby');
-                    break;
-                    case($uri == '/babies'):
-                        echo ('BB + Baby | Articles');
-                    break;
-                    case ($uri == '/kids'):
-                        echo ('BB + BLOG | Articles');
-                    break;
-                    case ($uri == '/guides'):
-                        echo ('BB + BLOG | Articles');
-                    break;
-                    case ($uri == '/health'):
-                        echo ('BB + BLOG | Articles');
-                    break;
-                    case ($uri == '/articles'):
-                        echo ('BB + BLOG | ARTICLES');
-                    break;
-                    case($uri == '/about'):
-                        echo ('BB + ABOUT US');
-                    break;
-                    case ($uri == '/contact'):
-                        echo ('BB + CONTACT US');
-                    break;
-                }
-                ?>
-                </strong>   
+        style="font-family: 'Big Shoulders Stencil Display', cursive; font-size: 40px; padding-top: 10px;"
+        href="#">
+    <?php 
+        switch($uri = Request::getRequestUri()) {
+            case ($uri == '/'):
+                echo ('BB + HOME | For The Love Of Baby');
+            break;
+            case($uri == '/babies'):
+                echo ('BB + Baby | Articles');
+            break;
+            case ($uri == '/kids'):
+                echo ('BB + BLOG | Articles');
+            break;
+            case ($uri == '/guides'):
+                echo ('BB + BLOG | Articles');
+            break;
+            case ($uri == '/health'):
+                echo ('BB + BLOG | Articles');
+            break;
+            case ($uri == '/articles'):
+                echo ('BB + BLOG | ARTICLES');
+            break;
+            case($uri == '/about'):
+                echo ('BB + ABOUT US');
+            break;
+            case ($uri == '/contact'):
+                echo ('BB + CONTACT US');
+            break;
+        }
+    ?>
+</strong>   
 
   <button class="navbar-toggler" 
           type="button" 
