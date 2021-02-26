@@ -1,9 +1,13 @@
-<footer class="page-footer font-small cyan darken-3">
+<style>
+  #socials {
+    margin-top: -80px;
+  }
+</style>
+<footer class="page-footer font-small cyan darken-3 mt-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 py-5">
+      <div class="col-md-12 py-5 text-center">
         <div class="mb-5 flex-center">
-
           <!-- Facebook -->
           <a class="fb-ic">
             <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
@@ -32,7 +36,8 @@
       </div>
     </div>
   </div>
-  <div class="footer-copyright text-center py-3">© 2020 BABYBASSINET x designed by ofRoot
-    <!-- <a href="">ofRoot.com</a> -->
+  <div id="socials" class="footer-copyright text-center py-3">
+      © 2020 BABYBASSINET + designed by ofRoot
+      <!-- <a href="">ofRoot.com</a> -->
   </div>
 </footer>
