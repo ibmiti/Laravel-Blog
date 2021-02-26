@@ -3,7 +3,7 @@
  -->
 
 <!--  | first 2 rows for baby article -->
-<div class="row">
+<div class="row add-whitespace mt-4 mb-2">
     <div class="col-lg">
         <h2  id="title">
             <a href="/babyArticle/{{ $mostRecent[0][0]->id ?? '' }}">
@@ -19,7 +19,7 @@
 <!-- <hr> -->
 
 <!-- | row for second most-popular baby article -->
-<div class="row">
+<div class="row add-whitespace mb-2">
     <div class="col-lg">
         <h2  id="title">
             <a href="/babyArticle/{{ $mostRecent[0][1]->id ?? '' }}">
@@ -34,7 +34,7 @@
 <!-- <hr>  -->
 <!-- | Second set of articles | Kids articles -->
 
-<div class="row">
+<div class="row add-whitespace mb-2">
     <div class="col-lg">
         <h2  id="title">
             <a href="/kidArticle/{{ $mostRecent[1][0]->id ?? '' }}">
@@ -48,7 +48,7 @@
 </div>
 <!-- <hr> -->
 
-<div class="row">
+<div class="row add-whitespace mb-2">
     <div class="col-lg">
         <h2  id="title">
             <a href="/kidArticle/{{ $mostRecent[1][1]->id ?? '' }}">
@@ -62,7 +62,7 @@
 </div>
 <!-- <hr> -->
 
-<div class="row">
+<div class="row add-whitespace mb-2">
     <div class="col-lg">
         <h2  id="title">
             <a href="/guideArticle/{{ $mostRecent[2][0]->id ?? '' }}">
@@ -76,7 +76,7 @@
 </div>
 <!-- <hr> -->
 
-<div class="row">
+<div class="row add-whitespace mb-2">
     <div class="col-lg">
         <h2  id="title">
             <a href="/guideArticle/{{ $mostRecent[2][1]->id ?? '' }}">
@@ -90,7 +90,7 @@
 </div>
 <!-- <hr> -->
 
-<div class="row">
+<div class="row add-whitespace mb-2">
     <div class="col-lg">
         <h2  id="title">
             <a href="/healthArticle/{{ $mostRecent[3][0]->id ?? '' }}">
@@ -104,7 +104,7 @@
 </div>
 <!-- <hr> -->
 
-<div class="row">
+<div class="row add-whitespace mb-4">
     <div class="col-lg">
         <h2  id="title">
             <a href="/healthArticle/{{ $mostRecent[3][1]->id ?? '' }}">

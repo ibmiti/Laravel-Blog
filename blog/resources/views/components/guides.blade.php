@@ -1,5 +1,5 @@
 @foreach($guideArticles as $a)
-<div class="row">
+<div class="row add-whitespace mt-4 mb-4">
     <div class="col-lg">
         <h2 id="title">
         <a href="/guideArticle/{{ $a->id ?? '' }}">{{ $a->title ?? ''}}</a>

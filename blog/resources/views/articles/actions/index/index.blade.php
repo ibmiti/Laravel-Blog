@@ -9,25 +9,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap');
 
 .col-lg  {
-/* font-family: 'Raleway', 'Roboto'; */
-font-family: 'Big Shoulders Stencil Display', cursive;
-font-size: 40px;
+    /* font-family: 'Raleway', 'Roboto'; */
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 40px;
 }
 
 .col-md {
-font-family: Verdana;
-font-size: 16px;
-color: #555555;
-line-height: 1.5;
-letter-spacing: .45px;
-margin: 20px 20px 20px 20px;
-padding: 20px 100px 20px 100px;
+    font-family: Verdana;
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.5;
+    letter-spacing: .45px;
+    margin: 20px 20px 20px 20px;
+    padding: 20px 100px 20px 100px;
 }
 
 #title {
-line-height: 1.5;
-letter-spacing: .45px;
-font-family: 'Big Shoulders Stencil Display', cursive;
+    line-height: 1.5;
+    letter-spacing: .45px;
+    font-family: 'Big Shoulders Stencil Display', cursive;
 }
 
 a {
@@ -35,40 +35,44 @@ text-decoration: none;
 }
 
 #imgPost {
-/* padding-right: 20px; */
-width: 75%;
+    /* padding-right: 20px; */
+    width: 75%;
 }
 
 a:hover {
-color: grey;
+    color: grey;
 }
 
 a:link {
-text-decoration: none;
+    text-decoration: none;  
 }
 
 a:visited {
-text-decoration: none;
+    text-decoration: none;
 }
 
 img {
-border-radius : 7%;
--moz-border-radius: 7%;
--webkit-border-radius:7%;
+    border-radius : 7%;
+    -moz-border-radius: 7%;
+    -webkit-border-radius:7%;
 }
 
 p {
-color: grey;
+    color: grey;
 }
 
 .card-articles {
--moz-box-shadow: 0 0 3px grey !important;
--webkit-box-shadow: 0 0 3px grey !important ;
-box-shadow: 0 0 20px grey !important;
+    -moz-box-shadow: 0 0 3px grey !important;
+    -webkit-box-shadow: 0 0 3px grey !important ;
+    box-shadow: 0 0 20px grey !important;
+}
+
+.add-whitespace {
+    padding : auto;
+    margin : auto;
 }
 
 </style>
-<!-- | end of style for this file -->
 
 <div class="container">
     <x-header-image/>
@@ -77,13 +81,16 @@ box-shadow: 0 0 20px grey !important;
     </div>
     
     <div class="row">
-        <div class="col-lg text-center" style="padding-bottom: 40px;">
+        <div class="col-lg text-center" 
+             style="padding-bottom: 40px;"
+        >
             <h2>The Latest Articles From The Bassinet</h2>
         </div>
     </div>
 
-    <div class="row">
-        <div class="text-center col-sm-12">
+<!-- buttons  -->
+    <div class="row add-whitespace">
+        <div class="text-center col-sm-12 add-whitespace">
             <button id="popular" type="button" class="btn btn-outline-primary">Popular</button>
             <button id="recent"  type="button" class="btn btn-outline-secondary">Recent</button>
             <button id="guides"  type="button" class="btn btn-outline-success">Guides</button>
@@ -93,8 +100,9 @@ box-shadow: 0 0 20px grey !important;
         </div>
     </div>
 
-    <div class="mt-4 row card card-articles">
-        <div class="col-lg-12 mt-2 container">
+<!-- card which buttons interact with -->
+    <div class="mt-4 row card card-articles add-whitespace">
+        <div class="col-lg-12 mt-2 container add-whitespace">
             <div class="container"> 
         <!-- | This data to be swapped out based on button push -->
                 <h2 id="article-type" class="col-lg">
@@ -110,8 +118,8 @@ box-shadow: 0 0 20px grey !important;
                 <div id="ba"><x-baby/></div>
                 <div id="ki"><x-kids/></div>
                 <div id="he"><x-health/></div>
+            </div>
         </div>
-    </div>
     </div>
 
 <!-- | etc...as above e.g shows -->
