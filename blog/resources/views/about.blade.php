@@ -39,8 +39,9 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="col-lg text-center">Get to know the Bassinet</h1>
+        <h1 class="col-lg text-center mt-5">Get to know the Bassinet</h1>
     </div>
+    <hr style="border: 2px solid red;">
 </div>
 
 <div class="container container-fluid">
@@ -53,10 +54,10 @@
     </div>
   </div>
 </div>   
-<h2 class="text-center">What We're Writing About</h2>
+<h2 class="text-center mt-5 mb-2">What We're Writing About</h2>
 <hr style="border: 2px solid red;">
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-sm-12 mt-4">
       <ul>
             <li><a href="/babyArticle/{{ $articles[0][0]->id ?? '' }}">{{ $articles[0][0]->title ?? '' }}</a></li>
             <p class="paragraph">{{ $articles[0][0]->excerpt ?? '' }}</p>
