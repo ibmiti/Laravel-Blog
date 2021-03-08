@@ -90,7 +90,8 @@ Route::get('/viewEditArticlePage', [ArticlesController::class, 'viewEditArticleP
 Route::get('/babies', [BabyArticlesController::class,'index'])->name('babies');
 Route::get('/createBabyArticle', [BabyArticlesController::class, 'create']);
 Route::post('/storeBabyArticle', [BabyArticlesController::class, 'store'])->name('storeBabyArticle');
-Route::get('/editBabyArticle/{babyArticleId}/edit', [BabyArticlesController::class, 'edit']);
+Route::get('/editBabyArticle/{babyArticleId}/edit', [BabyArticlesController::class, 'edit'])->name('editBaby');
+
 // Route::get('/editBabyArticle/{babyArticleId}/edit', [BabyArticlesController::class, 'editBabyArticle']);
 Route::post('/updateBabyArticle', [BabyArticlesController::class, 'update'])->name('updateBabyArticle');
 Route::get('/deleteBabyArticle/{babyArticleId}/delete', [BabyArticlesController::class, 'destroy'])->name('deleteBabyArticle');

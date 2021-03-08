@@ -31,7 +31,7 @@
 }
 
 a {
-text-decoration: none;
+    text-decoration: none;
 }
 
 #imgPost {
@@ -77,11 +77,11 @@ p {
 <div class="container">
     <x-header-image/>
     <div class="row">
-        <h1 class="col-lg text-center">Keeping up with the Bassinet</h1>
+        <h1 class="col-lg text-center mt-5">Keeping up with the Bassinet</h1>
     </div>
     
     <div class="row">
-        <div class="col-lg text-center" 
+        <div class="col-lg text-center mb-5" 
              style="padding-bottom: 40px;"
         >
             <h2>The Latest Articles From The Bassinet</h2>
@@ -105,7 +105,7 @@ p {
         <div class="col-lg-12 mt-2 container add-whitespace">
             <div class="container"> 
         <!-- | This data to be swapped out based on button push -->
-                <h2 id="article-type" class="col-lg">
+                <h2 id="article-type" class="col-lg mt-3">
                     <!-- this h2 filled with script on button click -->
                 </h2>
                 <p style="color: grey;" id="discription-type">

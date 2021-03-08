@@ -62,19 +62,15 @@ class BabyArticlesController extends Controller
             $babyArticle->p2 = $request->p2;
             $babyArticle->p3 = $request->p3;
 
-/*
-|---
-|   TODO - Flesh this out later
-|------
-|   Suggestion : maybe include emailing ofRoot or send data into error catching and reporting service
-|     // setup a system later in which will catch all logged errors
-*/
         try { 
+
             $babyArticle->save();
-              /*
-            | after article is saved give the option to immediately view and edit or destroy
-            */
-            return view('articles.actions.edit.editBaby.edit', ['babyArticle' => BabyArticles::find($babyArticle->id)]);
+
+            return view('articles.actions.edit.editBaby.edit', [
+                'babyArticle' => BabyArticles::find($babyArticle->id),   
+                $request->session()->flash('success', 'Successfully created Baby Article', 1)
+            ]);
+
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -90,7 +86,7 @@ class BabyArticlesController extends Controller
     {
         $babyArticle = BabyArticles::find($id);
         return view('articles.actions.show.showBabyArticle', [
-            'babyArticle' => $babyArticle 
+            'babyArticle' => $babyArticle
         ]);
     }
 

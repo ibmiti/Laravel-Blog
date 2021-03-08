@@ -220,6 +220,7 @@ p {
 
 @if($babyArticle)
 <div class="container col-sm-12">
+@include('partials.flash-message')
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        
           {{ $babyArticle->title ?? ''}}
@@ -238,8 +239,10 @@ p {
             <p class="mt-1"> {!! $babyArticle->image_credit !!} </p>
        </div>         
     </div>
-  
 </div>
+
+
+
 <!-- there should always be a p1 -->
 <!-- TODO this may be throwing an error - it is not currently being displayed -->
 @if ($babyArticle->p1 )

@@ -53,36 +53,38 @@
       </p>
     </div>
   </div>
-</div>   
+</div>  
+
 <h2 class="text-center mt-5 mb-2">What We're Writing About</h2>
 <hr style="border: 2px solid red;">
+
 <div class="row">
   <div class="col-sm-12 mt-4">
       <ul>
-            <li><a href="/babyArticle/{{ $articles[0][0]->id ?? '' }}">{{ $articles[0][0]->title ?? '' }}</a></li>
-            <p class="paragraph">{{ $articles[0][0]->excerpt ?? '' }}</p>
-            <hr>
-            <li><a href="/babyArticle/{{ $articles[0][1]->id ?? '' }}">{{ $articles[0][1]->title ?? '' }}</a></li>
-            <p class="paragraph">{{ $articles[0][1]->excerpt ?? '' }}</p>
-            <hr>
-            <li><a href="/kidArticle/{{ $articles[1][0]->id ?? '' }}">{{ $articles[1][0]->title ?? '' }}</a></li>
-            <p class="paragraph">{{ $articles[1][0]->excerpt ?? '' }}</p>
-            <hr>
-            <li><a href="/kidArticle/{{ $articles[1][1]->id ?? '' }}">{{ $articles[1][1]->title ?? '' }}</a></li>
-            <p class="paragraph">{{ $articles[1][1]->excerpt ?? '' }}</p>
-            <hr>
-            <li><a href="/guideArticle/{{ $articles[2][0]->id ?? '' }}">{{ $articles[2][0]->title ?? '' }}</a></li>
-            <p class="paragraph">{{ $articles[2][0]->excerpt ?? '' }}</p>
-            <hr>
-            <li><a href="/guideArticle/{{ $articles[2][1]->id ?? '' }}">{{ $articles[2][1]->title ?? '' }}</a></li>
-            <p class="paragraph">{{ $articles[2][1]->excerpt ?? '' }}</p>
-            <hr>
-            <li><a href="/healthArticle/{{ $articles[3][0]->id ?? '' }}">{{ $articles[3][0]->title ?? '' }}</a></li>
-            <p class="paragraph">{{ $articles[3][0]->excerpt ?? '' }}</p>
-            <hr>
-            <li><a href="/healthArticle/{{ $articles[3][1]->id ?? '' }}">{{ $articles[3][1]->title ?? '' }}</a></li>
-            <p class="paragraph">{{ $articles[3][1]->excerpt ?? '' }}</p>
-            <hr>
+        <li><a href="/babyArticle/{{ $articles[0][0]->id ?? '' }}">{{ $articles[0][0]->title ?? '' }}</a></li>
+        <p class="paragraph">{{ $articles[0][0]->excerpt ?? '' }}</p>
+        <hr>
+        <li><a href="/babyArticle/{{ $articles[0][1]->id ?? '' }}">{{ $articles[0][1]->title ?? '' }}</a></li>
+        <p class="paragraph">{{ $articles[0][1]->excerpt ?? '' }}</p>
+        <hr>
+        <li><a href="/kidArticle/{{ $articles[1][0]->id ?? '' }}">{{ $articles[1][0]->title ?? '' }}</a></li>
+        <p class="paragraph">{{ $articles[1][0]->excerpt ?? '' }}</p>
+        <hr>
+        <li><a href="/kidArticle/{{ $articles[1][1]->id ?? '' }}">{{ $articles[1][1]->title ?? '' }}</a></li>
+        <p class="paragraph">{{ $articles[1][1]->excerpt ?? '' }}</p>
+        <hr>
+        <li><a href="/guideArticle/{{ $articles[2][0]->id ?? '' }}">{{ $articles[2][0]->title ?? '' }}</a></li>
+        <p class="paragraph">{{ $articles[2][0]->excerpt ?? '' }}</p>
+        <hr>
+        <li><a href="/guideArticle/{{ $articles[2][1]->id ?? '' }}">{{ $articles[2][1]->title ?? '' }}</a></li>
+        <p class="paragraph">{{ $articles[2][1]->excerpt ?? '' }}</p>
+        <hr>
+        <li><a href="/healthArticle/{{ $articles[3][0]->id ?? '' }}">{{ $articles[3][0]->title ?? '' }}</a></li>
+        <p class="paragraph">{{ $articles[3][0]->excerpt ?? '' }}</p>
+        <hr>
+        <li><a href="/healthArticle/{{ $articles[3][1]->id ?? '' }}">{{ $articles[3][1]->title ?? '' }}</a></li>
+        <p class="paragraph">{{ $articles[3][1]->excerpt ?? '' }}</p>
+        <hr>
       </ul>
     </div>
 </div>   
