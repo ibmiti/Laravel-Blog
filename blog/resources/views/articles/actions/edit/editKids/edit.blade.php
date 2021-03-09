@@ -241,6 +241,7 @@ p {
 <!-- there should always be a p1 -->
 <!-- TODO this may be throwing an error - it is not currently being displayed -->
 @if ($kidsArticle->p1 )
+@include('partials.flash-message')
     <div class="row">
       <div class="col-md mb-3 text-center">
           <h2> {{ $kidsArticle->heading1 }} </h2>

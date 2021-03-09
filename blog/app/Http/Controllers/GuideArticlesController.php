@@ -108,7 +108,10 @@ class GuideArticlesController extends Controller
             //   'article created, this is the id of article in this database. etc.
             // )
             return view('articles.actions.edit.editGuide.edit',
-             ['guideArticle' => GuideArticles::find($guideArticle->id)]
+             [
+                 'guideArticle' => GuideArticles::find($guideArticle->id),
+                 $request->session()->flash('success', 'Successfully create Guide Article', 1)
+             ]
         );
         } catch (Error $error){
             // - send email of failure to ofroot company email

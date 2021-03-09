@@ -60,7 +60,10 @@ class HealthArticlesController extends Controller
         $healthArticle->p3 = $request->p3;
     try {
         $healthArticle->save();
-        return view('articles.actions.edit.editHealth.edit', ['healthArticle' => HealthArticles::find($healthArticle->id)]);
+        return view('articles.actions.edit.editHealth.edit', [
+            'healthArticle' => HealthArticles::find($healthArticle->id),
+            $request->session()->flash('success', 'Successfully created Health Article', 1)
+            ]);
      } catch (\Exception $e){
         return $e->getMessage();
      }

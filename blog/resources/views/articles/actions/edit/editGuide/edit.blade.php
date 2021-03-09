@@ -219,6 +219,7 @@ p {
 <!-- <hr class="my-5"> -->
 
 @if($guideArticle)
+@include('partials.flash-message')
 <div class="container-fluid">
       <div class="mt-5 row">
         <h1 style="padding-bottom: 15px;" class="col-lg text-center">        

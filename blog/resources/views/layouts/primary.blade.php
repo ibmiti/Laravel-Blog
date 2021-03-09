@@ -42,9 +42,8 @@
         @break
     @endswitch
 <body>
-@include('partials.flash-message')
 <div class="container">
-    
+    @include('partials.flash-message')
     @yield('content')
 </div>
 

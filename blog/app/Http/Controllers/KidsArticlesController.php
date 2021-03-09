@@ -40,7 +40,7 @@ class KidsArticlesController extends Controller
     {
         // | add server side validation
         $this->validate($request, [
-            'title' => 'required|string|max:50|min:3',
+            'title'   => 'required|string|max:50|min:3',
             'excerpt' => 'required|string|max:150|min:10',
         ]);
 
@@ -64,7 +64,10 @@ class KidsArticlesController extends Controller
             /*
             | after article is saved give the option to immediately view and edit or destroy
             */
-            return view('articles.actions.edit.editKids.edit', ['kidsArticle' => KidsArticles::find($kidsArticle->id)]);
+            return view('articles.actions.edit.editKids.edit', [
+                'kidsArticle' => KidsArticles::find($kidsArticle->id),
+                $request->session()->flash('success', 'Successfully created Kid Article', 1)
+                ]);
          } catch (\Exception $e){
             return $e->getMessage();
          }
