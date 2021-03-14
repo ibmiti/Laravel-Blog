@@ -119,3 +119,18 @@
 	</div>
 
 @endif
+
+<script type='text/javascript'>
+
+	// in 3 seconds of showing, hide flash-message
+	//		this will be true for all alerts - across all pages.
+
+		setTimeout(() => {
+			let alertDiv = document.getElementsByClassName('alert');
+			alertDiv[0].style.display = 'none';	
+		}, 3000);
+		
+
+
+
+</script>

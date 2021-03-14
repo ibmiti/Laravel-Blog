@@ -89,6 +89,11 @@ class HealthArticlesController extends Controller
      */
     public function edit($healthArticleId)
     {
+        // | add server side validation
+            $this->validate($request, [
+                'title' => 'required|string|max:50|min:3',
+                'excerpt' => 'required|string|max:150|min:10',
+            ]);
         // | use the id to return the individual article
         return view('articles.actions.edit.editHealth.edit', ['healthArticle'=> HealthArticles::find($healthArticleId)]);
     }
@@ -102,22 +107,22 @@ class HealthArticlesController extends Controller
      */
     public function update(Request $request, HealthArticles $healthArticles)
     {
-        $healthArticle = new HealthArticles;
-        $healthArticle->image = $request->image;
+        $healthArticle               = new HealthArticles;
+        $healthArticle->image        = $request->image;
         $healthArticle->image_credit = $request->image_credit;
-        $healthArticle->title = $request->title;
-        $healthArticle->quip = $request->quip;
+        $healthArticle->title        = $request->title;
+        $healthArticle->quip         = $request->quip;
 
         // truncating || limiting the excerpt
-        $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
-        $healthArticle->excerpt = $excerpt;
+        $excerpt                     = \Illuminate\Support\Str::limit($request->excerpt, 40);
+        $healthArticle->excerpt      = $excerpt;
 
-        $healthArticle->heading1 = $request->h1;
-        $healthArticle->heading2 = $request->h2;
-        $healthArticle->heading3 = $request->h3;
-        $healthArticle->p1 = $request->p1;
-        $healthArticle->p2 = $request->p2;
-        $healthArticle->p3 = $request->p3;
+        $healthArticle->heading1     = $request->h1;
+        $healthArticle->heading2     = $request->h2;
+        $healthArticle->heading3     = $request->h3;
+        $healthArticle->p1           = $request->p1;
+        $healthArticle->p2           = $request->p2;
+        $healthArticle->p3           = $request->p3;
 
 /*
 |---

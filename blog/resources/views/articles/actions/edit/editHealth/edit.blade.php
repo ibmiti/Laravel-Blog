@@ -226,30 +226,25 @@ p {
           {{ $healthArticle->title ?? ''}}
         </h1>
       </div> 
-      
     <div class="row">
       <div class="col-12 text-center">
       <blockquote class="blockquote">{{ $healthArticle->quip ?? '' }}</blockquote>
       </div>
     </div>
-  
     <div class="row">
        <div class="col-md text-center mt-5 mb-5">
           <img class="image featured" src="{{ $healthArticle->image }}" alt="article image" max-width="100%" max-height="100%">
           <p class="mt-1"> {!! $healthArticle->image_credit !!} </p>
        </div>         
     </div>
-  
 </div>
-<!-- there should always be a p1 -->
-<!-- TODO this may be throwing an error - it is not currently being displayed -->
+
 @if ($healthArticle->p1 )
     <div class="row">
       <div class="col-md mb-3 text-center">
           <h2> {{ $healthArticle->heading1 }} </h2>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md text-center">
           <p> {{ $healthArticle->p1 }} </p>
@@ -263,7 +258,6 @@ p {
           <h2> {{ $healthArticle->heading2 }} </h2>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md text-center">
           <p> {{ $healthArticle->p2}} </p>
@@ -273,13 +267,11 @@ p {
 
 <!-- if there is a paragraph 3 then show it -->
 @if ($healthArticle->p3)
-
     <div class="row">
       <div class="col-md mb-3 text-center">
           <h2> {{ $healthArticle->heading3 }} </h2>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md text-center">
           <p> {{ $healthArticle->p3}} </p>
@@ -293,8 +285,8 @@ p {
     @csrf
 
 <div class="row">
-        <!-- <label for="title" class="control-label">Article Image</label> -->
-        <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">
+    <!-- <label for="title" class="control-label">Article Image</label> -->
+    <input type="text" name="image" class="form-control form-control-lg" placeholder="A cool image here">
 </div>
 
 <div  class="row mt-3">
@@ -347,27 +339,31 @@ p {
     <input type="textarea" name="p3" class="form-control form-control-lg mt-3" placeholder="Third Paragraph Here">
 </div>
 
-
-
-    <!-- <div class="row justify-content-center mt-3">
-        <div class="col-sm-6">
-            <button class="btn btn-block btn-success" type="submit">Edit Article</button>
-        </div>
-    </div> -->
-
-  <div class="row justify-content-center mt-3">
-    <div class="col-sm-3">
-        <button class="btn btn-block btn-primary" type="submit">Edit</button>
+<div class="row justify-content-center mt-3">
+    <div class="col-1 mt-5">
+      <!--  empty div - used for padding -->
     </div>
-    <div class="col-sm-3">
-      <button id="delete-btn" class="btn btn-block btn-primary">
-      <a href="/deleteHealthArticle/{{$healthArticle->id}}/delete">Delete</a>
+  <div class="col-4 mt-5">
+      <button class="btn btn-block btn-primary" type="submit">
+         Submit
       </button>
-    </div>
-    <div class="col-sm-3">
-      <button id="return-btn" class="btn btn-block btn-dark"><a href="/health">Go Back</a></button>
-    </div>   
+  </div>
+  <div class="col-4 mt-5">
+    <button id="delete-btn" class="btn btn-block btn-primary">
+     <a href="/deleteHealthArticle/{{$healthArticle->id}}/delete">Delete</a>
+    </button>
+  </div>
+  <div class="col-2 mt-5">
+    <button id="return-btn" class="btn btn-block btn-dark">
+      <a href="/health">Go Back</a>
+    </button>
+  </div> 
+  <div class="col-1">
+      <!--  empty div - used for padding -->
+  </div>  
 </div>
+
+
 </form>
 
 @endif
@@ -376,19 +372,27 @@ p {
   <div class="col-sm-12 text-center">
     <p style="font-weight: bold;">{{ $messages['success'] ?? '' }}</p>
   </div>
-
   <div class="col-sm-3">
     <button id="" class="btn btn-dark"><a href="/health">Go Back</a></button>
   </div>   
 </div>
 </div>
 @endif
-<!-- <script type="text/javascript">
-    let x = document.getElementById('id');
-    console.log(x);
-    x.style.display = 'none';
-</script> -->
 
+<script type="text/javascript">
+// | Prevent form from submitting to edit method, instead send id to 
+// | ... destroy method within BabyArticles controller
+    let delete_btn = document.getElementById('delete-btn');
+    delete_btn.onclick(function(event) {
+      event.preventDefault();
+    });
+    
+    //  | prevent from from submitting - allow button to function
+    let return_btn = document.getElementById('return-btn');
+    return_btn.onclick(function(event) {
+      event.preventDefault();
+    });
+</script>
 <!-- <script src="{{ asset('js/main.js') }}"></script> -->
 
 <!-- bootstrap related scripts -->

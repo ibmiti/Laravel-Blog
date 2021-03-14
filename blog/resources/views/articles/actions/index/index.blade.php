@@ -87,7 +87,7 @@ p {
             <h2>The Latest Articles From The Bassinet</h2>
         </div>
     </div>
-
+ 
 <!-- buttons  -->
     <div class="row add-whitespace">
         <div class="text-center col-sm-12 add-whitespace">
@@ -122,6 +122,10 @@ p {
         </div>
     </div>
 
+
+<div id='this'> 
+    <p>hello this</p>
+</div>
 <!-- | etc...as above e.g shows -->
 
 <script type="text/javascript">
@@ -289,7 +293,6 @@ let count = 0;
         }
     }
 </script>
-
- 
-
 @endsection
+
+

@@ -215,7 +215,7 @@ p {
   </div>
 </nav>
 <!-- <hr class="my-5"> -->
-
+@include('partials.flash-message')
 @if($kidsArticle)
 <div class="container-fluid">
       <div class="mt-5 row">
@@ -241,7 +241,6 @@ p {
 <!-- there should always be a p1 -->
 <!-- TODO this may be throwing an error - it is not currently being displayed -->
 @if ($kidsArticle->p1 )
-@include('partials.flash-message')
     <div class="row">
       <div class="col-md mb-3 text-center">
           <h2> {{ $kidsArticle->heading1 }} </h2>
@@ -349,18 +348,27 @@ p {
 </div>
 
 <div class="row justify-content-center mt-3">
-  <div class="col-sm-3">
-    <button class="btn btn-primary" type="submit">Edit</button>
+  <div class="col-1 mt-5">
+      <!--  empty div - used for padding -->
   </div>
-  <div class="col-sm-3">
-    <button id="delete-btn" class="btn btn-primary">
+  <div class="col-4 mt-5">
+      <button class="btn btn-block btn-primary" type="submit">
+         Submit
+      </button>
+  </div>
+  <div class="col-4 mt-5">
+    <button id="delete-btn" class="btn btn-block btn-primary">
     <a href="/deleteKidsArticle/{{$kidsArticle->id}}/delete">Delete</a>
     </button>
   </div>
-  <div class="col-sm-3">
-    <button id="return-btn" class="btn btn-dark"><a href="/kids">Go Back</a></button>
-  </div>   
+  <div class="col-2 mt-5">
+    <button id="return-btn" class="btn btn-block btn-dark"><a href="/kids">Go Back</a></button>
+  </div> 
+  <div class="col-1">
+      <!--  empty div - used for padding -->
+  </div>  
 </div>
+
 </form>
 @endif
 @if(!$kidsArticle)

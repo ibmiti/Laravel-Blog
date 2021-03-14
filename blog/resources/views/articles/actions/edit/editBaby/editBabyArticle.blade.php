@@ -1,3 +1,8 @@
+<!-- 
+     may not need this file or others like it
+         ex : editGuide/editGuideArticle.blade.php -> can also be deleted
+ -->
+
 @extends ('layouts.primary')
 <!-- make title unqique to article -->
 <!--  TODO: this view needs to be styled for all view sizes -->
@@ -99,8 +104,10 @@ img {
    
 
 
-
-   
+<!-- 
+     may not need this file or others like it
+         ex : editGuide/editGuideArticle.blade.php -> can also be deleted
+ -->
 </div>
    
 

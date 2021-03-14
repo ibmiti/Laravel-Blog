@@ -500,17 +500,25 @@ p {
 </div>
 
 <div class="row justify-content-center mt-3">
-  <div class="col-sm-3">
-      <button class="btn btn-block btn-primary" type="submit">Edit</button>
+  <div class="col-1 mt-5">
+      <!--  empty div - used for padding -->
   </div>
-  <div class="col-sm-3">
+  <div class="col-4 mt-5">
+      <button class="btn btn-block btn-primary" type="submit">
+         Submit
+      </button>
+  </div>
+  <div class="col-4 mt-5">
     <button id="delete-btn" class="btn btn-block btn-primary">
     <a href="/deleteGuideArticle/{{$guideArticle->id}}/delete">Delete</a>
     </button>
   </div>
-  <div class="col-sm-3">
+  <div class="col-2 mt-5">
     <button id="return-btn" class="btn btn-block btn-dark"><a href="/guides">Go Back</a></button>
-  </div>   
+  </div> 
+  <div class="col-1">
+      <!--  empty div - used for padding -->
+  </div>  
 </div>
 
 </form>
