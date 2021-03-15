@@ -74,12 +74,15 @@ p {
 
 </style>
 
+    <!--  TODO: place all styles within separate dir. -->
+
+
 <div class="container">
     <x-header-image/>
     <div class="row">
         <h1 class="col-lg text-center mt-5">Keeping up with the Bassinet</h1>
     </div>
-    
+
     <div class="row">
         <div class="col-lg text-center mb-5" 
              style="padding-bottom: 40px;"
@@ -122,12 +125,6 @@ p {
         </div>
     </div>
 
-
-<div id='this'> 
-    <p>hello this</p>
-</div>
-<!-- | etc...as above e.g shows -->
-
 <script type="text/javascript">
     // - Use these to target elements to place title for articles tab
     let p = document.getElementById('popular');
@@ -143,15 +140,18 @@ p {
     let ba = document.getElementById('ba');
     let ki = document.getElementById('ki');
     let he = document.getElementById('he');
+
     //  | default article selection
     window.onload = () =>  {   
         p.click();
         aac(p);
      }
+
     // - hide div with articles
     function hdwa(x) {
         x.style.display = "none";
     }
+
     //  - this will hide all divs onload
     hdwa(po);
     hdwa(re);
@@ -159,6 +159,7 @@ p {
     hdwa(ba);
     hdwa(ki);
     hdwa(he);
+    
 let count = 0;
 // - add active class to buttons on click
     function aac(x){

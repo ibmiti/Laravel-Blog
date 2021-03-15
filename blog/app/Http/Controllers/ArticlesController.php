@@ -27,31 +27,35 @@ class ArticlesController extends Controller
 | ---------------
 */
     public function index(){
+
+        // display max of 10 articles per page using pagination 
+
+        // return paginated resource to view articles
         
         // - get most recent article out of all articles 
         $mostRecent = [];
         // - push articles to articles array
-        $mostRecent[] = BabyArticles::take(2)->latest()->get();
-        $mostRecent[] = KidsArticles::take(2)->latest()->get();
-        $mostRecent[] = GuideArticles::take(2)->latest()->get();
-        $mostRecent[] = HealthArticles::take(2)->latest()->get();
+        $mostRecent[] = BabyArticles::latest()->paginate(10);
+        $mostRecent[] = KidsArticles::latest()->pageinate(10);
+        $mostRecent[] = GuideArticles::latest()->paginate(10);
+        $mostRecent[] = HealthArticles::latest()->paginate(10);
 
         // - get most popular article out of all-time popular articles
         // - this feature may be fully implemented when more users are active
         // - get with founder to plan out how to implement features
         $mostPopular = [];
         // - push articles to articles array
-        $mostPopular[] = BabyArticles::take(2)->latest()->get();
-        $mostPopular[] = KidsArticles::take(2)->latest()->get();
-        $mostPopular[] = GuideArticles::take(2)->latest()->get();
-        $mostPopular[] = HealthArticles::take(2)->latest()->get();
+        $mostPopular[] = BabyArticles::latest()->paginate(10);
+        $mostPopular[] = KidsArticles::latest()->paginate(10);
+        $mostPopular[] = GuideArticles::latest()->pagiante(10);
+        $mostPopular[] = HealthArticles::latest()->paginate(10);
      
         return view('articles.actions.index.index', [
-            'articles'      => Article::take(6)->latest()->paginate(),
-            'babyArticles'  => $babyArticles = BabyArticles::take(6)->get(),
-            'kidsArticles'  => $kidsArticles = KidsArticles::take(6)->get(),
-            'guideArticles' => $guideArticles = GuideArticles::take(6)->get(),
-            'healthArticles'=> $healthArticles = HealthArticles::take(6)->get(),
+            'articles'      => Article::latest()->paginate(10),
+            'babyArticles'  => $babyArticles = BabyArticles::paginate(10),
+            'kidsArticles'  => $kidsArticles = KidsArticles::paginate(10),
+            'guideArticles' => $guideArticles = GuideArticles::paginate(10),
+            'healthArticles'=> $healthArticles = HealthArticles::paginate(10),
             'mostRecent'    => $mostRecent,
             'mostPopular'   => $mostPopular,
         ]);

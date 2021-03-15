@@ -47,20 +47,21 @@ class BabyArticlesController extends Controller
         // | add event listener 
         // | - this event listener will notify by email those signed up that a new article has been created
         
-            $babyArticle = new BabyArticles;
-            $babyArticle->image = $request->image;
-            $babyArticle->image_credit = $request->image_credit;
-            $babyArticle->title = $request->title;
-            $babyArticle->quip = $request->quip;
-            // truncating || limiting the excerpt
-            $excerpt = \Illuminate\Support\Str::limit($request->excerpt, 40);
-            $babyArticle->excerpt = $excerpt;
-            $babyArticle->heading1 = $request->h1;
-            $babyArticle->heading2 = $request->h2;
-            $babyArticle->heading3 = $request->h3;
-            $babyArticle->p1 = $request->p1;
-            $babyArticle->p2 = $request->p2;
-            $babyArticle->p3 = $request->p3;
+            $babyArticle                 = new BabyArticles;
+            $babyArticle->image          = $request->image;
+            $babyArticle->image_credit   = $request->image_credit;
+            $babyArticle->title          = $request->title;
+            $babyArticle->quip           = $request->quip;
+
+        // truncating || limiting the excerpt
+            $excerpt                     = \Illuminate\Support\Str::limit($request->excerpt, 40);
+            $babyArticle->excerpt        = $excerpt;
+            $babyArticle->heading1       = $request->h1;
+            $babyArticle->heading2       = $request->h2;
+            $babyArticle->heading3       = $request->h3;
+            $babyArticle->p1             = $request->p1;
+            $babyArticle->p2             = $request->p2;
+            $babyArticle->p3             = $request->p3;
 
         try { 
 
